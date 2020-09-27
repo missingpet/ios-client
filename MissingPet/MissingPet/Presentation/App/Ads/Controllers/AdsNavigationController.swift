@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AdsNavigationController.swift
 //  MissingPet
 //
 //  Created by Михаил Еремеев on 27.09.2020.
@@ -7,13 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AdsNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
-
 }
-
