@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 
-protocol StoryboardInstanceType {
+public protocol StoryboardInstanceType {
     
     var name: String { get }
     var rootNavigationController: UINavigationController! { get }
     
 }
 
-extension StoryboardInstanceType {
+public extension StoryboardInstanceType {
     
     func navigationController(controllerName: String) -> UINavigationController! {
         let storyboard = UIStoryboard(name: name, bundle: nil)
