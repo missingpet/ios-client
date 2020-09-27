@@ -13,4 +13,8 @@ class AdsPresenter: DefaultPresenterType {
         
     }
     
+    func openProfile() {
+        Navigator(Storyboard.profile).push(ProfileViewController.self, presenter: ProfilePresenter())
+    }
+    
 }

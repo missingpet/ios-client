@@ -21,7 +21,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Объявления" largeTitleDisplayMode="always" id="XlM-6p-7Zq">
                         <barButtonItem key="backBarButtonItem" title=" " id="SoU-AD-Ftg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Профиль" id="6EX-Sy-zV3">
+                            <connections>
+                                <action selector="profileBarButtonAction:" destination="iw6-VS-deR" id="TgJ-9l-Xxw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileBarButton" destination="6EX-Sy-zV3" id="BnY-UG-4F8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pav-sY-EPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
