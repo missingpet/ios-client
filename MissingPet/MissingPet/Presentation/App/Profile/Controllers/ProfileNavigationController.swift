@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileNavigationController: Controller<ProfilePresenter> {
+class ProfileNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
