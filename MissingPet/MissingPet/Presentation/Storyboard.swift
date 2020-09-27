@@ -7,16 +7,13 @@
 
 import Foundation
 
-enum Storyboard: StoryboardInstanceType {
+enum Storyboard: String, StoryboardInstanceType {
     
-    case ads
-    case profile
+    case ads = "Ads"
+    case profile = "Profile"
     
     var name: String {
-        switch self {
-        case .ads: return "Ads"
-        case .profile: return "Profile"
-        }
+        return rawValue
     }
     
 }
