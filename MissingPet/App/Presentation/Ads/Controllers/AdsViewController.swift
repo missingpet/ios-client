@@ -9,15 +9,21 @@ import UIKit
 
 class AdsViewController: Controller<AdsPresenter> {
     
-    @IBOutlet weak var profileBarButton: UIBarButtonItem!
+    @IBOutlet weak var profileButton: UIButton!
     
     override func viewDidLoad() {
+        
+        presenter?.profileImageSetter = { [unowned self] image in
+            self.profileButton.setBackgroundImage(image, for: .normal)
+        }
+        
         super.viewDidLoad()
         
     }
     
     
-    @IBAction func profileBarButtonAction(_ sender: UIBarButtonItem) {
+    
+    @IBAction func profileAction(_ sender: UIButton) {
         presenter?.openProfile()
     }
     

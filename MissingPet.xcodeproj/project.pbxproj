@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0869D152CAA23394AB4F4D5A /* Pods_MissingPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */; };
+		C834D5432522560E0070E3F6 /* UISetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D5422522560E0070E3F6 /* UISetter.swift */; };
 		C86ED4B92520E4BB00189E8A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86ED4B82520E4BB00189E8A /* Profile.storyboard */; };
 		C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4BC2520E4EA00189E8A /* ProfilePresenter.swift */; };
 		C86ED4C02520E51E00189E8A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4BF2520E51E00189E8A /* ProfileViewController.swift */; };
@@ -32,6 +33,7 @@
 		2784DA8184CA10E8AD9CCCAD /* Pods-MissingPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.release.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.release.xcconfig"; sourceTree = "<group>"; };
 		63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissingPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B7AA15D05DAF05F9F3D85B /* Pods-MissingPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.debug.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.debug.xcconfig"; sourceTree = "<group>"; };
+		C834D5422522560E0070E3F6 /* UISetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISetter.swift; sourceTree = "<group>"; };
 		C86ED4B82520E4BB00189E8A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C86ED4BC2520E4EA00189E8A /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		C86ED4BF2520E51E00189E8A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 				2784DA8184CA10E8AD9CCCAD /* Pods-MissingPet.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C834D541252255EC0070E3F6 /* ReusableUI */ = {
+			isa = PBXGroup;
+			children = (
+				C834D5422522560E0070E3F6 /* UISetter.swift */,
+			);
+			path = ReusableUI;
 			sourceTree = "<group>";
 		};
 		C86ED4B42520E49C00189E8A /* Profile */ = {
@@ -127,6 +137,7 @@
 				C8CA02C22520BDB000C22815 /* Assets.xcassets */,
 				C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */,
 				C8CA02C72520BDB000C22815 /* Info.plist */,
+				C834D541252255EC0070E3F6 /* ReusableUI */,
 				C8F441BC2520D2B500A6570D /* ArchitecturePattern */,
 				C8F441D52520DD5800A6570D /* App */,
 			);
@@ -326,6 +337,7 @@
 				C86ED4C32520E53D00189E8A /* ProfileNavigationController.swift in Sources */,
 				C8F441C32520D30500A6570D /* PresenterType.swift in Sources */,
 				C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */,
+				C834D5432522560E0070E3F6 /* UISetter.swift in Sources */,
 				C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */,
 				C8F441E92520DF5600A6570D /* AdsNavigationController.swift in Sources */,
 				C8F441E22520DEB100A6570D /* AdsPresenter.swift in Sources */,

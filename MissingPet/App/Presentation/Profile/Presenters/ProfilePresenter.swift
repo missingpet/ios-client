@@ -13,4 +13,8 @@ class ProfilePresenter: DefaultPresenterType {
         
     }
     
+    func setup() {
+        
+    }
+    
 }

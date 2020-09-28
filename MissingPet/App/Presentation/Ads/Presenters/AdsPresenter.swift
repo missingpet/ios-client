@@ -6,11 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 class AdsPresenter: DefaultPresenterType {
     
     required init() {
         
+    }
+    
+    var profileImageSetter: UISetter<UIImage>?
+    
+    func setup() {
+        profileImageSetter?(UIImage(named: "ProfilePicTemplate")!)
     }
     
     func openProfile() {

@@ -21,14 +21,47 @@
                     </view>
                     <navigationItem key="navigationItem" title="Объявления" largeTitleDisplayMode="always" id="XlM-6p-7Zq">
                         <barButtonItem key="backBarButtonItem" title=" " id="SoU-AD-Ftg"/>
-                        <barButtonItem key="rightBarButtonItem" title="Профиль" id="6EX-Sy-zV3">
-                            <connections>
-                                <action selector="profileBarButtonAction:" destination="iw6-VS-deR" id="TgJ-9l-Xxw"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" width="44" style="plain" id="z9o-Mk-sfr">
+                            <view key="customView" contentMode="scaleToFill" id="hK1-2e-ov7">
+                                <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exp-4d-KGs">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="7ys-v3-2RM"/>
+                                            <constraint firstAttribute="width" constant="44" id="agB-kL-LX5"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="profileAction:" destination="iw6-VS-deR" eventType="touchUpInside" id="2mg-tt-PDv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Exp-4d-KGs" secondAttribute="trailing" id="PB2-vT-mym"/>
+                                    <constraint firstAttribute="bottom" secondItem="Exp-4d-KGs" secondAttribute="bottom" id="aw3-NZ-dVW"/>
+                                    <constraint firstItem="Exp-4d-KGs" firstAttribute="top" secondItem="hK1-2e-ov7" secondAttribute="top" id="oD4-WT-qqq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="profileBarButton" destination="6EX-Sy-zV3" id="BnY-UG-4F8"/>
+                        <outlet property="profileButton" destination="Exp-4d-KGs" id="zvR-SU-MfK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pav-sY-EPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
