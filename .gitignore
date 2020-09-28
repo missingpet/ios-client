@@ -1,4 +1,4 @@
 # CocoaPods
-MissingPet/Pods/
-MissingPet/Podfile.lock
-MissingPet/*.xcworkspace
+Pods/
+Podfile.lock
+*.xcworkspace
