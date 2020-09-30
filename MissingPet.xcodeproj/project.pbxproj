@@ -28,6 +28,8 @@
 		C8F441E22520DEB100A6570D /* AdsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441E12520DEB100A6570D /* AdsPresenter.swift */; };
 		C8F441E62520DEEA00A6570D /* AdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441E52520DEEA00A6570D /* AdsViewController.swift */; };
 		C8F441E92520DF5600A6570D /* AdsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441E82520DF5600A6570D /* AdsNavigationController.swift */; };
+		C8FDF0AF252479B000A2C962 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDF0AE252479B000A2C962 /* MainTabBarController.swift */; };
+		C8FDF0B3252479C800A2C962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8FDF0B2252479C800A2C962 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		C8F441E12520DEB100A6570D /* AdsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsPresenter.swift; sourceTree = "<group>"; };
 		C8F441E52520DEEA00A6570D /* AdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsViewController.swift; sourceTree = "<group>"; };
 		C8F441E82520DF5600A6570D /* AdsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsNavigationController.swift; sourceTree = "<group>"; };
+		C8FDF0AE252479B000A2C962 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		C8FDF0B2252479C800A2C962 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		C8F441D32520DD5400A6570D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C8FDF0AC2524795C00A2C962 /* Main */,
 				C86ED4B42520E49C00189E8A /* Profile */,
 				C8F441DA2520DE0E00A6570D /* Ads */,
 			);
@@ -211,6 +216,23 @@
 				C8F441E12520DEB100A6570D /* AdsPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		C8FDF0AC2524795C00A2C962 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C8FDF0B2252479C800A2C962 /* Main.storyboard */,
+				C8FDF0AD2524798E00A2C962 /* Controllers */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C8FDF0AD2524798E00A2C962 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C8FDF0AE252479B000A2C962 /* MainTabBarController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		DAFFA6FBB146DAA839EB619F /* Frameworks */ = {
@@ -281,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8F441DC2520DE4B00A6570D /* Ads.storyboard in Resources */,
+				C8FDF0B3252479C800A2C962 /* Main.storyboard in Resources */,
 				C8CA02C62520BDB000C22815 /* LaunchScreen.storyboard in Resources */,
 				C86ED4B92520E4BB00189E8A /* Profile.storyboard in Resources */,
 				C8CA02C32520BDB000C22815 /* Assets.xcassets in Resources */,
@@ -352,6 +375,7 @@
 				C86ED4C02520E51E00189E8A /* ProfileViewController.swift in Sources */,
 				C8F441CF2520D96C00A6570D /* Controller.swift in Sources */,
 				C8F441E62520DEEA00A6570D /* AdsViewController.swift in Sources */,
+				C8FDF0AF252479B000A2C962 /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
