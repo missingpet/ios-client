@@ -13,7 +13,6 @@ class ProfileViewController: Controller<ProfilePresenter> {
         
         
         
-        
         super.viewDidLoad()
     }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0869D152CAA23394AB4F4D5A /* Pods_MissingPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */; };
+		C82B02E625228A0900C5DBC1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82B02E525228A0900C5DBC1 /* ShadowView.swift */; };
 		C834D5432522560E0070E3F6 /* UISetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D5422522560E0070E3F6 /* UISetter.swift */; };
 		C86ED4B92520E4BB00189E8A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86ED4B82520E4BB00189E8A /* Profile.storyboard */; };
 		C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4BC2520E4EA00189E8A /* ProfilePresenter.swift */; };
@@ -33,6 +34,7 @@
 		2784DA8184CA10E8AD9CCCAD /* Pods-MissingPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.release.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.release.xcconfig"; sourceTree = "<group>"; };
 		63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissingPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B7AA15D05DAF05F9F3D85B /* Pods-MissingPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.debug.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.debug.xcconfig"; sourceTree = "<group>"; };
+		C82B02E525228A0900C5DBC1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		C834D5422522560E0070E3F6 /* UISetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISetter.swift; sourceTree = "<group>"; };
 		C86ED4B82520E4BB00189E8A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C86ED4BC2520E4EA00189E8A /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C834D5422522560E0070E3F6 /* UISetter.swift */,
+				C82B02E525228A0900C5DBC1 /* ShadowView.swift */,
 			);
 			path = ReusableUI;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				C8F441D72520DD8E00A6570D /* Storyboard.swift in Sources */,
 				C8F441C92520D90D00A6570D /* UIWindow.swift in Sources */,
 				C8CA02BA2520BDAD00C22815 /* AppDelegate.swift in Sources */,
+				C82B02E625228A0900C5DBC1 /* ShadowView.swift in Sources */,
 				C86ED4C02520E51E00189E8A /* ProfileViewController.swift in Sources */,
 				C8F441CF2520D96C00A6570D /* Controller.swift in Sources */,
 				C8F441E62520DEEA00A6570D /* AdsViewController.swift in Sources */,
