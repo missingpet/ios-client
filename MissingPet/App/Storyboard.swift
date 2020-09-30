@@ -9,8 +9,10 @@ import Foundation
 
 enum Storyboard: String, StoryboardInstanceType {
     
-    case ads = "Ads"
+    case ads = "Feed"
     case profile = "Profile"
+    case main = "Main"
+    case myAds = "MyAds"
     
     var name: String {
         return rawValue

@@ -11,19 +11,22 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewControllers = [
+            createController(FeedViewController.self, in: FeedNavigationController.self, from: .ads, iconName: "feed"),
+            createController(MyAdsViewController.self, in: MyAdsNavigationController.self, from: .myAds, iconName: "myads"),
+            createController(ProfileViewController.self, in: ProfileNavigationController.self, from: .profile, iconName: "profile"),
+        ]
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func createController<P: DefaultPresenterType, C: Controller<P>, NC: UINavigationController>(_ controller: C.Type, in navigationController: NC.Type, from storyboard: Storyboard, iconName: String) -> UINavigationController {
+        let navigator = Navigator(storyboard)
+        let navigationController = navigator.createController(NC.self)
+        let controller: C = navigator.createControllerWithDefaultPresenter(C.self)
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: iconName)?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: iconName + "-selected")?.withRenderingMode(.alwaysOriginal))
+        navigationController.viewControllers = [controller]
+        return navigationController
     }
-    */
-
+    
 }

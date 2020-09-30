@@ -9,41 +9,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Профиль-->
-        <scene sceneID="G8h-Ck-e0L">
+        <!--Лента-->
+        <scene sceneID="Vep-09-xYW">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="7C7-Hk-eDf" customClass="ProfileViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1oe-Bk-qdF">
+                <viewController storyboardIdentifier="FeedViewController" id="1aZ-oE-oBC" customClass="FeedViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pUY-rz-CKz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mYR-6u-Mqy"/>
+                        <viewLayoutGuide key="safeArea" id="aOE-e6-GKp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Профиль" largeTitleDisplayMode="always" id="0hD-Ix-PbL">
-                        <barButtonItem key="backBarButtonItem" title=" " id="dc0-zT-N7R"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Лента" largeTitleDisplayMode="always" id="fhS-nP-SJr"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WTT-IQ-N5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MbA-18-GlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198.5507246376812" y="122.54464285714285"/>
+            <point key="canvasLocation" x="237.68115942028987" y="-27.455357142857142"/>
         </scene>
-        <!--Profile Navigation Controller-->
-        <scene sceneID="d4z-7G-HiK">
+        <!--Feed Navigation Controller-->
+        <scene sceneID="E3L-sA-7Kv">
             <objects>
-                <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="K7V-ll-i66" customClass="ProfileNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="WWA-3S-cyu" customClass="FeedNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="it7-Ec-Nkt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="l8J-aS-4sC">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7C7-Hk-eDf" kind="relationship" relationship="rootViewController" id="jle-U2-lGa"/>
+                        <segue destination="1aZ-oE-oBC" kind="relationship" relationship="rootViewController" id="R9A-Qp-FBI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eu2-u6-5ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLJ-VH-ju2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289.85507246376812" y="122.54464285714285"/>
+            <point key="canvasLocation" x="-672.46376811594212" y="-27.455357142857142"/>
         </scene>
     </scenes>
     <resources>

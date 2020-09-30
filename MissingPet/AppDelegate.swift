@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Navigator.set(window: &window)
-        Navigator(Storyboard.ads).root(AdsViewController.self)
+        Navigator(Storyboard.main).root(MainTabBarController.self)
         
         return true
     }
