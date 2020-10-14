@@ -9,9 +9,11 @@ import UIKit
 
 class FeedItemTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var feedItemImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        feedItemImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="250" id="ibP-0H-Q6e"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -110,6 +110,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <accessibility key="accessibilityConfiguration" identifier="FeedItemTableViewCell"/>
+            <connections>
+                <outlet property="feedItemImageView" destination="Yjs-cy-K5p" id="haJ-NE-Pce"/>
+            </connections>
             <point key="canvasLocation" x="158.69565217391306" y="132.58928571428572"/>
         </tableViewCell>
     </objects>
