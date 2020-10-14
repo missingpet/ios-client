@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,10 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="pUY-rz-CKz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oI9-h8-HH5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aOE-e6-GKp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.90196078431372551" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oI9-h8-HH5" firstAttribute="leading" secondItem="aOE-e6-GKp" secondAttribute="leading" id="FGL-IE-Niu"/>
+                            <constraint firstItem="oI9-h8-HH5" firstAttribute="top" secondItem="aOE-e6-GKp" secondAttribute="top" id="Lvn-PP-IOs"/>
+                            <constraint firstItem="oI9-h8-HH5" firstAttribute="trailing" secondItem="aOE-e6-GKp" secondAttribute="trailing" id="mL3-UD-PDX"/>
+                            <constraint firstItem="oI9-h8-HH5" firstAttribute="bottom" secondItem="aOE-e6-GKp" secondAttribute="bottom" id="pra-mS-XZ5"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Лента" largeTitleDisplayMode="always" id="fhS-nP-SJr"/>
+                    <navigationItem key="navigationItem" title="Лента" largeTitleDisplayMode="never" id="fhS-nP-SJr"/>
+                    <connections>
+                        <outlet property="feedTableView" destination="oI9-h8-HH5" id="I2U-Sq-xCK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbA-18-GlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,9 +44,10 @@
             <objects>
                 <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="WWA-3S-cyu" customClass="FeedNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="l8J-aS-4sC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l8J-aS-4sC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -44,9 +59,4 @@
             <point key="canvasLocation" x="-672.46376811594212" y="-27.455357142857142"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
