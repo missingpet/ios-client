@@ -14,13 +14,15 @@
 		C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4BC2520E4EA00189E8A /* ProfilePresenter.swift */; };
 		C86ED4C02520E51E00189E8A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4BF2520E51E00189E8A /* ProfileViewController.swift */; };
 		C86ED4C32520E53D00189E8A /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4C22520E53D00189E8A /* ProfileNavigationController.swift */; };
+		C87FCB3D25252BF800BDDE17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87FCB3C25252BF800BDDE17 /* Assets.xcassets */; };
 		C8BCC9802524C62200FB3164 /* MyAds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BCC97F2524C62200FB3164 /* MyAds.storyboard */; };
 		C8BCC9852524C65A00FB3164 /* MyAdsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCC9842524C65A00FB3164 /* MyAdsPresenter.swift */; };
 		C8BCC9892524C68200FB3164 /* MyAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCC9882524C68200FB3164 /* MyAdsViewController.swift */; };
 		C8BCC98D2524C6A900FB3164 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BCC98C2524C6A900FB3164 /* Feed.storyboard */; };
 		C8BCC9902524C71800FB3164 /* MyAdsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCC98F2524C71800FB3164 /* MyAdsNavigationController.swift */; };
+		C8C706692525A8E90094A75B /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C706672525A8E90094A75B /* FeedItemTableViewCell.swift */; };
+		C8C7066A2525A8E90094A75B /* FeedItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C706682525A8E90094A75B /* FeedItemTableViewCell.xib */; };
 		C8CA02BA2520BDAD00C22815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CA02B92520BDAD00C22815 /* AppDelegate.swift */; };
-		C8CA02C32520BDB000C22815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8CA02C22520BDB000C22815 /* Assets.xcassets */; };
 		C8CA02C62520BDB000C22815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */; };
 		C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441BE2520D2E800A6570D /* ViewType.swift */; };
 		C8F441C32520D30500A6570D /* PresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441C22520D30500A6570D /* PresenterType.swift */; };
@@ -46,14 +48,16 @@
 		C86ED4BC2520E4EA00189E8A /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		C86ED4BF2520E51E00189E8A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C86ED4C22520E53D00189E8A /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
+		C87FCB3C25252BF800BDDE17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8BCC97F2524C62200FB3164 /* MyAds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAds.storyboard; sourceTree = "<group>"; };
 		C8BCC9842524C65A00FB3164 /* MyAdsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsPresenter.swift; sourceTree = "<group>"; };
 		C8BCC9882524C68200FB3164 /* MyAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsViewController.swift; sourceTree = "<group>"; };
 		C8BCC98C2524C6A900FB3164 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		C8BCC98F2524C71800FB3164 /* MyAdsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsNavigationController.swift; sourceTree = "<group>"; };
+		C8C706672525A8E90094A75B /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
+		C8C706682525A8E90094A75B /* FeedItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedItemTableViewCell.xib; sourceTree = "<group>"; };
 		C8CA02B62520BDAC00C22815 /* MissingPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissingPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CA02B92520BDAD00C22815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8CA02C22520BDB000C22815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8CA02C52520BDB000C22815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8CA02C72520BDB000C22815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8F441BE2520D2E800A6570D /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 			path = Presenters;
 			sourceTree = "<group>";
 		};
+		C8C706662525A8B00094A75B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C8C706672525A8E90094A75B /* FeedItemTableViewCell.swift */,
+				C8C706682525A8E90094A75B /* FeedItemTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C8CA02AD2520BDAC00C22815 = {
 			isa = PBXGroup;
 			children = (
@@ -175,8 +188,8 @@
 		C8CA02B82520BDAC00C22815 /* MissingPet */ = {
 			isa = PBXGroup;
 			children = (
+				C87FCB3C25252BF800BDDE17 /* Assets.xcassets */,
 				C8CA02B92520BDAD00C22815 /* AppDelegate.swift */,
-				C8CA02C22520BDB000C22815 /* Assets.xcassets */,
 				C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */,
 				C8CA02C72520BDB000C22815 /* Info.plist */,
 				C834D541252255EC0070E3F6 /* ReusableUI */,
@@ -231,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				C8BCC98C2524C6A900FB3164 /* Feed.storyboard */,
+				C8C706662525A8B00094A75B /* Cells */,
 				C8F441E02520DE7100A6570D /* Presenters */,
 				C8F441DF2520DE5900A6570D /* Controllers */,
 			);
@@ -340,10 +354,11 @@
 			files = (
 				C8BCC9802524C62200FB3164 /* MyAds.storyboard in Resources */,
 				C8FDF0B3252479C800A2C962 /* Main.storyboard in Resources */,
+				C8C7066A2525A8E90094A75B /* FeedItemTableViewCell.xib in Resources */,
 				C8BCC98D2524C6A900FB3164 /* Feed.storyboard in Resources */,
 				C8CA02C62520BDB000C22815 /* LaunchScreen.storyboard in Resources */,
+				C87FCB3D25252BF800BDDE17 /* Assets.xcassets in Resources */,
 				C86ED4B92520E4BB00189E8A /* Profile.storyboard in Resources */,
-				C8CA02C32520BDB000C22815 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +416,7 @@
 				C8F441C32520D30500A6570D /* PresenterType.swift in Sources */,
 				C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */,
 				C8BCC9902524C71800FB3164 /* MyAdsNavigationController.swift in Sources */,
+				C8C706692525A8E90094A75B /* FeedItemTableViewCell.swift in Sources */,
 				C834D5432522560E0070E3F6 /* UISetter.swift in Sources */,
 				C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */,
 				C8F441E92520DF5600A6570D /* FeedNavigationController.swift in Sources */,
