@@ -5,5 +5,6 @@ target 'MissingPet' do
   pod 'ReachabilitySwift'
   pod 'Alamofire'
   pod 'Realm'
+  pod 'Kingfisher'
 
 end
