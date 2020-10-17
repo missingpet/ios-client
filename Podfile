@@ -4,5 +4,6 @@ target 'MissingPet' do
   use_frameworks!
   pod 'ReachabilitySwift'
   pod 'Alamofire'
+  pod 'Realm'
 
 end
