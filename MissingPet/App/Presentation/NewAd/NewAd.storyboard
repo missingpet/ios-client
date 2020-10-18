@@ -19,9 +19,29 @@
                         <viewLayoutGuide key="safeArea" id="wFD-hn-jYd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="p5i-MQ-mkT"/>
+                    <navigationItem key="navigationItem" id="p5i-MQ-mkT">
+                        <barButtonItem key="backBarButtonItem" title=" " id="w4k-Vy-3UL"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peR-zd-q04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875.3623188405797" y="17.410714285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mXK-Qb-lvX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjQ-Ah-Eof" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K9A-hA-com">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fgr-et-bEc" kind="relationship" relationship="rootViewController" id="ajP-uQ-MhN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Apf-7u-ZjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.21739130434787" y="17.410714285714285"/>
         </scene>

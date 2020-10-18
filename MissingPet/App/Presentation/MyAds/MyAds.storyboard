@@ -32,6 +32,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мои объявления" largeTitleDisplayMode="never" id="3Cv-GC-UF7">
+                        <barButtonItem key="backBarButtonItem" title=" " id="F6N-dX-HAi"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="2Hi-Pa-wYc">
                             <color key="tintColor" red="0.047058823530000002" green="0.63529411759999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -56,6 +57,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DIG-l7-Kha">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.047058823530000002" green="0.63529411759999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
