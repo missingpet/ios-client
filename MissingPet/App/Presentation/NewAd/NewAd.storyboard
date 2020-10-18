@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Ad View Controller-->
         <scene sceneID="nF8-Eo-GJA">
             <objects>
-                <viewController id="Fgr-et-bEc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewAdViewController" hidesBottomBarWhenPushed="YES" id="Fgr-et-bEc" customClass="NewAdViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbK-JC-0nT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,24 +24,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peR-zd-q04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.21739130434787" y="17.410714285714285"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="19A-bg-dzO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g4S-42-BKN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dga-wj-p3i">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Fgr-et-bEc" kind="relationship" relationship="rootViewController" id="KUx-eM-cvT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfC-c8-Gev" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="55.072463768115945" y="17.410714285714285"/>
         </scene>
     </scenes>
     <resources>
