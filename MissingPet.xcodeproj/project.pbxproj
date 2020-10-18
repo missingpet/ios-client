@@ -24,6 +24,7 @@
 		C8C7066A2525A8E90094A75B /* FeedItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C706682525A8E90094A75B /* FeedItemTableViewCell.xib */; };
 		C8CA02BA2520BDAD00C22815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CA02B92520BDAD00C22815 /* AppDelegate.swift */; };
 		C8CA02C62520BDB000C22815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */; };
+		C8DBC608253CE6D20074811D /* NewAd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8DBC607253CE6D20074811D /* NewAd.storyboard */; };
 		C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441BE2520D2E800A6570D /* ViewType.swift */; };
 		C8F441C32520D30500A6570D /* PresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441C22520D30500A6570D /* PresenterType.swift */; };
 		C8F441C62520D3D900A6570D /* StoryboardInstanceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441C52520D3D900A6570D /* StoryboardInstanceType.swift */; };
@@ -61,6 +62,7 @@
 		C8CA02B92520BDAD00C22815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8CA02C52520BDB000C22815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8CA02C72520BDB000C22815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8DBC607253CE6D20074811D /* NewAd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewAd.storyboard; sourceTree = "<group>"; };
 		C8F441BE2520D2E800A6570D /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		C8F441C22520D30500A6570D /* PresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterType.swift; sourceTree = "<group>"; };
 		C8F441C52520D3D900A6570D /* StoryboardInstanceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstanceType.swift; sourceTree = "<group>"; };
@@ -210,6 +212,30 @@
 			path = MissingPet;
 			sourceTree = "<group>";
 		};
+		C8DBC606253CE6AC0074811D /* NewAd */ = {
+			isa = PBXGroup;
+			children = (
+				C8DBC607253CE6D20074811D /* NewAd.storyboard */,
+				C8E03B42253CE71000DE1A3E /* Presenters */,
+				C8E03B45253CE71A00DE1A3E /* Controllers */,
+			);
+			path = NewAd;
+			sourceTree = "<group>";
+		};
+		C8E03B42253CE71000DE1A3E /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		C8E03B45253CE71A00DE1A3E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C8F441BC2520D2B500A6570D /* ArchitecturePattern */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +260,7 @@
 		C8F441D32520DD5400A6570D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C8DBC606253CE6AC0074811D /* NewAd */,
 				C8BCC97E2524C5BB00FB3164 /* MyAds */,
 				C8FDF0AC2524795C00A2C962 /* Main */,
 				C86ED4B42520E49C00189E8A /* Profile */,
@@ -385,6 +412,7 @@
 				C8BCC98D2524C6A900FB3164 /* Feed.storyboard in Resources */,
 				C8CA02C62520BDB000C22815 /* LaunchScreen.storyboard in Resources */,
 				C87FCB3D25252BF800BDDE17 /* Assets.xcassets in Resources */,
+				C8DBC608253CE6D20074811D /* NewAd.storyboard in Resources */,
 				C86ED4B92520E4BB00189E8A /* Profile.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
