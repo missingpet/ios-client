@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,10 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="bjm-Ry-HCS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k6e-vo-i44">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6mk-H5-Ibw"/>
                         <color key="backgroundColor" red="0.89803921568627454" green="0.90196078431372551" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="k6e-vo-i44" firstAttribute="bottom" secondItem="6mk-H5-Ibw" secondAttribute="bottom" id="3gS-ge-bZj"/>
+                            <constraint firstItem="k6e-vo-i44" firstAttribute="trailing" secondItem="6mk-H5-Ibw" secondAttribute="trailing" id="ZXL-C1-7bT"/>
+                            <constraint firstItem="k6e-vo-i44" firstAttribute="leading" secondItem="6mk-H5-Ibw" secondAttribute="leading" id="kKp-1y-E1S"/>
+                            <constraint firstItem="k6e-vo-i44" firstAttribute="top" secondItem="6mk-H5-Ibw" secondAttribute="top" id="sPs-2F-9cW"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Мои объявления" largeTitleDisplayMode="never" id="3Cv-GC-UF7"/>
+                    <navigationItem key="navigationItem" title="Мои объявления" largeTitleDisplayMode="never" id="3Cv-GC-UF7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="2Hi-Pa-wYc">
+                            <color key="tintColor" red="0.047058823530000002" green="0.63529411759999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="createAdButton" destination="2Hi-Pa-wYc" id="peh-hj-2Yk"/>
+                        <outlet property="myAdsTableView" destination="k6e-vo-i44" id="kd3-YE-cup"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmL-f0-g8g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,4 +65,9 @@
             <point key="canvasLocation" x="-317.39130434782612" y="-45.535714285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -8,21 +8,32 @@
 import UIKit
 
 class MyAdsViewController: Controller<MyAdsPresenter> {
-
+    
+    
+    @IBOutlet weak var myAdsTableView: UITableView!
+    @IBOutlet weak var createAdButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        myAdsTableView.delegate = self
+        myAdsTableView.dataSource = self
+        myAdsTableView.register(UINib(nibName: "FeedItemTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedItemTableViewCell")
+    }
 
-        // Do any additional setup after loading the view.
+}
+
+extension MyAdsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myAdsCell = myAdsTableView.dequeueReusableCell(withIdentifier: "FeedItemTableViewCell", for: indexPath) as! FeedItemTableViewCell
+        myAdsCell.separatorInset.bottom = .infinity
+        myAdsCell.separatorInset.left = .infinity
+        myAdsCell.separatorInset.top = .infinity
+        myAdsCell.separatorInset.right = .infinity
+        return myAdsCell
     }
-    */
-
 }
