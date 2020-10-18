@@ -13,4 +13,8 @@ class MyAdsPresenter: DefaultPresenterType {
         
     }
     
+    func openNewAdViewController() {
+        Navigator(Storyboard.newAd).push(NewAdViewController.self, presenter: NewAdPresenter())
+    }
+    
 }

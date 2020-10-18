@@ -19,7 +19,12 @@ class MyAdsViewController: Controller<MyAdsPresenter> {
         myAdsTableView.dataSource = self
         myAdsTableView.register(UINib(nibName: "FeedItemTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedItemTableViewCell")
     }
-
+    
+    
+    @IBAction func createAdAction(_ sender: UIBarButtonItem) {
+        presenter?.openNewAdViewController()
+    }
+    
 }
 
 extension MyAdsViewController: UITableViewDelegate, UITableViewDataSource {
