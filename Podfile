@@ -6,5 +6,6 @@ target 'MissingPet' do
   pod 'Alamofire'
   pod 'Realm'
   pod 'Kingfisher'
+  pod 'SwiftyJSON'
 
 end
