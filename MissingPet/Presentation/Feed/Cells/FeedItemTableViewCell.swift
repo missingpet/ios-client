@@ -10,10 +10,12 @@ import UIKit
 class FeedItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var feedItemImageView: UIImageView!
+    @IBOutlet weak var atHomeView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         feedItemImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        atHomeView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

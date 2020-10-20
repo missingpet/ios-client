@@ -22,7 +22,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aOE-e6-GKp"/>
-                        <color key="backgroundColor" red="0.89803921568627454" green="0.90196078431372551" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="leading" secondItem="aOE-e6-GKp" secondAttribute="leading" id="FGL-IE-Niu"/>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="top" secondItem="aOE-e6-GKp" secondAttribute="top" id="Lvn-PP-IOs"/>

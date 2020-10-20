@@ -68,11 +68,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcI-o2-jdv">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уже дома" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlu-1Y-ssy">
+                                        <rect key="frame" x="128" y="7" width="87.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.047058823530000002" green="0.63529411759999999" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jlu-1Y-ssy" firstAttribute="centerX" secondItem="WcI-o2-jdv" secondAttribute="centerX" id="EWY-r1-uug"/>
+                                    <constraint firstAttribute="height" constant="35" id="NbS-An-Tlh"/>
+                                    <constraint firstItem="jlu-1Y-ssy" firstAttribute="centerY" secondItem="WcI-o2-jdv" secondAttribute="centerY" id="rlA-mC-Fjp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Yjs-cy-K5p" secondAttribute="trailing" id="4KI-lT-oAH"/>
                             <constraint firstAttribute="trailing" secondItem="S9I-Y5-b1M" secondAttribute="trailing" constant="16" id="4uT-th-0CF"/>
+                            <constraint firstItem="WcI-o2-jdv" firstAttribute="top" secondItem="ERQ-YS-2GS" secondAttribute="top" id="7ag-Da-JFt"/>
+                            <constraint firstItem="WcI-o2-jdv" firstAttribute="leading" secondItem="ERQ-YS-2GS" secondAttribute="leading" id="8c1-Lq-vaU"/>
                             <constraint firstItem="S9I-Y5-b1M" firstAttribute="leading" secondItem="ERQ-YS-2GS" secondAttribute="leading" constant="16" id="BfC-m3-aM5"/>
                             <constraint firstItem="DCf-2P-bDr" firstAttribute="top" secondItem="S9I-Y5-b1M" secondAttribute="bottom" constant="12" id="C3w-AJ-OhN"/>
                             <constraint firstItem="S9I-Y5-b1M" firstAttribute="top" secondItem="Yjs-cy-K5p" secondAttribute="bottom" constant="16" id="CKH-Kb-lLL"/>
@@ -82,6 +106,7 @@
                             <constraint firstItem="LTL-Ad-mCw" firstAttribute="top" secondItem="DCf-2P-bDr" secondAttribute="bottom" constant="12" id="d0m-dF-396"/>
                             <constraint firstItem="Yjs-cy-K5p" firstAttribute="leading" secondItem="ERQ-YS-2GS" secondAttribute="leading" id="eap-NW-wYw"/>
                             <constraint firstItem="LTL-Ad-mCw" firstAttribute="leading" secondItem="ERQ-YS-2GS" secondAttribute="leading" constant="16" id="lHr-Oj-YX4"/>
+                            <constraint firstAttribute="trailing" secondItem="WcI-o2-jdv" secondAttribute="trailing" id="tuq-l8-s7g"/>
                             <constraint firstItem="Yjs-cy-K5p" firstAttribute="top" secondItem="ERQ-YS-2GS" secondAttribute="top" id="uNy-ck-8Ge"/>
                             <constraint firstAttribute="bottom" secondItem="LTL-Ad-mCw" secondAttribute="bottom" constant="16" id="xhE-lz-uei"/>
                         </constraints>
@@ -111,6 +136,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <accessibility key="accessibilityConfiguration" identifier="FeedItemTableViewCell"/>
             <connections>
+                <outlet property="atHomeView" destination="WcI-o2-jdv" id="kqh-k7-yEv"/>
                 <outlet property="feedItemImageView" destination="Yjs-cy-K5p" id="haJ-NE-Pce"/>
             </connections>
             <point key="canvasLocation" x="158.69565217391306" y="132.58928571428572"/>

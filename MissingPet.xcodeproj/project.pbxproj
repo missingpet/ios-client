@@ -205,13 +205,14 @@
 		C8CA02B82520BDAC00C22815 /* MissingPet */ = {
 			isa = PBXGroup;
 			children = (
-				C87FCB3C25252BF800BDDE17 /* Assets.xcassets */,
-				C8CA02B92520BDAD00C22815 /* AppDelegate.swift */,
-				C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */,
 				C8CA02C72520BDB000C22815 /* Info.plist */,
-				C834D541252255EC0070E3F6 /* ReusableUI */,
+				C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */,
+				C8CA02B92520BDAD00C22815 /* AppDelegate.swift */,
+				C87FCB3C25252BF800BDDE17 /* Assets.xcassets */,
 				C8F441BC2520D2B500A6570D /* ArchitecturePattern */,
-				C8F441D52520DD5800A6570D /* App */,
+				C834D541252255EC0070E3F6 /* ReusableUI */,
+				C8F441D32520DD5400A6570D /* Presentation */,
+				C89D7BEF253AEB8600074C57 /* DataAccessLayer */,
 			);
 			path = MissingPet;
 			sourceTree = "<group>";
@@ -266,6 +267,7 @@
 		C8F441D32520DD5400A6570D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C8F441D62520DD8E00A6570D /* Storyboard.swift */,
 				C8DBC606253CE6AC0074811D /* NewAd */,
 				C8BCC97E2524C5BB00FB3164 /* MyAds */,
 				C8FDF0AC2524795C00A2C962 /* Main */,
@@ -273,16 +275,6 @@
 				C8F441DA2520DE0E00A6570D /* Feed */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		C8F441D52520DD5800A6570D /* App */ = {
-			isa = PBXGroup;
-			children = (
-				C89D7BEF253AEB8600074C57 /* DataAccessLayer */,
-				C8F441D32520DD5400A6570D /* Presentation */,
-				C8F441D62520DD8E00A6570D /* Storyboard.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		C8F441DA2520DE0E00A6570D /* Feed */ = {
