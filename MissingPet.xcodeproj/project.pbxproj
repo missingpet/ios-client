@@ -15,6 +15,8 @@
 		C86ED4C02520E51E00189E8A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4BF2520E51E00189E8A /* ProfileViewController.swift */; };
 		C86ED4C32520E53D00189E8A /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4C22520E53D00189E8A /* ProfileNavigationController.swift */; };
 		C87FCB3D25252BF800BDDE17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87FCB3C25252BF800BDDE17 /* Assets.xcassets */; };
+		C89F99FE254477E60022C7C4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F99FD254477E60022C7C4 /* Colors.swift */; };
+		C8AEAD31253F26AF0069F1B4 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AEAD30253F26AF0069F1B4 /* Announcement.swift */; };
 		C8BCC9802524C62200FB3164 /* MyAds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BCC97F2524C62200FB3164 /* MyAds.storyboard */; };
 		C8BCC9852524C65A00FB3164 /* MyAdsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCC9842524C65A00FB3164 /* MyAdsPresenter.swift */; };
 		C8BCC9892524C68200FB3164 /* MyAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCC9882524C68200FB3164 /* MyAdsViewController.swift */; };
@@ -53,6 +55,8 @@
 		C86ED4BF2520E51E00189E8A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C86ED4C22520E53D00189E8A /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 		C87FCB3C25252BF800BDDE17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C89F99FD254477E60022C7C4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C8AEAD30253F26AF0069F1B4 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		C8BCC97F2524C62200FB3164 /* MyAds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAds.storyboard; sourceTree = "<group>"; };
 		C8BCC9842524C65A00FB3164 /* MyAdsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsPresenter.swift; sourceTree = "<group>"; };
 		C8BCC9882524C68200FB3164 /* MyAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsViewController.swift; sourceTree = "<group>"; };
@@ -143,9 +147,33 @@
 			isa = PBXGroup;
 			children = (
 				C8F76C56253CA0C400ED71C4 /* Web */,
-				C8F76C57253CA0CE00ED71C4 /* Repositories */,
 			);
 			path = DataAccessLayer;
+			sourceTree = "<group>";
+		};
+		C89F9A00254478A60022C7C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C89F9A01254478CB0022C7C4 /* Fonts */,
+				C89F99FD254477E60022C7C4 /* Colors.swift */,
+				C87FCB3C25252BF800BDDE17 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C89F9A01254478CB0022C7C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C8AEAD2F253F269D0069F1B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C8AEAD30253F26AF0069F1B4 /* Announcement.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C8BCC97E2524C5BB00FB3164 /* MyAds */ = {
@@ -205,10 +233,10 @@
 		C8CA02B82520BDAC00C22815 /* MissingPet */ = {
 			isa = PBXGroup;
 			children = (
-				C8CA02C72520BDB000C22815 /* Info.plist */,
 				C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */,
+				C8CA02C72520BDB000C22815 /* Info.plist */,
 				C8CA02B92520BDAD00C22815 /* AppDelegate.swift */,
-				C87FCB3C25252BF800BDDE17 /* Assets.xcassets */,
+				C89F9A00254478A60022C7C4 /* Resources */,
 				C8F441BC2520D2B500A6570D /* ArchitecturePattern */,
 				C834D541252255EC0070E3F6 /* ReusableUI */,
 				C8F441D32520DD5400A6570D /* Presentation */,
@@ -308,16 +336,10 @@
 		C8F76C56253CA0C400ED71C4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				C8AEAD2F253F269D0069F1B4 /* Models */,
 				C8F76C51253C828200ED71C4 /* Router.swift */,
 			);
 			path = Web;
-			sourceTree = "<group>";
-		};
-		C8F76C57253CA0CE00ED71C4 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		C8FDF0AC2524795C00A2C962 /* Main */ = {
@@ -467,6 +489,7 @@
 				C8F76C52253C828200ED71C4 /* Router.swift in Sources */,
 				C8F441CC2520D94E00A6570D /* Navigator.swift in Sources */,
 				C86ED4C32520E53D00189E8A /* ProfileNavigationController.swift in Sources */,
+				C8AEAD31253F26AF0069F1B4 /* Announcement.swift in Sources */,
 				C8F441C32520D30500A6570D /* PresenterType.swift in Sources */,
 				C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */,
 				C8BCC9902524C71800FB3164 /* MyAdsNavigationController.swift in Sources */,
@@ -484,6 +507,7 @@
 				C82B02E625228A0900C5DBC1 /* ShadowView.swift in Sources */,
 				C8E03B4B253CFA8700DE1A3E /* NewAdViewController.swift in Sources */,
 				C86ED4C02520E51E00189E8A /* ProfileViewController.swift in Sources */,
+				C89F99FE254477E60022C7C4 /* Colors.swift in Sources */,
 				C8F441CF2520D96C00A6570D /* Controller.swift in Sources */,
 				C8BCC9852524C65A00FB3164 /* MyAdsPresenter.swift in Sources */,
 				C8F441E62520DEEA00A6570D /* FeedViewController.swift in Sources */,
