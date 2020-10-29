@@ -45,7 +45,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrc-bd-Wf3">
                         <rect key="frame" x="16" y="8" width="343" height="440"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="announcement-template" translatesAutoresizingMaskIntoConstraints="NO" id="EXV-EF-zKm" customClass="AnnouncementImageView" customModule="MissingPet" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="announcement-template-0" translatesAutoresizingMaskIntoConstraints="NO" id="EXV-EF-zKm" customClass="AnnouncementImageView" customModule="MissingPet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EXV-EF-zKm" secondAttribute="height" multiplier="1:1" id="9wa-3q-o6J"/>
@@ -56,15 +56,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="21 октября 2020, 15:34" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N4-MW-CFw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="CreationDateLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N4-MW-CFw">
                                 <rect key="frame" x="10" y="353" width="323" height="18"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="15"/>
                                 <color key="textColor" name="LightBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmH-VK-IVx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmH-VK-IVx">
                                 <rect key="frame" x="10" y="376" width="323" height="54"/>
-                                <string key="text">Пропал пёс по кличке Ричард. Сорвался с поводка в городе Ростове-на-Дону. На нем был ошейник чёрного цвета. Прошу вернуть за вознаграждение!</string>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="15"/>
                                 <color key="textColor" name="Blue"/>
                                 <nil key="highlightedColor"/>
@@ -103,11 +102,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="announcementImageView" destination="EXV-EF-zKm" id="BGu-9r-jnm"/>
+                <outlet property="creationDateLabel" destination="9N4-MW-CFw" id="hL2-BD-jbD"/>
+                <outlet property="descriprionLabel" destination="mmH-VK-IVx" id="wRq-h4-5bl"/>
+            </connections>
             <point key="canvasLocation" x="186.23188405797103" y="159.375"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="announcement-template" width="343" height="343"/>
+        <image name="announcement-template-0" width="343" height="343"/>
         <namedColor name="Blue">
             <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
