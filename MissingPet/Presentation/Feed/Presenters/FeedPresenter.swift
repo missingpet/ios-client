@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Kingfisher
 
 class FeedPresenter: DefaultPresenterType {
     

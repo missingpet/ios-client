@@ -12,8 +12,9 @@ enum Storyboard: String, StoryboardInstanceType {
     case ads = "Feed"
     case profile = "Profile"
     case main = "Main"
-    case myAds = "MyAds"
-    case newAd = "NewAd"
+    case myAnnouncements = "MyAnnouncements"
+    case createAnnouncement = "CreateAnnouncement"
+    case map = "Map"
     
     var name: String {
         return rawValue

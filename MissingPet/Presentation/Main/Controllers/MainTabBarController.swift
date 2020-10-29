@@ -13,18 +13,20 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         
         viewControllers = [
-            createController(FeedViewController.self, in: FeedNavigationController.self, from: .ads, iconName: "feed", title: "Лента"),
-            createController(MyAdsViewController.self, in: MyAdsNavigationController.self, from: .myAds, iconName: "myads", title: "Мои объявления"),
-            createController(ProfileViewController.self, in: ProfileNavigationController.self, from: .profile, iconName: "profile", title: "Профиль"),
+            createController(FeedViewController.self, in: FeedNavigationController.self, from: .ads, iconName: "feed"),
+            createController(MapViewController.self, in: MapNavigationController.self, from: .map, iconName: "map"),
+            createController(CreateAnnouncementViewController.self, in: CreateAnnouncementNavigationController.self, from: .createAnnouncement, iconName: "createAnnouncement"),
+            createController(MyAnnouncementsViewController.self, in: MyAnnouncementsNavigationController.self, from: .myAnnouncements, iconName: "myAnnouncements"),
+            createController(ProfileViewController.self, in: ProfileNavigationController.self, from: .profile, iconName: "profile"),
         ]
 
     }
     
-    private func createController<P: DefaultPresenterType, C: Controller<P>, NC: UINavigationController>(_ controller: C.Type, in navigationController: NC.Type, from storyboard: Storyboard, iconName: String, title: String) -> UINavigationController {
+    private func createController<P: DefaultPresenterType, C: Controller<P>, NC: UINavigationController>(_ controller: C.Type, in navigationController: NC.Type, from storyboard: Storyboard, iconName: String) -> UINavigationController {
         let navigator = Navigator(storyboard)
         let navigationController = navigator.createController(NC.self)
         let controller: C = navigator.createControllerWithDefaultPresenter(C.self)
-        navigationController.tabBarItem = UITabBarItem(title: title, image: UIImage(named: iconName)?.withRenderingMode(.alwaysTemplate), selectedImage: UIImage(named: iconName + "-selected")?.withRenderingMode(.alwaysTemplate))
+        navigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: iconName)?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: iconName + "-selected")?.withRenderingMode(.alwaysOriginal))
         navigationController.viewControllers = [controller]
         return navigationController
     }

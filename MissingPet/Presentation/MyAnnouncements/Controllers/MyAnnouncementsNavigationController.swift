@@ -1,13 +1,13 @@
 //
-//  MyAdsNavigationController.swift
+//  MyAnnouncementsNavigationController.swift
 //  MissingPet
 //
-//  Created by Михаил Еремеев on 30.09.2020.
+//  Created by Михаил Еремеев on 29.10.2020.
 //
 
 import UIKit
 
-class MyAdsNavigationController: UINavigationController {
+class MyAnnouncementsNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

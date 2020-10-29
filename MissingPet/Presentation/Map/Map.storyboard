@@ -5,36 +5,34 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Профиль-->
-        <scene sceneID="G8h-Ck-e0L">
+        <!--Карта-->
+        <scene sceneID="kgz-jG-9rf">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="7C7-Hk-eDf" customClass="ProfileViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1oe-Bk-qdF">
+                <viewController storyboardIdentifier="MapViewController" id="pem-E6-V1w" customClass="MapViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QWC-bS-O6e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mYR-6u-Mqy"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BkW-CX-Fcu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Профиль" id="0hD-Ix-PbL">
-                        <barButtonItem key="backBarButtonItem" title=" " id="dc0-zT-N7R"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Карта" id="meX-2S-sAg"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WTT-IQ-N5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IeR-eu-U22" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198.5507246376812" y="122.54464285714285"/>
+            <point key="canvasLocation" x="1044.9275362318842" y="59.598214285714285"/>
         </scene>
-        <!--Profile Navigation Controller-->
-        <scene sceneID="d4z-7G-HiK">
+        <!--Map Navigation Controller-->
+        <scene sceneID="2bw-Zt-uxj">
             <objects>
-                <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="K7V-ll-i66" customClass="ProfileNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MapNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="NSc-n9-ffW" customClass="MapNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="it7-Ec-Nkt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Om1-US-HNA">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
                             <color key="textColor" red="0.098039215690000001" green="0.28235294119999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,12 +44,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7C7-Hk-eDf" kind="relationship" relationship="rootViewController" id="jle-U2-lGa"/>
+                        <segue destination="pem-E6-V1w" kind="relationship" relationship="rootViewController" id="dP8-AJ-oom"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eu2-u6-5ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvs-kv-mx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289.85507246376812" y="122.54464285714285"/>
+            <point key="canvasLocation" x="134.78260869565219" y="59.598214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

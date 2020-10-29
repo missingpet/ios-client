@@ -9,41 +9,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Ad View Controller-->
-        <scene sceneID="nF8-Eo-GJA">
+        <!--Create Announcement View Controller-->
+        <scene sceneID="G28-yP-dEe">
             <objects>
-                <viewController storyboardIdentifier="NewAdViewController" hidesBottomBarWhenPushed="YES" id="Fgr-et-bEc" customClass="NewAdViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DbK-JC-0nT">
+                <viewController storyboardIdentifier="CreateAnnouncementViewController" id="wth-fq-lUZ" customClass="CreateAnnouncementViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gOn-Y7-OUs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="wFD-hn-jYd"/>
+                        <viewLayoutGuide key="safeArea" id="7Gk-6l-ByR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="p5i-MQ-mkT">
-                        <barButtonItem key="backBarButtonItem" title=" " id="w4k-Vy-3UL"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="rod-Sz-HYH"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="peR-zd-q04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkG-cU-2j5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875.3623188405797" y="17.410714285714285"/>
+            <point key="canvasLocation" x="1221.7391304347827" y="99.776785714285708"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mXK-Qb-lvX">
+        <!--Create Announcement Navigation Controller-->
+        <scene sceneID="jv3-Kn-6m5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjQ-Ah-Eof" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CreateAnnouncementNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Xiy-UR-CWR" customClass="CreateAnnouncementNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K9A-hA-com">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QjQ-Bj-Phf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Fgr-et-bEc" kind="relationship" relationship="rootViewController" id="ajP-uQ-MhN"/>
+                        <segue destination="wth-fq-lUZ" kind="relationship" relationship="rootViewController" id="NBW-F0-EFS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Apf-7u-ZjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ry-kb-JiU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965.21739130434787" y="17.410714285714285"/>
+            <point key="canvasLocation" x="311.59420289855075" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>
