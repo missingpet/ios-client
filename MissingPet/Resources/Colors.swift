@@ -16,6 +16,7 @@ enum CustomColor: String {
     case lightBlue = "LightBlue"
     case blue = "Blue"
     case darkBlue = "DarkBlue"
+    case tabBarShadowColor = "TabBarShadowColor"
 }
 
 extension UIColor {

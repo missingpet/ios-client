@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "createAnnouncement-selected.png",
+      "filename" : "my-announcements-selected.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "createAnnouncement-selected@2x.png",
+      "filename" : "my-announcements-selected@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "createAnnouncement-selected@3x.png",
+      "filename" : "my-announcements-selected@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
