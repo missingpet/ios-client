@@ -21,7 +21,7 @@ class MainTabBar: UITabBar {
     private func setupShadows() {
         layer.shadowRadius = 8
         layer.shadowOpacity = 1.0
-        layer.shadowColor = UIColor.custom(.mediumGray).cgColor
+        layer.shadowColor = UIColor.custom(.tabBarShadowColor).cgColor
     }
 
     override func draw(_ rect: CGRect) {
