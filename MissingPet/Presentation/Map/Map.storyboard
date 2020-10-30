@@ -16,10 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="QWC-bS-O6e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dk6-9F-x4h">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BkW-CX-Fcu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dk6-9F-x4h" firstAttribute="trailing" secondItem="BkW-CX-Fcu" secondAttribute="trailing" id="3fb-04-szp"/>
+                            <constraint firstItem="Dk6-9F-x4h" firstAttribute="top" secondItem="BkW-CX-Fcu" secondAttribute="top" id="T0g-Yt-29N"/>
+                            <constraint firstItem="Dk6-9F-x4h" firstAttribute="leading" secondItem="BkW-CX-Fcu" secondAttribute="leading" id="gNb-pg-Waa"/>
+                            <constraint firstAttribute="bottom" secondItem="Dk6-9F-x4h" secondAttribute="bottom" id="jSx-HZ-XPw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="meX-2S-sAg"/>
+                    <connections>
+                        <outlet property="mapView" destination="Dk6-9F-x4h" id="gwn-gC-4iW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IeR-eu-U22" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

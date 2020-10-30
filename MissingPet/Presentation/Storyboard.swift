@@ -9,7 +9,7 @@ import Foundation
 
 enum Storyboard: String, StoryboardInstanceType {
     
-    case ads = "Feed"
+    case feed = "Feed"
     case profile = "Profile"
     case main = "Main"
     case myAnnouncements = "MyAnnouncements"

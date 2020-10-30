@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: Controller<MapPresenter> {
 
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,17 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Announcement View Controller-->
+        <!--Создание объявления-->
         <scene sceneID="G28-yP-dEe">
             <objects>
-                <viewController storyboardIdentifier="CreateAnnouncementViewController" id="wth-fq-lUZ" customClass="CreateAnnouncementViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAnnouncementViewController" modalPresentationStyle="fullScreen" id="wth-fq-lUZ" customClass="CreateAnnouncementViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gOn-Y7-OUs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7Gk-6l-ByR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rod-Sz-HYH"/>
+                    <navigationItem key="navigationItem" title="Создание объявления" id="rod-Sz-HYH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkG-cU-2j5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,9 +30,17 @@
             <objects>
                 <navigationController storyboardIdentifier="CreateAnnouncementNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Xiy-UR-CWR" customClass="CreateAnnouncementNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QjQ-Bj-Phf">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QjQ-Bj-Phf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
+                            <color key="textColor" red="0.098039215690000001" green="0.28235294119999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="28"/>
+                            <color key="textColor" red="0.098039215690000001" green="0.28235294119999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

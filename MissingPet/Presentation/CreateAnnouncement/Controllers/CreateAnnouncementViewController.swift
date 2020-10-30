@@ -11,7 +11,6 @@ class CreateAnnouncementViewController: Controller<CreateAnnouncementPresenter> 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
 }
