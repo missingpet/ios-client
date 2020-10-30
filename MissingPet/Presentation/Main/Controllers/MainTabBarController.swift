@@ -15,8 +15,8 @@ class MainTabBarController: UITabBarController {
         viewControllers = [
             createController(FeedViewController.self, in: FeedNavigationController.self, from: .ads, iconName: "feed"),
             createController(MapViewController.self, in: MapNavigationController.self, from: .map, iconName: "map"),
-            createController(CreateAnnouncementViewController.self, in: CreateAnnouncementNavigationController.self, from: .createAnnouncement, iconName: "createAnnouncement"),
-            createController(MyAnnouncementsViewController.self, in: MyAnnouncementsNavigationController.self, from: .myAnnouncements, iconName: "myAnnouncements"),
+            createController(CreateAnnouncementViewController.self, in: CreateAnnouncementNavigationController.self, from: .createAnnouncement, iconName: "create-announcement"),
+            createController(MyAnnouncementsViewController.self, in: MyAnnouncementsNavigationController.self, from: .myAnnouncements, iconName: "my-announcements"),
             createController(ProfileViewController.self, in: ProfileNavigationController.self, from: .profile, iconName: "profile"),
         ]
 
