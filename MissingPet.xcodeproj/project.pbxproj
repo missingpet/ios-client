@@ -56,6 +56,7 @@
 		C8C9632A254A3EE7002850C7 /* CreateAnnouncement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C96329254A3EE7002850C7 /* CreateAnnouncement.storyboard */; };
 		C8CA02BA2520BDAD00C22815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CA02B92520BDAD00C22815 /* AppDelegate.swift */; };
 		C8CA02C62520BDB000C22815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */; };
+		C8DF04C0254D50C9000C0CF1 /* AnnouncementSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DF04BF254D50C9000C0CF1 /* AnnouncementSearchBar.swift */; };
 		C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441BE2520D2E800A6570D /* ViewType.swift */; };
 		C8F441C32520D30500A6570D /* PresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441C22520D30500A6570D /* PresenterType.swift */; };
 		C8F441C62520D3D900A6570D /* StoryboardInstanceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F441C52520D3D900A6570D /* StoryboardInstanceType.swift */; };
@@ -125,6 +126,7 @@
 		C8CA02B92520BDAD00C22815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8CA02C52520BDB000C22815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8CA02C72520BDB000C22815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8DF04BF254D50C9000C0CF1 /* AnnouncementSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementSearchBar.swift; sourceTree = "<group>"; };
 		C8F441BE2520D2E800A6570D /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		C8F441C22520D30500A6570D /* PresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterType.swift; sourceTree = "<group>"; };
 		C8F441C52520D3D900A6570D /* StoryboardInstanceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstanceType.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				C82B02E525228A0900C5DBC1 /* ShadowView.swift */,
 				C8BAF7F6254A24E1002C3855 /* AnnouncementImageView.swift */,
 				C8AFE655254ADBEA00675026 /* MainTabBar.swift */,
+				C8DF04BF254D50C9000C0CF1 /* AnnouncementSearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				C8BAF7F7254A24E1002C3855 /* AnnouncementImageView.swift in Sources */,
 				C8BAF7F0254A1CB1002C3855 /* MyAnnouncementsPresenter.swift in Sources */,
 				C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */,
+				C8DF04C0254D50C9000C0CF1 /* AnnouncementSearchBar.swift in Sources */,
 				C8F441E92520DF5600A6570D /* FeedNavigationController.swift in Sources */,
 				C8BAF7A0254A13F7002C3855 /* AnnouncementTableViewCell.swift in Sources */,
 				C8F441E22520DEB100A6570D /* FeedPresenter.swift in Sources */,
