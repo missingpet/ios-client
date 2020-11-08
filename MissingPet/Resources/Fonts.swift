@@ -14,6 +14,7 @@ extension UIFont {
     
     enum CustomName: String {
         case sfUiDisplayBold = "SFUIDisplay-Bold"
+        case sfUiDisplayRegular = "SFUIDisplay-Regular"
     }
     
     static func custom(_ customName: CustomName, size: CGFloat) -> UIFont {
