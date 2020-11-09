@@ -15,24 +15,26 @@ enum Router: URLConvertible {
     
     // auth
     case signUp
-    case logIn
-    case logOut
+    case signIn
+    case signOut
     case refreshToken
     
     // announcement
-    case getAllAnnouncements
+    case feed
     case createAnnouncement
-    case deleteAnnouncement(announcementId: Int)
+    case deleteAnnouncement(id: Int)
+    case myAnnouncements
     
     private var _path: String {
         switch self {
         case .signUp: return "auth/signup/"
-        case .logIn: return "auth/login/"
-        case .logOut: return "auth/logout/"
+        case .signIn: return "auth/signin/"
+        case .signOut: return "auth/signout/"
         case .refreshToken: return "auth/refresh-token/"
-        case .getAllAnnouncements: return "announcement/all/"
+        case .feed: return "announcement/feed/"
         case .createAnnouncement: return "announcement/create/"
-        case .deleteAnnouncement(let announcementId): return "announcement/delete/\(announcementId)/"
+        case .deleteAnnouncement(let id): return "announcement/delete/\(id)/"
+        case .myAnnouncements: return "announcement/my/"
         }
     }
     
