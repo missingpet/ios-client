@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class CreateAnnouncementPresenter: DefaultPresenterType {
     
@@ -13,4 +14,9 @@ class CreateAnnouncementPresenter: DefaultPresenterType {
         
     }
     
+    func presentConfirmCreateAlert(viewController: UIViewController) {
+        let confirmCreateAlert = UIAlertController(title: "Предупреждение", message: "Данный функционал пока что отсутсвует", preferredStyle: .alert)
+        confirmCreateAlert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: nil))
+        viewController.present(confirmCreateAlert, animated: true, completion: nil)
+    }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateAnnouncementNavigationController: UINavigationController {
+class CreateAnnouncementNavigationController: NavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

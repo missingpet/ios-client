@@ -13,4 +13,9 @@ class CreateAnnouncementViewController: Controller<CreateAnnouncementPresenter> 
         super.viewDidLoad()
     }
     
+    
+    @IBAction func presentConfirmCreateAlert(_ sender: UIButton) {
+        presenter?.presentConfirmCreateAlert(viewController: self)
+    }
+    
 }
