@@ -12,12 +12,12 @@ struct Announcement {
     let id: Int
     let user: String
     let description: String
-    let photo: String?
+    let photo: String
     let announcement_type: AnnouncementType
     let animal_type: AnimalType
-    let place: String?
-    let latitude: Double?
-    let longitude: Double?
+    let place: String
+    let latitude: Double
+    let longitude: Double
     let contact_phone_number: String
     let created_at: String
     let updated_at: String
