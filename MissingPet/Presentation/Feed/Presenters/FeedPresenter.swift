@@ -14,11 +14,10 @@ import Kingfisher
 class FeedPresenter: DefaultPresenterType {
     
     required init() {
-        
     }
     
-    func setup() {
-        
+    func openInspectAnnouncement(announcement: Announcement, isMyAnnouncement: Bool) {
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, isMyAnnouncement: isMyAnnouncement))
     }
     
 }

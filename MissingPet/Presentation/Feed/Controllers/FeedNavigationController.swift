@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeedNavigationController: UINavigationController {
+class FeedNavigationController: NavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

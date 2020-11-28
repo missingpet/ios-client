@@ -30,19 +30,21 @@ extension FeedViewController {
 
 extension FeedViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.getFeed()[indexPath.item], isMyAnnouncement: false)
+    }
+    
 }
 
 extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        return AnnouncementMockRepository.instance.getFeed().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = feedTableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
-        feedCell.announcementImageView.image = UIImage(named: "announcement-template-0")
-        feedCell.creationDateLabel.text = "21 октября 2020, 15:34"
-        feedCell.descriprionLabel.text = "Пропал пёс по кличке Ричард. Сорвался с поводка в городе Ростове-на-Дону. На нем был ошейник черного цвета. Прошу вернуть за вознаграждение!"
+        feedCell.set(item: AnnouncementMockRepository.instance.getFeed()[indexPath.item])
         return feedCell
     }
     
