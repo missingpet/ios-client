@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Sign Up View Controller-->
+        <scene sceneID="lme-YZ-gur">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" hidesBottomBarWhenPushed="YES" id="SfU-8V-5rb" customClass="SignUpViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c1A-FF-0Qb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-PA-lIS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-rD-Hb3">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mtk-iA-z26">
+                                                <rect key="frame" x="16" y="16" width="382" height="340"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etA-TJ-pgD" customClass="InfoView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hJI-rN-vVe">
+                                                                <rect key="frame" x="10" y="10" width="362" height="40"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-selected" translatesAutoresizingMaskIntoConstraints="NO" id="7Wp-xf-ago">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="40"/>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GeF-MT-zhN">
+                                                                        <rect key="frame" x="34" y="0.0" width="328" height="40"/>
+                                                                        <color key="textColor" name="Blue"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="nickname"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hJI-rN-vVe" firstAttribute="leading" secondItem="etA-TJ-pgD" secondAttribute="leading" constant="10" id="42i-Pe-yrK"/>
+                                                            <constraint firstAttribute="height" constant="60" id="aVZ-JI-3hb"/>
+                                                            <constraint firstItem="hJI-rN-vVe" firstAttribute="top" secondItem="etA-TJ-pgD" secondAttribute="top" constant="10" id="k30-YR-jsl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hJI-rN-vVe" secondAttribute="trailing" constant="10" id="sIm-NR-HJu"/>
+                                                            <constraint firstAttribute="bottom" secondItem="hJI-rN-vVe" secondAttribute="bottom" constant="10" id="wQq-Oh-0wy"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8f-GA-tdL" customClass="InfoView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hwL-e6-G3y">
+                                                                <rect key="frame" x="10" y="10" width="362" height="40"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="5mQ-l8-eTX">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Адрес электронной почты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCJ-nA-weK">
+                                                                        <rect key="frame" x="30" y="0.0" width="332" height="40"/>
+                                                                        <color key="textColor" name="Blue"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="hwL-e6-G3y" secondAttribute="bottom" constant="10" id="197-Vw-tZe"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hwL-e6-G3y" secondAttribute="trailing" constant="10" id="6El-yl-Daj"/>
+                                                            <constraint firstItem="hwL-e6-G3y" firstAttribute="leading" secondItem="T8f-GA-tdL" secondAttribute="leading" constant="10" id="Jug-bq-F85"/>
+                                                            <constraint firstAttribute="height" constant="60" id="Wki-D9-EEl"/>
+                                                            <constraint firstItem="hwL-e6-G3y" firstAttribute="top" secondItem="T8f-GA-tdL" secondAttribute="top" constant="10" id="ylR-ey-hSw"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaW-jI-V7H" customClass="InfoView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vXJ-Y3-9k4">
+                                                                <rect key="frame" x="10" y="10" width="362" height="40"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="0oa-h2-vyM">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVT-op-7xN">
+                                                                        <rect key="frame" x="30" y="0.0" width="332" height="40"/>
+                                                                        <color key="textColor" name="Blue"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="vXJ-Y3-9k4" secondAttribute="trailing" constant="10" id="JLD-yV-Cbb"/>
+                                                            <constraint firstItem="vXJ-Y3-9k4" firstAttribute="leading" secondItem="OaW-jI-V7H" secondAttribute="leading" constant="10" id="Jk9-Or-OZs"/>
+                                                            <constraint firstAttribute="height" constant="60" id="N2G-9n-WiU"/>
+                                                            <constraint firstAttribute="bottom" secondItem="vXJ-Y3-9k4" secondAttribute="bottom" constant="10" id="dm3-Yc-3mU"/>
+                                                            <constraint firstItem="vXJ-Y3-9k4" firstAttribute="top" secondItem="OaW-jI-V7H" secondAttribute="top" constant="10" id="hSU-fC-MUx"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlv-vl-l2U" customClass="InfoView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="210" width="382" height="60"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tkn-jA-9Kv">
+                                                                <rect key="frame" x="10" y="10" width="362" height="40"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="haJ-ed-Sxe">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
+                                                                    </imageView>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Повторите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-6H-oA4">
+                                                                        <rect key="frame" x="30" y="0.0" width="332" height="40"/>
+                                                                        <color key="textColor" name="Blue"/>
+                                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="O6j-ye-fUG"/>
+                                                            <constraint firstItem="Tkn-jA-9Kv" firstAttribute="leading" secondItem="Wlv-vl-l2U" secondAttribute="leading" constant="10" id="XfE-HA-eR5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Tkn-jA-9Kv" secondAttribute="trailing" constant="10" id="hLZ-gf-sqP"/>
+                                                            <constraint firstItem="Tkn-jA-9Kv" firstAttribute="top" secondItem="Wlv-vl-l2U" secondAttribute="top" constant="10" id="kSg-hv-znd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Tkn-jA-9Kv" secondAttribute="bottom" constant="10" id="sPM-xb-riX"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxD-qD-cYJ" customClass="Button" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="280" width="382" height="60"/>
+                                                        <color key="backgroundColor" name="Blue"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="AA2-9O-DsN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                        <state key="normal" title="Зарегистрироваться">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="mtk-iA-z26" firstAttribute="leading" secondItem="h0L-rD-Hb3" secondAttribute="leading" constant="16" id="HWD-IR-FyB"/>
+                                            <constraint firstItem="mtk-iA-z26" firstAttribute="top" secondItem="h0L-rD-Hb3" secondAttribute="top" constant="16" id="Y6Z-wf-ghH"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mtk-iA-z26" secondAttribute="bottom" constant="16" id="pFH-Q6-v72"/>
+                                            <constraint firstAttribute="trailing" secondItem="mtk-iA-z26" secondAttribute="trailing" constant="16" id="sOD-uM-5MP"/>
+                                            <constraint firstItem="mtk-iA-z26" firstAttribute="centerX" secondItem="h0L-rD-Hb3" secondAttribute="centerX" id="weL-i2-j90"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="h0L-rD-Hb3" firstAttribute="top" secondItem="8Fj-PA-lIS" secondAttribute="top" id="Hdl-KA-8pH"/>
+                                    <constraint firstAttribute="bottom" secondItem="h0L-rD-Hb3" secondAttribute="bottom" id="OlF-0v-uY4"/>
+                                    <constraint firstItem="h0L-rD-Hb3" firstAttribute="width" secondItem="8Fj-PA-lIS" secondAttribute="width" id="m1l-yX-vVp"/>
+                                    <constraint firstItem="h0L-rD-Hb3" firstAttribute="height" secondItem="8Fj-PA-lIS" secondAttribute="height" priority="250" id="mha-ar-K7s"/>
+                                    <constraint firstItem="h0L-rD-Hb3" firstAttribute="leading" secondItem="8Fj-PA-lIS" secondAttribute="leading" id="vZb-WF-osS"/>
+                                    <constraint firstAttribute="trailing" secondItem="h0L-rD-Hb3" secondAttribute="trailing" id="w7s-ec-Jnn"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s5p-CN-Fas"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Fj-PA-lIS" firstAttribute="top" secondItem="s5p-CN-Fas" secondAttribute="top" id="AMp-og-tkq"/>
+                            <constraint firstItem="8Fj-PA-lIS" firstAttribute="trailing" secondItem="s5p-CN-Fas" secondAttribute="trailing" id="HL8-KE-Qy0"/>
+                            <constraint firstItem="8Fj-PA-lIS" firstAttribute="bottom" secondItem="s5p-CN-Fas" secondAttribute="bottom" id="pSg-xn-5yd"/>
+                            <constraint firstItem="8Fj-PA-lIS" firstAttribute="leading" secondItem="s5p-CN-Fas" secondAttribute="leading" id="uck-4b-gb7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="mnh-SR-6oc">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="a2P-Ru-Ppt"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="rCJ-nA-weK" id="0iJ-2K-YwR"/>
+                        <outlet property="passwordTextField" destination="VVT-op-7xN" id="yTs-yK-ICU"/>
+                        <outlet property="repeatPasswordTextField" destination="tMW-6H-oA4" id="Egl-vp-pEX"/>
+                        <outlet property="usernameTextField" destination="GeF-MT-zhN" id="yKf-r2-khA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ZC-1M-THy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.97101449275374" y="137.94642857142856"/>
+        </scene>
+        <!--Sign Up Navigation Controller-->
+        <scene sceneID="muS-hQ-kmj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QXK-vY-wmK" customClass="SignUpNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" backIndicatorTransitionMaskImage="back" id="p2r-1b-BXH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SfU-8V-5rb" kind="relationship" relationship="rootViewController" id="gLE-2G-XGT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkl-eB-SRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152.17391304347828" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="nxD-qD-cYJ">
+            <size key="intrinsicContentSize" width="167" height="32"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="back" width="20" height="20"/>
+        <image name="email" width="20" height="20"/>
+        <image name="password" width="20" height="20"/>
+        <image name="profile-selected" width="24" height="24"/>
+        <namedColor name="Blue">
+            <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
