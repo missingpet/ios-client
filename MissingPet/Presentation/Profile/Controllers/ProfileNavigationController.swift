@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileNavigationController: UINavigationController {
+class ProfileNavigationController: NavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

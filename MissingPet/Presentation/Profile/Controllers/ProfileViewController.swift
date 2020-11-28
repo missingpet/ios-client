@@ -15,5 +15,10 @@ class ProfileViewController: Controller<ProfilePresenter> {
         
         super.viewDidLoad()
     }
-
+    
+    
+    @IBAction func presentSignOutAlert(_ sender: UIButton) {
+        presenter?.presentSignOutAlert(viewController: self)
+    }
+    
 }
