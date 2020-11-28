@@ -10,7 +10,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="uys-dH-bZe">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" id="LxO-Rg-miQ" customClass="MainTabBarController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" hidesBottomBarWhenPushed="YES" id="LxO-Rg-miQ" customClass="MainTabBarController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MJn-I6-EU3" customClass="MainTabBar" customModule="MissingPet" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
