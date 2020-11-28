@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class AnnouncementTableViewCell: UITableViewCell {
 
@@ -42,6 +43,17 @@ extension AnnouncementTableViewCell {
         separatorInset.left = .infinity
         separatorInset.top = .infinity
         separatorInset.right = .infinity
+    }
+    
+    func set(item: Announcement) {
+//        if let photo = item.photo {
+//            announcementImageView.kf.setImage(with: URL(string: photo))
+//        } else {
+//            announcementImageView.image = UIImage(named: "main-logo")
+//        }
+        announcementImageView.image = UIImage(named: item.photo)
+        creationDateLabel.text = item.created_at
+        descriprionLabel.text = item.description
     }
     
 }
