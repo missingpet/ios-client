@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dk6-9F-x4h">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dk6-9F-x4h">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                             </mapView>
                         </subviews>
@@ -30,7 +31,9 @@
                             <constraint firstAttribute="bottom" secondItem="Dk6-9F-x4h" secondAttribute="bottom" id="jSx-HZ-XPw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Карта" id="meX-2S-sAg"/>
+                    <navigationItem key="navigationItem" title="Карта" largeTitleDisplayMode="always" id="meX-2S-sAg">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="H3C-L4-M0H"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Dk6-9F-x4h" id="gwn-gC-4iW"/>
                     </connections>
@@ -44,9 +47,11 @@
             <objects>
                 <navigationController storyboardIdentifier="MapNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="NSc-n9-ffW" customClass="MapNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Om1-US-HNA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="back" largeTitles="YES" backIndicatorTransitionMaskImage="back" id="Om1-US-HNA">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="DarkBlue"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
                             <color key="textColor" red="0.098039215690000001" green="0.28235294119999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,6 +72,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="20" height="20"/>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
