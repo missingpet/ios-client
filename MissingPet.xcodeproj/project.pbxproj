@@ -302,7 +302,6 @@
 		C86ED4B42520E49C00189E8A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				C8BC629A254F2DA300DD184F /* Views */,
 				C86ED4B62520E4A300189E8A /* Presenters */,
 				C86ED4B72520E4AB00189E8A /* Controllers */,
 				C86ED4B82520E4BB00189E8A /* Profile.storyboard */,
@@ -527,13 +526,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		C8BC629A254F2DA300DD184F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		C8CA02AD2520BDAC00C22815 = {
 			isa = PBXGroup;
 			children = (
@@ -573,10 +565,10 @@
 		C8F441BC2520D2B500A6570D /* ArchitecturePattern */ = {
 			isa = PBXGroup;
 			children = (
+				C8F441BD2520D2C200A6570D /* Abstract */,
 				C8F441CB2520D94E00A6570D /* Navigator.swift */,
 				C8F441C82520D90D00A6570D /* UIWindow.swift */,
 				C8F441CE2520D96C00A6570D /* Controller.swift */,
-				C8F441BD2520D2C200A6570D /* Abstract */,
 			);
 			path = ArchitecturePattern;
 			sourceTree = "<group>";

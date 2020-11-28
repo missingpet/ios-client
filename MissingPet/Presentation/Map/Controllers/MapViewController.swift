@@ -16,6 +16,7 @@ class MapViewController: Controller<MapPresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupMapView()
         setupLocationManager()
     }
 

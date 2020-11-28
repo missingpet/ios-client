@@ -179,7 +179,7 @@
     </scenes>
     <designables>
         <designable name="WsS-LM-CBe">
-            <size key="intrinsicContentSize" width="48" height="33"/>
+            <size key="intrinsicContentSize" width="49" height="32"/>
         </designable>
     </designables>
     <resources>

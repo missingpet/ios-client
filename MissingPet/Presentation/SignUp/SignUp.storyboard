@@ -43,6 +43,7 @@
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GeF-MT-zhN">
                                                                         <rect key="frame" x="34" y="0.0" width="328" height="40"/>
+                                                                        <color key="tintColor" name="DarkBlue"/>
                                                                         <color key="textColor" name="Blue"/>
                                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="nickname"/>
@@ -70,6 +71,7 @@
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Адрес электронной почты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCJ-nA-weK">
                                                                         <rect key="frame" x="30" y="0.0" width="332" height="40"/>
+                                                                        <color key="tintColor" name="DarkBlue"/>
                                                                         <color key="textColor" name="Blue"/>
                                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
@@ -97,6 +99,7 @@
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVT-op-7xN">
                                                                         <rect key="frame" x="30" y="0.0" width="332" height="40"/>
+                                                                        <color key="tintColor" name="DarkBlue"/>
                                                                         <color key="textColor" name="Blue"/>
                                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
@@ -124,6 +127,7 @@
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Повторите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-6H-oA4">
                                                                         <rect key="frame" x="30" y="0.0" width="332" height="40"/>
+                                                                        <color key="tintColor" name="DarkBlue"/>
                                                                         <color key="textColor" name="Blue"/>
                                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
@@ -218,7 +222,7 @@
     </scenes>
     <designables>
         <designable name="nxD-qD-cYJ">
-            <size key="intrinsicContentSize" width="167" height="32"/>
+            <size key="intrinsicContentSize" width="162" height="33"/>
         </designable>
     </designables>
     <resources>
@@ -228,6 +232,9 @@
         <image name="profile-selected" width="24" height="24"/>
         <namedColor name="Blue">
             <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
