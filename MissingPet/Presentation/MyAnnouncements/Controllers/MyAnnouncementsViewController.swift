@@ -30,21 +30,21 @@ extension MyAnnouncementsViewController {
 
 extension MyAnnouncementsViewController: UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.getMyAnnoncements()[indexPath.item], isMyAnnouncement: true)
+    }
     
 }
 
 extension MyAnnouncementsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        AnnouncementMockRepository.instance.getMyAnnoncements().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let announcementCell = myAnnouncementsTableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
-        announcementCell.announcementImageView.image = UIImage(named: "announcement-template-1")
-        announcementCell.creationDateLabel.text = "27 октября 2020, 12:04"
-        announcementCell.descriprionLabel.text = "Потерялась собака по кличке Арчи. Порода - доберман. Черного цвета."
+        announcementCell.set(item: AnnouncementMockRepository.instance.getMyAnnoncements()[indexPath.item])
         return announcementCell
     }
     
