@@ -7,15 +7,25 @@
 
 import UIKit
 
+@IBDesignable
 class AnnouncementImageView: UIImageView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        setupCorners()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setupCorners()
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupCorners()
+    }
+    
+    private func setupCorners() {
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
