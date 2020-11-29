@@ -13,8 +13,8 @@ protocol AuthRepositoryType {
     
     func signUp(username: String, email: String, password: String)
     
-    //func signOut(refresh: String)
+    func signOut(refresh: String)
     
-    //func refreshToken()
+    func refreshToken(refresh: String)
     
 }
