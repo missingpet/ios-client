@@ -184,7 +184,7 @@
                                                                 <string key="text">Пропала собака по адресу Мильчакова 8а. Нашедших ждёт вознаграждение 5000 рублей! Звонить по указанному в объявлении номеру телефона.</string>
                                                                 <color key="textColor" name="Blue"/>
                                                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
                                                             </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" name="MainWhite"/>

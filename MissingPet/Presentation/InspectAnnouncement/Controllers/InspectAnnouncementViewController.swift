@@ -14,11 +14,10 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var animalTypeLabel: UILabel!
     @IBOutlet weak var lostFoundLabel: UILabel!
-    @IBOutlet weak var placeButton: UIButton!
+    @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var callPhoneNumberButton: UIButton!
     @IBOutlet weak var deleteAnnouncementButton: UIButton!
-    @IBOutlet weak var placeButtonWithImage: UIButton!
     
     override func viewDidLoad() {
         presenter?.photoUrlSetter = { [weak self] photoUrl in
@@ -36,8 +35,8 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
         presenter?.lostFoundSetter = { [weak self] lostFound in
             self?.lostFoundLabel.text = lostFound
         }
-        presenter?.placeButtonSetter = { [weak self] place in
-            self?.placeButton.setTitle(place, for: .normal)
+        presenter?.placeLabelSetter = { [weak self] place in
+            self?.placeLabel.text = place
         }
         presenter?.usernameSetter = { [weak self] username in
             self?.usernameLabel.text = username
@@ -47,9 +46,6 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
         }
         presenter?.deleteAnnouncementButtonSetter = { [weak self] isMyAnnouncement in
             self?.deleteAnnouncementButton.isHidden = isMyAnnouncement
-        }
-        presenter?.placeButtonBackgroundImageSetter = { [weak self] image in
-            self?.placeButtonWithImage.setBackgroundImage(image, for: .normal)
         }
         super.viewDidLoad()
     }

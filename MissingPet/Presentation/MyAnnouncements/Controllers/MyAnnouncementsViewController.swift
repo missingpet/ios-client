@@ -18,6 +18,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter> {
     
 }
 
+// MARK: - TableView setup
 extension MyAnnouncementsViewController {
     
     func setupMyAnnouncementsTableView() {
@@ -28,6 +29,7 @@ extension MyAnnouncementsViewController {
     
 }
 
+// MARK: - UITableViewDelegate
 extension MyAnnouncementsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -36,6 +38,7 @@ extension MyAnnouncementsViewController: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
 extension MyAnnouncementsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
