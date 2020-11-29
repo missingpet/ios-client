@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHo-Ba-CF7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="829"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="683"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gY9-33-9pd">
-                                                <rect key="frame" x="16" y="16" width="382" height="797"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="651"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="announcement-template-0" translatesAutoresizingMaskIntoConstraints="NO" id="xi0-ji-kMV" customClass="AnnouncementImageView" customModule="MissingPet" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="382"/>
@@ -47,61 +47,55 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CreationDateLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsW-yb-5Ku">
-                                                        <rect key="frame" x="0.0" y="392" width="382" height="19"/>
+                                                        <rect key="frame" x="0.0" y="392" width="382" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn1-nF-fD9">
-                                                        <rect key="frame" x="0.0" y="421" width="382" height="19"/>
+                                                        <rect key="frame" x="0.0" y="421.5" width="382" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="Blue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вид животного:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc1-6Q-Obs">
-                                                        <rect key="frame" x="0.0" y="450" width="382" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc1-6Q-Obs">
+                                                        <rect key="frame" x="0.0" y="451" width="382" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AnimalTypeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUF-7b-qUQ">
-                                                        <rect key="frame" x="0.0" y="480" width="382" height="20"/>
+                                                        <rect key="frame" x="0.0" y="481.5" width="382" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                         <color key="textColor" name="Blue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LostFoundLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY7-fe-MRP">
-                                                        <rect key="frame" x="0.0" y="510" width="382" height="19"/>
+                                                        <rect key="frame" x="0.0" y="512" width="382" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA0-k7-PBD">
-                                                        <rect key="frame" x="0.0" y="539" width="382" height="22"/>
-                                                        <state key="normal" title="PlaceButton" image="geolocation">
-                                                            <color key="titleColor" name="Blue"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGE-Dt-9s4">
-                                                        <rect key="frame" x="0.0" y="571" width="382" height="138"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="vGE-Dt-9s4" secondAttribute="height" multiplier="343:124" id="y6k-Jh-DF7"/>
-                                                        </constraints>
-                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4W6-oy-Hbj">
+                                                        <rect key="frame" x="0.0" y="541.5" width="382" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                        <color key="textColor" name="Blue"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Связаться с:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxi-Hd-32I">
-                                                        <rect key="frame" x="0.0" y="719" width="382" height="19"/>
+                                                        <rect key="frame" x="0.0" y="572" width="382" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-Bi-11V">
-                                                        <rect key="frame" x="0.0" y="748" width="382" height="19"/>
+                                                        <rect key="frame" x="0.0" y="601.5" width="382" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="Blue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa2-cs-KZM">
-                                                        <rect key="frame" x="0.0" y="777" width="382" height="20"/>
+                                                        <rect key="frame" x="0.0" y="631" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <state key="normal" title="PhoneNumberButton" image="phone">
                                                             <color key="titleColor" name="Blue"/>
@@ -163,8 +157,7 @@
                         <outlet property="deleteAnnouncementButton" destination="CNy-Ve-n2c" id="aqI-np-RqZ"/>
                         <outlet property="descriptionLabel" destination="Sn1-nF-fD9" id="Sud-Gu-2wi"/>
                         <outlet property="lostFoundLabel" destination="bY7-fe-MRP" id="xez-vF-6B1"/>
-                        <outlet property="placeButton" destination="VA0-k7-PBD" id="mwg-gr-fHw"/>
-                        <outlet property="placeButtonWithImage" destination="vGE-Dt-9s4" id="j0f-6x-yji"/>
+                        <outlet property="placeLabel" destination="4W6-oy-Hbj" id="HO5-yJ-7nu"/>
                         <outlet property="usernameLabel" destination="XDg-Bi-11V" id="dpa-ZE-2ML"/>
                     </connections>
                 </viewController>
@@ -199,7 +192,6 @@
     <resources>
         <image name="announcement-template-0" width="343" height="343"/>
         <image name="back" width="20" height="20"/>
-        <image name="geolocation" width="20" height="20"/>
         <image name="phone" width="20" height="20"/>
         <namedColor name="Blue">
             <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
