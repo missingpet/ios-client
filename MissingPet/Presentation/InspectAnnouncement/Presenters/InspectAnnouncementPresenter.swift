@@ -35,11 +35,11 @@ class InspectAnnouncementPresenter: PresenterType {
         creationDateSetter?(announcement.created_at)
         switch announcement.animal_type {
         case .dog:
-            animalTypeSetter?("Собака")
+            animalTypeSetter?("Собаки")
         case .cat:
-            animalTypeSetter?("Кошка")
+            animalTypeSetter?("Кошки")
         case .other:
-            animalTypeSetter?("Другое")
+            animalTypeSetter?("Иное")
         }
         descriptionSetter?(announcement.description)
         switch announcement.announcement_type {
