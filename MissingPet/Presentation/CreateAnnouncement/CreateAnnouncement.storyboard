@@ -134,7 +134,7 @@
                                                         <rect key="frame" x="0.0" y="210" width="382" height="90"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sip-8s-2o5">
-                                                                <rect key="frame" x="10" y="16" width="362" height="19.5"/>
+                                                                <rect key="frame" x="10" y="16" width="362" height="19"/>
                                                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                                 <color key="textColor" name="Blue"/>
                                                                 <nil key="highlightedColor"/>
@@ -145,7 +145,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите номер с +7" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMA-R0-Fxy">
-                                                                <rect key="frame" x="10" y="45.5" width="362" height="28.5"/>
+                                                                <rect key="frame" x="10" y="45" width="362" height="29"/>
                                                                 <color key="tintColor" name="DarkBlue"/>
                                                                 <color key="textColor" name="Blue"/>
                                                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
@@ -168,7 +168,7 @@
                                                         <rect key="frame" x="0.0" y="310" width="382" height="180"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комментарий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLX-8P-5Zh">
-                                                                <rect key="frame" x="10" y="16" width="362" height="19.5"/>
+                                                                <rect key="frame" x="10" y="16" width="362" height="19"/>
                                                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                                 <color key="textColor" name="Blue"/>
                                                                 <nil key="highlightedColor"/>
@@ -179,7 +179,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9sZ-aO-NJW">
-                                                                <rect key="frame" x="10" y="45.5" width="362" height="118.5"/>
+                                                                <rect key="frame" x="10" y="45" width="362" height="119"/>
                                                                 <color key="tintColor" name="DarkBlue"/>
                                                                 <string key="text">Пропала собака по адресу Мильчакова 8а. Нашедших ждёт вознаграждение 5000 рублей! Звонить по указанному в объявлении номеру телефона.</string>
                                                                 <color key="textColor" name="Blue"/>
@@ -218,7 +218,7 @@
                                                                         <rect key="frame" x="40" y="40" width="26" height="26"/>
                                                                     </imageView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="backgroundColor" name="MainWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="1dV-gz-Xmz" firstAttribute="leading" secondItem="Cit-VR-w11" secondAttribute="leading" constant="40" id="6el-TV-WQk"/>
                                                                     <constraint firstAttribute="bottom" secondItem="1dV-gz-Xmz" secondAttribute="bottom" constant="40" id="PIW-RJ-e7C"/>
@@ -288,6 +288,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Создание объявления" largeTitleDisplayMode="always" id="rod-Sz-HYH"/>
+                    <connections>
+                        <outlet property="animalTypeView" destination="W55-lO-40K" id="Ef4-XN-0pO"/>
+                        <outlet property="announcementTypeView" destination="DA0-RV-4DS" id="dWl-C4-jns"/>
+                        <outlet property="placeView" destination="12r-yS-qVl" id="pgY-eU-Uyt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkG-cU-2j5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,7 +327,7 @@
     </scenes>
     <designables>
         <designable name="j7K-DL-nbn">
-            <size key="intrinsicContentSize" width="111" height="33"/>
+            <size key="intrinsicContentSize" width="114" height="32"/>
         </designable>
     </designables>
     <resources>
