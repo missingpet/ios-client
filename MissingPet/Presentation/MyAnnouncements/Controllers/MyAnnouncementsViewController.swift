@@ -33,7 +33,7 @@ extension MyAnnouncementsViewController {
 extension MyAnnouncementsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.getMyAnnoncements()[indexPath.item], isMyAnnouncement: true)
+        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.myAnnouncements[indexPath.item], isMyAnnouncement: true)
     }
     
 }
@@ -42,12 +42,12 @@ extension MyAnnouncementsViewController: UITableViewDelegate {
 extension MyAnnouncementsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        AnnouncementMockRepository.instance.getMyAnnoncements().count
+        AnnouncementMockRepository.instance.myAnnouncements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let announcementCell = myAnnouncementsTableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
-        announcementCell.set(item: AnnouncementMockRepository.instance.getMyAnnoncements()[indexPath.item])
+        announcementCell.set(item: AnnouncementMockRepository.instance.myAnnouncements[indexPath.item])
         return announcementCell
     }
     

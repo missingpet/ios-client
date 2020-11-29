@@ -31,7 +31,7 @@ extension FeedViewController {
 extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.getFeed()[indexPath.item], isMyAnnouncement: false)
+        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.feed[indexPath.item], isMyAnnouncement: false)
     }
     
 }
@@ -39,12 +39,12 @@ extension FeedViewController: UITableViewDelegate {
 extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AnnouncementMockRepository.instance.getFeed().count
+        return AnnouncementMockRepository.instance.feed.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = feedTableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
-        feedCell.set(item: AnnouncementMockRepository.instance.getFeed()[indexPath.item])
+        feedCell.set(item: AnnouncementMockRepository.instance.feed[indexPath.item])
         return feedCell
     }
     

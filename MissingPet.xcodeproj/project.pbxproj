@@ -36,6 +36,8 @@
 		C898AD472550CF5D00DEBFF1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C898AD462550CF5D00DEBFF1 /* Fonts.swift */; };
 		C89B227C25580758009BF623 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89B227B25580758009BF623 /* Button.swift */; };
 		C89F99FE254477E60022C7C4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F99FD254477E60022C7C4 /* Colors.swift */; };
+		C8A5811A257447DA00671029 /* AnnouncementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A58119257447DA00671029 /* AnnouncementRepository.swift */; };
+		C8A5811D25744AD800671029 /* AuthRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A5811C25744AD800671029 /* AuthRepositoryType.swift */; };
 		C8AFE656254ADBEA00675026 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AFE655254ADBEA00675026 /* MainTabBar.swift */; };
 		C8BAF7A0254A13F7002C3855 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BAF79E254A13F7002C3855 /* AnnouncementTableViewCell.swift */; };
 		C8BAF7A1254A13F7002C3855 /* AnnouncementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8BAF79F254A13F7002C3855 /* AnnouncementTableViewCell.xib */; };
@@ -123,6 +125,8 @@
 		C898AD462550CF5D00DEBFF1 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C89B227B25580758009BF623 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		C89F99FD254477E60022C7C4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C8A58119257447DA00671029 /* AnnouncementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementRepository.swift; sourceTree = "<group>"; };
+		C8A5811C25744AD800671029 /* AuthRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryType.swift; sourceTree = "<group>"; };
 		C8AFE655254ADBEA00675026 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		C8BAF79E254A13F7002C3855 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		C8BAF79F254A13F7002C3855 /* AnnouncementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementTableViewCell.xib; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 			children = (
 				C809D7B4254F457600254EFE /* Abstract */,
 				C850262625533E500068D687 /* AnnouncementMockRepository.swift */,
+				C8A58119257447DA00671029 /* AnnouncementRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C850261B255338770068D687 /* AnnouncementRepositoryType.swift */,
+				C8A5811C25744AD800671029 /* AuthRepositoryType.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -817,6 +823,7 @@
 				C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */,
 				C834D5432522560E0070E3F6 /* UISetter.swift in Sources */,
 				C8BAF7FE254A283F002C3855 /* MapPresenter.swift in Sources */,
+				C8A5811D25744AD800671029 /* AuthRepositoryType.swift in Sources */,
 				C898AD1625507DE800DEBFF1 /* InspectAnnouncementPresenter.swift in Sources */,
 				C86096B02573001700E90F61 /* UIViewController.swift in Sources */,
 				C8AFE656254ADBEA00675026 /* MainTabBar.swift in Sources */,
@@ -826,6 +833,7 @@
 				C8BAF7F0254A1CB1002C3855 /* MyAnnouncementsPresenter.swift in Sources */,
 				C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */,
 				C86096A12572EA7400E90F61 /* SignUpPresenter.swift in Sources */,
+				C8A5811A257447DA00671029 /* AnnouncementRepository.swift in Sources */,
 				C8F441E92520DF5600A6570D /* FeedNavigationController.swift in Sources */,
 				C8BAF7A0254A13F7002C3855 /* AnnouncementTableViewCell.swift in Sources */,
 				C8F441E22520DEB100A6570D /* FeedPresenter.swift in Sources */,
