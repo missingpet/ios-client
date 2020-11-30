@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AuthRepositoryType {
+protocol AuthRepositoryType: class {
     
     func signIn(email: String, password: String)
     
