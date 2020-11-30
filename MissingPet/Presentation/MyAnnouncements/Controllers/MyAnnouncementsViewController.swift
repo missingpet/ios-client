@@ -18,6 +18,15 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter> {
     
 }
 
+// MARK: - InspectAnnouncementDelegate
+extension MyAnnouncementsViewController: InspectAnnouncementDelegate {
+    
+    func updateTableView() {
+        myAnnouncementsTableView.reloadData()
+    }
+    
+}
+
 // MARK: - TableView setup
 extension MyAnnouncementsViewController {
     
@@ -33,7 +42,7 @@ extension MyAnnouncementsViewController {
 extension MyAnnouncementsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.myAnnouncements[indexPath.item], isMyAnnouncement: true)
+        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.myAnnouncements[indexPath.item], isMyAnnouncement: true, inspectAnnouncementDelegate: self)
     }
     
 }
@@ -52,4 +61,3 @@ extension MyAnnouncementsViewController: UITableViewDataSource {
     }
     
 }
-

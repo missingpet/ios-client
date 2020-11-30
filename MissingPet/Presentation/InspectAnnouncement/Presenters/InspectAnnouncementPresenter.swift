@@ -25,9 +25,14 @@ class InspectAnnouncementPresenter: PresenterType {
     
     let isMyAnnouncement: Bool
     
-    init (announcement: Announcement, isMyAnnouncement: Bool) {
+    private(set) var inspectAnnouncementDelegate: InspectAnnouncementDelegate?
+    
+    private(set) var announcementRepository: AnnouncementRepositoryType = AnnouncementMockRepository.instance
+    
+    init (announcement: Announcement, isMyAnnouncement: Bool, inspectAnnouncementDelegate: InspectAnnouncementDelegate?) {
         self.announcement = announcement
         self.isMyAnnouncement = isMyAnnouncement
+        self.inspectAnnouncementDelegate = inspectAnnouncementDelegate
     }
     
     func setup() {
@@ -62,8 +67,22 @@ class InspectAnnouncementPresenter: PresenterType {
     func presentDeleteAnnouncementAlert(viewController: UIViewController) {
         let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение", message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { _ in Navigator(Storyboard.inspectAnnouncement).pop() }))
+        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { _ in self.deleteAnnouncement(id: self.announcement.id) }))
         viewController.present(deleteAnnouncementAlert, animated: true, completion: nil)
+    }
+    
+    private func deleteAnnouncement(id: Int) {
+        announcementRepository.deleteAnnouncement(id: id)
+        inspectAnnouncementDelegate?.updateTableView()
+        Navigator(Storyboard.inspectAnnouncement).pop()
+    }
+    
+    func presentImagePreviewViewController(viewController: UIViewController) {
+        let vc = viewController as! InspectAnnouncementViewController
+        guard let image = vc.announcementImageView.image else {
+            return
+        }
+        Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self, presenter: ImagePreviewPresenter(image: image))
     }
     
 }

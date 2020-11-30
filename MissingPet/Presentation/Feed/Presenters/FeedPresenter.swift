@@ -17,7 +17,7 @@ class FeedPresenter: DefaultPresenterType {
     }
     
     func openInspectAnnouncement(announcement: Announcement, isMyAnnouncement: Bool) {
-        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, isMyAnnouncement: isMyAnnouncement))
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, isMyAnnouncement: isMyAnnouncement, inspectAnnouncementDelegate: nil))
     }
     
 }
