@@ -29,7 +29,7 @@ class InspectAnnouncementPresenter: PresenterType {
     
     private(set) var announcementRepository: AnnouncementRepositoryType = AnnouncementMockRepository.instance
     
-    init (announcement: Announcement, isMyAnnouncement: Bool, inspectAnnouncementDelegate: InspectAnnouncementDelegate?) {
+    init (announcement: Announcement, isMyAnnouncement: Bool = false, inspectAnnouncementDelegate: InspectAnnouncementDelegate? = nil) {
         self.announcement = announcement
         self.isMyAnnouncement = isMyAnnouncement
         self.inspectAnnouncementDelegate = inspectAnnouncementDelegate
@@ -49,9 +49,9 @@ class InspectAnnouncementPresenter: PresenterType {
         descriptionSetter?(announcement.description)
         switch announcement.announcement_type {
         case .lost:
-            lostFoundSetter?("Животное было потеряно тут:")
+            lostFoundSetter?("Место пропажи:")
         case .found:
-            lostFoundSetter?("Животное было найдено тут:")
+            lostFoundSetter?("Место находки:")
         }
         placeLabelSetter?(announcement.place)
         usernameSetter?(announcement.user)

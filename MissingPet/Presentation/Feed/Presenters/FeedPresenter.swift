@@ -13,11 +13,14 @@ import Kingfisher
 
 class FeedPresenter: DefaultPresenterType {
     
+    private(set) var announcementRepository: AnnouncementRepositoryType!
+    
     required init() {
+        announcementRepository = AnnouncementMockRepository.instance
     }
     
-    func openInspectAnnouncement(announcement: Announcement, isMyAnnouncement: Bool) {
-        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, isMyAnnouncement: isMyAnnouncement, inspectAnnouncementDelegate: nil))
+    func pushInspectAnnouncementViewController(with announcement: Announcement) {
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, isMyAnnouncement: false, inspectAnnouncementDelegate: nil))
     }
     
 }

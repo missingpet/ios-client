@@ -154,6 +154,9 @@
                                                         <state key="normal" title="Зарегистрироваться">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="signUp:" destination="SfU-8V-5rb" eventType="touchUpInside" id="Umf-l4-54R"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -222,7 +225,7 @@
     </scenes>
     <designables>
         <designable name="nxD-qD-cYJ">
-            <size key="intrinsicContentSize" width="162" height="33"/>
+            <size key="intrinsicContentSize" width="167" height="32"/>
         </designable>
     </designables>
     <resources>

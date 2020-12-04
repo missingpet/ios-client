@@ -11,7 +11,6 @@ class SignUpNavigationController: NavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
 }

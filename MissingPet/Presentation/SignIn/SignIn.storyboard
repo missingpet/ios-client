@@ -98,6 +98,9 @@
                                                         <state key="normal" title="Войти">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="signIn:" destination="Jn1-y5-Dzn" eventType="touchUpInside" id="IXn-BQ-NMf"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofK-bO-qIr">
                                                         <rect key="frame" x="0.0" y="210" width="382" height="60"/>
@@ -110,7 +113,7 @@
                                                             <color key="titleColor" name="Blue"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="openSignUpViewController:" destination="Jn1-y5-Dzn" eventType="touchUpInside" id="FP3-Jg-lCw"/>
+                                                            <action selector="pushSignUpViewController:" destination="Jn1-y5-Dzn" eventType="touchUpInside" id="FP3-Jg-lCw"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -179,7 +182,7 @@
     </scenes>
     <designables>
         <designable name="WsS-LM-CBe">
-            <size key="intrinsicContentSize" width="48" height="33"/>
+            <size key="intrinsicContentSize" width="49" height="32"/>
         </designable>
     </designables>
     <resources>

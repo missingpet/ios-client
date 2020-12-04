@@ -12,31 +12,23 @@ import SwiftyJSON
 
 class AnnouncementRepository: AnnouncementRepositoryType {
     
-    func getAllMapInfo() {
-        
+    var feed: [Announcement] = []
+    
+    var myAnnouncements: [Announcement] = []
+    
+    func getAllMapInfo() {}
+    
+    func getFeedMapInfo() {}
+    
+    func getAllAnnouncements() {}
+    
+    func getFeed() {}
+    
+    func getMyAnnoncements() {}
+    
+    func createAnnouncement(description: String, photo: UIImage, announcementType: Int, animalType: Int, place: String, latitude: Double, longitude: Double, contactPhoneNumber: String) {
     }
     
-    func getFeedMapInfo() {
-        
-    }
-    
-    
-    func getAllAnnouncements() {
-        
-    }
-    
-    func getFeed() {
-
-    }
-    
-    func getMyAnnoncements() {
-        
-    }
-    
-    func createAnnouncement(description: String, photo: UIImage, announcement_type: Int, animal_type: Int, place: String, latitude: Double, longitude: Double, contact_phone_number: String) {
-    }
-    
-    func deleteAnnouncement(id: Int) {
-    }
+    func deleteAnnouncement(id: Int) {}
     
 }

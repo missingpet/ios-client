@@ -9,7 +9,6 @@ import UIKit
 
 class SignUpViewController: Controller<SignUpPresenter> {
 
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -18,11 +17,16 @@ class SignUpViewController: Controller<SignUpPresenter> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFieldDelegates()
-        hideKeyboardOnTap()
+        dismissKeyboardOnTap()
     }
 
+    @IBAction func signUp(_ sender: UIButton) {
+        presenter?.presentSignUpAlert(viewController: self)
+    }
+    
 }
 
+// MARK: - UITextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
     
     private func setupTextFieldDelegates() {

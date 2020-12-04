@@ -22,7 +22,6 @@
 		C860969E2572EA6500E90F61 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C860969D2572EA6500E90F61 /* SignUpViewController.swift */; };
 		C86096A12572EA7400E90F61 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86096A02572EA7400E90F61 /* SignUpPresenter.swift */; };
 		C86096A42572EBBD00E90F61 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86096A32572EBBD00E90F61 /* SignUpNavigationController.swift */; };
-		C86096AD2572FEAA00E90F61 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86096AC2572FEAA00E90F61 /* UINavigationController.swift */; };
 		C86096B02573001700E90F61 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86096AF2573001700E90F61 /* UIViewController.swift */; };
 		C8695B5B256828B1001A3D04 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8695B5A256828B1001A3D04 /* SignInViewController.swift */; };
 		C8695B5E256828C7001A3D04 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8695B5D256828C7001A3D04 /* SignIn.storyboard */; };
@@ -32,6 +31,7 @@
 		C86ED4C32520E53D00189E8A /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ED4C22520E53D00189E8A /* ProfileNavigationController.swift */; };
 		C874218125756A2C00118E9A /* InspectAnnouncementDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874218025756A2C00118E9A /* InspectAnnouncementDelegate.swift */; };
 		C87FCB3D25252BF800BDDE17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87FCB3C25252BF800BDDE17 /* Assets.xcassets */; };
+		C89455282576C26D004A85EB /* AnnouncementPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89455272576C26D004A85EB /* AnnouncementPointAnnotation.swift */; };
 		C898AD1325507DCC00DEBFF1 /* InspectAnnouncement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C898AD1225507DCC00DEBFF1 /* InspectAnnouncement.storyboard */; };
 		C898AD1625507DE800DEBFF1 /* InspectAnnouncementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C898AD1525507DE700DEBFF1 /* InspectAnnouncementPresenter.swift */; };
 		C898AD1925507E1600DEBFF1 /* InspectAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C898AD1825507E1600DEBFF1 /* InspectAnnouncementViewController.swift */; };
@@ -115,7 +115,6 @@
 		C860969D2572EA6500E90F61 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C86096A02572EA7400E90F61 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		C86096A32572EBBD00E90F61 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
-		C86096AC2572FEAA00E90F61 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		C86096AF2573001700E90F61 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C8695B5A256828B1001A3D04 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C8695B5D256828C7001A3D04 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		C86ED4C22520E53D00189E8A /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
 		C874218025756A2C00118E9A /* InspectAnnouncementDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectAnnouncementDelegate.swift; sourceTree = "<group>"; };
 		C87FCB3C25252BF800BDDE17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C89455272576C26D004A85EB /* AnnouncementPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementPointAnnotation.swift; sourceTree = "<group>"; };
 		C898AD1225507DCC00DEBFF1 /* InspectAnnouncement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InspectAnnouncement.storyboard; sourceTree = "<group>"; };
 		C898AD1525507DE700DEBFF1 /* InspectAnnouncementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectAnnouncementPresenter.swift; sourceTree = "<group>"; };
 		C898AD1825507E1600DEBFF1 /* InspectAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectAnnouncementViewController.swift; sourceTree = "<group>"; };
@@ -288,7 +288,6 @@
 		C86096A62572FDDB00E90F61 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C86096AC2572FEAA00E90F61 /* UINavigationController.swift */,
 				C86096AF2573001700E90F61 /* UIViewController.swift */,
 			);
 			path = Extensions;
@@ -356,6 +355,14 @@
 				C8CA02B92520BDAD00C22815 /* AppDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		C89455262576C247004A85EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C89455272576C26D004A85EB /* AnnouncementPointAnnotation.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C898AD0F25507DA000DEBFF1 /* InspectAnnouncement */ = {
@@ -496,6 +503,7 @@
 		C8BAF7FA254A281A002C3855 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				C89455262576C247004A85EB /* Views */,
 				C8BAF7FC254A282F002C3855 /* Presenters */,
 				C8BAF7FB254A2823002C3855 /* Controllers */,
 				C8BAF80C254A290B002C3855 /* Map.storyboard */,
@@ -830,7 +838,6 @@
 				C850262725533E500068D687 /* AnnouncementMockRepository.swift in Sources */,
 				C8BAF7ED254A1CA0002C3855 /* MyAnnouncementsNavigationController.swift in Sources */,
 				C86ED4C32520E53D00189E8A /* ProfileNavigationController.swift in Sources */,
-				C86096AD2572FEAA00E90F61 /* UINavigationController.swift in Sources */,
 				C8F441C32520D30500A6570D /* PresenterType.swift in Sources */,
 				C86ED4BD2520E4EA00189E8A /* ProfilePresenter.swift in Sources */,
 				C834D5432522560E0070E3F6 /* UISetter.swift in Sources */,
@@ -870,6 +877,7 @@
 				C8BAF801254A2873002C3855 /* MapNavigationController.swift in Sources */,
 				C8502620255338D00068D687 /* Announcement.swift in Sources */,
 				C85B78EF2557D8BA00D9C139 /* InfoView.swift in Sources */,
+				C89455282576C26D004A85EB /* AnnouncementPointAnnotation.swift in Sources */,
 				C816F94825748B2400C0E71E /* ImagePreviewViewController.swift in Sources */,
 				C8BAF815254A29FE002C3855 /* CreateAnnouncementNavigationController.swift in Sources */,
 				C8F441CF2520D96C00A6570D /* Controller.swift in Sources */,
@@ -1040,7 +1048,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24X4EL2BCS;
+				DEVELOPMENT_TEAM = 84LQ3B37P5;
 				INFOPLIST_FILE = MissingPet/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -27,7 +27,7 @@ extension MyAnnouncementsViewController: InspectAnnouncementDelegate {
     
 }
 
-// MARK: - TableView setup
+// MARK: - Presetting
 extension MyAnnouncementsViewController {
     
     func setupMyAnnouncementsTableView() {
@@ -42,7 +42,7 @@ extension MyAnnouncementsViewController {
 extension MyAnnouncementsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.myAnnouncements[indexPath.item], isMyAnnouncement: true, inspectAnnouncementDelegate: self)
+        presenter?.pushInspectAnnouncementViewController(with: presenter!.announcementRepository.myAnnouncements[indexPath.item], delegate: self)
     }
     
 }
@@ -51,12 +51,12 @@ extension MyAnnouncementsViewController: UITableViewDelegate {
 extension MyAnnouncementsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        AnnouncementMockRepository.instance.myAnnouncements.count
+        presenter!.announcementRepository.myAnnouncements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let announcementCell = myAnnouncementsTableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
-        announcementCell.set(item: AnnouncementMockRepository.instance.myAnnouncements[indexPath.item])
+        announcementCell.set(item: presenter!.announcementRepository.myAnnouncements[indexPath.item])
         return announcementCell
     }
     
