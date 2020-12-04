@@ -16,19 +16,20 @@ class SignInViewController: Controller<SignInPresenter> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFieldDelegates()
-        hideKeyboardOnTap()
+        dismissKeyboardOnTap()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.forceUpdateNavigationBar()
+    @IBAction func signIn(_ sender: UIButton) {
+        presenter?.presentSignInAlert(viewController: self)
     }
     
-    @IBAction func openSignUpViewController(_ sender: UIButton) {
-        presenter?.openSignUpViewController()
+    @IBAction func pushSignUpViewController(_ sender: UIButton) {
+        presenter?.pushSignUpViewController()
     }
+    
 }
 
+// MARK: - UITextFieldDelegate
 extension SignInViewController: UITextFieldDelegate {
     
     private func setupTextFieldDelegates() {

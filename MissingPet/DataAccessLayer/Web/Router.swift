@@ -20,6 +20,7 @@ enum Router: URLConvertible {
     case refreshToken
     
     // announcement
+    case allAnnouncements
     case feed
     case createAnnouncement
     case deleteAnnouncement(id: Int)
@@ -31,6 +32,7 @@ enum Router: URLConvertible {
         case .signIn: return "auth/signin/"
         case .signOut: return "auth/signout/"
         case .refreshToken: return "auth/refresh-token/"
+        case .allAnnouncements: return "announcement/all/"
         case .feed: return "announcement/feed/"
         case .createAnnouncement: return "announcement/create/"
         case .deleteAnnouncement(let id): return "announcement/delete/\(id)/"

@@ -7,27 +7,27 @@
 
 import Foundation
 
-struct Announcement {
+struct Announcement: Codable {
     
-    let id: Int
-    let user: String
-    let description: String
-    let photo: String
-    let announcement_type: AnnouncementType
-    let animal_type: AnimalType
-    let place: String
-    let latitude: Double
-    let longitude: Double
-    let contact_phone_number: String
-    let created_at: String
-    let updated_at: String
+    var id: Int
+    var user: String
+    var description: String
+    var photo: String
+    var announcement_type: AnnouncementType
+    var animal_type: AnimalType
+    var place: String
+    var latitude: Double
+    var longitude: Double
+    var contact_phone_number: String
+    var created_at: String
+    var updated_at: String
     
-    enum AnnouncementType: Int {
+    enum AnnouncementType: Int, Codable {
         case lost = 1
         case found
     }
     
-    enum AnimalType: Int {
+    enum AnimalType: Int, Codable {
         case dog = 1
         case cat
         case other

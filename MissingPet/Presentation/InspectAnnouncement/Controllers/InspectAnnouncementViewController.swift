@@ -48,14 +48,28 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
             self?.deleteAnnouncementButton.isHidden = isMyAnnouncement
         }
         super.viewDidLoad()
+        openImagePreviewViewControllerOnTap()
     }
 
     @IBAction func callPhoneNumber(_ sender: UIButton) {
         presenter?.callPhoneNumber()
     }
     
-    
     @IBAction func deleteAnnouncement(_ sender: UIButton) {
         presenter?.presentDeleteAnnouncementAlert(viewController: self)
     }
+    
+    func openImagePreviewViewControllerOnTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(presentImagePreviewViewController))
+        announcementImageView.addGestureRecognizer(tap)
+        announcementImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc private func presentImagePreviewViewController() {
+        #if DEBUG
+        print("presentImagePreviewViewController method called")
+        #endif
+        presenter?.presentImagePreviewViewController(viewController: self)
+    }
+    
 }

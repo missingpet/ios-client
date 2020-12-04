@@ -18,6 +18,7 @@ class FeedViewController: Controller<FeedPresenter> {
     
 }
 
+// MARK: - Presetting
 extension FeedViewController {
     
     func setupFeedTableView() {
@@ -28,23 +29,27 @@ extension FeedViewController {
     
 }
 
+// MARK: - UITableViewDelegate
 extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.openInspectAnnouncement(announcement: AnnouncementMockRepository.instance.getFeed()[indexPath.item], isMyAnnouncement: false)
+        let announcement = presenter!.announcementRepository.feed[indexPath.item]
+        presenter?.pushInspectAnnouncementViewController(with: announcement)
     }
     
 }
 
+// MARK: - UITableViewDataSource
 extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AnnouncementMockRepository.instance.getFeed().count
+        return presenter!.announcementRepository.feed.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = feedTableView.dequeueReusableCell(withIdentifier: "AnnouncementTableViewCell", for: indexPath) as! AnnouncementTableViewCell
-        feedCell.set(item: AnnouncementMockRepository.instance.getFeed()[indexPath.item])
+        let announcement = presenter!.announcementRepository.feed[indexPath.item]
+        feedCell.set(item: announcement)
         return feedCell
     }
     

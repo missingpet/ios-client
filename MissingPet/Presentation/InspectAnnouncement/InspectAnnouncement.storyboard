@@ -21,7 +21,7 @@
         <!--Inspect Announcement View Controller-->
         <scene sceneID="NCI-V7-oAc">
             <objects>
-                <viewController storyboardIdentifier="InspectAnnouncementViewController" hidesBottomBarWhenPushed="YES" id="Ezo-W7-C2b" customClass="InspectAnnouncementViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InspectAnnouncementViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="Ezo-W7-C2b" customClass="InspectAnnouncementViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qHL-lj-9lO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHo-Ba-CF7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="683"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="679"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gY9-33-9pd">
-                                                <rect key="frame" x="16" y="16" width="382" height="651"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="647"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="announcement-template-0" translatesAutoresizingMaskIntoConstraints="NO" id="xi0-ji-kMV" customClass="AnnouncementImageView" customModule="MissingPet" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="382"/>
@@ -47,55 +47,55 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CreationDateLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsW-yb-5Ku">
-                                                        <rect key="frame" x="0.0" y="392" width="382" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="392" width="382" height="19"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn1-nF-fD9">
-                                                        <rect key="frame" x="0.0" y="421.5" width="382" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="421" width="382" height="19"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="Blue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категория:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc1-6Q-Obs">
-                                                        <rect key="frame" x="0.0" y="451" width="382" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="450" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AnimalTypeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUF-7b-qUQ">
-                                                        <rect key="frame" x="0.0" y="481.5" width="382" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="480" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                         <color key="textColor" name="Blue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LostFoundLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY7-fe-MRP">
-                                                        <rect key="frame" x="0.0" y="512" width="382" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="510" width="382" height="19"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4W6-oy-Hbj">
-                                                        <rect key="frame" x="0.0" y="541.5" width="382" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="539" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                                         <color key="textColor" name="Blue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Связаться с:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxi-Hd-32I">
-                                                        <rect key="frame" x="0.0" y="572" width="382" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="569" width="382" height="19"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="LightBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-Bi-11V">
-                                                        <rect key="frame" x="0.0" y="601.5" width="382" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="598" width="382" height="19"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <color key="textColor" name="Blue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa2-cs-KZM">
-                                                        <rect key="frame" x="0.0" y="631" width="382" height="20"/>
+                                                        <rect key="frame" x="0.0" y="627" width="382" height="20"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                         <state key="normal" title="PhoneNumberButton" image="phone">
                                                             <color key="titleColor" name="Blue"/>
@@ -159,11 +159,47 @@
                         <outlet property="lostFoundLabel" destination="bY7-fe-MRP" id="xez-vF-6B1"/>
                         <outlet property="placeLabel" destination="4W6-oy-Hbj" id="HO5-yJ-7nu"/>
                         <outlet property="usernameLabel" destination="XDg-Bi-11V" id="dpa-ZE-2ML"/>
+                        <segue destination="cAa-NR-WEn" kind="modal" id="FQa-EM-AAL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxu-52-t36" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="47.544642857142854"/>
+        </scene>
+        <!--Фотография-->
+        <scene sceneID="Wz9-RE-lsQ">
+            <objects>
+                <viewController storyboardIdentifier="ImagePreviewViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" interfaceStyle="light" id="cAa-NR-WEn" customClass="ImagePreviewViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V6d-99-Epk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p07-kI-wa3">
+                                <rect key="frame" x="323" y="49" width="71" height="33"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
+                                <state key="normal" title="Закрыть">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissViewController" destination="cAa-NR-WEn" eventType="touchUpInside" id="H91-Vf-Aah"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qLj-J3-Dxa"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qLj-J3-Dxa" firstAttribute="trailing" secondItem="p07-kI-wa3" secondAttribute="trailing" constant="20" id="5Nt-8O-VAO"/>
+                            <constraint firstItem="p07-kI-wa3" firstAttribute="top" secondItem="qLj-J3-Dxa" secondAttribute="top" constant="5" id="hzc-2h-AAo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Фотография" largeTitleDisplayMode="never" id="uHN-nV-YZJ">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="jDg-yP-8J7"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5M-Bp-Xp5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556.521739130435" y="47.544642857142854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="04d-wc-Keg">

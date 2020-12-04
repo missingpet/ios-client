@@ -25,9 +25,14 @@ class InspectAnnouncementPresenter: PresenterType {
     
     let isMyAnnouncement: Bool
     
-    init (announcement: Announcement, isMyAnnouncement: Bool) {
+    private(set) var inspectAnnouncementDelegate: InspectAnnouncementDelegate?
+    
+    private(set) var announcementRepository: AnnouncementRepositoryType = AnnouncementMockRepository.instance
+    
+    init (announcement: Announcement, isMyAnnouncement: Bool = false, inspectAnnouncementDelegate: InspectAnnouncementDelegate? = nil) {
         self.announcement = announcement
         self.isMyAnnouncement = isMyAnnouncement
+        self.inspectAnnouncementDelegate = inspectAnnouncementDelegate
     }
     
     func setup() {
@@ -35,18 +40,18 @@ class InspectAnnouncementPresenter: PresenterType {
         creationDateSetter?(announcement.created_at)
         switch announcement.animal_type {
         case .dog:
-            animalTypeSetter?("Собака")
+            animalTypeSetter?("Собаки")
         case .cat:
-            animalTypeSetter?("Кошка")
+            animalTypeSetter?("Кошки")
         case .other:
-            animalTypeSetter?("Другое")
+            animalTypeSetter?("Иное")
         }
         descriptionSetter?(announcement.description)
         switch announcement.announcement_type {
         case .lost:
-            lostFoundSetter?("Животное было потеряно тут:")
+            lostFoundSetter?("Место пропажи:")
         case .found:
-            lostFoundSetter?("Животное было найдено тут:")
+            lostFoundSetter?("Место находки:")
         }
         placeLabelSetter?(announcement.place)
         usernameSetter?(announcement.user)
@@ -62,8 +67,22 @@ class InspectAnnouncementPresenter: PresenterType {
     func presentDeleteAnnouncementAlert(viewController: UIViewController) {
         let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение", message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { _ in Navigator(Storyboard.inspectAnnouncement).pop() }))
+        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { _ in self.deleteAnnouncement(id: self.announcement.id) }))
         viewController.present(deleteAnnouncementAlert, animated: true, completion: nil)
+    }
+    
+    private func deleteAnnouncement(id: Int) {
+        announcementRepository.deleteAnnouncement(id: id)
+        inspectAnnouncementDelegate?.updateTableView()
+        Navigator(Storyboard.inspectAnnouncement).pop()
+    }
+    
+    func presentImagePreviewViewController(viewController: UIViewController) {
+        let vc = viewController as! InspectAnnouncementViewController
+        guard let image = vc.announcementImageView.image else {
+            return
+        }
+        Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self, presenter: ImagePreviewPresenter(image: image))
     }
     
 }

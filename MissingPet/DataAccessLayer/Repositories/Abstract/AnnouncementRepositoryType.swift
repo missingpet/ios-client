@@ -10,12 +10,22 @@ import Foundation
 
 protocol AnnouncementRepositoryType: class {
     
-    func getFeed() -> [Announcement]
+    var feed: [Announcement] { get }
     
-    func getMyAnnoncements() -> [Announcement]
+    var myAnnouncements: [Announcement] { get }
     
-    func createAnnouncement(description: String, photo: UIImage, announcement_type: Int, animal_type: Int, place: String, latitude: Double, longitude: Double, contact_phone_number: String) -> Void
+    func getAllAnnouncements()
     
-    func deleteAnnouncement(id: Int) -> Void
+    func getFeed()
+    
+    func getMyAnnoncements()
+    
+    func getAllMapInfo()
+    
+    func getFeedMapInfo()
+    
+    func createAnnouncement(description: String, photo: UIImage, announcementType: Int, animalType: Int, place: String, latitude: Double, longitude: Double, contactPhoneNumber: String)
+    
+    func deleteAnnouncement(id: Int)
     
 }

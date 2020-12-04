@@ -9,8 +9,14 @@ import Foundation
 
 class MapPresenter: DefaultPresenterType {
     
+    private(set) var announcementRepository: AnnouncementRepositoryType!
+    
     required init() {
-        
+        announcementRepository = AnnouncementMockRepository.instance
+    }
+    
+    func pushInspectAnnouncementViewController(with announcement: Announcement) {
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement))
     }
     
 }

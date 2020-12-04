@@ -15,7 +15,7 @@ class CreateAnnouncementViewController: Controller<CreateAnnouncementPresenter> 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideKeyboardOnTap()
+        dismissKeyboardOnTap()
     }
     
     @IBAction func presentConfirmCreateAlert(_ sender: UIButton) {

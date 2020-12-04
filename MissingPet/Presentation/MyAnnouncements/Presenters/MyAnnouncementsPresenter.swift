@@ -9,11 +9,13 @@ import Foundation
 
 class MyAnnouncementsPresenter: DefaultPresenterType {
     
+    private(set) var announcementRepository: AnnouncementRepositoryType!
+    
     required init() {
-        
+        announcementRepository = AnnouncementMockRepository.instance
     }
     
-    func openInspectAnnouncement(announcement: Announcement, isMyAnnouncement: Bool) {
-        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, isMyAnnouncement: isMyAnnouncement))
+    func pushInspectAnnouncementViewController(with announcement: Announcement, delegate inspectAnnouncementDelegate: InspectAnnouncementDelegate?) {
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, isMyAnnouncement: true, inspectAnnouncementDelegate: inspectAnnouncementDelegate))
     }
 }

@@ -6,11 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
 class SignUpPresenter: DefaultPresenterType {
     
-    required init() {
-        
+    required init() {}
+    
+    func presentSignUpAlert(viewController: UIViewController) {
+        let signUpAlert = UIAlertController(title: "Предупреждение", message: "Данный функционал пока что отсутсвует", preferredStyle: .alert)
+        signUpAlert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: nil))
+        viewController.present(signUpAlert, animated: true, completion: nil)
     }
     
 }
