@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserDefaultsAccessor<T> {
+class UserDefaultsAccessor<T: Decodable> {
     
     private let key: String
     
