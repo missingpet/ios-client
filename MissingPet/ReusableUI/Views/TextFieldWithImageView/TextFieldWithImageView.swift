@@ -13,9 +13,9 @@ class TextFieldWithImageView: UIView {
     @IBOutlet var view: UIView!
     
     @IBOutlet weak var shadowView: ShadowView!
-    @IBOutlet private weak var contentView: UIView!
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textField: UITextField!
     
     @IBInspectable var image: UIImage = UIImage() {
         didSet {
