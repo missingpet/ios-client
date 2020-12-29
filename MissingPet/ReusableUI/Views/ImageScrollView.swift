@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ImageScrollView: UIScrollView {
+class ImageScrollView: UIScrollView, UIScrollViewDelegate {
 
-    private(set) var imageView: UIImageView!
+    var imageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -129,11 +129,6 @@ class ImageScrollView: UIScrollView {
         let location = sender.location(in: sender.view)
         zoom(point: location, animated: true)
     }
-    
-}
-
-// MARK: - UIScrollViewDelegate
-extension ImageScrollView: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
