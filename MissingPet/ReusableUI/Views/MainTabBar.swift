@@ -13,15 +13,10 @@ class MainTabBar: UITabBar {
         super.init(frame: frame)
         setupShadows()
     }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupShadows()
-    }
-    
-    private func setupShadows() {
-        layer.shadowRadius = 8
-        layer.shadowOpacity = 1.0
-        layer.shadowColor = UIColor.custom(.tabBarShadowColor).cgColor
     }
 
     override func draw(_ rect: CGRect) {
@@ -34,6 +29,12 @@ class MainTabBar: UITabBar {
         var sizeThatFits = super.sizeThatFits(size)
         sizeThatFits.height += 10
         return sizeThatFits
+    }
+    
+    private func setupShadows() {
+        layer.shadowRadius = 8
+        layer.shadowOpacity = 1.0
+        layer.shadowColor = UIColor.custom(.tabBarShadowColor).cgColor
     }
 
 }

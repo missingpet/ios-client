@@ -54,7 +54,6 @@ class ShadowView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        
         shadowColor.setFill()
         UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).fill()
     }

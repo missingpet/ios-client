@@ -27,6 +27,7 @@ class AnnouncementImageView: UIImageView {
     
     private func setupCorners() {
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        layer.cornerRadius = 7
     }
 
 }
