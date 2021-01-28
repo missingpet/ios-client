@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Place Search View Controller-->
+        <scene sceneID="KJ8-ko-SXn">
+            <objects>
+                <viewController storyboardIdentifier="PlaceSearchViewController" hidesBottomBarWhenPushed="YES" id="vfb-fe-K7j" customClass="PlaceSearchViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WVJ-yP-Th4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfK-bH-VnM" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
+                                <rect key="frame" x="16" y="104" width="382" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4JV-6e-V26"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Введите адрес"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="search"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mg5-WW-aw6">
+                                <rect key="frame" x="0.0" y="172" width="414" height="690"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="BPv-Ky-2k1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eNK-Rw-Wim"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eNK-Rw-Wim" firstAttribute="trailing" secondItem="kfK-bH-VnM" secondAttribute="trailing" constant="16" id="Cxr-ao-kkQ"/>
+                            <constraint firstItem="Mg5-WW-aw6" firstAttribute="leading" secondItem="eNK-Rw-Wim" secondAttribute="leading" id="GDk-aO-BZA"/>
+                            <constraint firstItem="Mg5-WW-aw6" firstAttribute="trailing" secondItem="eNK-Rw-Wim" secondAttribute="trailing" id="Ijm-Mk-9ye"/>
+                            <constraint firstItem="kfK-bH-VnM" firstAttribute="top" secondItem="eNK-Rw-Wim" secondAttribute="top" constant="16" id="Lse-Zp-mKN"/>
+                            <constraint firstItem="Mg5-WW-aw6" firstAttribute="top" secondItem="kfK-bH-VnM" secondAttribute="bottom" constant="8" id="WhE-jv-spk"/>
+                            <constraint firstItem="eNK-Rw-Wim" firstAttribute="bottom" secondItem="Mg5-WW-aw6" secondAttribute="bottom" id="YUL-nP-W5z"/>
+                            <constraint firstItem="kfK-bH-VnM" firstAttribute="leading" secondItem="eNK-Rw-Wim" secondAttribute="leading" constant="16" id="uv7-bQ-ADG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xxh-V1-3sA">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="1tY-ld-Bfb"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="placeSearchResultsTableView" destination="Mg5-WW-aw6" id="MNM-fC-qf2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZr-Jh-9Xu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639.13043478260875" y="66.964285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c5S-5V-GYc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S2A-u9-0T0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" backIndicatorTransitionMaskImage="back" id="SZ8-IN-rz7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="DarkBlue"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vfb-fe-K7j" kind="relationship" relationship="rootViewController" id="6he-Do-OA7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wik-S6-eoC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-271.01449275362319" y="66.964285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="20" height="20"/>
+        <image name="search" width="20" height="20"/>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -10,22 +10,29 @@ import Foundation
 
 protocol AnnouncementRepositoryType: class {
     
-    var feed: [Announcement] { get }
+    func getFeed(page: Int, completion: @escaping ([AnnouncementItem]) -> Void)
     
-    var myAnnouncements: [Announcement] { get }
+    func getAllAnnouncements(page: Int,
+                             onStart: @escaping () -> Void,
+                             onProcess: @escaping ([AnnouncementItem]) -> Void,
+                             onComplete: @escaping () -> Void)
     
-    func getAllAnnouncements()
+    func getMyAnnoncements(completion: @escaping ([AnnouncementItem]) -> Void)
     
-    func getFeed()
+    func getFeedMapInfo(completion: @escaping ([AnnouncmenetsMapItem]) -> Void)
     
-    func getMyAnnoncements()
+    func getAllMapInfo(completion: @escaping ([AnnouncmenetsMapItem]) -> Void)
     
-    func getAllMapInfo()
+    func createAnnouncement(description: String,
+                            photo: UIImage,
+                            announcementType: AnnouncementType,
+                            animalType: AnimalType,
+                            place: String,
+                            latitude: Double,
+                            longitude: Double,
+                            contactPhoneNumber: String,
+                            completion: @escaping (Bool) -> Void)
     
-    func getFeedMapInfo()
-    
-    func createAnnouncement(description: String, photo: UIImage, announcementType: Int, animalType: Int, place: String, latitude: Double, longitude: Double, contactPhoneNumber: String)
-    
-    func deleteAnnouncement(id: Int)
+    func deleteAnnouncement(id: Int, completion: @escaping (Bool) -> Void)
     
 }

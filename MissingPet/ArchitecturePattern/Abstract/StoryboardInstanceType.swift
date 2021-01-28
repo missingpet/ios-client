@@ -1,5 +1,5 @@
 //
-//  StoryboardInstanceType.swift
+//  StoryboardInstanceProtocol.swift
 //  MissingPet
 //
 //  Created by Михаил Еремеев on 27.09.2020.

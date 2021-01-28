@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AnnouncementTableViewCell" rowHeight="198" id="KGk-i7-Jjw" customClass="AnnouncementTableViewCell" customModule="MissingPet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="456"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="456"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQ3-KN-t4H" customClass="ShadowView" customModule="MissingPet" customModuleProvider="target">
+                        <rect key="frame" x="16" y="8" width="343" height="440"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrc-bd-Wf3">
+                        <rect key="frame" x="16" y="8" width="343" height="440"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="announcement-template-0" translatesAutoresizingMaskIntoConstraints="NO" id="EXV-EF-zKm" customClass="AnnouncementImageView" customModule="MissingPet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EXV-EF-zKm" secondAttribute="height" multiplier="1:1" id="9wa-3q-o6J"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="CreationDateLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N4-MW-CFw">
+                                <rect key="frame" x="10" y="353" width="323" height="19"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
+                                <color key="textColor" name="LightBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmH-VK-IVx">
+                                <rect key="frame" x="10" y="377" width="323" height="53"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
+                                <color key="textColor" name="Blue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EXV-EF-zKm" secondAttribute="trailing" id="1wk-z4-7gy"/>
+                            <constraint firstAttribute="trailing" secondItem="9N4-MW-CFw" secondAttribute="trailing" constant="10" id="6jR-TM-VZb"/>
+                            <constraint firstItem="EXV-EF-zKm" firstAttribute="top" secondItem="wrc-bd-Wf3" secondAttribute="top" id="CSm-9d-CcU"/>
+                            <constraint firstItem="EXV-EF-zKm" firstAttribute="leading" secondItem="wrc-bd-Wf3" secondAttribute="leading" id="FPJ-3v-TaS"/>
+                            <constraint firstItem="mmH-VK-IVx" firstAttribute="top" secondItem="9N4-MW-CFw" secondAttribute="bottom" constant="5" id="LKs-5k-FEx"/>
+                            <constraint firstAttribute="trailing" secondItem="mmH-VK-IVx" secondAttribute="trailing" constant="10" id="XBF-Hr-0R4"/>
+                            <constraint firstAttribute="bottom" secondItem="mmH-VK-IVx" secondAttribute="bottom" constant="10" id="cSY-0d-tBd"/>
+                            <constraint firstItem="9N4-MW-CFw" firstAttribute="top" secondItem="EXV-EF-zKm" secondAttribute="bottom" constant="10" id="eVf-IS-jBL"/>
+                            <constraint firstItem="mmH-VK-IVx" firstAttribute="leading" secondItem="wrc-bd-Wf3" secondAttribute="leading" constant="10" id="i59-W1-Yg9"/>
+                            <constraint firstItem="9N4-MW-CFw" firstAttribute="leading" secondItem="wrc-bd-Wf3" secondAttribute="leading" constant="10" id="lMD-Mh-BVh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wrc-bd-Wf3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1BW-BR-otY"/>
+                    <constraint firstItem="wrc-bd-Wf3" firstAttribute="centerX" secondItem="WQ3-KN-t4H" secondAttribute="centerX" id="GN0-Sk-8WO"/>
+                    <constraint firstAttribute="trailing" secondItem="wrc-bd-Wf3" secondAttribute="trailing" constant="16" id="JHs-bK-ZsQ"/>
+                    <constraint firstItem="wrc-bd-Wf3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="VV7-U3-AVD"/>
+                    <constraint firstAttribute="bottom" secondItem="wrc-bd-Wf3" secondAttribute="bottom" constant="8" id="Vj2-zZ-qXq"/>
+                    <constraint firstItem="wrc-bd-Wf3" firstAttribute="height" secondItem="WQ3-KN-t4H" secondAttribute="height" id="a4P-5u-MFM"/>
+                    <constraint firstItem="wrc-bd-Wf3" firstAttribute="centerY" secondItem="WQ3-KN-t4H" secondAttribute="centerY" id="ehB-FZ-0YN"/>
+                    <constraint firstItem="wrc-bd-Wf3" firstAttribute="width" secondItem="WQ3-KN-t4H" secondAttribute="width" id="yX0-zy-Vfn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="announcementImageView" destination="EXV-EF-zKm" id="BGu-9r-jnm"/>
+                <outlet property="creationDateLabel" destination="9N4-MW-CFw" id="hL2-BD-jbD"/>
+                <outlet property="descriprionLabel" destination="mmH-VK-IVx" id="wRq-h4-5bl"/>
+            </connections>
+            <point key="canvasLocation" x="-27" y="159"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="EXV-EF-zKm">
+            <size key="intrinsicContentSize" width="343" height="343"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="announcement-template-0" width="343" height="343"/>
+        <namedColor name="Blue">
+            <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightBlue">
+            <color red="0.72600001096725464" green="0.79500001668930054" blue="0.84500002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

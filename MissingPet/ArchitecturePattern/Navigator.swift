@@ -10,7 +10,7 @@ import UIKit
 
 public class Navigator {
     
-    private let storyboardInstance: StoryboardInstanceProtocol!
+    private let storyboardInstance: StoryboardInstanceType!
     
     private static var window: UIWindow?
     
@@ -20,7 +20,7 @@ public class Navigator {
         self.window = window
     }
     
-    public init(_ storyboardInstance: StoryboardInstanceProtocol! = nil) {
+    public init(_ storyboardInstance: StoryboardInstanceType! = nil) {
         self.storyboardInstance = storyboardInstance
     }
     
@@ -31,12 +31,12 @@ public class Navigator {
         return visibleController
     }
     
-    func createControllerWithPresenter<P: PresenterProtocol, C: Controller<P>>(_ controller: C.Type, presenter: P) -> C {
+    func createControllerWithPresenter<P: PresenterType, C: Controller<P>>(_ controller: C.Type, presenter: P) -> C {
         let controller: C = createController(C.self)
         controller.set(presenter: presenter)
         return controller
     }
-    func createControllerWithDefaultPresenter<P: DefaultPresenterProtocol, C: Controller<P>>(_ controller: C.Type) -> C {
+    func createControllerWithDefaultPresenter<P: DefaultPresenterType, C: Controller<P>>(_ controller: C.Type) -> C {
         let controller: C = createController(C.self)
         controller.set(presenter: P())
         return controller
@@ -73,12 +73,12 @@ public class Navigator {
         }
     }
     
-    func push<P: PresenterProtocol, C: Controller<P>>(_ controller: C.Type, presenter: P) {
+    func push<P: PresenterType, C: Controller<P>>(_ controller: C.Type, presenter: P) {
         let controller: C = createControllerWithPresenter(C.self, presenter: presenter)
         let navigationController = visibleController!.navigationController!
         navigationController.pushViewController(controller, animated: true)
     }
-    func push<P: DefaultPresenterProtocol, C: Controller<P>>(_ controller: C.Type) {
+    func push<P: DefaultPresenterType, C: Controller<P>>(_ controller: C.Type) {
         let controller: C = createControllerWithDefaultPresenter(C.self)
         visibleController?.navigationController?.pushViewController(controller, animated: true)
     }
@@ -91,7 +91,7 @@ public class Navigator {
         visibleController?.navigationController?.popToRootViewController(animated: true)
     }
     
-    func root<P: PresenterProtocol, C: Controller<P>>(_ controller: C.Type, presenter: P) {
+    func root<P: PresenterType, C: Controller<P>>(_ controller: C.Type, presenter: P) {
         let controller: C = createControllerWithPresenter(C.self, presenter: presenter)
         guard let delegate = UIApplication.shared.delegate, let window = delegate.window else {
             return
@@ -106,7 +106,7 @@ public class Navigator {
             window?.rootViewController = controller
         }
     }
-    func root<P: DefaultPresenterProtocol, C: Controller<P>>(_ controller: C.Type) {
+    func root<P: DefaultPresenterType, C: Controller<P>>(_ controller: C.Type) {
         let controller: C = createControllerWithDefaultPresenter(C.self)
         guard let delegate = UIApplication.shared.delegate, let window = delegate.window else {
             return
@@ -122,7 +122,7 @@ public class Navigator {
         }
     }
     
-    func modal<P: PresenterProtocol, C: Controller<P>>(_ controller: C.Type, presenter: P, usingNavigationNamed navigationName: String! = nil) {
+    func modal<P: PresenterType, C: Controller<P>>(_ controller: C.Type, presenter: P, usingNavigationNamed navigationName: String! = nil) {
         let controller: C = createControllerWithPresenter(C.self, presenter: presenter)
         if let navigationName = navigationName {
             let navigationController = storyboardInstance.navigationController(controllerName: navigationName)!
@@ -133,7 +133,7 @@ public class Navigator {
         }
     }
     
-    func modal<P: DefaultPresenterProtocol, C: Controller<P>>(_ controller: C.Type, usingNavigationNamed navigationName: String! = nil) {
+    func modal<P: DefaultPresenterType, C: Controller<P>>(_ controller: C.Type, usingNavigationNamed navigationName: String! = nil) {
         let controller: C = createControllerWithDefaultPresenter(C.self)
         if let navigationName = navigationName {
             let navigationController = storyboardInstance.navigationController(controllerName: navigationName)!

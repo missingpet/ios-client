@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Создание объявления-->
+        <scene sceneID="G28-yP-dEe">
+            <objects>
+                <viewController storyboardIdentifier="CreateAnnouncementViewController" modalPresentationStyle="fullScreen" id="wth-fq-lUZ" customClass="CreateAnnouncementViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gOn-Y7-OUs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00K-UV-YJE">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s81-XM-PSi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="797"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j3R-MZ-GBV">
+                                                <rect key="frame" x="16" y="16" width="382" height="765"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggP-Qy-Gz2" customClass="ViewWithLabelAndImageView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="kBQ-nx-IUY"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="arrow-down"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Тип объявления"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9p-Np-gSw" customClass="ViewWithLabelAndImageView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="A3L-kG-M0J"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="arrow-down"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Вид животного"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coR-SG-mgU" customClass="ViewWithLabelAndImageView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="KFm-JC-MRY"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Место пропажи или находки"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="geolocation"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-BF-eYu" customClass="PhoneNumberTextFieldWithLabel" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="210" width="382" height="90"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="90" id="wqn-IQ-z2x"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrF-0G-dqU" customClass="CommentTextViewWithLabel" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="310" width="382" height="180"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="180" id="dS9-Ma-laq"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zE9-si-bwO">
+                                                        <rect key="frame" x="0.0" y="500" width="382" height="195"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фотография" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veY-4g-0GU">
+                                                                <rect key="frame" x="10" y="16" width="362" height="23"/>
+                                                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
+                                                                <color key="textColor" name="Blue"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-VR-w11">
+                                                                <rect key="frame" x="138" y="64" width="106" height="106"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="70P-s0-PdD">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create-announcement-cam" translatesAutoresizingMaskIntoConstraints="NO" id="1dV-gz-Xmz">
+                                                                        <rect key="frame" x="40" y="40" width="26" height="26"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="MainWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="1dV-gz-Xmz" firstAttribute="leading" secondItem="Cit-VR-w11" secondAttribute="leading" constant="40" id="6el-TV-WQk"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="1dV-gz-Xmz" secondAttribute="bottom" constant="40" id="PIW-RJ-e7C"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="70P-s0-PdD" secondAttribute="bottom" id="VUA-Zk-uXU"/>
+                                                                    <constraint firstItem="70P-s0-PdD" firstAttribute="top" secondItem="Cit-VR-w11" secondAttribute="top" id="Vjx-l0-CbH"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="1dV-gz-Xmz" secondAttribute="trailing" constant="40" id="ZeA-wZ-Bmf"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="70P-s0-PdD" secondAttribute="trailing" id="d6J-VO-JN5"/>
+                                                                    <constraint firstItem="1dV-gz-Xmz" firstAttribute="top" secondItem="Cit-VR-w11" secondAttribute="top" constant="40" id="e21-gk-X1S"/>
+                                                                    <constraint firstAttribute="width" secondItem="Cit-VR-w11" secondAttribute="height" multiplier="1:1" id="xqV-l6-F2N"/>
+                                                                    <constraint firstItem="70P-s0-PdD" firstAttribute="leading" secondItem="Cit-VR-w11" secondAttribute="leading" id="zfD-4W-V4h"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="MainWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Cit-VR-w11" firstAttribute="top" secondItem="veY-4g-0GU" secondAttribute="bottom" constant="25" id="C2D-pT-hKM"/>
+                                                            <constraint firstItem="veY-4g-0GU" firstAttribute="leading" secondItem="zE9-si-bwO" secondAttribute="leading" constant="10" id="KFV-zk-lVi"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Cit-VR-w11" secondAttribute="bottom" constant="25" id="Opi-d5-MHj"/>
+                                                            <constraint firstItem="veY-4g-0GU" firstAttribute="top" secondItem="zE9-si-bwO" secondAttribute="top" constant="16" id="Ude-NI-ChH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="veY-4g-0GU" secondAttribute="trailing" constant="10" id="VP2-Lg-MSC"/>
+                                                            <constraint firstAttribute="height" constant="195" id="aaS-ac-Doa"/>
+                                                            <constraint firstItem="Cit-VR-w11" firstAttribute="centerX" secondItem="zE9-si-bwO" secondAttribute="centerX" id="bTY-yq-6RA"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7K-DL-nbn" customClass="Button" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="705" width="382" height="60"/>
+                                                        <color key="backgroundColor" name="Blue"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="mAo-BD-QXJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                        <state key="normal" title="Опубликовать">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="presentConfirmCreateAlert:" destination="wth-fq-lUZ" eventType="touchUpInside" id="dMi-c0-dyD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="j3R-MZ-GBV" firstAttribute="top" secondItem="s81-XM-PSi" secondAttribute="top" constant="16" id="e40-8Z-AME"/>
+                                            <constraint firstAttribute="bottom" secondItem="j3R-MZ-GBV" secondAttribute="bottom" constant="16" id="eI7-FK-Pf8"/>
+                                            <constraint firstAttribute="trailing" secondItem="j3R-MZ-GBV" secondAttribute="trailing" constant="16" id="qfH-ez-sjs"/>
+                                            <constraint firstItem="j3R-MZ-GBV" firstAttribute="leading" secondItem="s81-XM-PSi" secondAttribute="leading" constant="16" id="vNQ-KX-atS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="s81-XM-PSi" secondAttribute="bottom" id="7jK-Hh-nS6"/>
+                                    <constraint firstItem="s81-XM-PSi" firstAttribute="width" secondItem="00K-UV-YJE" secondAttribute="width" id="Mbn-fL-Iuw"/>
+                                    <constraint firstItem="s81-XM-PSi" firstAttribute="leading" secondItem="00K-UV-YJE" secondAttribute="leading" id="Vfx-7T-J8E"/>
+                                    <constraint firstItem="s81-XM-PSi" firstAttribute="top" secondItem="00K-UV-YJE" secondAttribute="top" id="aXU-cY-tXe"/>
+                                    <constraint firstAttribute="trailing" secondItem="s81-XM-PSi" secondAttribute="trailing" id="zw8-EX-zs9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Gk-6l-ByR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="00K-UV-YJE" firstAttribute="bottom" secondItem="7Gk-6l-ByR" secondAttribute="bottom" id="0zB-PG-ej8"/>
+                            <constraint firstItem="00K-UV-YJE" firstAttribute="top" secondItem="7Gk-6l-ByR" secondAttribute="top" id="Tas-6r-ndo"/>
+                            <constraint firstItem="00K-UV-YJE" firstAttribute="trailing" secondItem="7Gk-6l-ByR" secondAttribute="trailing" id="XtH-bd-ldN"/>
+                            <constraint firstItem="00K-UV-YJE" firstAttribute="leading" secondItem="7Gk-6l-ByR" secondAttribute="leading" id="bUi-wO-8CP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Создание объявления" largeTitleDisplayMode="always" id="rod-Sz-HYH">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="hob-Gg-SJ2"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="animalTypeView" destination="B9p-Np-gSw" id="bEH-sa-Ril"/>
+                        <outlet property="announcementTypeView" destination="ggP-Qy-Gz2" id="Zgq-XR-Nft"/>
+                        <outlet property="phoneNumberTextFieldWithLabel" destination="zm0-BF-eYu" id="XEC-NE-eXn"/>
+                        <outlet property="placeView" destination="coR-SG-mgU" id="TeZ-ML-nbz"/>
+                        <outlet property="scrollView" destination="00K-UV-YJE" id="ECj-ne-sWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkG-cU-2j5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.7391304347827" y="99.776785714285708"/>
+        </scene>
+        <!--Create Announcement Navigation Controller-->
+        <scene sceneID="jv3-Kn-6m5">
+            <objects>
+                <navigationController storyboardIdentifier="CreateAnnouncementNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Xiy-UR-CWR" customClass="CreateAnnouncementNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="back" largeTitles="YES" backIndicatorTransitionMaskImage="back" id="QjQ-Bj-Phf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="DarkBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
+                            <color key="textColor" red="0.098039215690000001" green="0.28235294119999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="28"/>
+                            <color key="textColor" red="0.098039215690000001" green="0.28235294119999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wth-fq-lUZ" kind="relationship" relationship="rootViewController" id="NBW-F0-EFS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ry-kb-JiU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311.59420289855075" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow-down" width="20" height="20"/>
+        <image name="back" width="20" height="20"/>
+        <image name="create-announcement-cam" width="25" height="24"/>
+        <image name="geolocation" width="20" height="20"/>
+        <image name="rectangle" width="106" height="106"/>
+        <namedColor name="Blue">
+            <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainWhite">
+            <color red="0.98400002717971802" green="0.98400002717971802" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Controller<P: PresenterProtocol>: UIViewController, ViewProtocol {
+class Controller<P: PresenterType>: UIViewController, ViewType {
     typealias Presenter = P
     var presenter: P!
     

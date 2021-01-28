@@ -13,15 +13,15 @@ enum Router: URLConvertible {
     static let domain = ""
     static let apiPath = domain + "api/"
     
-    // auth
+    // authorization
     case signUp
     case signIn
     case signOut
     case refreshToken
     
-    // announcement
+    // announcements
     case allAnnouncements
-    case feed
+    case feedAnnouncements(userId: Int)
     case createAnnouncement
     case deleteAnnouncement(id: Int)
     case myAnnouncements
@@ -31,9 +31,9 @@ enum Router: URLConvertible {
         case .signUp: return "auth/signup/"
         case .signIn: return "auth/signin/"
         case .signOut: return "auth/signout/"
-        case .refreshToken: return "auth/refresh-token/"
-        case .allAnnouncements: return "announcement/all/"
-        case .feed: return "announcement/feed/"
+        case .refreshToken: return "auth/token/refresh/"
+        case .allAnnouncements: return "announcement/"
+        case .feedAnnouncements(let userId): return "user/\(userId)/feed/"
         case .createAnnouncement: return "announcement/create/"
         case .deleteAnnouncement(let id): return "announcement/delete/\(id)/"
         case .myAnnouncements: return "announcement/my/"
