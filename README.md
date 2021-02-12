@@ -1,6 +1,4 @@
-### Запуск проекта 
-Для Terminal:
-````
-> pod install
-> open MissingPet.xcworkspace
-````
+## Development
+
+- Execute `pod install` command to install dependencies
+- Open `MissingPet.xcworkspace` file
