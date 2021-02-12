@@ -7,14 +7,34 @@
 
 import UIKit
 
+@IBDesignable
 class PhotoView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet var view: UIView!
+    
+    @IBOutlet weak var shadowView: ShadowView!
+    @IBOutlet weak var contentView: UIView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadUI()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadUI()
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        loadUI()
+    }
+    
+    private func loadUI() {
+        view = loadNibView()
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        view.frame = bounds
+        addSubview(view)
+    }
+    
 }

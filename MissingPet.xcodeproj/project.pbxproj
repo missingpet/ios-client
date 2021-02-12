@@ -262,14 +262,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9D427D9125D5BE45008F718A /* Management */ = {
+		9D427D9125D5BE45008F718A /* DAL */ = {
 			isa = PBXGroup;
 			children = (
 				C874218725759AB100118E9A /* Support */,
 				C809D7B3254F456500254EFE /* Repositories */,
 				C8F76C56253CA0C400ED71C4 /* Web */,
 			);
-			path = Management;
+			path = DAL;
 			sourceTree = "<group>";
 		};
 		C801550F259A06ED00601D76 /* PhoneNumberTextFieldWithLabel */ = {
@@ -685,7 +685,7 @@
 		C8CA02B82520BDAC00C22815 /* MissingPet */ = {
 			isa = PBXGroup;
 			children = (
-				9D427D9125D5BE45008F718A /* Management */,
+				9D427D9125D5BE45008F718A /* DAL */,
 				C86096A62572FDDB00E90F61 /* Extensions */,
 				C850261E255338B70068D687 /* Models */,
 				C89F9A00254478A60022C7C4 /* Resources */,
