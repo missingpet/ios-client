@@ -14,27 +14,26 @@ class AuthorizationRepository: AuthorizationRepositoryType {
     
     private let refreshTokenStorage = UserDefaultsAccessor<String>(key: Constants.refreshTokenKey)
     private let accessTokenStorage = UserDefaultsAccessor<String>(key: Constants.accessTokenKey)
-    
-    private let usernameStorage = UserDefaultsAccessor<String>(key: Constants.usernameKey)
+    private let nicknameStorage = UserDefaultsAccessor<String>(key: Constants.nicknameKey)
     private let emailStorage = UserDefaultsAccessor<String>(key: Constants.emailKey)
     private let userIdStorage = UserDefaultsAccessor<Int>(key: Constants.userIdKey)
     
     // MARK: - API Requests
     
-    func signIn(email: String,
-                password: String,
-                completion: @escaping (Bool) -> Void) {
+    func login(email: String,
+               password: String,
+               completion: @escaping (Bool) -> Void) {
         
         let parameters: [String: String] = [
             "email": email,
             "password": password
         ]
         
-        AF.request(Router.signIn, method: .post, parameters: parameters).response(completionHandler: { (dataResponse) in
-            let statusCode = dataResponse.response?.statusCode
+        AF.request(Router.login, method: .post, parameters: parameters).response(completionHandler: { response in
+            let statusCode = response.response?.statusCode
             if statusCode == 200 {
-                let data = dataResponse.data!
-                self.processSignIn(data: data)
+                let data = response.data!
+                self.processLogin(data: data)
                 completion(true)
             } else {
                 completion(false)
@@ -42,40 +41,20 @@ class AuthorizationRepository: AuthorizationRepositoryType {
         })
     }
     
-    func signUp(username: String,
-                email: String,
-                password: String,
-                completion: @escaping (Bool) -> Void) {
+    func register(nickname: String,
+                  email: String,
+                  password: String,
+                  completion: @escaping (Bool) -> Void) {
         
         let parameters: [String: String] = [
             "email": email,
-            "username": username,
+            "nickname": nickname,
             "password": password
         ]
         
-        AF.request(Router.signUp, method: .post, parameters: parameters).response(completionHandler: { (dataResponse) in
+        AF.request(Router.register, method: .post, parameters: parameters).response(completionHandler: { (dataResponse) in
             let statusCode = dataResponse.response?.statusCode
             if statusCode == 201 {
-                completion(true)
-            } else {
-                completion(false)
-            }
-        })
-        
-    }
-    
-    func signOut(completion: @escaping (Bool) -> Void) {
-        
-        let refreshToken = refreshTokenStorage.value!
-        
-        let parameters: [String: String] = [
-            "refresh": refreshToken
-        ]
-        
-        AF.request(Router.signOut, method: .post, parameters: parameters).response(completionHandler: { (dataResponse) in
-            let statusCode = dataResponse.response?.statusCode
-            if statusCode == 204 || statusCode == 400 {
-                self.processSignOut()
                 completion(true)
             } else {
                 completion(false)
@@ -92,10 +71,10 @@ class AuthorizationRepository: AuthorizationRepositoryType {
             "refresh": refreshToken
         ]
         
-        AF.request(Router.refreshToken, method: .post, parameters: parameters).response(completionHandler: { (dataResponse) in
-            let statusCode = dataResponse.response?.statusCode
+        AF.request(Router.tokenRefresh, method: .post, parameters: parameters).response(completionHandler: { response in
+            let statusCode = response.response?.statusCode
             if statusCode == 200 {
-                let data = dataResponse.data!
+                let data = response.data!
                 self.processRefreshAccessToken(data: data)
                 completion(true)
             } else {
@@ -105,11 +84,15 @@ class AuthorizationRepository: AuthorizationRepositoryType {
         
     }
     
+    
+    func logout(completion: @escaping () -> Void) {
+        self.processLogout()
+        completion()
+    }
+    
 }
 
 fileprivate extension AuthorizationRepository {
-    
-    // MARK: - Decodable Structs
     
     struct UserInfo: Decodable {
         
@@ -119,7 +102,7 @@ fileprivate extension AuthorizationRepository {
         }
         
         let id: Int
-        let username: String
+        let nickname: String
         let email: String
         let tokens: Tokens
         
@@ -131,30 +114,30 @@ fileprivate extension AuthorizationRepository {
     
     // MARK: - Data Processing
     
-    func processSignIn(data: Data) {
+    func processLogin(data: Data) {
         
         let decoder = JSONDecoder()
-        let userInfo: UserInfo = try! decoder.decode(UserInfo.self, from: data)
+        let userInfo = try! decoder.decode(UserInfo.self, from: data)
         
         accessTokenStorage.value = userInfo.tokens.access
         refreshTokenStorage.value = userInfo.tokens.refresh
-        usernameStorage.value = userInfo.username
+        nicknameStorage.value = userInfo.nickname
         emailStorage.value = userInfo.email
         userIdStorage.value = userInfo.id
     }
     
-    func processSignOut() {
-        accessTokenStorage.value = nil
-        refreshTokenStorage.value = nil
-        usernameStorage.value = nil
-        emailStorage.value = nil
-        userIdStorage.value = nil
-    }
-    
     func processRefreshAccessToken(data: Data) {
         let decoder = JSONDecoder()
-        let accessToken: AccessToken = try! decoder.decode(AccessToken.self, from: data)
+        let accessToken = try! decoder.decode(AccessToken.self, from: data)
         accessTokenStorage.value = accessToken.access
+    }
+    
+    func processLogout() {
+        accessTokenStorage.value = nil
+        refreshTokenStorage.value = nil
+        userIdStorage.value = nil
+        nicknameStorage.value = nil
+        emailStorage.value = nil
     }
     
 }

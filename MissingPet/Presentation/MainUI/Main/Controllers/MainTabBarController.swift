@@ -17,7 +17,7 @@ class MainTabBarController: UITabBarController {
             createController(MapViewController.self, presenter: MapPresenter(announcementRepository: AnnouncementRepository()), navigationController: MapNavigationController.self, storyboard: .map, iconName: "map"),
             createController(CreateAnnouncementViewController.self, presenter: CreateAnnouncementPresenter(), navigationController: CreateAnnouncementNavigationController.self, storyboard: .createAnnouncement, iconName: "create-announcement"),
             createController(MyAnnouncementsViewController.self, presenter: MyAnnouncementsPresenter(announcementRepository: AnnouncementRepository()),navigationController: MyAnnouncementsNavigationController.self, storyboard: .myAnnouncements, iconName: "my-announcements"),
-            createController(SignInViewController.self, presenter: SignInPresenter(authRepository: AuthorizationRepository()), navigationController: SignInNavigationController.self, storyboard: .signIn, iconName: "profile"),
+            createController(ProfileViewController.self, presenter: ProfilePresenter(authRepository: AuthorizationRepository()), navigationController: ProfileNavigationController.self, storyboard: .profile, iconName: "profile"),
         ]
 
     }

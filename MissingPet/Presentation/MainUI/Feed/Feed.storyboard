@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,47 +27,12 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3u-8C-QO2" userLabel="Feed View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJe-XT-RK0">
-                                        <rect key="frame" x="177" y="357" width="60" height="60"/>
-                                        <subviews>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="R7A-c4-gUR">
-                                                <rect key="frame" x="11.5" y="11.5" width="37" height="37"/>
-                                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </activityIndicatorView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.20347281680000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="R7A-c4-gUR" firstAttribute="centerY" secondItem="sJe-XT-RK0" secondAttribute="centerY" id="3Zu-rg-zW5"/>
-                                            <constraint firstItem="R7A-c4-gUR" firstAttribute="centerX" secondItem="sJe-XT-RK0" secondAttribute="centerX" id="OVb-3K-Ib0"/>
-                                            <constraint firstAttribute="width" constant="60" id="i14-dh-bQS"/>
-                                            <constraint firstAttribute="height" constant="60" id="iUg-cD-gaq"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="sJe-XT-RK0" firstAttribute="centerY" secondItem="F3u-8C-QO2" secondAttribute="centerY" id="kWD-lh-T0j"/>
-                                    <constraint firstItem="sJe-XT-RK0" firstAttribute="centerX" secondItem="F3u-8C-QO2" secondAttribute="centerX" id="xk7-AW-mce"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aOE-e6-GKp"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="leading" secondItem="aOE-e6-GKp" secondAttribute="leading" id="0kq-Ot-Yhh"/>
-                            <constraint firstItem="F3u-8C-QO2" firstAttribute="leading" secondItem="aOE-e6-GKp" secondAttribute="leading" id="24B-uV-oRk"/>
-                            <constraint firstItem="aOE-e6-GKp" firstAttribute="bottom" secondItem="F3u-8C-QO2" secondAttribute="bottom" id="5Bq-Df-7ia"/>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="trailing" secondItem="aOE-e6-GKp" secondAttribute="trailing" id="RJG-6D-Ekq"/>
-                            <constraint firstItem="aOE-e6-GKp" firstAttribute="trailing" secondItem="F3u-8C-QO2" secondAttribute="trailing" id="Xdl-zF-a1N"/>
-                            <constraint firstItem="F3u-8C-QO2" firstAttribute="top" secondItem="aOE-e6-GKp" secondAttribute="top" id="cSo-QB-sun"/>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="bottom" secondItem="aOE-e6-GKp" secondAttribute="bottom" id="qM7-br-cfj"/>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="top" secondItem="aOE-e6-GKp" secondAttribute="top" id="tQF-jl-hH0"/>
                         </constraints>
@@ -76,10 +41,7 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="0N4-c0-Cue"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="feedActivityIndicator" destination="R7A-c4-gUR" id="ZCY-BK-hFH"/>
-                        <outlet property="feedActivityView" destination="sJe-XT-RK0" id="pCs-Uz-Hb0"/>
                         <outlet property="feedTableView" destination="oI9-h8-HH5" id="I2U-Sq-xCK"/>
-                        <outlet property="feedView" destination="F3u-8C-QO2" id="upH-QI-BBW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbA-18-GlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

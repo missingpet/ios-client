@@ -63,7 +63,7 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     }
     
     @objc private func presentImagePreviewViewController() {
-        presenter?.presentImagePreviewViewController(viewController: self)
+        //presenter?.presentImagePreviewViewController(controller: self)
     }
     
 }

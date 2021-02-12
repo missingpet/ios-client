@@ -17,11 +17,7 @@ class SignUpPresenter: PresenterType {
     }
     
     func singUp(username: String, email: String, password: String, repeatedPassword: String) {
-        guard password == repeatedPassword else {
-            print("Different passwords")
-            return
-        }
-        authRepository.signUp(username: username, email: email, password: password, completion: {  (status) in })
+        
     }
     
     func presentSignUpAlert(viewController: UIViewController) {

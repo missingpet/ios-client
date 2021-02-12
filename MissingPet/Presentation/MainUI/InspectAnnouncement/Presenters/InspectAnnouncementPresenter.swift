@@ -23,15 +23,8 @@ class InspectAnnouncementPresenter: PresenterType {
     
     let announcement: AnnouncementItem
     
-    private let inspectAnnouncementDelegate: InspectAnnouncementDelegateProtocol!
-    
-    private let announcementRepository: AnnouncementRepositoryType!
-    
-    init (announcement: AnnouncementItem, announcementRepository: AnnouncementRepositoryType, inspectAnnouncementDelegate: InspectAnnouncementDelegateProtocol? = nil) {
+    init (announcement: AnnouncementItem) {
         self.announcement = announcement
-        
-        self.inspectAnnouncementDelegate = inspectAnnouncementDelegate
-        self.announcementRepository = announcementRepository
     }
     
     func setup() {
@@ -53,7 +46,7 @@ class InspectAnnouncementPresenter: PresenterType {
             lostFoundSetter?("Место находки:")
         }
         placeLabelSetter?(announcement.address)
-        usernameSetter?(announcement.user.username)
+        usernameSetter?(announcement.user.nickname)
         callPhoneNumberSetter?(announcement.contactPhoneNumber)
         deleteAnnouncementButtonSetter?(announcement.user.id != AppSettings.currentUserId)
     }
@@ -71,13 +64,10 @@ class InspectAnnouncementPresenter: PresenterType {
     }
     
     private func deleteAnnouncement(id: Int) {
-        //announcementRepository.deleteAnnouncement(id: id, completion: { () })
-        inspectAnnouncementDelegate?.updateTableView()
         Navigator().pop()
     }
     
-    func presentImagePreviewViewController(viewController: UIViewController) {
-        guard let image = (viewController as! InspectAnnouncementViewController).announcementImageView.image else { return }
+    func presentImagePreviewViewController(image: UIImage) {
         Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self, presenter: ImagePreviewPresenter(image: image))
     }
     

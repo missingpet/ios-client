@@ -4,8 +4,7 @@ target 'MissingPet' do
   use_frameworks!
 
   pod 'ReachabilitySwift'
-  pod 'SwiftyJSON'  
-  pod 'Kingfisher'  
-  pod 'Alamofire'  
+  pod 'Kingfisher'
+  pod 'Alamofire'
 
 end

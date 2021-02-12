@@ -10,7 +10,7 @@ import Foundation
 struct AnnouncementItem: Decodable {
     
     struct User: Decodable {
-        let username: String
+        let nickname: String
         let id: Int
     }
     

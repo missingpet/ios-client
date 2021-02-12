@@ -15,7 +15,7 @@ class MyAnnouncementsPresenter: PresenterType {
         self.announcementRepository = announcementRepository
     }
     
-    func pushInspectAnnouncementViewController(with announcement: AnnouncementItem, delegate inspectAnnouncementDelegate: InspectAnnouncementDelegateProtocol?) {
-        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement, announcementRepository: announcementRepository, inspectAnnouncementDelegate: inspectAnnouncementDelegate))
+    func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement))
     }
 }

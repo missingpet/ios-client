@@ -16,7 +16,6 @@ enum Storyboard: String, StoryboardInstanceType {
     case createAnnouncement = "CreateAnnouncement"
     case map = "Map"
     case inspectAnnouncement = "InspectAnnouncement"
-    case signIn = "SignIn"
     case signUp = "SignUp"
     case placeSearch = "PlaceSearch"
     
