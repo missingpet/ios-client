@@ -14,29 +14,27 @@ class AnnouncementRepository: AnnouncementRepositoryType {
     
     private let userIdStorage = UserDefaultsAccessor<Int>.init(key: Constants.userIdKey)
     
-    func getFeed(pageNumber: Int, pageSize: Int, completion: @escaping ([AnnouncementItem]) -> Void) {
+    func getFeed<T: Decodable>(pageNumber: Int,
+                               pageSize: Int,
+                               onSuccess: ((AnnouncementListResult<T>) -> Void)?,
+                               onFailure: ((String) -> Void)?) {
         let parameters: [String: Int] = [
             "page": pageNumber,
             "page_size": pageSize,
         ]
         let userId = userIdStorage.value
         let route = userId == nil ? Router.listOrCreateAnnouncement : Router.feedAnnouncements(userId: userId!)
-        AF.request(route, method: .get, parameters: parameters)
-            .validate(statusCode: 200..<300)
-            .responseDecodable(of: Announcements.self, completionHandler: { response in
-            if let results = response.value?.results {
-                completion(results)
-            }
-        })
+        createAnnouncementListRequest(route, parameters: parameters, onSuccess: onSuccess, onFailure: onFailure)
     }
     
     func getMyAnnoncements(completion: @escaping ([AnnouncementItem]) -> Void) {
-
+        
     }
 
     func getAnnouncementsMap(completion: @escaping ([AnnouncmenetsMapItem]) -> Void) {
 
     }
+    
     func createAnnouncement(description: String,
                             photo: UIImage,
                             announcementType: AnnouncementType,
@@ -58,9 +56,23 @@ class AnnouncementRepository: AnnouncementRepositoryType {
 
 fileprivate extension AnnouncementRepository {
     
-    struct Announcements: Decodable {
-        let count: Int
-        let results: [AnnouncementItem]
+    func createAnnouncementListRequest<T: Decodable>(_ route: URLConvertible,
+                                            parameters: Parameters?,
+                                            onSuccess: ((AnnouncementListResult<T>) -> Void)?,
+                                            onFailure: ((String) -> Void)?
+                                            ) {
+        AF.request(route, method: .get, parameters: parameters)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: AnnouncementListResult<T>.self, completionHandler: { response in
+                switch response.result {
+                case .success(let value):
+                    onSuccess?(value)
+                case .failure(let error):
+                    if let onFailure = onFailure {
+                        onFailure(error.localizedDescription)
+                    }
+                }
+        })
     }
     
 }

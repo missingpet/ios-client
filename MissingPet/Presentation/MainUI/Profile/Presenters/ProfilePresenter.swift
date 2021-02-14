@@ -12,8 +12,13 @@ class ProfilePresenter: PresenterType {
     
     var nicknameSetter: UISetter<String>?
     var emailSetter: UISetter<String>?
+    var profileViewSetter: UISetter<Bool>?
     
     private let authReporitory: AuthorizationRepositoryType
+    
+    func setup() {
+        profileViewSetter?(AppSettings.isAuthorized)
+    }
     
     init(authRepository: AuthorizationRepositoryType) {
         self.authReporitory = authRepository

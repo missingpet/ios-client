@@ -70,6 +70,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>Pricacy - Photo Library Usage Description</key>
+	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string></string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>

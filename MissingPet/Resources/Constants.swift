@@ -9,7 +9,6 @@ import Foundation
 
 struct Constants {
     
-    // MARK: - UserDefaults Keys
     static let refreshTokenKey = "refresh"
     static let accessTokenKey = "access"
     static let nicknameKey = "nickname"

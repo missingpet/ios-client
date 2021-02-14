@@ -14,6 +14,7 @@ class PhotoView: UIView {
     
     @IBOutlet weak var shadowView: ShadowView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

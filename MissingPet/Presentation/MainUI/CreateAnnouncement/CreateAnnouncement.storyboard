@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00K-UV-YJE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s81-XM-PSi">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="797"/>
@@ -142,6 +142,7 @@
                         <outlet property="animalTypeView" destination="B9p-Np-gSw" id="bEH-sa-Ril"/>
                         <outlet property="announcementTypeView" destination="ggP-Qy-Gz2" id="Zgq-XR-Nft"/>
                         <outlet property="phoneNumberTextFieldWithLabel" destination="zm0-BF-eYu" id="XEC-NE-eXn"/>
+                        <outlet property="photoView" destination="HKw-fo-jrc" id="RcE-UL-cIZ"/>
                         <outlet property="placeView" destination="coR-SG-mgU" id="TeZ-ML-nbz"/>
                         <outlet property="scrollView" destination="00K-UV-YJE" id="ECj-ne-sWZ"/>
                     </connections>

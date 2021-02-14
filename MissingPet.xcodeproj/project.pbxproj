@@ -11,6 +11,7 @@
 		9D33D8B525D6EFD9008F40A8 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */; };
 		9D33D8B925D6EFE8008F40A8 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */; };
 		9D33D8D925D70193008F40A8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8D825D70193008F40A8 /* Profile.storyboard */; };
+		9DD7F19925D96EB50024169F /* AnnouncementListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */; };
 		C801550A2599EFD800601D76 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80155092599EFD800601D76 /* PhotoView.swift */; };
 		C801550D2599EFE800601D76 /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C801550C2599EFE800601D76 /* PhotoView.xib */; };
 		C8015511259A070500601D76 /* PhoneNumberTextFieldWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8015510259A070500601D76 /* PhoneNumberTextFieldWithLabel.xib */; };
@@ -94,8 +95,6 @@
 		C8BAF80D254A290B002C3855 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BAF80C254A290B002C3855 /* Map.storyboard */; };
 		C8BAF811254A298E002C3855 /* CreateAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BAF810254A298E002C3855 /* CreateAnnouncementViewController.swift */; };
 		C8BAF815254A29FE002C3855 /* CreateAnnouncementNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BAF814254A29FE002C3855 /* CreateAnnouncementNavigationController.swift */; };
-		C8BC744C259DBF5E00932946 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC744B259DBF5E00932946 /* CommentViewController.swift */; };
-		C8BC744F259DBF6E00932946 /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BC744E259DBF6E00932946 /* CommentPresenter.swift */; };
 		C8BCC98D2524C6A900FB3164 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BCC98C2524C6A900FB3164 /* Feed.storyboard */; };
 		C8C9632A254A3EE7002850C7 /* CreateAnnouncement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C96329254A3EE7002850C7 /* CreateAnnouncement.storyboard */; };
 		C8CA02BA2520BDAD00C22815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CA02B92520BDAD00C22815 /* AppDelegate.swift */; };
@@ -124,6 +123,7 @@
 		9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoView.xib; sourceTree = "<group>"; };
 		9D33D8D825D70193008F40A8 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../../../../../Desktop/Profile.storyboard; sourceTree = "<group>"; };
+		9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementListResult.swift; sourceTree = "<group>"; };
 		C80155092599EFD800601D76 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		C801550C2599EFE800601D76 /* PhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoView.xib; sourceTree = "<group>"; };
 		C8015510259A070500601D76 /* PhoneNumberTextFieldWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberTextFieldWithLabel.xib; sourceTree = "<group>"; };
@@ -207,8 +207,6 @@
 		C8BAF80C254A290B002C3855 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		C8BAF810254A298E002C3855 /* CreateAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnnouncementViewController.swift; sourceTree = "<group>"; };
 		C8BAF814254A29FE002C3855 /* CreateAnnouncementNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnnouncementNavigationController.swift; sourceTree = "<group>"; };
-		C8BC744B259DBF5E00932946 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
-		C8BC744E259DBF6E00932946 /* CommentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPresenter.swift; sourceTree = "<group>"; };
 		C8BCC98C2524C6A900FB3164 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		C8C96329254A3EE7002850C7 /* CreateAnnouncement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAnnouncement.storyboard; sourceTree = "<group>"; };
 		C8CA02B62520BDAC00C22815 /* MissingPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissingPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +268,21 @@
 				C8F76C56253CA0C400ED71C4 /* Web */,
 			);
 			path = DAL;
+			sourceTree = "<group>";
+		};
+		9D4EC3C025D724C6007C25F1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9DD7F19C25D96EEF0024169F /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		C801550F259A06ED00601D76 /* PhoneNumberTextFieldWithLabel */ = {
@@ -405,6 +418,7 @@
 		C850261E255338B70068D687 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9DD7F19C25D96EEF0024169F /* Web */,
 				C850261F255338D00068D687 /* AnnouncementItem.swift */,
 				C88F368B259656360034F8C7 /* AnnouncementType.swift */,
 				C88F368F2596564E0034F8C7 /* AnimalType.swift */,
@@ -649,7 +663,6 @@
 			isa = PBXGroup;
 			children = (
 				C8BAF808254A28F8002C3855 /* CreateAnnouncementPresenter.swift */,
-				C8BC744E259DBF6E00932946 /* CommentPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -659,7 +672,6 @@
 			children = (
 				C8BAF810254A298E002C3855 /* CreateAnnouncementViewController.swift */,
 				C8BAF814254A29FE002C3855 /* CreateAnnouncementNavigationController.swift */,
-				C8BC744B259DBF5E00932946 /* CommentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -685,6 +697,7 @@
 		C8CA02B82520BDAC00C22815 /* MissingPet */ = {
 			isa = PBXGroup;
 			children = (
+				9D4EC3C025D724C6007C25F1 /* Services */,
 				9D427D9125D5BE45008F718A /* DAL */,
 				C86096A62572FDDB00E90F61 /* Extensions */,
 				C850261E255338B70068D687 /* Models */,
@@ -968,7 +981,6 @@
 				C814C365258D4FBE000EF0B9 /* PlaceSearchPresenter.swift in Sources */,
 				C8A581392574713600671029 /* ImageScrollView.swift in Sources */,
 				C8AFE656254ADBEA00675026 /* MainTabBar.swift in Sources */,
-				C8BC744F259DBF6E00932946 /* CommentPresenter.swift in Sources */,
 				C81E11162598072C00AE24AD /* TextFieldWithImageView.swift in Sources */,
 				C86096A42572EBBD00E90F61 /* SignUpNavigationController.swift in Sources */,
 				C898AD1925507E1600DEBFF1 /* InspectAnnouncementViewController.swift in Sources */,
@@ -1008,6 +1020,7 @@
 				C8502620255338D00068D687 /* AnnouncementItem.swift in Sources */,
 				C814C358258D4F2B000EF0B9 /* UserDefaultsAccessor.swift in Sources */,
 				C8E3432B25A87CE5000C95B4 /* UITableViewCell.swift in Sources */,
+				9DD7F19925D96EB50024169F /* AnnouncementListResult.swift in Sources */,
 				C87DDD7D25975F6900F87B9F /* Constants.swift in Sources */,
 				C89455282576C26D004A85EB /* AnnouncementPointAnnotation.swift in Sources */,
 				C816F94825748B2400C0E71E /* ImagePreviewViewController.swift in Sources */,
@@ -1019,7 +1032,6 @@
 				C8AE325E258D56AE002EAF6F /* AddressTableViewCell.swift in Sources */,
 				C80D841C2599508700342234 /* ViewWithLabelAndImageView.swift in Sources */,
 				C8FDF0AF252479B000A2C962 /* MainTabBarController.swift in Sources */,
-				C8BC744C259DBF5E00932946 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

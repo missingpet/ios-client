@@ -9,9 +9,14 @@ import Foundation
 
 class AppSettings {
     
+    private static let currentUserIdStorage = UserDefaultsAccessor<Int>.init(key: Constants.userIdKey)
+    
     static var currentUserId: Int? {
-        let currentUserIdStorage = UserDefaultsAccessor<Int>.init(key: Constants.userIdKey)
         return currentUserIdStorage.value
+    }
+    
+    static var isAuthorized: Bool {
+        return currentUserIdStorage.value != nil
     }
     
 }

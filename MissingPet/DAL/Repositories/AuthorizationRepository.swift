@@ -96,15 +96,11 @@ fileprivate extension AuthorizationRepository {
     
     struct UserInfo: Decodable {
         
-        struct Tokens: Decodable {
-            let access: String
-            let refresh: String
-        }
-        
+        let refresh: String
+        let access: String
         let id: Int
-        let nickname: String
         let email: String
-        let tokens: Tokens
+        let nickname: String
         
     }
     
@@ -119,8 +115,8 @@ fileprivate extension AuthorizationRepository {
         let decoder = JSONDecoder()
         let userInfo = try! decoder.decode(UserInfo.self, from: data)
         
-        accessTokenStorage.value = userInfo.tokens.access
-        refreshTokenStorage.value = userInfo.tokens.refresh
+        accessTokenStorage.value = userInfo.access
+        refreshTokenStorage.value = userInfo.refresh
         nicknameStorage.value = userInfo.nickname
         emailStorage.value = userInfo.email
         userIdStorage.value = userInfo.id
