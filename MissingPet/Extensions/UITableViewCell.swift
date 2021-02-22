@@ -10,11 +10,11 @@ import UIKit
 
 extension UITableViewCell {
     
-    static var cellIdentifier: String {
+    class var cellIdentifier: String {
         return String(describing: self)
     }
     
-    static var nibName: String {
+    class var nibName: String {
         return String(describing: self)
     }
     
