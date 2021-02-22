@@ -17,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Navigator.set(window: &window)
         Navigator(Storyboard.main).root(MainTabBarController.self)
         
+        if InternetService.isUnavailable {
+            let alertController = UIAlertController(title: "Предупреждение",
+                                                    message: "Из-за отсутствия интернет-соединения функционал приложения ограничен",
+                                                    preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+            window?.rootViewController?.present(alertController, animated: true)
+        }
+        
         return true
     }
     
