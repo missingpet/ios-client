@@ -10,14 +10,17 @@ import UIKit
 
 class SignUpPresenter: PresenterType {
 
-    let authRepository: AuthorizationRepositoryType!
+    let authorizationRepository: AuthorizationRepositoryType!
 
-    init(authRepository: AuthorizationRepositoryType) {
-        self.authRepository = authRepository
+    init(authorizationRepository: AuthorizationRepositoryType) {
+        self.authorizationRepository = authorizationRepository
     }
 
-    func singUp(username: String, email: String, password: String, repeatedPassword: String) {
-
+    func singUp(nickname: String, email: String, password: String, repeatedPassword: String) {
+        authorizationRepository.register(nickname: nickname,
+                                         email: email, password: password,
+                                         onSuccess: nil,
+                                         onFailure: nil)
     }
 
     func presentSignUpAlert(viewController: UIViewController) {

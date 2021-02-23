@@ -92,7 +92,7 @@ class ProfilePresenter: PresenterType {
 
     func pushSignUpViewController() {
         Navigator(Storyboard.signUp).push(SignUpViewController.self,
-                                          presenter: SignUpPresenter(authRepository: AuthorizationRepository()))
+                                          presenter: SignUpPresenter(authorizationRepository: AuthorizationRepository()))
     }
 
 }

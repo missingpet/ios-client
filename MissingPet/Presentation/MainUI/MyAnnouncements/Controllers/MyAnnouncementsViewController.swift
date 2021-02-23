@@ -45,7 +45,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
                                                 bundle: nil),
                                           forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
 
-        presenter?.getMyAnnouncements()
+        presenter?.loadItems()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -67,7 +67,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == myAnnouncementsTableView else { return }
         if ((myAnnouncementsTableView.contentOffset.y + myAnnouncementsTableView.frame.size.height) >= myAnnouncementsTableView.contentSize.height) {
-            presenter?.getMyAnnouncements()
+            presenter?.loadItems()
         }
     }
 }
