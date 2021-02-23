@@ -15,7 +15,7 @@ class SignUpPresenter: PresenterType {
     init(authorizationRepository: AuthorizationRepositoryType) {
         self.authorizationRepository = authorizationRepository
     }
-    
+
     func singUp(nickname: String, email: String, password: String, repeatedPassword: String) {
         authorizationRepository.register(nickname: nickname,
                                          email: email, password: password,

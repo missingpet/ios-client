@@ -85,7 +85,7 @@ class MyAnnouncementsPresenter: PresenterType {
         guard AppSettings.isAuthorized else { return }
         self.getMyAnnouncements()
     }
-    
+
     func getMyAnnouncements() {
         guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         self.startAnimating()
