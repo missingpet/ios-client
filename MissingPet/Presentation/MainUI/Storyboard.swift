@@ -8,7 +8,7 @@
 import Foundation
 
 enum Storyboard: String, StoryboardInstanceType {
-    
+
     case feed = "Feed"
     case profile = "Profile"
     case main = "Main"
@@ -18,9 +18,9 @@ enum Storyboard: String, StoryboardInstanceType {
     case inspectAnnouncement = "InspectAnnouncement"
     case signUp = "SignUp"
     case placeSearch = "PlaceSearch"
-    
+
     var name: String {
         return rawValue
     }
-    
+
 }

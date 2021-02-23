@@ -10,31 +10,31 @@ import UIKit
 class AddressTableViewCell: UITableViewCell {
 
     @IBOutlet weak var addressLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCell()
     }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCell()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureCell()
     }
-    
+
     private func configureCell() {
         separatorInset.bottom = .infinity
         separatorInset.left = .infinity
         separatorInset.top = .infinity
         separatorInset.right = .infinity
     }
-    
+
     func set(title: String) {
         addressLabel.text = title
     }
-    
+
 }

@@ -9,21 +9,21 @@ import UIKit
 import Foundation
 
 class ImagePreviewPresenter: PresenterType {
-    
+
     var image: UIImage
-    
+
     var imageSetter: UISetter<UIImage>?
-    
+
     func dismissViewController() {
         Navigator().dismiss()
     }
-    
+
     func setup() {
         imageSetter?(image)
     }
-    
+
     init(image: UIImage) {
         self.image = image
     }
-    
+
 }
