@@ -9,44 +9,40 @@ import Foundation
 import Alamofire
 
 enum Router: URLConvertible {
-    
-    static let domain = ""
+
+    static let domain = "https://missingpet.social/"
     static let apiPath = domain + "api/"
-    
-    // auth
-    case signUp
-    case signIn
-    case signOut
-    case refreshToken
-    
-    // announcement
-    case allAnnouncements
-    case feed
-    case createAnnouncement
-    case deleteAnnouncement(id: Int)
-    case myAnnouncements
-    
+
+    // authorization
+    case register
+    case login
+    case tokenRefresh
+
+    // announcements
+    case listOrCreateAnnouncement
+    case feedAnnouncements(userId: Int)
+    case detailOrDeleteAnnouncement(id: Int)
+    case myAnnouncements(userId: Int)
+
     private var _path: String {
         switch self {
-        case .signUp: return "auth/signup/"
-        case .signIn: return "auth/signin/"
-        case .signOut: return "auth/signout/"
-        case .refreshToken: return "auth/refresh-token/"
-        case .allAnnouncements: return "announcement/all/"
-        case .feed: return "announcement/feed/"
-        case .createAnnouncement: return "announcement/create/"
-        case .deleteAnnouncement(let id): return "announcement/delete/\(id)/"
-        case .myAnnouncements: return "announcement/my/"
+        case .register: return "auth/register/"
+        case .login: return "auth/login/"
+        case .tokenRefresh: return "auth/token/refresh/"
+        case .listOrCreateAnnouncement: return "announcement/"
+        case .feedAnnouncements(let userId): return "user/\(userId)/feed/"
+        case .detailOrDeleteAnnouncement(let id): return "announcement/\(id)/"
+        case .myAnnouncements(let userId): return "user/\(userId)/announcements/"
         }
     }
-    
+
     var path: String {
         return Router.apiPath + _path
     }
-    
+
     func asURL() throws -> URL {
         let url = URL(string: path)!
         return url
     }
-    
+
 }

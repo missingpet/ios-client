@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Мои объявления-->
+        <scene sceneID="JIK-f6-rTF">
+            <objects>
+                <viewController storyboardIdentifier="MyAnnouncementsViewController" id="x8K-C4-ER3" customClass="MyAnnouncementsViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fs0-nw-4NK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sHC-ii-gXt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="ibG-pQ-ozQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AnnouncementCountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfl-EP-1Vd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                            <color key="textColor" name="DarkBlue"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Yfl-EP-1Vd" secondAttribute="bottom" id="7OX-7A-hyr"/>
+                                        <constraint firstAttribute="trailing" secondItem="Yfl-EP-1Vd" secondAttribute="trailing" id="KxB-cp-o7k"/>
+                                        <constraint firstItem="Yfl-EP-1Vd" firstAttribute="top" secondItem="ibG-pQ-ozQ" secondAttribute="top" id="bsZ-wQ-2Uq"/>
+                                        <constraint firstItem="Yfl-EP-1Vd" firstAttribute="leading" secondItem="ibG-pQ-ozQ" secondAttribute="leading" id="tGa-mH-lpa"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvt-MG-yjx" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gi6-4m-UQn">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" name="DarkBlue"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="gi6-4m-UQn" firstAttribute="centerX" secondItem="pvt-MG-yjx" secondAttribute="centerX" id="AZp-ve-qG5"/>
+                                    <constraint firstItem="gi6-4m-UQn" firstAttribute="centerY" secondItem="pvt-MG-yjx" secondAttribute="centerY" id="Lpg-9P-1tR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a9v-W8-977"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pvt-MG-yjx" firstAttribute="leading" secondItem="a9v-W8-977" secondAttribute="leading" id="7JA-U1-Ts9"/>
+                            <constraint firstItem="sHC-ii-gXt" firstAttribute="leading" secondItem="a9v-W8-977" secondAttribute="leading" id="C3p-bn-R8G"/>
+                            <constraint firstItem="a9v-W8-977" firstAttribute="bottom" secondItem="pvt-MG-yjx" secondAttribute="bottom" id="OeM-3L-AJV"/>
+                            <constraint firstItem="sHC-ii-gXt" firstAttribute="trailing" secondItem="a9v-W8-977" secondAttribute="trailing" id="ZSa-Ev-tHc"/>
+                            <constraint firstItem="pvt-MG-yjx" firstAttribute="top" secondItem="a9v-W8-977" secondAttribute="top" id="lL0-hc-E4f"/>
+                            <constraint firstItem="sHC-ii-gXt" firstAttribute="top" secondItem="a9v-W8-977" secondAttribute="top" id="mTS-2f-ylL"/>
+                            <constraint firstItem="sHC-ii-gXt" firstAttribute="bottom" secondItem="a9v-W8-977" secondAttribute="bottom" id="qZB-OM-04v"/>
+                            <constraint firstItem="a9v-W8-977" firstAttribute="trailing" secondItem="pvt-MG-yjx" secondAttribute="trailing" id="qak-VL-13y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Мои объявления" largeTitleDisplayMode="always" id="hGi-ZZ-ZHJ">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="AB6-kn-uID"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="announcementCountLabel" destination="Yfl-EP-1Vd" id="78H-Hc-CDq"/>
+                        <outlet property="largeActivityIndicatorView" destination="gi6-4m-UQn" id="zof-k4-ZzD"/>
+                        <outlet property="loadingView" destination="pvt-MG-yjx" id="6eN-Hy-r64"/>
+                        <outlet property="myAnnouncementsTableView" destination="sHC-ii-gXt" id="fkm-AB-I9o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owc-Kz-G6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121.7391304347827" y="94.419642857142847"/>
+        </scene>
+        <!--My Announcements Navigation Controller-->
+        <scene sceneID="PAc-Vq-G27">
+            <objects>
+                <navigationController storyboardIdentifier="MyAnnouncementsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="geu-ll-19n" customClass="MyAnnouncementsNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="back" largeTitles="YES" backIndicatorTransitionMaskImage="back" id="vZh-PR-vhn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="DarkBlue"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="28"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x8K-C4-ER3" kind="relationship" relationship="rootViewController" id="jRg-lO-7We"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nc-kh-UAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211.59420289855075" y="94.419642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="20" height="20"/>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentTextViewWithLabel" customModule="MissingPet" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="b5h-Cz-Nh7" id="B6b-iX-Vxe"/>
+                <outlet property="shadowView" destination="8zC-Oc-tGG" id="SVg-0k-gam"/>
+                <outlet property="textView" destination="jkV-Ia-YgB" id="iG4-9S-svV"/>
+                <outlet property="view" destination="iN0-l3-epB" id="a2E-4b-sSi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="441" height="272"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zC-Oc-tGG" customClass="ShadowView" customModule="MissingPet" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="441" height="194"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5h-Cz-Nh7" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="44" width="441" height="194"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="00y-U3-03o">
+                            <rect key="frame" x="10" y="16" width="421" height="162"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комментарий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e6-De-qgC">
+                                    <rect key="frame" x="0.0" y="0.0" width="421" height="20"/>
+                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                    <color key="textColor" name="Blue"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jkV-Ia-YgB">
+                                    <rect key="frame" x="0.0" y="30" width="421" height="132"/>
+                                    <color key="tintColor" name="DarkBlue"/>
+                                    <string key="text">Пропала собака по адресу Мильчакова 8а. Нашедших ждёт вознаграждение 5000 рублей! Звонить по указанному в объявлении номеру телефона. </string>
+                                    <color key="textColor" name="Blue"/>
+                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
+                                </textView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="00y-U3-03o" firstAttribute="leading" secondItem="b5h-Cz-Nh7" secondAttribute="leading" constant="10" id="DBJ-Lx-cMy"/>
+                        <constraint firstAttribute="trailing" secondItem="00y-U3-03o" secondAttribute="trailing" constant="10" id="MBI-hM-bwN"/>
+                        <constraint firstItem="00y-U3-03o" firstAttribute="top" secondItem="b5h-Cz-Nh7" secondAttribute="top" constant="16" id="gza-nw-qhR"/>
+                        <constraint firstAttribute="bottom" secondItem="00y-U3-03o" secondAttribute="bottom" constant="16" id="lSe-qG-7ZZ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                            <color key="value" name="MainWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="b5h-Cz-Nh7" firstAttribute="centerY" secondItem="8zC-Oc-tGG" secondAttribute="centerY" id="2ov-tU-hby"/>
+                <constraint firstItem="b5h-Cz-Nh7" firstAttribute="width" secondItem="8zC-Oc-tGG" secondAttribute="width" id="7sf-2q-W3l"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="b5h-Cz-Nh7" secondAttribute="bottom" id="BfX-Dg-jsY"/>
+                <constraint firstItem="b5h-Cz-Nh7" firstAttribute="centerX" secondItem="8zC-Oc-tGG" secondAttribute="centerX" id="Fd8-I9-Pny"/>
+                <constraint firstItem="b5h-Cz-Nh7" firstAttribute="height" secondItem="8zC-Oc-tGG" secondAttribute="height" id="FvU-R0-kr9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8zC-Oc-tGG" secondAttribute="trailing" id="GXv-2D-5hF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8zC-Oc-tGG" secondAttribute="bottom" id="KuY-Vu-a6n"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="b5h-Cz-Nh7" secondAttribute="trailing" id="TV6-Ng-zI1"/>
+                <constraint firstItem="b5h-Cz-Nh7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Z1T-6A-gEE"/>
+                <constraint firstItem="8zC-Oc-tGG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="d8N-Cn-cM6"/>
+                <constraint firstItem="8zC-Oc-tGG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mkR-xB-wml"/>
+                <constraint firstItem="b5h-Cz-Nh7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="oJR-nt-ffx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="160.1449275362319" y="-92.410714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Blue">
+            <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainWhite">
+            <color red="0.98400002717971802" green="0.98400002717971802" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

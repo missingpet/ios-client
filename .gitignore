@@ -1,4 +1,4 @@
-# CocoaPods
 Pods/
 Podfile.lock
 *.xcworkspace
+xcuserdata/

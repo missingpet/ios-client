@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneNumberTextFieldWithLabel" customModule="MissingPet" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="WUp-ah-xWX" id="rEU-GK-j7C"/>
+                <outlet property="shadowView" destination="ceb-eg-Qf1" id="kZt-UR-DyZ"/>
+                <outlet property="textField" destination="QQX-x0-KGY" id="OfU-Fn-rKw"/>
+                <outlet property="view" destination="iN0-l3-epB" id="YUw-2c-hHT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="254" height="144"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceb-eg-Qf1" customClass="ShadowView" customModule="MissingPet" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="254" height="144"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUp-ah-xWX" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="254" height="144"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y41-GZ-aAb">
+                            <rect key="frame" x="10" y="16" width="234" height="112"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ud-y3-RiM">
+                                    <rect key="frame" x="0.0" y="0.0" width="234" height="20"/>
+                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                    <color key="textColor" name="Blue"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите номер с +7" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQX-x0-KGY">
+                                    <rect key="frame" x="0.0" y="30" width="234" height="82"/>
+                                    <color key="tintColor" name="DarkBlue"/>
+                                    <color key="textColor" name="Blue"/>
+                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" keyboardAppearance="light" returnKeyType="done" textContentType="tel"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                            <color key="value" name="LightBlue"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Y41-GZ-aAb" secondAttribute="trailing" constant="10" id="Exw-Rp-ByK"/>
+                        <constraint firstAttribute="bottom" secondItem="Y41-GZ-aAb" secondAttribute="bottom" constant="16" id="b8K-AH-e1M"/>
+                        <constraint firstItem="Y41-GZ-aAb" firstAttribute="leading" secondItem="WUp-ah-xWX" secondAttribute="leading" constant="10" id="bu4-bv-HpQ"/>
+                        <constraint firstItem="Y41-GZ-aAb" firstAttribute="top" secondItem="WUp-ah-xWX" secondAttribute="top" constant="16" id="rxV-mH-7La"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                            <color key="value" name="MainWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ceb-eg-Qf1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Ru-xj-6jk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WUp-ah-xWX" secondAttribute="bottom" id="50E-mf-bXb"/>
+                <constraint firstItem="WUp-ah-xWX" firstAttribute="centerX" secondItem="ceb-eg-Qf1" secondAttribute="centerX" id="9Zx-Kn-mcF"/>
+                <constraint firstItem="WUp-ah-xWX" firstAttribute="centerY" secondItem="ceb-eg-Qf1" secondAttribute="centerY" id="ACH-W3-1Kl"/>
+                <constraint firstItem="WUp-ah-xWX" firstAttribute="width" secondItem="ceb-eg-Qf1" secondAttribute="width" id="AYk-fC-kyB"/>
+                <constraint firstItem="ceb-eg-Qf1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hi3-ql-d55"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WUp-ah-xWX" secondAttribute="trailing" id="KRE-pa-rA7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ceb-eg-Qf1" secondAttribute="trailing" id="bp5-yL-yDb"/>
+                <constraint firstItem="WUp-ah-xWX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dII-Sd-gm1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ceb-eg-Qf1" secondAttribute="bottom" id="egl-y5-lHY"/>
+                <constraint firstItem="WUp-ah-xWX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gN2-ET-D9R"/>
+                <constraint firstItem="WUp-ah-xWX" firstAttribute="height" secondItem="ceb-eg-Qf1" secondAttribute="height" id="xdp-vl-zI8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-300" y="-145.98214285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Blue">
+            <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightBlue">
+            <color red="0.72600001096725464" green="0.79500001668930054" blue="0.84500002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainWhite">
+            <color red="0.98400002717971802" green="0.98400002717971802" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

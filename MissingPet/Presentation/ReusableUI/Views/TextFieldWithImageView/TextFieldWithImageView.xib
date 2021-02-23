@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="0KK-pA-pNe" id="sXs-Lv-Qg4"/>
+                <outlet property="imageView" destination="qmX-AO-AKt" id="qgq-5H-rr8"/>
+                <outlet property="shadowView" destination="LbT-5h-mOv" id="suk-En-LsW"/>
+                <outlet property="textField" destination="N1H-jK-tl8" id="ksc-RE-Lh9"/>
+                <outlet property="view" destination="iN0-l3-epB" id="1du-el-1I8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbT-5h-mOv" customClass="ShadowView" customModule="MissingPet" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0KK-pA-pNe" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="80"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bh5-Ts-OHW">
+                            <rect key="frame" x="10" y="10" width="266" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="qmX-AO-AKt">
+                                    <rect key="frame" x="0.0" y="0.0" width="20" height="60"/>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PlaceholderText" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N1H-jK-tl8">
+                                    <rect key="frame" x="30" y="0.0" width="236" height="60"/>
+                                    <color key="tintColor" name="DarkBlue"/>
+                                    <color key="textColor" name="Blue"/>
+                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="MainWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Bh5-Ts-OHW" secondAttribute="trailing" constant="10" id="3ZN-9k-lOG"/>
+                        <constraint firstAttribute="bottom" secondItem="Bh5-Ts-OHW" secondAttribute="bottom" constant="10" id="7Eo-Bw-Qxl"/>
+                        <constraint firstItem="Bh5-Ts-OHW" firstAttribute="leading" secondItem="0KK-pA-pNe" secondAttribute="leading" constant="10" id="GDo-0e-CMa"/>
+                        <constraint firstItem="Bh5-Ts-OHW" firstAttribute="top" secondItem="0KK-pA-pNe" secondAttribute="top" constant="10" id="Vey-6a-z3j"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                            <color key="value" name="MainWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LbT-5h-mOv" secondAttribute="trailing" id="5Yi-c7-e6B"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0KK-pA-pNe" secondAttribute="bottom" id="I1O-Wi-pwW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0KK-pA-pNe" secondAttribute="trailing" id="Ksh-NK-ygy"/>
+                <constraint firstItem="0KK-pA-pNe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RO7-sN-ODH"/>
+                <constraint firstItem="0KK-pA-pNe" firstAttribute="centerX" secondItem="LbT-5h-mOv" secondAttribute="centerX" id="bRk-AI-lH3"/>
+                <constraint firstItem="LbT-5h-mOv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="erJ-QY-P6Z"/>
+                <constraint firstItem="0KK-pA-pNe" firstAttribute="width" secondItem="LbT-5h-mOv" secondAttribute="width" id="gTH-tD-80u"/>
+                <constraint firstItem="0KK-pA-pNe" firstAttribute="height" secondItem="LbT-5h-mOv" secondAttribute="height" id="iti-Aw-0TM"/>
+                <constraint firstItem="0KK-pA-pNe" firstAttribute="centerY" secondItem="LbT-5h-mOv" secondAttribute="centerY" id="jyq-Ru-nE8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LbT-5h-mOv" secondAttribute="bottom" id="s1p-fo-ZKu"/>
+                <constraint firstItem="LbT-5h-mOv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tfp-9n-Jz5"/>
+                <constraint firstItem="0KK-pA-pNe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wcI-gh-1Ae"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="46.376811594202906" y="-203.57142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="email" width="20" height="20"/>
+        <namedColor name="Blue">
+            <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainWhite">
+            <color red="0.98400002717971802" green="0.98400002717971802" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
