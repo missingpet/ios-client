@@ -59,12 +59,11 @@ class CreateAnnouncementPresenter: PresenterType {
         controller.present(chooseAnnouncementTypeAlert, animated: true, completion: nil)
     }
 
-    func validate(controller: UIViewController) {}
-
     func createAnnouncement() {}
 
     func pushPlaceSearchViewController() {
-        Navigator(Storyboard.placeSearch).push(PlaceSearchViewController.self, presenter: PlaceSearchPresenter())
+        Navigator(Storyboard.placeSearch).push(PlaceSearchViewController.self,
+                                               presenter: PlaceSearchPresenter())
     }
 
     func presentConfirmCreateAlert(viewController: UIViewController) {

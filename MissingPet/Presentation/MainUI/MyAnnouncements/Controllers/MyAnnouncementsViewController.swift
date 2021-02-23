@@ -45,7 +45,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
                                                 bundle: nil),
                                           forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
 
-        presenter?.getMyAnnouncements()
+        presenter?.loadItems()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

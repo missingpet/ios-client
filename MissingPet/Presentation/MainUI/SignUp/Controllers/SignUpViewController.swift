@@ -9,7 +9,7 @@ import UIKit
 
 class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
 
-    @IBOutlet weak var usernameTextField: TextFieldWithImageView!
+    @IBOutlet weak var nicknameTextField: TextFieldWithImageView!
     @IBOutlet weak var emailTextField: TextFieldWithImageView!
     @IBOutlet weak var passwordTextField: TextFieldWithImageView!
     @IBOutlet weak var repeatPasswordTextField: TextFieldWithImageView!
@@ -18,10 +18,10 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usernameTextField.delegate = self
-        usernameTextField.keyboardType = .asciiCapable
-        usernameTextField.textContentType = .username
-        usernameTextField.isSecureTextEntry = false
+        nicknameTextField.delegate = self
+        nicknameTextField.keyboardType = .asciiCapable
+        nicknameTextField.textContentType = .username
+        nicknameTextField.isSecureTextEntry = false
 
         emailTextField.delegate = self
         emailTextField.keyboardType = .emailAddress
@@ -43,12 +43,14 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
     }
 
     @IBAction func signUp(_ sender: UIButton) {
-        /*let username = usernameTextField.text ?? ""
+        let nickname = nicknameTextField.text ?? ""
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         let repeatedPassword = repeatPasswordTextField.text ?? ""
-        presenter?.singUp(username: username, email: email, password: password, repeatedPassword: repeatedPassword) */
-        presenter?.presentSignUpAlert(viewController: self)
+        presenter?.singUp(nickname: nickname,
+                          email: email,
+                          password: password,
+                          repeatedPassword: repeatedPassword)
     }
 
     @objc private func dismissKeyboard() {

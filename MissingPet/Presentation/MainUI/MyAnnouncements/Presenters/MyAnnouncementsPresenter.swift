@@ -81,8 +81,13 @@ class MyAnnouncementsPresenter: PresenterType {
         self.reloadItemsWithCount?(max(self.itemsWeb, self.itemsTotal))
     }
 
+    func loadItems() {
+        guard AppSettings.isAuthorized else { return }
+        self.getMyAnnouncements()
+    }
+    
     func getMyAnnouncements() {
-        guard AppSettings.isAuthorized, itemsTotal == 0 || itemsTotal < itemsWeb else { return }
+        guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         self.startAnimating()
         announcementRepository.getMyAnnouncements(pageNumber: pageNumber,
                                        onSuccess: { result in
