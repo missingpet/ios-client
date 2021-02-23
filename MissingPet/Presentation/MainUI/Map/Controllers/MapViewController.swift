@@ -12,14 +12,13 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    private var locationManager: CLLocationManager!
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
         
-        locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
@@ -53,7 +52,6 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect: MKAnnotationView) {
         guard let annotation = didSelect.annotation as? AnnouncementPointAnnotation else { return }
         let announcementId = annotation.id
-        /*let announcement = presenter!.announcementRepository.feed.first(where: {$0.id == announcementId})!*/
         
         #if DEBUG
         print("Annotation with announcement id \(announcementId) has selected")
@@ -64,11 +62,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
         self.mapView.deselectAnnotation(annotation, animated: false)
     }
     
-    func mapView(_ mapView: MKMapView, didDeselect: MKAnnotationView) {
-        #if DEBUG
-        print("Annotation has deselected")
-        #endif
-    }
+    func mapView(_ mapView: MKMapView, didDeselect: MKAnnotationView) {}
     
 }
 

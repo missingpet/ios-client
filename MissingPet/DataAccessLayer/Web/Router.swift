@@ -10,7 +10,7 @@ import Alamofire
 
 enum Router: URLConvertible {
     
-    static let domain = "http://192.168.0.110/"
+    static let domain = "https://missingpet.social/"
     static let apiPath = domain + "api/"
     
     // authorization
@@ -21,8 +21,8 @@ enum Router: URLConvertible {
     // announcements
     case listOrCreateAnnouncement
     case feedAnnouncements(userId: Int)
-    case deleteAnnouncement(id: Int)
-    case myAnnouncements
+    case detailOrDeleteAnnouncement(id: Int)
+    case myAnnouncements(userId: Int)
     
     private var _path: String {
         switch self {
@@ -31,8 +31,8 @@ enum Router: URLConvertible {
         case .tokenRefresh: return "auth/token/refresh/"
         case .listOrCreateAnnouncement: return "announcement/"
         case .feedAnnouncements(let userId): return "user/\(userId)/feed/"
-        case .deleteAnnouncement(let id): return "announcement/\(id)/"
-        case .myAnnouncements: return "announcement/my/"
+        case .detailOrDeleteAnnouncement(let id): return "announcement/\(id)/"
+        case .myAnnouncements(let userId): return "user/\(userId)/announcements/"
         }
     }
     

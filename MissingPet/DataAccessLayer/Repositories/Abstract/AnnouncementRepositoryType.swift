@@ -10,12 +10,13 @@ import Foundation
 
 protocol AnnouncementRepositoryType: class {
     
-    func getFeed<T: Decodable>(pageNumber: Int,
-                 pageSize: Int,
-                 onSuccess: ((AnnouncementListResult<T>) -> Void)?,
+    func getFeed(pageNumber: Int,
+                 onSuccess: ((AnnouncementListResult) -> Void)?,
                  onFailure: ((String) -> Void)?)
     
-    func getMyAnnoncements(completion: @escaping ([AnnouncementItem]) -> Void)
+    func getMyAnnouncements(pageNumber: Int,
+                           onSuccess: ((AnnouncementListResult) -> Void)?,
+                           onFailure: ((String) -> Void)?)
     
     func getAnnouncementsMap(completion: @escaping ([AnnouncmenetsMapItem]) -> Void)
     

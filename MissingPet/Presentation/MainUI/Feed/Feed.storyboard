@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Лента-->
         <scene sceneID="Vep-09-xYW">
@@ -24,7 +29,21 @@
                                 <view key="tableFooterView" contentMode="scaleToFill" id="HsF-iR-0mz">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AnnouncementCountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo1-tC-he2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                            <color key="textColor" name="DarkBlue"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="vo1-tC-he2" secondAttribute="bottom" id="ISW-mr-UoJ"/>
+                                        <constraint firstItem="vo1-tC-he2" firstAttribute="top" secondItem="HsF-iR-0mz" secondAttribute="top" id="TPs-oq-wfs"/>
+                                        <constraint firstItem="vo1-tC-he2" firstAttribute="leading" secondItem="HsF-iR-0mz" secondAttribute="leading" id="byt-yu-Mh6"/>
+                                        <constraint firstAttribute="trailing" secondItem="vo1-tC-he2" secondAttribute="trailing" id="pcI-rp-Rkf"/>
+                                    </constraints>
                                 </view>
                             </tableView>
                         </subviews>
@@ -41,6 +60,7 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="0N4-c0-Cue"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="announcementCountLabel" destination="vo1-tC-he2" id="FWI-yH-F90"/>
                         <outlet property="feedTableView" destination="oI9-h8-HH5" id="I2U-Sq-xCK"/>
                     </connections>
                 </viewController>

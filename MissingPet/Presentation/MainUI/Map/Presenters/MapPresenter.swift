@@ -9,7 +9,7 @@ import Foundation
 
 class MapPresenter: PresenterType {
     
-    private let announcementRepository: AnnouncementRepositoryType
+    private let announcementRepository: AnnouncementRepositoryType!
     
     init(announcementRepository: AnnouncementRepositoryType) {
         self.announcementRepository = announcementRepository

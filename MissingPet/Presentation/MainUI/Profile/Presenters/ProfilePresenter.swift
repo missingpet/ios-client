@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class ProfilePresenter: PresenterType {
     
@@ -14,47 +13,67 @@ class ProfilePresenter: PresenterType {
     var emailSetter: UISetter<String>?
     var profileViewSetter: UISetter<Bool>?
     
-    private let authReporitory: AuthorizationRepositoryType
+    var loadingViewSetter: UISetter<Bool>?
+    var largeActivityIndicatorSetter: UISetter<Bool>?
+    
+    private let authorizationReporitory: AuthorizationRepositoryType!
+    
+    private let notificationCenter = NotificationCenter.default
+    
+    init(authorizationReporitory: AuthorizationRepositoryType) {
+        self.authorizationReporitory = authorizationReporitory
+    }
     
     func setup() {
+        setupUserInfoViews()
+    }
+    
+    private func setupUserInfoViews() {
         profileViewSetter?(AppSettings.isAuthorized)
+        emailSetter?(AppSettings.currentUserEmail ?? "")
+        nicknameSetter?(AppSettings.currentUserNickname ?? "")
     }
     
-    init(authRepository: AuthorizationRepositoryType) {
-        self.authReporitory = authRepository
+    func login(email: String?, password: String?) {
+        if ConnectionService.isUnavailable { return }
+        guard let email = email, let password = password else { return }
+        authorizationReporitory.login(email: email,
+                                      password: password,
+                                      onSuccess: { (_) in
+                                        self.setupUserInfoViews()
+                                        self.postUserLoggedInOrLoggedOutNotification()
+                                      },
+                                      onFailure: nil)
     }
     
-    func signIn(email: String, password: String, controller: UIViewController) {
-        
-        guard let controller = controller as? ProfileViewController else { return }
-        
-        let signInAlert = UIAlertController(title: "Успех", message: "Вы авторизованы в системе", preferredStyle: .alert)
-        signInAlert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-        
-        if email != "" && password != "" {
-            authReporitory.login(email: email, password: password, completion: { [weak controller] (status) in
-                if (status) {
-                    controller?.present(signInAlert, animated: true, completion: nil)
-                    
-                } else {
-                    let message = "Не удалось авторизоваться"
-                    let title = "Ошибка"
-                    signInAlert.title = title
-                    signInAlert.message = message
-                    controller?.present(signInAlert, animated: true, completion: nil)
-                }
-            })
-        } else {
-            let title = "Ошибка"
-            let message = "Вы не ввели логин и/или пароль"
-            signInAlert.title = title
-            signInAlert.message = message
-            controller.present(signInAlert, animated: true, completion: nil)
-        }
+    func postUserLoggedInOrLoggedOutNotification() {
+        notificationCenter.post(name: Notification.Name(Constants.userLoggedInOrLoggedOut),
+                                     object: nil)
+    }
+    
+    func postRefreshedAccessTokenNotification() {
+        notificationCenter.post(name: Notification.Name(Constants.refreshedAccessToken),
+                                object: nil)
+    }
+    
+    func logout() {
+        if ConnectionService.isUnavailable { return }
+        authorizationReporitory.logout()
+        postUserLoggedInOrLoggedOutNotification()
+        setupUserInfoViews()
+    }
+    
+    func refreshAccessToken() {
+        if ConnectionService.isUnavailable { return }
+        authorizationReporitory.refreshAccessToken(onSuccess: { (_) in
+            self.postRefreshedAccessTokenNotification()
+        },
+        onFailure: nil)
     }
     
     func pushSignUpViewController() {
-        Navigator(Storyboard.signUp).push(SignUpViewController.self, presenter: SignUpPresenter(authRepository: AuthorizationRepository()))
+        Navigator(Storyboard.signUp).push(SignUpViewController.self,
+                                          presenter: SignUpPresenter(authRepository: AuthorizationRepository()))
     }
     
 }

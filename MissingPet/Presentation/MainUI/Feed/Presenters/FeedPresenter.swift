@@ -6,51 +6,67 @@
 //
 
 import Foundation
-import UIKit
-import Alamofire
 
 class FeedPresenter: PresenterType {
     
+    var reloadItemsWithCount: UISetter<Int>?
+    
+    private var pageNumber = 1
+    
+    private var items = [AnnouncementItem]()
+    
+    var itemsWeb: Int = 0
+    
+    var itemsTotal: Int {
+        return items.count
+    }
+    
+    func item(at index: Int) -> AnnouncementItem {
+        return items[index]
+    }
+    
     private let announcementRepository: AnnouncementRepositoryType!
     
-    var items = [AnnouncementItem]()
+    private let notificationCenter = NotificationCenter.default
     
     init(announcementRepository: AnnouncementRepositoryType) {
         self.announcementRepository = announcementRepository
+        notificationCenter.addObserver(self,
+                                       selector: #selector(reloadFeed),
+                                       name: Notification.Name(Constants.userLoggedInOrLoggedOut),
+                                       object: nil)
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+    
+    @objc func reloadFeed() {
+        self.items = []
+        self.pageNumber = 1
+        self.itemsWeb = 0
+        self.getFeed()
     }
     
     func getFeed() {
+        guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
+        announcementRepository.getFeed(pageNumber: pageNumber,
+                                       onSuccess: { result in
+                                        self.items += result.results
+                                        self.itemsWeb = result.count
+                                        if result.next != nil {
+                                            self.pageNumber += 1
+                                        }
+                                        self.reloadItemsWithCount?(max(self.itemsWeb, self.itemsTotal))
+                                       },
+                                       onFailure: { errorDescription in
+                                        debugPrint(errorDescription)
+                                       })
     }
     
-//    func loadFeed(controller: UIViewController) {
-//
-//        guard let controller = controller as? FeedViewController else { return }
-//
-//        announcementRepository.getAllAnnouncements(
-//            pageNumber: pageSize: Int,
-//            onStart: { [weak controller] in
-//                controller?.feedView.isHidden = false
-//                controller?.feedActivityView.isHidden = false
-//                controller?.feedActivityIndicator.startAnimating()
-//
-//            },
-//            onProcess: { [weak self, weak controller] (announcements) in
-//                self?.feed += announcements
-//                self?.page += 1
-//                controller?.feedTableView.reloadData()
-//
-//            },
-//            onComplete: { [weak controller] in
-//                controller?.feedActivityIndicator.stopAnimating()
-//                controller?.feedActivityView.isHidden = true
-//                controller?.feedView.isHidden = true
-//            }
-//        )
-//
-//    }
-    
-    func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
-        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement))
+    func pushInspectAnnouncementViewController(with item: AnnouncementItem) {
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self,
+                                                       presenter: InspectAnnouncementPresenter(announcement: item))
     }
     
 }

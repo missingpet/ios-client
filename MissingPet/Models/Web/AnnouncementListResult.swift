@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct AnnouncementListResult<T: Decodable>: Decodable {
+struct AnnouncementListResult: Decodable {
     let count: Int
     let next: String?
     let previous: String?
-    let results: [T]
+    let results: [AnnouncementItem]
 }

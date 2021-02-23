@@ -11,14 +11,18 @@ protocol AuthorizationRepositoryType: class {
     
     func login(email: String,
                password: String,
-               completion: @escaping (Bool) -> Void)
+               onSuccess: ((LoginResult) -> Void)?,
+               onFailure: ((String) -> Void)?)
     
     func register(nickname: String,
                   email: String,
                   password: String,
-                  completion: @escaping (Bool) -> Void)
+                  onSuccess: ((RegisterResult) -> Void)?,
+                  onFailure: ((String) -> Void)?)
     
-    func refreshAccessToken(completion: @escaping (Bool) -> Void)
+    func refreshAccessToken(onSuccess: ((TokenRefreshResult) -> Void)?,
+                            onFailure: ((String) -> Void)?)
     
-    func logout(completion: @escaping () -> Void)
+    func logout()
+    
 }

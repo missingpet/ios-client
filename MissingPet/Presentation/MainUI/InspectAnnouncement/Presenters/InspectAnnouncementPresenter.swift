@@ -59,15 +59,17 @@ class InspectAnnouncementPresenter: PresenterType {
     func presentDeleteAnnouncementAlert(viewController: UIViewController) {
         let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение", message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { (_) in self.deleteAnnouncement(id: self.announcement.id) }))
+        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { (_) in
+                                                            self.deleteAnnouncement(id: self.announcement.id) }))
         viewController.present(deleteAnnouncementAlert, animated: true, completion: nil)
     }
     
-    private func deleteAnnouncement(id: Int) {
+    func deleteAnnouncement(id: Int) {
         Navigator().pop()
     }
     
-    func presentImagePreviewViewController(image: UIImage) {
+    func presentImagePreviewViewController(image: UIImage?) {
+        guard let image = image else { return }
         Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self, presenter: ImagePreviewPresenter(image: image))
     }
     

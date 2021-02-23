@@ -11,8 +11,9 @@ import MapKit
 class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var placeSearchResultsTableView: UITableView!
-    
     @IBOutlet weak var textFieldWithImageView: TextFieldWithImageView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

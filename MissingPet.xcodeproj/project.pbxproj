@@ -11,6 +11,10 @@
 		9D33D8B525D6EFD9008F40A8 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */; };
 		9D33D8B925D6EFE8008F40A8 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */; };
 		9D33D8D925D70193008F40A8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8D825D70193008F40A8 /* Profile.storyboard */; };
+		9DC2D0F925E434EF0041BE1B /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0F825E434EF0041BE1B /* LoginResult.swift */; };
+		9DC2D0FC25E4417D0041BE1B /* TokenRefreshResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */; };
+		9DC2D10025E4444C0041BE1B /* RegisterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */; };
+		9DC2D10D25E461360041BE1B /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D10C25E461360041BE1B /* ConnectionService.swift */; };
 		9DD7F19925D96EB50024169F /* AnnouncementListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */; };
 		C801550A2599EFD800601D76 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80155092599EFD800601D76 /* PhotoView.swift */; };
 		C801550D2599EFE800601D76 /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C801550C2599EFE800601D76 /* PhotoView.xib */; };
@@ -123,6 +127,10 @@
 		9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoView.xib; sourceTree = "<group>"; };
 		9D33D8D825D70193008F40A8 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../../../../../Desktop/Profile.storyboard; sourceTree = "<group>"; };
+		9DC2D0F825E434EF0041BE1B /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshResult.swift; sourceTree = "<group>"; };
+		9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResult.swift; sourceTree = "<group>"; };
+		9DC2D10C25E461360041BE1B /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementListResult.swift; sourceTree = "<group>"; };
 		C80155092599EFD800601D76 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		C801550C2599EFE800601D76 /* PhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoView.xib; sourceTree = "<group>"; };
@@ -260,19 +268,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9D427D9125D5BE45008F718A /* DAL */ = {
+		9D427D9125D5BE45008F718A /* DataAccessLayer */ = {
 			isa = PBXGroup;
 			children = (
 				C874218725759AB100118E9A /* Support */,
 				C809D7B3254F456500254EFE /* Repositories */,
 				C8F76C56253CA0C400ED71C4 /* Web */,
 			);
-			path = DAL;
+			path = DataAccessLayer;
 			sourceTree = "<group>";
 		};
-		9D4EC3C025D724C6007C25F1 /* Services */ = {
+		9DC2D10B25E461170041BE1B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9DC2D10C25E461360041BE1B /* ConnectionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -281,6 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */,
+				9DC2D0F825E434EF0041BE1B /* LoginResult.swift */,
+				9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */,
+				9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -697,8 +709,8 @@
 		C8CA02B82520BDAC00C22815 /* MissingPet */ = {
 			isa = PBXGroup;
 			children = (
-				9D4EC3C025D724C6007C25F1 /* Services */,
-				9D427D9125D5BE45008F718A /* DAL */,
+				9DC2D10B25E461170041BE1B /* Services */,
+				9D427D9125D5BE45008F718A /* DataAccessLayer */,
 				C86096A62572FDDB00E90F61 /* Extensions */,
 				C850261E255338B70068D687 /* Models */,
 				C89F9A00254478A60022C7C4 /* Resources */,
@@ -987,8 +999,11 @@
 				C8BAF7F7254A24E1002C3855 /* AnnouncementImageView.swift in Sources */,
 				C8BAF7F0254A1CB1002C3855 /* MyAnnouncementsPresenter.swift in Sources */,
 				C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */,
+				9DC2D10D25E461360041BE1B /* ConnectionService.swift in Sources */,
 				C801551B259A1FEC00601D76 /* CommentTextViewWithLabel.swift in Sources */,
+				9DC2D0FC25E4417D0041BE1B /* TokenRefreshResult.swift in Sources */,
 				C86096A12572EA7400E90F61 /* SignUpPresenter.swift in Sources */,
+				9DC2D10025E4444C0041BE1B /* RegisterResult.swift in Sources */,
 				C85DEC99258834CE005E8A21 /* AuthorizationRepository.swift in Sources */,
 				C8A5811A257447DA00671029 /* AnnouncementRepository.swift in Sources */,
 				C8F441E92520DF5600A6570D /* FeedNavigationController.swift in Sources */,
@@ -1000,6 +1015,7 @@
 				C8F441C62520D3D900A6570D /* StoryboardInstanceType.swift in Sources */,
 				C88F368C259656360034F8C7 /* AnnouncementType.swift in Sources */,
 				C860969E2572EA6500E90F61 /* SignUpViewController.swift in Sources */,
+				9DC2D0F925E434EF0041BE1B /* LoginResult.swift in Sources */,
 				C816F94425748AF900C0E71E /* ImagePreviewPresenter.swift in Sources */,
 				C8BAF811254A298E002C3855 /* CreateAnnouncementViewController.swift in Sources */,
 				C8F441D72520DD8E00A6570D /* Storyboard.swift in Sources */,

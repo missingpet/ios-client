@@ -17,10 +17,34 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: TextFieldWithImageView!
     @IBOutlet weak var passwordTextField: TextFieldWithImageView!
     
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var largeActivityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
+        presenter?.profileViewSetter = { [weak self] isAuthorized in
+            self?.profileView.isHidden = !isAuthorized
+        }
+        presenter?.emailSetter = { [weak self] email in
+            self?.emailView.text = email
+        }
+        presenter?.nicknameSetter = { [weak self] nickname in
+            self?.nicknameView.text = nickname
+        }
+        presenter?.loadingViewSetter = { [weak self] isHidden in
+            self?.loadingView.isHidden = isHidden
+        }
+        presenter?.largeActivityIndicatorSetter = { [weak self] isAnimating in
+            if isAnimating {
+                self?.largeActivityIndicator.startAnimating()
+            } else {
+                self?.largeActivityIndicator.stopAnimating()
+            }
+        }
+        
         super.viewDidLoad()
         
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                         action: #selector(dismissKeyboard)))
         
         emailTextField.delegate = self
         emailTextField.keyboardType = .emailAddress
@@ -31,14 +55,18 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
         passwordTextField.keyboardType = .asciiCapable
         passwordTextField.textContentType = .password
         passwordTextField.isSecureTextEntry = true
-        
     }
     
-    @IBAction func signIn(_ sender: UIButton) {
+    @IBAction func login(_ sender: UIButton) {
         dismissKeyboard()
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        presenter?.signIn(email: email, password: password, controller: self)
+        presenter?.login(email: email, password: password)
+    }
+    
+    @IBAction func logout(_ sender: UIButton) {
+        dismissKeyboard()
+        presenter?.logout()
     }
     
     @IBAction func pushSignUpViewController(_ sender: UIButton) {
