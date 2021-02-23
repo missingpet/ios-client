@@ -10,7 +10,7 @@ import Foundation
 import Kingfisher
 
 class InspectAnnouncementPresenter: PresenterType {
-    
+
     var photoUrlSetter: UISetter<URL?>?
     var creationDateSetter: UISetter<String>?
     var animalTypeSetter: UISetter<String>?
@@ -20,13 +20,13 @@ class InspectAnnouncementPresenter: PresenterType {
     var usernameSetter: UISetter<String>?
     var callPhoneNumberSetter: UISetter<String>?
     var deleteAnnouncementButtonSetter: UISetter<Bool>?
-    
+
     let announcement: AnnouncementItem
-    
+
     init (announcement: AnnouncementItem) {
         self.announcement = announcement
     }
-    
+
     func setup() {
         photoUrlSetter?(URL(string: announcement.photo))
         creationDateSetter?(announcement.createdAt)
@@ -50,12 +50,12 @@ class InspectAnnouncementPresenter: PresenterType {
         callPhoneNumberSetter?(announcement.contactPhoneNumber)
         deleteAnnouncementButtonSetter?(announcement.user.id != AppSettings.currentUserId)
     }
-    
+
     func callPhoneNumber() {
         guard let telUrl = URL(string: "tel://\(announcement.contactPhoneNumber)") else { return }
         UIApplication.shared.open(telUrl, options: [:], completionHandler: nil)
     }
-    
+
     func presentDeleteAnnouncementAlert(viewController: UIViewController) {
         let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение", message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
@@ -63,14 +63,14 @@ class InspectAnnouncementPresenter: PresenterType {
                                                             self.deleteAnnouncement(id: self.announcement.id) }))
         viewController.present(deleteAnnouncementAlert, animated: true, completion: nil)
     }
-    
+
     func deleteAnnouncement(id: Int) {
         Navigator().pop()
     }
-    
+
     func presentImagePreviewViewController(image: UIImage?) {
         guard let image = image else { return }
         Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self, presenter: ImagePreviewPresenter(image: image))
     }
-    
+
 }

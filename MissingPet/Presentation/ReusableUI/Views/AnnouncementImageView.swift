@@ -14,17 +14,17 @@ class AnnouncementImageView: UIImageView {
         super.init(frame: frame)
         setupCorners()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupCorners()
     }
-    
+
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setupCorners()
     }
-    
+
     private func setupCorners() {
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         layer.cornerRadius = 7

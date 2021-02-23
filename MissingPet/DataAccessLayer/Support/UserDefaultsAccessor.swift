@@ -8,13 +8,13 @@
 import Foundation
 
 class UserDefaultsAccessor<T: Decodable> {
-    
+
     private let key: String
-    
+
     init(key: String) {
         self.key = key
     }
-    
+
     var value: T? {
         get { UserDefaults.standard.value(forKey: key) as? T }
         set {
@@ -28,5 +28,5 @@ class UserDefaultsAccessor<T: Decodable> {
             #endif
         }
     }
-    
+
 }

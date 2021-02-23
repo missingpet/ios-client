@@ -9,21 +9,21 @@ import Foundation
 import Alamofire
 
 enum Router: URLConvertible {
-    
+
     static let domain = "https://missingpet.social/"
     static let apiPath = domain + "api/"
-    
+
     // authorization
     case register
     case login
     case tokenRefresh
-    
+
     // announcements
     case listOrCreateAnnouncement
     case feedAnnouncements(userId: Int)
     case detailOrDeleteAnnouncement(id: Int)
     case myAnnouncements(userId: Int)
-    
+
     private var _path: String {
         switch self {
         case .register: return "auth/register/"
@@ -35,14 +35,14 @@ enum Router: URLConvertible {
         case .myAnnouncements(let userId): return "user/\(userId)/announcements/"
         }
     }
-    
+
     var path: String {
         return Router.apiPath + _path
     }
-    
+
     func asURL() throws -> URL {
         let url = URL(string: path)!
         return url
     }
-    
+
 }

@@ -9,12 +9,12 @@ import Foundation
 import MapKit
 
 class AnnouncementPointAnnotation: MKPointAnnotation {
-    
+
     let id: Int
-    
+
     init(id: Int) {
         self.id = id
         super.init()
     }
-    
+
 }

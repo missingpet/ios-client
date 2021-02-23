@@ -11,7 +11,7 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         viewControllers = [
             createController(FeedViewController.self,
                              presenter: FeedPresenter(announcementRepository: AnnouncementRepository()),
@@ -41,7 +41,7 @@ class MainTabBarController: UITabBarController {
         ]
 
     }
-    
+
     private func createController<P: PresenterType, C: Controller<P>, NC: UINavigationController>(_ controller: C.Type,
                                                                                                   presenter: P,
                                                                                                   navigationController: NC.Type,
@@ -55,5 +55,5 @@ class MainTabBarController: UITabBarController {
         navigationController.viewControllers = [controller]
         return navigationController
     }
-    
+
 }

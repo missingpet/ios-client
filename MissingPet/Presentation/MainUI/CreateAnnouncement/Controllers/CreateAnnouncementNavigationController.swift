@@ -8,9 +8,9 @@
 import UIKit
 
 class CreateAnnouncementNavigationController: NavigationController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
 }

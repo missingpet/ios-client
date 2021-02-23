@@ -8,13 +8,13 @@
 import UIKit
 
 class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
-    
+
     @IBOutlet weak var feedTableView: UITableView!
     @IBOutlet weak var announcementCountLabel: UILabel!
-    
+
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         presenter?.loadingSetter = { [weak self] isLoading in
             if isLoading {
@@ -34,18 +34,18 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
             self?.announcementCountLabel.text = "Всего объявлений: \(count)"
             self?.announcementCountLabel.isHidden = count == 0
         }
-        
+
         super.viewDidLoad()
-        
+
         feedTableView.delegate = self
         feedTableView.dataSource = self
-        
+
         feedTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName, bundle: nil),
                                forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
-        
+
         presenter?.loadItems()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let announcement = presenter?.item(at: indexPath.item) {
             presenter?.pushInspectAnnouncementViewController(with: announcement)
@@ -59,12 +59,12 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
         feedCell.set(item: presenter.item(at: indexPath.item))
         return feedCell
     }
-    
+
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == feedTableView else { return }
         if ((feedTableView.contentOffset.y + feedTableView.frame.size.height) >= feedTableView.contentSize.height) {
             presenter?.loadItems()
         }
     }
-    
+
 }

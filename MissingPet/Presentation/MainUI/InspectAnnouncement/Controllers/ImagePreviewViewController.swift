@@ -9,9 +9,9 @@ import UIKit
 import Foundation
 
 class ImagePreviewViewController: Controller<ImagePreviewPresenter> {
-    
+
     var imageScrollView: ImageScrollView!
-    
+
     override func viewDidLoad() {
         imageScrollView = ImageScrollView(frame: view.bounds)
         view.insertSubview(imageScrollView, at: 0)
@@ -25,9 +25,9 @@ class ImagePreviewViewController: Controller<ImagePreviewPresenter> {
         }
         super.viewDidLoad()
     }
-    
+
     @IBAction func dismissViewController() {
         presenter?.dismissViewController()
     }
-    
+
 }

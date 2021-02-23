@@ -8,9 +8,9 @@
 import Foundation
 
 struct AnnouncmenetsMapItem: Decodable {
-    
+
     let id: Int
     let latitude: Double
     let longitude: Double
-    
+
 }

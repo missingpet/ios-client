@@ -10,7 +10,7 @@ import UIKit
 class ProfileNavigationController: NavigationController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()  
+        super.viewDidLoad()
     }
 
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 struct Constants {
-    
+
     // MARK:- UserDefaults Keys
-    
+
     static let refreshTokenKey = "refresh"
     static let accessTokenKey = "access"
     static let nicknameKey = "nickname"
@@ -18,9 +18,9 @@ struct Constants {
     static let userIdKey = "user_id"
 
     // MARK:- NotificationCenter Names
-    
+
     static let userLoggedIn = "UserLoggedIn"
     static let userLoggedOut = "UserLoggedOut"
     static let refreshedAccessToken = "RefreshedAccessToken"
-    
+
 }

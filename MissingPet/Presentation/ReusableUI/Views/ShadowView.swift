@@ -15,49 +15,49 @@ class ShadowView: UIView {
             setNeedsDisplay()
         }
     }
-    
+
     @IBInspectable var shadowColor: UIColor = .black {
         didSet {
             setupShadows()
             setNeedsDisplay()
         }
     }
-    
+
     @IBInspectable var shadowOffset: CGSize = .zero {
         didSet {
             setupShadows()
         }
     }
-    
+
     @IBInspectable var shadowRadius: CGFloat = 0.0 {
         didSet {
             setupShadows()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
         setupShadows()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         backgroundColor = .clear
         setupShadows()
     }
-    
+
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         backgroundColor = .clear
         setupShadows()
     }
-    
+
     override func draw(_ rect: CGRect) {
         shadowColor.setFill()
         UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).fill()
     }
-    
+
     private func setupShadows() {
         if shadowRadius > 0.0 {
             layer.shadowOpacity = 1.0
@@ -68,5 +68,5 @@ class ShadowView: UIView {
             layer.shadowOpacity = 0.0
         }
     }
-    
+
 }

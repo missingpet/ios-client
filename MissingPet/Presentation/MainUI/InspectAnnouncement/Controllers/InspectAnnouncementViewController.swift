@@ -19,7 +19,7 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var callPhoneNumberButton: UIButton!
     @IBOutlet weak var deleteAnnouncementButton: UIButton!
-    
+
     override func viewDidLoad() {
         presenter?.photoUrlSetter = { [weak self] photoUrl in
             self?.announcementImageView.kf.setImage(with: photoUrl)
@@ -49,7 +49,7 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
             self?.deleteAnnouncementButton.isHidden = isHidden
         }
         super.viewDidLoad()
-        
+
         announcementImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentImagePreviewViewController)))
         announcementImageView.isUserInteractionEnabled = true
     }
@@ -57,13 +57,13 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     @IBAction func callPhoneNumber(_ sender: UIButton) {
         presenter?.callPhoneNumber()
     }
-    
+
     @IBAction func deleteAnnouncement(_ sender: UIButton) {
         presenter?.presentDeleteAnnouncementAlert(viewController: self)
     }
-    
+
     @objc private func presentImagePreviewViewController() {
         presenter?.presentImagePreviewViewController(image: announcementImageView.image)
     }
-    
+
 }

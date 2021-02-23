@@ -10,61 +10,61 @@ import Foundation
 import Alamofire
 
 class AnnouncementRepository: AnnouncementRepositoryType {
-    
+
     private let userIdStorage = UserDefaultsAccessor<Int>.init(key: Constants.userIdKey)
-    
+
     func getAllAnnouncements(pageNumber: Int,
                  onSuccess: ((AnnouncementListResult) -> Void)?,
                  onFailure: ((String) -> Void)?) {
-        
+
         let parameters: [String: Int] = [
             "page": pageNumber,
         ]
-        
+
         createAnnouncementListRequest(Router.listOrCreateAnnouncement,
                                       parameters: parameters,
                                       onSuccess: onSuccess,
                                       onFailure: onFailure)
     }
-    
+
     func getFeed(pageNumber: Int,
                  onSuccess: ((AnnouncementListResult) -> Void)?,
                  onFailure: ((String) -> Void)?) {
-        
+
         guard let userId = userIdStorage.value else { return }
-        
+
         let parameters: [String: Int] = [
             "page": pageNumber,
         ]
-        
+
         createAnnouncementListRequest(Router.feedAnnouncements(userId: userId),
                                       parameters: parameters,
                                       onSuccess: onSuccess,
                                       onFailure: onFailure)
     }
-    
+
     func getMyAnnouncements(pageNumber: Int,
                            onSuccess: ((AnnouncementListResult) -> Void)?,
                            onFailure: ((String) -> Void)?) {
-        
+
         guard let userId = userIdStorage.value else { return }
-        
+
         let parameters: [String: Int] = [
             "page": pageNumber,
         ]
-        
+
         createAnnouncementListRequest(Router.myAnnouncements(userId: userId),
                                       parameters: parameters,
                                       onSuccess: onSuccess,
                                       onFailure: onFailure)
     }
-    
-    
+
+
 
     func getAnnouncementsMap(completion: @escaping ([AnnouncmenetsMapItem]) -> Void) {
 
     }
-    
+
     func createAnnouncement(description: String,
                             photo: UIImage,
                             announcementType: AnnouncementType,
@@ -81,11 +81,11 @@ class AnnouncementRepository: AnnouncementRepositoryType {
     func deleteAnnouncement(id: Int, completion: @escaping () -> Void) {
 
     }
-    
+
 }
 
 fileprivate extension AnnouncementRepository {
-    
+
     func createAnnouncementListRequest(_ route: URLConvertible,
                                             parameters: Parameters?,
                                             onSuccess: ((AnnouncementListResult) -> Void)?,

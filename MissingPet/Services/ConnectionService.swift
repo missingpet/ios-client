@@ -9,9 +9,9 @@ import Foundation
 import Reachability
 
 class ConnectionService {
-    
+
     static var isUnavailable: Bool {
         return try! Reachability().connection == .unavailable
     }
-    
+
 }

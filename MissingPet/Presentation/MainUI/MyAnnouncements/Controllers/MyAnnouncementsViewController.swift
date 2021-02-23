@@ -8,13 +8,13 @@
 import UIKit
 
 class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
-    
+
     @IBOutlet weak var myAnnouncementsTableView: UITableView!
     @IBOutlet weak var announcementCountLabel: UILabel!
-    
+
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         presenter?.loadingSetter = { [weak self] isLoading in
             if isLoading {
@@ -35,19 +35,19 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
             self?.announcementCountLabel.text = "Всего объявлений: \(count)"
             self?.announcementCountLabel.isHidden = count == 0
         }
-        
+
         super.viewDidLoad()
-        
+
         myAnnouncementsTableView.delegate = self
         myAnnouncementsTableView.dataSource = self
-        
+
         myAnnouncementsTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName,
                                                 bundle: nil),
                                           forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
-        
+
         presenter?.getMyAnnouncements()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let annoucement = presenter?.item(at: indexPath.item) else { return }
         presenter?.pushInspectAnnouncementViewController(with: annoucement)
@@ -63,7 +63,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
         myAnnouncementCell.set(item: presenter.item(at: indexPath.item))
         return myAnnouncementCell
     }
-    
+
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == myAnnouncementsTableView else { return }
         if ((myAnnouncementsTableView.contentOffset.y + myAnnouncementsTableView.frame.size.height) >= myAnnouncementsTableView.contentSize.height) {
