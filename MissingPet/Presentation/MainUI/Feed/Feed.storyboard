@@ -46,13 +46,31 @@
                                     </constraints>
                                 </view>
                             </tableView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJQ-Na-VGH" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9nd-zH-zaY">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" name="DarkBlue"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="9nd-zH-zaY" firstAttribute="centerY" secondItem="JJQ-Na-VGH" secondAttribute="centerY" id="S9i-CA-M7y"/>
+                                    <constraint firstItem="9nd-zH-zaY" firstAttribute="centerX" secondItem="JJQ-Na-VGH" secondAttribute="centerX" id="y3D-8N-0SK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aOE-e6-GKp"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="leading" secondItem="aOE-e6-GKp" secondAttribute="leading" id="0kq-Ot-Yhh"/>
+                            <constraint firstItem="JJQ-Na-VGH" firstAttribute="leading" secondItem="aOE-e6-GKp" secondAttribute="leading" id="0u2-ai-yBW"/>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="trailing" secondItem="aOE-e6-GKp" secondAttribute="trailing" id="RJG-6D-Ekq"/>
+                            <constraint firstItem="aOE-e6-GKp" firstAttribute="bottom" secondItem="JJQ-Na-VGH" secondAttribute="bottom" id="V3b-LB-0lJ"/>
+                            <constraint firstItem="aOE-e6-GKp" firstAttribute="trailing" secondItem="JJQ-Na-VGH" secondAttribute="trailing" id="q5o-kd-ZDw"/>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="bottom" secondItem="aOE-e6-GKp" secondAttribute="bottom" id="qM7-br-cfj"/>
+                            <constraint firstItem="JJQ-Na-VGH" firstAttribute="top" secondItem="aOE-e6-GKp" secondAttribute="top" id="qqc-3y-pHl"/>
                             <constraint firstItem="oI9-h8-HH5" firstAttribute="top" secondItem="aOE-e6-GKp" secondAttribute="top" id="tQF-jl-hH0"/>
                         </constraints>
                     </view>
@@ -62,6 +80,8 @@
                     <connections>
                         <outlet property="announcementCountLabel" destination="vo1-tC-he2" id="FWI-yH-F90"/>
                         <outlet property="feedTableView" destination="oI9-h8-HH5" id="I2U-Sq-xCK"/>
+                        <outlet property="largeActivityIndicatorView" destination="9nd-zH-zaY" id="FWb-CS-Wdp"/>
+                        <outlet property="loadingView" destination="JJQ-Na-VGH" id="V0C-8X-ZiZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbA-18-GlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

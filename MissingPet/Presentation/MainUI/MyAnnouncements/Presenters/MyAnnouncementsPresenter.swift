@@ -10,6 +10,7 @@ import Foundation
 class MyAnnouncementsPresenter: PresenterType {
     
     var reloadItemsWithCount: UISetter<Int>?
+    var loadingSetter: UISetter<Bool>?
     
     private var pageNumber = 1
     
@@ -33,7 +34,11 @@ class MyAnnouncementsPresenter: PresenterType {
         self.announcementRepository = announcementRepository
         notificationCenter.addObserver(self,
                                        selector: #selector(reloadMyAnnouncements),
-                                       name: Notification.Name(Constants.userLoggedInOrLoggedOut),
+                                       name: Notification.Name(Constants.userLoggedIn),
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(reloadMyAnnouncements),
+                                       name: Notification.Name(Constants.userLoggedOut),
                                        object: nil)
     }
     
@@ -41,26 +46,53 @@ class MyAnnouncementsPresenter: PresenterType {
         notificationCenter.removeObserver(self)
     }
     
-    @objc func reloadMyAnnouncements() {
+    private func resetItemsState() {
         self.items = []
         self.pageNumber = 1
         self.itemsWeb = 0
-        self.getMyAnnouncements()
+    }
+    
+    private func startAnimating() {
+        loadingSetter?(true)
+    }
+    
+    private func stopAnimatng() {
+        loadingSetter?(false)
+    }
+    
+    @objc func reloadMyAnnouncements() {
+        resetItemsState()
+        if AppSettings.isAuthorized {
+            self.getMyAnnouncements()
+        } else {
+            self.reloadItemsUI()
+        }
+    }
+    
+    private func updateItems(result: AnnouncementListResult) {
+        self.items += result.results
+        self.itemsWeb = result.count
+        if result.next != nil {
+            self.pageNumber += 1
+        }
+    }
+    
+    private func reloadItemsUI() {
+        self.reloadItemsWithCount?(max(self.itemsWeb, self.itemsTotal))
     }
     
     func getMyAnnouncements() {
-        guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
+        guard AppSettings.isAuthorized, itemsTotal == 0 || itemsTotal < itemsWeb else { return }
+        self.startAnimating()
         announcementRepository.getMyAnnouncements(pageNumber: pageNumber,
                                        onSuccess: { result in
-                                        self.items += result.results
-                                        self.itemsWeb = result.count
-                                        if result.next != nil {
-                                            self.pageNumber += 1
-                                        }
-                                        self.reloadItemsWithCount?(max(self.itemsWeb, self.itemsTotal))
+                                        self.updateItems(result: result)
+                                        self.reloadItemsUI()
+                                        self.stopAnimatng()
                                        },
                                        onFailure: { errorDescription in
                                         debugPrint(errorDescription)
+                                        self.stopAnimatng()
                                        })
     }
     

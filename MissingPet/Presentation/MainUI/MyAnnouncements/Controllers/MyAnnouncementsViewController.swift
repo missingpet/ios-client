@@ -12,7 +12,24 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
     @IBOutlet weak var myAnnouncementsTableView: UITableView!
     @IBOutlet weak var announcementCountLabel: UILabel!
     
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
+        presenter?.loadingSetter = { [weak self] isLoading in
+            if isLoading {
+                self?.loadingView.isHidden = false
+                self?.largeActivityIndicatorView.startAnimating()
+                self?.view.isUserInteractionEnabled = false
+                self?.tabBarController?.view.isUserInteractionEnabled = false
+            } else {
+                self?.loadingView.isHidden = true
+                self?.largeActivityIndicatorView.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
+                self?.tabBarController?.view.isUserInteractionEnabled = true
+            }
+        }
+
         presenter?.reloadItemsWithCount = { [weak self] count in
             self?.myAnnouncementsTableView.reloadData()
             self?.announcementCountLabel.text = "Всего объявлений: \(count)"

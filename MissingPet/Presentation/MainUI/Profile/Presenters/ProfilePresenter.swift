@@ -12,9 +12,7 @@ class ProfilePresenter: PresenterType {
     var nicknameSetter: UISetter<String>?
     var emailSetter: UISetter<String>?
     var profileViewSetter: UISetter<Bool>?
-    
-    var loadingViewSetter: UISetter<Bool>?
-    var largeActivityIndicatorSetter: UISetter<Bool>?
+    var loadingSetter: UISetter<Bool>?
     
     private let authorizationReporitory: AuthorizationRepositoryType!
     
@@ -34,20 +32,39 @@ class ProfilePresenter: PresenterType {
         nicknameSetter?(AppSettings.currentUserNickname ?? "")
     }
     
+    private func startAnimating() {
+        loadingSetter?(true)
+    }
+    
+    private func stopAnimatng() {
+        loadingSetter?(false)
+    }
+    
     func login(email: String?, password: String?) {
         if ConnectionService.isUnavailable { return }
         guard let email = email, let password = password else { return }
+        
+        startAnimating()
+        
         authorizationReporitory.login(email: email,
                                       password: password,
                                       onSuccess: { (_) in
                                         self.setupUserInfoViews()
-                                        self.postUserLoggedInOrLoggedOutNotification()
+                                        self.postUserLoggedInNotification()
+                                        self.stopAnimatng()
                                       },
-                                      onFailure: nil)
+                                      onFailure: { (_) in
+                                        self.stopAnimatng()
+                                      })
     }
     
-    func postUserLoggedInOrLoggedOutNotification() {
-        notificationCenter.post(name: Notification.Name(Constants.userLoggedInOrLoggedOut),
+    private func postUserLoggedInNotification() {
+        notificationCenter.post(name: Notification.Name(Constants.userLoggedIn),
+                                     object: nil)
+    }
+    
+    private func postUserLoggedOutNotification() {
+        notificationCenter.post(name: Notification.Name(Constants.userLoggedOut),
                                      object: nil)
     }
     
@@ -58,9 +75,11 @@ class ProfilePresenter: PresenterType {
     
     func logout() {
         if ConnectionService.isUnavailable { return }
+        startAnimating()
         authorizationReporitory.logout()
-        postUserLoggedInOrLoggedOutNotification()
+        postUserLoggedOutNotification()
         setupUserInfoViews()
+        stopAnimatng()
     }
     
     func refreshAccessToken() {

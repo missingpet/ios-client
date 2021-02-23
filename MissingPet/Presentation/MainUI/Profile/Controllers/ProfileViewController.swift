@@ -30,14 +30,17 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
         presenter?.nicknameSetter = { [weak self] nickname in
             self?.nicknameView.text = nickname
         }
-        presenter?.loadingViewSetter = { [weak self] isHidden in
-            self?.loadingView.isHidden = isHidden
-        }
-        presenter?.largeActivityIndicatorSetter = { [weak self] isAnimating in
-            if isAnimating {
+        presenter?.loadingSetter = { [weak self] isLoading in
+            if isLoading {
+                self?.loadingView.isHidden = false
                 self?.largeActivityIndicator.startAnimating()
+                self?.view.isUserInteractionEnabled = false
+                self?.tabBarController?.view.isUserInteractionEnabled = false
             } else {
+                self?.loadingView.isHidden = true
                 self?.largeActivityIndicator.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
+                self?.tabBarController?.view.isUserInteractionEnabled = true
             }
         }
         

@@ -13,7 +13,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
     
     private let userIdStorage = UserDefaultsAccessor<Int>.init(key: Constants.userIdKey)
     
-    func getFeed(pageNumber: Int,
+    func getAllAnnouncements(pageNumber: Int,
                  onSuccess: ((AnnouncementListResult) -> Void)?,
                  onFailure: ((String) -> Void)?) {
         
@@ -21,9 +21,23 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             "page": pageNumber,
         ]
         
-        let userId = userIdStorage.value
-        let route = userId == nil ? Router.listOrCreateAnnouncement : Router.feedAnnouncements(userId: userId!)
-        createAnnouncementListRequest(route,
+        createAnnouncementListRequest(Router.listOrCreateAnnouncement,
+                                      parameters: parameters,
+                                      onSuccess: onSuccess,
+                                      onFailure: onFailure)
+    }
+    
+    func getFeed(pageNumber: Int,
+                 onSuccess: ((AnnouncementListResult) -> Void)?,
+                 onFailure: ((String) -> Void)?) {
+        
+        guard let userId = userIdStorage.value else { return }
+        
+        let parameters: [String: Int] = [
+            "page": pageNumber,
+        ]
+        
+        createAnnouncementListRequest(Router.feedAnnouncements(userId: userId),
                                       parameters: parameters,
                                       onSuccess: onSuccess,
                                       onFailure: onFailure)

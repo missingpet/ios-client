@@ -46,14 +46,32 @@
                                     </constraints>
                                 </view>
                             </tableView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvt-MG-yjx" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gi6-4m-UQn">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" name="DarkBlue"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="gi6-4m-UQn" firstAttribute="centerX" secondItem="pvt-MG-yjx" secondAttribute="centerX" id="AZp-ve-qG5"/>
+                                    <constraint firstItem="gi6-4m-UQn" firstAttribute="centerY" secondItem="pvt-MG-yjx" secondAttribute="centerY" id="Lpg-9P-1tR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a9v-W8-977"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pvt-MG-yjx" firstAttribute="leading" secondItem="a9v-W8-977" secondAttribute="leading" id="7JA-U1-Ts9"/>
                             <constraint firstItem="sHC-ii-gXt" firstAttribute="leading" secondItem="a9v-W8-977" secondAttribute="leading" id="C3p-bn-R8G"/>
+                            <constraint firstItem="a9v-W8-977" firstAttribute="bottom" secondItem="pvt-MG-yjx" secondAttribute="bottom" id="OeM-3L-AJV"/>
                             <constraint firstItem="sHC-ii-gXt" firstAttribute="trailing" secondItem="a9v-W8-977" secondAttribute="trailing" id="ZSa-Ev-tHc"/>
+                            <constraint firstItem="pvt-MG-yjx" firstAttribute="top" secondItem="a9v-W8-977" secondAttribute="top" id="lL0-hc-E4f"/>
                             <constraint firstItem="sHC-ii-gXt" firstAttribute="top" secondItem="a9v-W8-977" secondAttribute="top" id="mTS-2f-ylL"/>
                             <constraint firstItem="sHC-ii-gXt" firstAttribute="bottom" secondItem="a9v-W8-977" secondAttribute="bottom" id="qZB-OM-04v"/>
+                            <constraint firstItem="a9v-W8-977" firstAttribute="trailing" secondItem="pvt-MG-yjx" secondAttribute="trailing" id="qak-VL-13y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мои объявления" largeTitleDisplayMode="always" id="hGi-ZZ-ZHJ">
@@ -61,6 +79,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="announcementCountLabel" destination="Yfl-EP-1Vd" id="78H-Hc-CDq"/>
+                        <outlet property="largeActivityIndicatorView" destination="gi6-4m-UQn" id="zof-k4-ZzD"/>
+                        <outlet property="loadingView" destination="pvt-MG-yjx" id="6eN-Hy-r64"/>
                         <outlet property="myAnnouncementsTableView" destination="sHC-ii-gXt" id="fkm-AB-I9o"/>
                     </connections>
                 </viewController>

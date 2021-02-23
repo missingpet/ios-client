@@ -11,9 +11,24 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
     
     @IBOutlet weak var feedTableView: UITableView!
     @IBOutlet weak var announcementCountLabel: UILabel!
-    @IBOutlet weak var blockingInteractionView: UIView!
+    
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        presenter?.loadingSetter = { [weak self] isLoading in
+            if isLoading {
+                self?.loadingView.isHidden = false
+                self?.largeActivityIndicatorView.startAnimating()
+                self?.view.isUserInteractionEnabled = false
+                self?.tabBarController?.view.isUserInteractionEnabled = false
+            } else {
+                self?.loadingView.isHidden = true
+                self?.largeActivityIndicatorView.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
+                self?.tabBarController?.view.isUserInteractionEnabled = true
+            }
+        }
         presenter?.reloadItemsWithCount = { [weak self] count in
             self?.feedTableView.reloadData()
             self?.announcementCountLabel.text = "Всего объявлений: \(count)"
@@ -28,7 +43,7 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
         feedTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName, bundle: nil),
                                forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
         
-        presenter?.getFeed()
+        presenter?.loadItems()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -48,7 +63,7 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == feedTableView else { return }
         if ((feedTableView.contentOffset.y + feedTableView.frame.size.height) >= feedTableView.contentSize.height) {
-            presenter?.getFeed()
+            presenter?.loadItems()
         }
     }
     

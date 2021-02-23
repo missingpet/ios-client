@@ -19,7 +19,8 @@ struct Constants {
 
     // MARK:- NotificationCenter Names
     
-    static let userLoggedInOrLoggedOut = "UserLoggedInOrLoggedOut"
+    static let userLoggedIn = "UserLoggedIn"
+    static let userLoggedOut = "UserLoggedOut"
     static let refreshedAccessToken = "RefreshedAccessToken"
     
 }

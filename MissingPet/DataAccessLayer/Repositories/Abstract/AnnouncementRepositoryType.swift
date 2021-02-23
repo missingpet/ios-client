@@ -10,6 +10,10 @@ import Foundation
 
 protocol AnnouncementRepositoryType: class {
     
+    func getAllAnnouncements(pageNumber: Int,
+                 onSuccess: ((AnnouncementListResult) -> Void)?,
+                 onFailure: ((String) -> Void)?)
+    
     func getFeed(pageNumber: Int,
                  onSuccess: ((AnnouncementListResult) -> Void)?,
                  onFailure: ((String) -> Void)?)
