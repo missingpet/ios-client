@@ -47,9 +47,8 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let announcement = presenter?.item(at: indexPath.item) {
-            presenter?.pushInspectAnnouncementViewController(with: announcement)
-        }
+        guard let announcement = presenter?.item(at: indexPath.item) else { return }
+        presenter?.pushInspectAnnouncementViewController(with: announcement)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter?.itemsTotal ?? 0
@@ -62,7 +61,7 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == feedTableView else { return }
-        if ((feedTableView.contentOffset.y + feedTableView.frame.size.height) >= feedTableView.contentSize.height) {
+        if feedTableView.isNeedsUpdatePages {
             presenter?.loadItems()
         }
     }

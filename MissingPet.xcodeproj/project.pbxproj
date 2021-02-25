@@ -12,6 +12,7 @@
 		9D33D8B925D6EFE8008F40A8 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */; };
 		9D33D8D925D70193008F40A8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8D825D70193008F40A8 /* Profile.storyboard */; };
 		9D7337BA25E500B9005BA301 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7337B925E500B9005BA301 /* AlertService.swift */; };
+		9DB3130725E803010073ABF7 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3130625E803010073ABF7 /* UITableView.swift */; };
 		9DC2D0F925E434EF0041BE1B /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0F825E434EF0041BE1B /* LoginResult.swift */; };
 		9DC2D0FC25E4417D0041BE1B /* TokenRefreshResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */; };
 		9DC2D10025E4444C0041BE1B /* RegisterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */; };
@@ -129,6 +130,7 @@
 		9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoView.xib; sourceTree = "<group>"; };
 		9D33D8D825D70193008F40A8 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../../../../../Desktop/Profile.storyboard; sourceTree = "<group>"; };
 		9D7337B925E500B9005BA301 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		9DB3130625E803010073ABF7 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		9DC2D0F825E434EF0041BE1B /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshResult.swift; sourceTree = "<group>"; };
 		9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResult.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				C8CB001A258A367500DF4734 /* Date.swift */,
 				C89F486325985E6B001F0137 /* UIView.swift */,
 				C8E3432A25A87CE5000C95B4 /* UITableViewCell.swift */,
+				9DB3130625E803010073ABF7 /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				C8F76C52253C828200ED71C4 /* Router.swift in Sources */,
 				C8F441CC2520D94E00A6570D /* Navigator.swift in Sources */,
 				C8BAF7ED254A1CA0002C3855 /* MyAnnouncementsNavigationController.swift in Sources */,
+				9DB3130725E803010073ABF7 /* UITableView.swift in Sources */,
 				C8F441C32520D30500A6570D /* PresenterType.swift in Sources */,
 				C8015514259A071E00601D76 /* PhoneNumberTextFieldWithLabel.swift in Sources */,
 				C834D5432522560E0070E3F6 /* UISetter.swift in Sources */,
