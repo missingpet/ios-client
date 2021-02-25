@@ -65,7 +65,8 @@ class CreateAnnouncementViewController: Controller<CreateAnnouncementPresenter>,
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        presenter?.imagePickerController(picker, didFinishPickingMediaWithInfo: info)
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        presenter?.addPhoto(photo: image)
     }
 
     @objc func chooseAnnouncementType() {

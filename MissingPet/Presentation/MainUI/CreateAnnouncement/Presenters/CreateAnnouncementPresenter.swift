@@ -92,9 +92,7 @@ class CreateAnnouncementPresenter: PresenterType {
         controller.present(chooseSourceTypeAlert, animated: true, completion: nil)
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let photo = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-
+    func addPhoto(photo: UIImage?) {
         self.photo = photo
         photoSetter?(self.photo)
 
