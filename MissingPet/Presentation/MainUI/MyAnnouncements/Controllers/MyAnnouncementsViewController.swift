@@ -66,7 +66,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == myAnnouncementsTableView else { return }
-        if myAnnouncementsTableView.isNeedsUpdatePages {
+        if myAnnouncementsTableView.isScrolledToTheBottom {
             presenter?.loadItems()
         }
     }

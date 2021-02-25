@@ -10,7 +10,7 @@ import Foundation
 
 extension UITableView {
     
-    var isNeedsUpdatePages: Bool {
+    var isScrolledToTheBottom: Bool {
         return (self.contentOffset.y + self.frame.size.height) >= self.contentSize.height
     }
     

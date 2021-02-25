@@ -61,7 +61,7 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == feedTableView else { return }
-        if feedTableView.isNeedsUpdatePages {
+        if feedTableView.isScrolledToTheBottom {
             presenter?.loadItems()
         }
     }
