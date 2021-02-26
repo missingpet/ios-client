@@ -29,6 +29,10 @@ class MapPresenter: PresenterType {
                                        name: Notification.Name(Constants.userLoggedOut),
                                        object: nil)
     }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
 
     func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
         Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self,
