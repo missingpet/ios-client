@@ -23,6 +23,8 @@ enum Router: URLConvertible {
     case feedAnnouncements(userId: Int)
     case detailOrDeleteAnnouncement(id: Int)
     case myAnnouncements(userId: Int)
+    case allAnnouncementsMap
+    case feedAnnouncementsMap(userId: Int)
 
     private var _path: String {
         switch self {
@@ -33,6 +35,8 @@ enum Router: URLConvertible {
         case .feedAnnouncements(let userId): return "user/\(userId)/feed/"
         case .detailOrDeleteAnnouncement(let id): return "announcement/\(id)/"
         case .myAnnouncements(let userId): return "user/\(userId)/announcements/"
+        case .allAnnouncementsMap: return "map/"
+        case .feedAnnouncementsMap(let userId): return "user/\(userId)/map/"
         }
     }
 
