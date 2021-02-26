@@ -89,7 +89,17 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                             contactPhoneNumber: String,
                             onSuccess: ((AnnouncementItem) -> Void)?,
                             onFailure: ((String) -> Void)?) {
-        // TODO: implement createAnnouncement method
+        
+        guard let accessToken = accessTokenStorage.value else { return }
+        
+        let parameters = [
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        
+        performRequest(Router.listOrCreateAnnouncement,
+                       parameters: parameters,
+                       onSuccess: onSuccess,
+                       onFailure: onFailure)
     }
 
     func getAnnouncement(id: Int, onSuccess: ((AnnouncementItem) -> Void)?,
@@ -124,5 +134,5 @@ fileprivate extension AnnouncementRepository {
                 }
             })
     }
-    
+
 }

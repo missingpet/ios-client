@@ -77,14 +77,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect: MKAnnotationView) {
         guard let annotation = didSelect.annotation as? AnnouncementPointAnnotation else { return }
-        let announcementId = annotation.id
-
-        #if DEBUG
-        print("Annotation with announcement id \(announcementId) has selected")
-        #endif
-
-        presenter?.openConcreteItem(id: announcementId)
-
+        presenter?.openConcreteItem(id: annotation.id)
         self.mapView.deselectAnnotation(annotation, animated: false)
     }
 
