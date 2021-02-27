@@ -24,8 +24,8 @@ struct AnnouncementItem: Decodable {
     let latitude: Double
     let longitude: Double
     let contactPhoneNumber: String
-    let createdAt: String
-    let updatedAt: String
+    let createdAt: Date
+    let updatedAt: Date
 
     enum CodingKeys: String, CodingKey {
         case id
