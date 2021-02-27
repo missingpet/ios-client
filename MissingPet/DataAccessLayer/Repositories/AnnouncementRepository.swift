@@ -22,7 +22,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             "page": pageNumber,
         ]
 
-        performRequest(Router.listOrCreateAnnouncement,
+        performDecodableRequest(Router.listOrCreateAnnouncement,
                       parameters: parameters,
                       onSuccess: onSuccess,
                       onFailure: onFailure)
@@ -38,7 +38,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             "page": pageNumber,
         ]
 
-        performRequest(Router.feedAnnouncements(userId: userId),
+        performDecodableRequest(Router.feedAnnouncements(userId: userId),
                       parameters: parameters,
                       onSuccess: onSuccess,
                       onFailure: onFailure)
@@ -54,7 +54,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             "page": pageNumber,
         ]
 
-        performRequest(Router.myAnnouncements(userId: userId),
+        performDecodableRequest(Router.myAnnouncements(userId: userId),
                       parameters: parameters,
                       onSuccess: onSuccess,
                       onFailure: onFailure)
@@ -64,7 +64,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
 
     func getAllAnnouncementsMap(onSuccess: (([AnnouncmenetsMapItem]) -> Void)?,
                                 onFailure: ((String) -> Void)?) {
-        performRequest(Router.allAnnouncementsMap,
+        performDecodableRequest(Router.allAnnouncementsMap,
                       parameters: nil,
                       onSuccess: onSuccess,
                       onFailure: onFailure)
@@ -73,7 +73,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
     func getFeedAnnouncementsMap(onSuccess: (([AnnouncmenetsMapItem]) -> Void)?,
                                  onFailure: ((String) -> Void)?) {
         guard let userId = userIdStorage.value else { return }
-        performRequest(Router.feedAnnouncementsMap(userId: userId),
+        performDecodableRequest(Router.feedAnnouncementsMap(userId: userId),
                       parameters: nil,
                       onSuccess: onSuccess,
                       onFailure: onFailure)
@@ -96,7 +96,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             "Authorization": "Bearer \(accessToken)"
         ]
         
-        performRequest(Router.listOrCreateAnnouncement,
+        performDecodableRequest(Router.listOrCreateAnnouncement,
                        parameters: parameters,
                        onSuccess: onSuccess,
                        onFailure: onFailure)
@@ -104,7 +104,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
 
     func getAnnouncement(id: Int, onSuccess: ((AnnouncementItem) -> Void)?,
                          onFailure: ((String) -> Void)?) {
-        performRequest(Router.detailOrDeleteAnnouncement(id: id),
+        performDecodableRequest(Router.detailOrDeleteAnnouncement(id: id),
                       parameters: nil,
                       onSuccess: onSuccess,
                       onFailure: onFailure)
@@ -112,20 +112,42 @@ class AnnouncementRepository: AnnouncementRepositoryType {
     
     func deleteAnnouncement(id: Int, onSuccess: (() -> Void)?,
                             onFailure: ((String) -> Void)?) {
-        // TODO: implement deleteAnnouncement method
+        guard let accessToken = accessTokenStorage.value else { return }
+        let parameters = [
+            "Authorization": "Bearer \(accessToken)"
+        ]
+        AF.request(Router.detailOrDeleteAnnouncement(id: id), method: .get, parameters: parameters)
+            .validate(statusCode: 200..<300)
+            .response(completionHandler: { (response) in
+                switch response.result {
+                case .success(_):
+                    onSuccess?()
+                case .failure(let error):
+                    onFailure?(error.localizedDescription)
+                }
+            })
     }
 
 }
 
 fileprivate extension AnnouncementRepository {
-
-    func performRequest<T: Decodable>(_ route: URLConvertible,
+    
+    func getDecoder() -> JSONDecoder {
+        let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        return decoder
+    }
+    
+    func performDecodableRequest<T: Decodable>(_ route: URLConvertible,
                                      parameters: Parameters?,
                                      onSuccess: ((T) -> Void)?,
                                      onFailure: ((String) -> Void)?) {
+        let decoder = getDecoder()
         AF.request(route, method: .get, parameters: parameters)
             .validate(statusCode: 200..<300)
-            .responseDecodable(of: T.self, completionHandler: { (response) in
+            .responseDecodable(of: T.self, decoder: decoder, completionHandler: { (response) in
                 switch response.result {
                 case .success(let value):
                     onSuccess?(value)
