@@ -5,6 +5,7 @@
 //  Created by Михаил Еремеев on 20.11.2020.
 //
 
+import UIKit
 import Foundation
 
 class ProfilePresenter: PresenterType {
@@ -26,6 +27,17 @@ class ProfilePresenter: PresenterType {
         setupUserInfoViews()
     }
 
+    func presentLogoutConfirmationAlert(controller: UIViewController) {
+        let alert = UIAlertController(title: "Предупреждение",
+                                      message: "Вы действительно хотите выйти? Данные для входа будут удалены",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Да",
+                                      style: .destructive,
+                                      handler: { (_) in self.logout() }))
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        controller.present(alert, animated: true, completion: nil)
+    }
+    
     private func setupUserInfoViews() {
         profileViewSetter?(AppSettings.isAuthorized)
         emailSetter?(AppSettings.currentUserEmail ?? "")
