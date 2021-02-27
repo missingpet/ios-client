@@ -29,7 +29,7 @@ class InspectAnnouncementPresenter: PresenterType {
 
     func setup() {
         photoUrlSetter?(URL(string: announcement.photo))
-        creationDateSetter?(announcement.createdAt)
+        creationDateSetter?(announcement.createdAt.string(withFormat: "d MMM yyyy',' HH:mm"))
         switch announcement.animalType {
         case .dog:
             animalTypeSetter?("Собаки")
