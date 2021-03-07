@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Bold.ttf">
+            <string>SFUIDisplay-Bold</string>
+        </array>
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Профиль-->
+        <scene sceneID="iqh-lc-J12">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" hidesBottomBarWhenPushed="YES" id="hk0-j4-R6p" customClass="ProfileViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jn2-ds-GnP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-hC-CfN">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nI-tk-Tdg" userLabel="Login View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NKt-S8-j6d">
+                                                <rect key="frame" x="16" y="16" width="382" height="270"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNQ-FG-Mx0" userLabel="Email Text Field With Image View" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="wwR-Ov-pbh"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Адрес электронной почты"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="email"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-Xc-JNe" userLabel="Password Text Field With Image View" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="IS1-Om-43r"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Пароль"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="password"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouA-E6-pBd">
+                                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
+                                                        <color key="backgroundColor" name="Blue"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="JSU-SW-o3o"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                        <state key="normal" title="Войти">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="login:" destination="hk0-j4-R6p" eventType="touchUpInside" id="fsM-Az-b3w"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEl-Eg-Go3">
+                                                        <rect key="frame" x="0.0" y="210" width="382" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="hiP-jZ-EtB"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
+                                                        <state key="normal" title="Регистрация">
+                                                            <color key="titleColor" name="Blue"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="pushSignUpViewController:" destination="hk0-j4-R6p" eventType="touchUpInside" id="C5w-Un-BcP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="NKt-S8-j6d" secondAttribute="trailing" constant="16" id="V0V-Hu-HiF"/>
+                                            <constraint firstItem="NKt-S8-j6d" firstAttribute="top" secondItem="2nI-tk-Tdg" secondAttribute="top" constant="16" id="Y2y-RT-qZ2"/>
+                                            <constraint firstItem="NKt-S8-j6d" firstAttribute="leading" secondItem="2nI-tk-Tdg" secondAttribute="leading" constant="16" id="cQw-1H-n36"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NKt-S8-j6d" secondAttribute="bottom" constant="16" id="ikW-7d-n28"/>
+                                            <constraint firstItem="NKt-S8-j6d" firstAttribute="centerX" secondItem="2nI-tk-Tdg" secondAttribute="centerX" id="rEh-4q-ycr"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6R2-Wi-vW3" userLabel="Profile View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-s1-1zs">
+                                                <rect key="frame" x="16" y="16" width="382" height="200"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pm-3B-HCL" customClass="ProfileInfoView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="2i2-ws-oeZ"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="profile-selected"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-TP-e1F" customClass="ProfileInfoView" customModule="MissingPet" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="0os-SU-cvO"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="email"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIc-In-zHn">
+                                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="Kci-iP-DrJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="17"/>
+                                                        <state key="normal" title="Выйти из профиля">
+                                                            <color key="titleColor" name="Red"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="logout:" destination="hk0-j4-R6p" eventType="touchUpInside" id="kPe-j3-AN5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="QpO-s1-1zs" firstAttribute="top" secondItem="6R2-Wi-vW3" secondAttribute="top" constant="16" id="48K-hf-dqQ"/>
+                                            <constraint firstItem="QpO-s1-1zs" firstAttribute="leading" secondItem="6R2-Wi-vW3" secondAttribute="leading" constant="16" id="5aV-kH-u7c"/>
+                                            <constraint firstItem="QpO-s1-1zs" firstAttribute="centerX" secondItem="6R2-Wi-vW3" secondAttribute="centerX" id="Qft-bJ-5h9"/>
+                                            <constraint firstAttribute="trailing" secondItem="QpO-s1-1zs" secondAttribute="trailing" constant="16" id="Rgf-T4-0hJ"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QpO-s1-1zs" secondAttribute="bottom" constant="16" id="k18-4s-gvq"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Yw-sQ-fSY" userLabel="Loading View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aMM-8L-bie">
+                                                <rect key="frame" x="188.5" y="342.5" width="37" height="37"/>
+                                                <color key="color" name="DarkBlue"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="aMM-8L-bie" firstAttribute="centerX" secondItem="0Yw-sQ-fSY" secondAttribute="centerX" id="KcH-87-pUa"/>
+                                            <constraint firstItem="aMM-8L-bie" firstAttribute="centerY" secondItem="0Yw-sQ-fSY" secondAttribute="centerY" id="kI4-wy-rFf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2nI-tk-Tdg" secondAttribute="bottom" id="1xs-ES-hdj"/>
+                                    <constraint firstItem="0Yw-sQ-fSY" firstAttribute="top" secondItem="b6f-hC-CfN" secondAttribute="top" id="Csw-Oh-zpP"/>
+                                    <constraint firstAttribute="bottom" secondItem="6R2-Wi-vW3" secondAttribute="bottom" id="FJE-S7-W3f"/>
+                                    <constraint firstItem="6R2-Wi-vW3" firstAttribute="leading" secondItem="b6f-hC-CfN" secondAttribute="leading" id="OKT-wc-DbS"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Yw-sQ-fSY" secondAttribute="trailing" id="QDd-0W-bYT"/>
+                                    <constraint firstItem="2nI-tk-Tdg" firstAttribute="leading" secondItem="b6f-hC-CfN" secondAttribute="leading" id="UEg-js-gkq"/>
+                                    <constraint firstAttribute="trailing" secondItem="2nI-tk-Tdg" secondAttribute="trailing" id="UNf-vF-CSf"/>
+                                    <constraint firstItem="6R2-Wi-vW3" firstAttribute="height" secondItem="b6f-hC-CfN" secondAttribute="height" priority="250" id="XoV-wf-Vfz"/>
+                                    <constraint firstItem="0Yw-sQ-fSY" firstAttribute="leading" secondItem="b6f-hC-CfN" secondAttribute="leading" id="Z6c-Lm-lbE"/>
+                                    <constraint firstItem="2nI-tk-Tdg" firstAttribute="width" secondItem="b6f-hC-CfN" secondAttribute="width" id="gsq-2h-tvg"/>
+                                    <constraint firstItem="2nI-tk-Tdg" firstAttribute="top" secondItem="b6f-hC-CfN" secondAttribute="top" id="kdP-vK-tQZ"/>
+                                    <constraint firstItem="6R2-Wi-vW3" firstAttribute="top" secondItem="b6f-hC-CfN" secondAttribute="top" id="qo4-0E-YnE"/>
+                                    <constraint firstItem="6R2-Wi-vW3" firstAttribute="width" secondItem="b6f-hC-CfN" secondAttribute="width" id="sv0-uU-jce"/>
+                                    <constraint firstItem="2nI-tk-Tdg" firstAttribute="height" secondItem="b6f-hC-CfN" secondAttribute="height" priority="250" id="xr2-l5-KeF"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Yw-sQ-fSY" secondAttribute="bottom" id="xyv-AO-MaT"/>
+                                    <constraint firstAttribute="trailing" secondItem="6R2-Wi-vW3" secondAttribute="trailing" id="ykr-Io-ROb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VRh-Ru-XAh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b6f-hC-CfN" firstAttribute="leading" secondItem="VRh-Ru-XAh" secondAttribute="leading" id="A46-WT-joP"/>
+                            <constraint firstItem="b6f-hC-CfN" firstAttribute="top" secondItem="VRh-Ru-XAh" secondAttribute="top" id="MQE-ZD-5Hh"/>
+                            <constraint firstItem="b6f-hC-CfN" firstAttribute="trailing" secondItem="VRh-Ru-XAh" secondAttribute="trailing" id="mC2-uq-wcH"/>
+                            <constraint firstItem="b6f-hC-CfN" firstAttribute="bottom" secondItem="VRh-Ru-XAh" secondAttribute="bottom" id="pMV-oX-pq4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Профиль" largeTitleDisplayMode="always" id="vL2-A1-ZDr">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="3mX-9e-abd"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="MNQ-FG-Mx0" id="ZtJ-h1-MdA"/>
+                        <outlet property="emailView" destination="8qf-TP-e1F" id="8CH-yM-OjN"/>
+                        <outlet property="largeActivityIndicator" destination="aMM-8L-bie" id="7Uz-38-GA2"/>
+                        <outlet property="loadingView" destination="0Yw-sQ-fSY" id="ng6-lY-2h1"/>
+                        <outlet property="nicknameView" destination="5Pm-3B-HCL" id="deM-OV-B2r"/>
+                        <outlet property="passwordTextField" destination="2Cq-Xc-JNe" id="QU2-mV-bB4"/>
+                        <outlet property="profileView" destination="6R2-Wi-vW3" id="yre-AG-RUP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seY-Ws-Z7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="51"/>
+        </scene>
+        <!--Profile Navigation Controller-->
+        <scene sceneID="tEq-N7-3iC">
+            <objects>
+                <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Ylw-ij-d6L" customClass="ProfileNavigationController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="back" largeTitles="YES" backIndicatorTransitionMaskImage="back" id="uKC-Vz-AJg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="DarkBlue"/>
+                        <color key="barTintColor" name="DarkBlue"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hk0-j4-R6p" kind="relationship" relationship="rootViewController" id="5fs-7h-tZ8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BsO-9Q-VQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1099" y="51"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="20" height="20"/>
+        <image name="email" width="20" height="20"/>
+        <image name="password" width="20" height="20"/>
+        <image name="profile-selected" width="24" height="24"/>
+        <namedColor name="Blue">
+            <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="0.91399997472763062" green="0.31000000238418579" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
