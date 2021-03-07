@@ -21,7 +21,7 @@
         <!--Профиль-->
         <scene sceneID="iqh-lc-J12">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" hidesBottomBarWhenPushed="YES" id="hk0-j4-R6p" customClass="ProfileViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="hk0-j4-R6p" customClass="ProfileViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jn2-ds-GnP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
