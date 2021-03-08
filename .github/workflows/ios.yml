@@ -12,6 +12,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: CocoaPods Action
+        uses: ty0x2333/cocoapods-action@0.2.0
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set Default Scheme
