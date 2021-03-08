@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,32 +20,32 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpViewController" hidesBottomBarWhenPushed="YES" id="SfU-8V-5rb" customClass="SignUpViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1A-FF-0Qb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-PA-lIS">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-rD-Hb3">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mtk-iA-z26">
-                                                <rect key="frame" x="16" y="16" width="568" height="340"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="340"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-l1-3Mj" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="568" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="AAE-2Z-lzD"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Имя пользователя"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Никнейм"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="profile-selected"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBu-XJ-pj9" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="568" height="60"/>
+                                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="7vM-8Q-S8w"/>
@@ -55,7 +57,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQ8-ft-HfN" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="140" width="568" height="60"/>
+                                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="SOD-JY-oca"/>
@@ -67,7 +69,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-zc-7Ko" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="210" width="568" height="60"/>
+                                                        <rect key="frame" x="0.0" y="210" width="382" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="Mmx-MB-ZCr"/>
@@ -79,7 +81,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxD-qD-cYJ" customClass="Button" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="280" width="568" height="60"/>
+                                                        <rect key="frame" x="0.0" y="280" width="382" height="60"/>
                                                         <color key="backgroundColor" name="Blue"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="AA2-9O-DsN"/>
@@ -109,14 +111,32 @@
                                             <constraint firstItem="mtk-iA-z26" firstAttribute="centerX" secondItem="h0L-rD-Hb3" secondAttribute="centerX" id="weL-i2-j90"/>
                                         </constraints>
                                     </view>
+                                    <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04p-h1-QVZ" userLabel="Loading View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="A4q-Q4-BCr">
+                                                <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                                <color key="color" name="DarkBlue"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="A4q-Q4-BCr" firstAttribute="centerY" secondItem="04p-h1-QVZ" secondAttribute="centerY" id="Fvh-Tr-Sgj"/>
+                                            <constraint firstItem="A4q-Q4-BCr" firstAttribute="centerX" secondItem="04p-h1-QVZ" secondAttribute="centerX" id="lCN-b6-AXJ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="h0L-rD-Hb3" firstAttribute="top" secondItem="8Fj-PA-lIS" secondAttribute="top" id="Hdl-KA-8pH"/>
                                     <constraint firstAttribute="bottom" secondItem="h0L-rD-Hb3" secondAttribute="bottom" id="OlF-0v-uY4"/>
+                                    <constraint firstItem="04p-h1-QVZ" firstAttribute="leading" secondItem="8Fj-PA-lIS" secondAttribute="leading" id="gkA-a3-bor"/>
+                                    <constraint firstAttribute="bottom" secondItem="04p-h1-QVZ" secondAttribute="bottom" id="k0v-mG-M4L"/>
                                     <constraint firstItem="h0L-rD-Hb3" firstAttribute="width" secondItem="8Fj-PA-lIS" secondAttribute="width" id="m1l-yX-vVp"/>
                                     <constraint firstItem="h0L-rD-Hb3" firstAttribute="height" secondItem="8Fj-PA-lIS" secondAttribute="height" priority="250" id="mha-ar-K7s"/>
                                     <constraint firstItem="h0L-rD-Hb3" firstAttribute="leading" secondItem="8Fj-PA-lIS" secondAttribute="leading" id="vZb-WF-osS"/>
                                     <constraint firstAttribute="trailing" secondItem="h0L-rD-Hb3" secondAttribute="trailing" id="w7s-ec-Jnn"/>
+                                    <constraint firstItem="04p-h1-QVZ" firstAttribute="top" secondItem="8Fj-PA-lIS" secondAttribute="top" id="wD7-eH-95G"/>
+                                    <constraint firstAttribute="trailing" secondItem="04p-h1-QVZ" secondAttribute="trailing" id="xyc-YI-bdm"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -133,8 +153,10 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="a2P-Ru-Ppt"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="A4q-Q4-BCr" id="7E6-Y7-EMq"/>
                         <outlet property="bottomConstraint" destination="pFH-Q6-v72" id="qYC-al-2fj"/>
                         <outlet property="emailTextField" destination="wBu-XJ-pj9" id="mjt-9G-scM"/>
+                        <outlet property="loadingView" destination="04p-h1-QVZ" id="tsG-89-vfX"/>
                         <outlet property="nicknameTextField" destination="0P0-l1-3Mj" id="DR9-Vl-n5d"/>
                         <outlet property="passwordTextField" destination="aQ8-ft-HfN" id="MA9-qg-DKU"/>
                         <outlet property="repeatPasswordTextField" destination="m7C-zc-7Ko" id="ewW-sO-1KT"/>
@@ -170,6 +192,9 @@
         <image name="profile-selected" width="24" height="24"/>
         <namedColor name="Blue">
             <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

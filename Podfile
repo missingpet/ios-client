@@ -5,6 +5,7 @@ target 'MissingPet' do
 
   pod 'ReachabilitySwift'
   pod 'Kingfisher'
+  pod 'SwiftyJSON'
   pod 'Alamofire'
 
 end

@@ -6,8 +6,73 @@
 //
 
 import Foundation
-import MapKit
 
 class PlaceSearchPresenter: PresenterType {
+
+    var updateSearchResultsWithCount: UISetter<Int>?
+
+    var loadingSetter: UISetter<Bool>?
+
+    private let notificationCenter = NotificationCenter.default
+
+    private let placeRepository: PlaceRepositoryType!
+
+    init(placeRepository: PlaceRepositoryType) {
+        self.placeRepository = placeRepository
+    }
+
+    func postAddressSelectedNotification(userInfo: [String : Any]) {
+        notificationCenter.post(name: Notification.Name(Constants.addressSelected),
+                                object: nil, userInfo: userInfo)
+    }
+
+    func getUserInfoForItem(at index: Int) -> [String : Any] {
+        let item = searchResults[index]
+        let userInfo: [String : Any] = [
+            "address": item.addressLine,
+            "latitude": item.latitude,
+            "longitude": item.longitude
+        ]
+        return userInfo
+    }
+
+    private var searchResults = [PlaceItem]()
+
+    var itemsTotal: Int {
+        return searchResults.count
+    }
+
+    private func startLoading() {
+        loadingSetter?(true)
+    }
+
+    private func stopLoading() {
+        loadingSetter?(false)
+    }
+
+    func item(at index: Int) -> PlaceItem {
+        return searchResults[index]
+    }
+
+    func popViewController() {
+        Navigator().pop()
+    }
+
+    func searchForPlace(searchText: String) {
+        self.startLoading()
+        self.placeRepository.searchForPlaces(searchText: searchText,
+                                             onSuccess: { result in
+                                                DispatchQueue.main.async {
+                                                    self.searchResults = result
+                                                    self.updateSearchResultsWithCount?(self.itemsTotal)
+                                                    self.stopLoading()
+                                                }
+                                             },
+                                             onFailure: { _ in
+                                                DispatchQueue.main.async {
+                                                    self.stopLoading()
+                                                }
+                                             })
+    }
 
 }

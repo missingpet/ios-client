@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AnimalType: Int, Decodable {
+enum AnimalType: Int {
     case dog = 1
     case cat
     case other

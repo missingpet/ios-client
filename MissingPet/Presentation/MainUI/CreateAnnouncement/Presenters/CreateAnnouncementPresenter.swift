@@ -14,6 +14,8 @@ class CreateAnnouncementPresenter: PresenterType {
     var animalTypeSetter: UISetter<String?>?
     var addressSetter: UISetter<String?>?
     var photoSetter: UISetter<UIImage?>?
+    var sourceTypeSetter: UISetter<String?>?
+    var loadingSetter: UISetter<Bool>?
 
     var announcementType: AnnouncementType?
     var animalType: AnimalType?
@@ -23,6 +25,39 @@ class CreateAnnouncementPresenter: PresenterType {
     var phoneNumber: String?
     var comment: String?
     var photo: UIImage?
+
+    private let notificationCenter = NotificationCenter.default
+
+    private let announcementRepository: AnnouncementRepositoryType!
+
+    private func startAnimating() {
+        loadingSetter?(true)
+    }
+
+    private func stopAnimatng() {
+        loadingSetter?(false)
+    }
+
+    init (announcementRepository: AnnouncementRepositoryType) {
+        self.announcementRepository = announcementRepository
+        notificationCenter.addObserver(self, selector:
+                                        #selector(updateAddressUI(_:)),
+                                       name: NSNotification.Name(Constants.addressSelected),
+                                       object: nil)
+    }
+
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+
+    @objc func updateAddressUI(_ notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            self.address = userInfo["address"] as? String
+            self.latitude = userInfo["latitude"] as? Double
+            self.longitude = userInfo["longitude"] as? Double
+            addressSetter?(self.address)
+        }
+    }
 
     func chooseAnnouncementType(controller: UIViewController) {
 
@@ -59,42 +94,75 @@ class CreateAnnouncementPresenter: PresenterType {
         controller.present(chooseAnnouncementTypeAlert, animated: true, completion: nil)
     }
 
-    func createAnnouncement() {}
-
     func pushPlaceSearchViewController() {
         Navigator(Storyboard.placeSearch).push(PlaceSearchViewController.self,
-                                               presenter: PlaceSearchPresenter())
+                                               presenter: PlaceSearchPresenter(placeRepository: PlaceRepository()))
     }
 
-    func presentConfirmCreateAlert(viewController: UIViewController) {
-        let confirmCreateAlert = UIAlertController(title: "Предупреждение", message: "Данный функционал пока что отсутсвует", preferredStyle: .alert)
-        confirmCreateAlert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: nil))
-        viewController.present(confirmCreateAlert, animated: true, completion: nil)
-    }
-
-    func choosePhoto(controller: UIViewController) {
-        guard let controller = controller as? CreateAnnouncementViewController else { return }
-
-        func presentImagePickerWithSourceType(sourceType: UIImagePickerController.SourceType) {
-            controller.imagePicker.sourceType = sourceType
-            controller.present(controller.imagePicker, animated: true, completion: nil)
+    func createAnnouncement(controller: UIViewController) {
+        if ConnectionService.isUnavailable {
+            let connectionUnavailableAlert = AlertService.getConnectionUnavalableAlert()
+            controller.present(connectionUnavailableAlert, animated: true, completion: nil)
+            return
         }
+        guard AppSettings.isAuthorized else {
+            let notAuthorizedAlert = AlertService.getErrorAlert(message: "Вы не авторизованы")
+            controller.present(notAuthorizedAlert, animated: true, completion: nil)
+            return
+        }
+        if let comment = self.comment,
+           let photo = self.photo,
+           let announcementType = self.announcementType,
+           let animalType = self.animalType,
+           let place = self.address,
+           let latitude = self.latitude,
+           let longitude = self.longitude,
+           let contactPhoneNumber = self.phoneNumber {
+            self.startAnimating()
+            self.announcementRepository.createAnnouncement(description: comment,
+                                                      photo: photo,
+                                                      announcementType: announcementType,
+                                                      animalType: animalType,
+                                                      place: place,
+                                                      latitude: latitude,
+                                                      longitude: longitude,
+                                                      contactPhoneNumber: contactPhoneNumber,
+                                                      onSuccess: { (_) in
+                                                        self.stopAnimatng()
+                                                        self.notificationCenter.post(Notification(name: Notification.Name(Constants.announcementCreated)))
+                                                        let successAlert = AlertService.getSuccessAlert(message: "Объявление создано")
+                                                        controller.present(successAlert, animated: true, completion: nil)
+                                                      },
+                                                      onFailure: { errorMessage in
+                                                        let errorAlert = AlertService.getSuccessAlert(message: errorMessage)
+                                                        controller.present(errorAlert, animated: true, completion: nil)
+                                                        self.stopAnimatng()
+                                                      })
+        } else {
+            let alertControllet = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля")
+            controller.present(alertControllet, animated: true, completion: nil)
+        }
+    }
 
-        let chooseSourceTypeAlert = UIAlertController(title: "Фотография", message: "Выберите источник", preferredStyle: .alert)
+    func choosePhoto(controller: UIViewController, imagePicker: UIImagePickerController) {
+
+        let chooseSourceTypeAlert = UIAlertController(title: "Фотография",
+                                                      message: "Выберите источник",
+                                                      preferredStyle: .alert)
         chooseSourceTypeAlert.addAction(UIAlertAction(title: "Камера", style: .default, handler: { _ in
-            presentImagePickerWithSourceType(sourceType: .camera)
+            imagePicker.sourceType = .camera
+            controller.present(imagePicker, animated: true, completion: nil)
         }))
-        chooseSourceTypeAlert.addAction(UIAlertAction(title: "Библиотека", style: .default, handler: { _ in
-            presentImagePickerWithSourceType(sourceType: .photoLibrary)
+        chooseSourceTypeAlert.addAction(UIAlertAction(title: "Галерея", style: .default, handler: { _ in
+            imagePicker.sourceType = .photoLibrary
+            controller.present(imagePicker, animated: true, completion: nil)
         }))
         chooseSourceTypeAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
 
         controller.present(chooseSourceTypeAlert, animated: true, completion: nil)
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let photo = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-
+    func addPhoto(photo: UIImage?) {
         self.photo = photo
         photoSetter?(self.photo)
 

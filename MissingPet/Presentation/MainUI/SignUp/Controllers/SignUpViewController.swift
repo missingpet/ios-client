@@ -15,7 +15,22 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
     @IBOutlet weak var repeatPasswordTextField: TextFieldWithImageView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+
     override func viewDidLoad() {
+        self.presenter?.loadingSetter = { [weak self] isLoading in
+            if isLoading {
+                self?.view.isUserInteractionEnabled = false
+                self?.loadingView.isHidden = false
+                self?.activityIndicatorView.startAnimating()
+            } else {
+                self?.view.isUserInteractionEnabled = true
+                self?.loadingView.isHidden = true
+                self?.activityIndicatorView.stopAnimating()
+            }
+        }
+
         super.viewDidLoad()
 
         nicknameTextField.delegate = self
@@ -47,7 +62,8 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         let repeatedPassword = repeatPasswordTextField.text ?? ""
-        presenter?.singUp(nickname: nickname,
+        presenter?.singUp(self,
+                          nickname: nickname,
                           email: email,
                           password: password,
                           repeatedPassword: repeatedPassword)

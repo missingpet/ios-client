@@ -7,12 +7,12 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthorizationRepository: AuthorizationRepositoryType {
 
     // MARK: - UserDefaultsAccessor
 
-    private let refreshTokenStorage = UserDefaultsAccessor<String>(key: Constants.refreshTokenKey)
     private let accessTokenStorage = UserDefaultsAccessor<String>(key: Constants.accessTokenKey)
     private let nicknameStorage = UserDefaultsAccessor<String>(key: Constants.nicknameKey)
     private let emailStorage = UserDefaultsAccessor<String>(key: Constants.emailKey)
@@ -22,7 +22,7 @@ class AuthorizationRepository: AuthorizationRepositoryType {
 
     func login(email: String,
                password: String,
-               onSuccess: ((LoginResult) -> Void)?,
+               onSuccess: (() -> Void)?,
                onFailure: ((String) -> Void)?) {
 
         let parameters: [String: String] = [
@@ -32,13 +32,13 @@ class AuthorizationRepository: AuthorizationRepositoryType {
 
         AF.request(Router.login, method: .post, parameters: parameters)
             .validate(statusCode: 200..<300)
-            .responseDecodable(of: LoginResult.self, completionHandler: { (response) in
+            .responseJSON(completionHandler: { (response) in
                 switch response.result {
-                case .success(let value):
-                    self.processLogin(loginResult: value)
-                    onSuccess?(value)
-                case .failure(let error):
-                    onFailure?(error.localizedDescription)
+                case .success:
+                    self.processLogin(data: response.data!)
+                    onSuccess?()
+                case .failure:
+                    onFailure?(self.processLoginFailure(data: response.data!))
                 }
             })
     }
@@ -46,7 +46,7 @@ class AuthorizationRepository: AuthorizationRepositoryType {
     func register(nickname: String,
                   email: String,
                   password: String,
-                  onSuccess: ((RegisterResult) -> Void)?,
+                  onSuccess: (() -> Void)?,
                   onFailure: ((String) -> Void)?) {
 
         let parameters: [String: String] = [
@@ -57,34 +57,12 @@ class AuthorizationRepository: AuthorizationRepositoryType {
 
         AF.request(Router.register, method: .post, parameters: parameters)
             .validate(statusCode: 200..<300)
-            .responseDecodable(of: RegisterResult.self, completionHandler: { (response) in
+            .responseJSON(completionHandler: { (response) in
                 switch response.result {
-                case .success(let value):
-                    onSuccess?(value)
-                case .failure(let error):
-                    onFailure?(error.localizedDescription)
-                }
-            })
-    }
-
-    func refreshAccessToken(onSuccess: ((TokenRefreshResult) -> Void)?,
-                            onFailure: ((String) -> Void)?) {
-
-        let refreshToken = refreshTokenStorage.value!
-
-        let parameters: [String: String] = [
-            "refresh": refreshToken
-        ]
-
-        AF.request(Router.tokenRefresh, method: .post, parameters: parameters)
-            .validate(statusCode: 200..<300)
-            .responseDecodable(of: TokenRefreshResult.self, completionHandler: { (response) in
-                switch response.result {
-                case .success(let value):
-                    self.processTokenRefresh(tokenRefreshResult: value)
-                    onSuccess?(value)
-                case .failure(let error):
-                    onFailure?(error.localizedDescription)
+                case .success:
+                    onSuccess?()
+                case .failure:
+                    onFailure?(self.processRegisterFailure(data: response.data!))
                 }
             })
     }
@@ -99,24 +77,67 @@ fileprivate extension AuthorizationRepository {
 
     // MARK: - Data Processing
 
-    func processLogin(loginResult: LoginResult) {
-        accessTokenStorage.value = loginResult.access
-        refreshTokenStorage.value = loginResult.refresh
-        nicknameStorage.value = loginResult.nickname
-        emailStorage.value = loginResult.email
-        userIdStorage.value = loginResult.id
-    }
+    func processLogin(data: Data) {
 
-    func processTokenRefresh(tokenRefreshResult: TokenRefreshResult) {
-        accessTokenStorage.value = tokenRefreshResult.access
+        let json = JSON(data)
+
+        guard let access = json["token"].string,
+              let nickname = json["nickname"].string,
+              let email = json["email"].string,
+              let id = json["id"].int else { return }
+
+        self.accessTokenStorage.value = access
+        self.nicknameStorage.value = nickname
+        self.emailStorage.value = email
+        self.userIdStorage.value = id
     }
 
     func processLogout() {
-        accessTokenStorage.value = nil
-        refreshTokenStorage.value = nil
-        userIdStorage.value = nil
-        nicknameStorage.value = nil
-        emailStorage.value = nil
+        self.accessTokenStorage.value = nil
+        self.userIdStorage.value = nil
+        self.nicknameStorage.value = nil
+        self.emailStorage.value = nil
+    }
+
+    func processLoginFailure(data: Data) -> String {
+        let json = JSON(data)
+        let detailMessage = json[Constants.detailKey].string!
+        return detailMessage
+    }
+
+    func processRegisterFailure(data: Data) -> String {
+
+        let json = JSON(data)
+
+        let nonFieldErrorsErrorMessage = json[Constants.nonFieldErrorsErrorKey][0].string
+        let emailErrorMessage = json[Constants.emailErrorMessageKey][0].string
+        let nicknameErrorMessage = json[Constants.nicknameErrorMessageKey][0].string
+        let passwordErrorMessage = json[Constants.passwordErrorMessageKey][0].string
+
+        var resultMessage = ""
+
+        let separator = "\n"
+
+        if let nonFieldErrorsErrorMessage = nonFieldErrorsErrorMessage {
+            resultMessage += nonFieldErrorsErrorMessage
+        }
+        if let emailErrorMessage = emailErrorMessage {
+            resultMessage += emailErrorMessage
+        }
+        if let nicknameErrorMessage = nicknameErrorMessage {
+            if emailErrorMessage != nil {
+                resultMessage += separator
+            }
+            resultMessage += nicknameErrorMessage
+        }
+        if let passwordErrorMessage = passwordErrorMessage {
+            if nicknameErrorMessage != nil {
+                resultMessage += separator
+            }
+            resultMessage += passwordErrorMessage
+        }
+
+        return resultMessage
     }
 
 }

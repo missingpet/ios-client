@@ -21,8 +21,8 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
     @IBOutlet weak var largeActivityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
-        presenter?.profileViewSetter = { [weak self] isAuthorized in
-            self?.profileView.isHidden = !isAuthorized
+        presenter?.profileViewSetter = { [weak self] isHidden in
+            self?.profileView.isHidden = isHidden
         }
         presenter?.emailSetter = { [weak self] email in
             self?.emailView.text = email
@@ -64,12 +64,12 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
         dismissKeyboard()
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        presenter?.login(email: email, password: password)
+        presenter?.login(self, email: email, password: password)
     }
 
     @IBAction func logout(_ sender: UIButton) {
         dismissKeyboard()
-        presenter?.logout()
+        presenter?.presentLogoutConfirmationAlert(controller: self)
     }
 
     @IBAction func pushSignUpViewController(_ sender: UIButton) {

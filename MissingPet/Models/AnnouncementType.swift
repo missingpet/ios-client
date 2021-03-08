@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AnnouncementType: Int, Decodable {
+enum AnnouncementType: Int {
     case lost = 1
     case found
 }

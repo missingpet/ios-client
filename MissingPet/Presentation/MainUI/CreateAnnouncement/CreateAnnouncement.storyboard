@@ -102,7 +102,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="presentConfirmCreateAlert:" destination="wth-fq-lUZ" eventType="touchUpInside" id="dMi-c0-dyD"/>
+                                                            <action selector="createAnnouncement:" destination="wth-fq-lUZ" eventType="touchUpInside" id="dMi-c0-dyD"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -125,14 +125,32 @@
                                     <constraint firstAttribute="trailing" secondItem="s81-XM-PSi" secondAttribute="trailing" id="zw8-EX-zs9"/>
                                 </constraints>
                             </scrollView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JW-d4-hNt" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WEo-Qr-HKM">
+                                        <rect key="frame" x="188.5" y="342.5" width="37" height="37"/>
+                                        <color key="color" name="DarkBlue"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="WEo-Qr-HKM" firstAttribute="centerY" secondItem="5JW-d4-hNt" secondAttribute="centerY" id="Qh1-vE-j03"/>
+                                    <constraint firstItem="WEo-Qr-HKM" firstAttribute="centerX" secondItem="5JW-d4-hNt" secondAttribute="centerX" id="V3Y-KL-AzH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Gk-6l-ByR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7Gk-6l-ByR" firstAttribute="bottom" secondItem="5JW-d4-hNt" secondAttribute="bottom" id="0Ok-2d-5PV"/>
                             <constraint firstItem="00K-UV-YJE" firstAttribute="bottom" secondItem="7Gk-6l-ByR" secondAttribute="bottom" id="0zB-PG-ej8"/>
+                            <constraint firstItem="7Gk-6l-ByR" firstAttribute="trailing" secondItem="5JW-d4-hNt" secondAttribute="trailing" id="HvD-Qq-eVr"/>
+                            <constraint firstItem="5JW-d4-hNt" firstAttribute="top" secondItem="7Gk-6l-ByR" secondAttribute="top" id="OUc-Xd-tbc"/>
                             <constraint firstItem="00K-UV-YJE" firstAttribute="top" secondItem="7Gk-6l-ByR" secondAttribute="top" id="Tas-6r-ndo"/>
                             <constraint firstItem="00K-UV-YJE" firstAttribute="trailing" secondItem="7Gk-6l-ByR" secondAttribute="trailing" id="XtH-bd-ldN"/>
                             <constraint firstItem="00K-UV-YJE" firstAttribute="leading" secondItem="7Gk-6l-ByR" secondAttribute="leading" id="bUi-wO-8CP"/>
+                            <constraint firstItem="5JW-d4-hNt" firstAttribute="leading" secondItem="7Gk-6l-ByR" secondAttribute="leading" id="fhm-cL-mPK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Создание объявления" largeTitleDisplayMode="always" id="rod-Sz-HYH">
@@ -141,7 +159,10 @@
                     <connections>
                         <outlet property="animalTypeView" destination="B9p-Np-gSw" id="bEH-sa-Ril"/>
                         <outlet property="announcementTypeView" destination="ggP-Qy-Gz2" id="Zgq-XR-Nft"/>
-                        <outlet property="phoneNumberTextFieldWithLabel" destination="zm0-BF-eYu" id="XEC-NE-eXn"/>
+                        <outlet property="commentTextView" destination="FrF-0G-dqU" id="sCP-g8-zSj"/>
+                        <outlet property="largeActivityIndicatorView" destination="WEo-Qr-HKM" id="8OM-tE-RVr"/>
+                        <outlet property="loadingView" destination="5JW-d4-hNt" id="Nq0-e1-VeM"/>
+                        <outlet property="phoneNumberTextFieldWithLabel" destination="zm0-BF-eYu" id="BP1-uD-hfj"/>
                         <outlet property="photoView" destination="HKw-fo-jrc" id="RcE-UL-cIZ"/>
                         <outlet property="placeView" destination="coR-SG-mgU" id="TeZ-ML-nbz"/>
                         <outlet property="scrollView" destination="00K-UV-YJE" id="ECj-ne-sWZ"/>

@@ -31,18 +31,14 @@ class PhoneNumberTextFieldWithLabel: UIView {
         loadUI()
     }
 
-
-
-    var delegate: UITextFieldDelegate? = nil {
-        didSet {
-            textField.delegate = delegate
-        }
+    var delegate: UITextFieldDelegate? {
+        set { textField.delegate = newValue }
+        get { return textField.delegate }
     }
 
-    var text: String? = nil {
-        didSet {
-            textField.text = text
-        }
+    var text: String? {
+        set { textField.text = newValue }
+        get { return textField.text }
     }
 
     private func loadUI() {

@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0869D152CAA23394AB4F4D5A /* Pods_MissingPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */; };
+		9D2917D925F6386C00707FB6 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2917D825F6386C00707FB6 /* JSON.swift */; };
 		9D33D8B525D6EFD9008F40A8 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */; };
 		9D33D8B925D6EFE8008F40A8 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */; };
-		9D33D8D925D70193008F40A8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8D825D70193008F40A8 /* Profile.storyboard */; };
+		9D5D4DB425EE4C0A00F6F1A6 /* PlaceRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D4DB325EE4C0A00F6F1A6 /* PlaceRepositoryType.swift */; };
+		9D5D4DB825EE4C6700F6F1A6 /* PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D4DB725EE4C6700F6F1A6 /* PlaceRepository.swift */; };
+		9D5D4DBB25EE515800F6F1A6 /* PlaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D4DBA25EE515800F6F1A6 /* PlaceItem.swift */; };
 		9D7337BA25E500B9005BA301 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7337B925E500B9005BA301 /* AlertService.swift */; };
-		9DC2D0F925E434EF0041BE1B /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0F825E434EF0041BE1B /* LoginResult.swift */; };
-		9DC2D0FC25E4417D0041BE1B /* TokenRefreshResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */; };
-		9DC2D10025E4444C0041BE1B /* RegisterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */; };
+		9D7E9E8025F1E35B000A1861 /* UserInfoRespositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E9E7F25F1E35B000A1861 /* UserInfoRespositoryType.swift */; };
+		9D7E9E8325F1E3BC000A1861 /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E9E8225F1E3BC000A1861 /* UserInfoRepository.swift */; };
+		9D8CE6CC25F4D65C00E28DE8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D8CE6CB25F4D65C00E28DE8 /* Profile.storyboard */; };
+		9DB3130725E803010073ABF7 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3130625E803010073ABF7 /* UITableView.swift */; };
 		9DC2D10D25E461360041BE1B /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D10C25E461360041BE1B /* ConnectionService.swift */; };
 		9DD7F19925D96EB50024169F /* AnnouncementListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */; };
 		C801550A2599EFD800601D76 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80155092599EFD800601D76 /* PhotoView.swift */; };
@@ -125,13 +129,17 @@
 		2784DA8184CA10E8AD9CCCAD /* Pods-MissingPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.release.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.release.xcconfig"; sourceTree = "<group>"; };
 		63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissingPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B7AA15D05DAF05F9F3D85B /* Pods-MissingPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.debug.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.debug.xcconfig"; sourceTree = "<group>"; };
+		9D2917D825F6386C00707FB6 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoView.xib; sourceTree = "<group>"; };
-		9D33D8D825D70193008F40A8 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../../../../../Desktop/Profile.storyboard; sourceTree = "<group>"; };
+		9D5D4DB325EE4C0A00F6F1A6 /* PlaceRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepositoryType.swift; sourceTree = "<group>"; };
+		9D5D4DB725EE4C6700F6F1A6 /* PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepository.swift; sourceTree = "<group>"; };
+		9D5D4DBA25EE515800F6F1A6 /* PlaceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceItem.swift; sourceTree = "<group>"; };
 		9D7337B925E500B9005BA301 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
-		9DC2D0F825E434EF0041BE1B /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
-		9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshResult.swift; sourceTree = "<group>"; };
-		9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResult.swift; sourceTree = "<group>"; };
+		9D7E9E7F25F1E35B000A1861 /* UserInfoRespositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRespositoryType.swift; sourceTree = "<group>"; };
+		9D7E9E8225F1E3BC000A1861 /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
+		9D8CE6CB25F4D65C00E28DE8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		9DB3130625E803010073ABF7 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		9DC2D10C25E461360041BE1B /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementListResult.swift; sourceTree = "<group>"; };
 		C80155092599EFD800601D76 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
@@ -293,9 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */,
-				9DC2D0F825E434EF0041BE1B /* LoginResult.swift */,
-				9DC2D0FB25E4417D0041BE1B /* TokenRefreshResult.swift */,
-				9DC2D0FF25E4444C0041BE1B /* RegisterResult.swift */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -324,6 +329,8 @@
 				C809D7B4254F457600254EFE /* Abstract */,
 				C8A58119257447DA00671029 /* AnnouncementRepository.swift */,
 				C85DEC98258834CE005E8A21 /* AuthorizationRepository.swift */,
+				9D5D4DB725EE4C6700F6F1A6 /* PlaceRepository.swift */,
+				9D7E9E8225F1E3BC000A1861 /* UserInfoRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -333,6 +340,8 @@
 			children = (
 				C850261B255338770068D687 /* AnnouncementRepositoryType.swift */,
 				C8A5811C25744AD800671029 /* AuthorizationRepositoryType.swift */,
+				9D5D4DB325EE4C0A00F6F1A6 /* PlaceRepositoryType.swift */,
+				9D7E9E7F25F1E35B000A1861 /* UserInfoRespositoryType.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -438,6 +447,7 @@
 				C88F368B259656360034F8C7 /* AnnouncementType.swift */,
 				C88F368F2596564E0034F8C7 /* AnimalType.swift */,
 				C88F369525966B7E0034F8C7 /* AnnouncmenetsMapItem.swift */,
+				9D5D4DBA25EE515800F6F1A6 /* PlaceItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +485,8 @@
 				C8CB001A258A367500DF4734 /* Date.swift */,
 				C89F486325985E6B001F0137 /* UIView.swift */,
 				C8E3432A25A87CE5000C95B4 /* UITableViewCell.swift */,
+				9DB3130625E803010073ABF7 /* UITableView.swift */,
+				9D2917D825F6386C00707FB6 /* JSON.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -482,10 +494,10 @@
 		C8695B5825682814001A3D04 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				9D33D8D825D70193008F40A8 /* Profile.storyboard */,
 				9D33D8B325D6EFB6008F40A8 /* Views */,
 				C811477825684AE800620D1E /* Presenters */,
 				C8695B592568281D001A3D04 /* Controllers */,
+				9D8CE6CB25F4D65C00E28DE8 /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -891,7 +903,7 @@
 			files = (
 				C814C361258D4FAA000EF0B9 /* PlaceSearch.storyboard in Resources */,
 				C8FDF0B3252479C800A2C962 /* Main.storyboard in Resources */,
-				9D33D8D925D70193008F40A8 /* Profile.storyboard in Resources */,
+				9D8CE6CC25F4D65C00E28DE8 /* Profile.storyboard in Resources */,
 				C8BAF7F3254A1E3A002C3855 /* MyAnnouncements.storyboard in Resources */,
 				C8BAF7DA254A165F002C3855 /* SFUIText-Semibold.ttf in Resources */,
 				C801551E259A201D00601D76 /* CommentTextViewWithLabel.xib in Resources */,
@@ -986,8 +998,11 @@
 				C8F76C52253C828200ED71C4 /* Router.swift in Sources */,
 				C8F441CC2520D94E00A6570D /* Navigator.swift in Sources */,
 				C8BAF7ED254A1CA0002C3855 /* MyAnnouncementsNavigationController.swift in Sources */,
+				9D7E9E8325F1E3BC000A1861 /* UserInfoRepository.swift in Sources */,
+				9DB3130725E803010073ABF7 /* UITableView.swift in Sources */,
 				C8F441C32520D30500A6570D /* PresenterType.swift in Sources */,
 				C8015514259A071E00601D76 /* PhoneNumberTextFieldWithLabel.swift in Sources */,
+				9D7E9E8025F1E35B000A1861 /* UserInfoRespositoryType.swift in Sources */,
 				C834D5432522560E0070E3F6 /* UISetter.swift in Sources */,
 				C8BAF7FE254A283F002C3855 /* MapPresenter.swift in Sources */,
 				C8A5811D25744AD800671029 /* AuthorizationRepositoryType.swift in Sources */,
@@ -1004,9 +1019,8 @@
 				C8F441BF2520D2E800A6570D /* ViewType.swift in Sources */,
 				9DC2D10D25E461360041BE1B /* ConnectionService.swift in Sources */,
 				C801551B259A1FEC00601D76 /* CommentTextViewWithLabel.swift in Sources */,
-				9DC2D0FC25E4417D0041BE1B /* TokenRefreshResult.swift in Sources */,
+				9D2917D925F6386C00707FB6 /* JSON.swift in Sources */,
 				C86096A12572EA7400E90F61 /* SignUpPresenter.swift in Sources */,
-				9DC2D10025E4444C0041BE1B /* RegisterResult.swift in Sources */,
 				C85DEC99258834CE005E8A21 /* AuthorizationRepository.swift in Sources */,
 				C8A5811A257447DA00671029 /* AnnouncementRepository.swift in Sources */,
 				C8F441E92520DF5600A6570D /* FeedNavigationController.swift in Sources */,
@@ -1015,10 +1029,10 @@
 				C8F441E22520DEB100A6570D /* FeedPresenter.swift in Sources */,
 				C87DDD802597614C00F87B9F /* AppSettings.swift in Sources */,
 				C88F36902596564E0034F8C7 /* AnimalType.swift in Sources */,
+				9D5D4DB825EE4C6700F6F1A6 /* PlaceRepository.swift in Sources */,
 				C8F441C62520D3D900A6570D /* StoryboardInstanceType.swift in Sources */,
 				C88F368C259656360034F8C7 /* AnnouncementType.swift in Sources */,
 				C860969E2572EA6500E90F61 /* SignUpViewController.swift in Sources */,
-				9DC2D0F925E434EF0041BE1B /* LoginResult.swift in Sources */,
 				C816F94425748AF900C0E71E /* ImagePreviewPresenter.swift in Sources */,
 				C8BAF811254A298E002C3855 /* CreateAnnouncementViewController.swift in Sources */,
 				C8F441D72520DD8E00A6570D /* Storyboard.swift in Sources */,
@@ -1042,7 +1056,9 @@
 				9D7337BA25E500B9005BA301 /* AlertService.swift in Sources */,
 				9DD7F19925D96EB50024169F /* AnnouncementListResult.swift in Sources */,
 				C87DDD7D25975F6900F87B9F /* Constants.swift in Sources */,
+				9D5D4DB425EE4C0A00F6F1A6 /* PlaceRepositoryType.swift in Sources */,
 				C89455282576C26D004A85EB /* AnnouncementPointAnnotation.swift in Sources */,
+				9D5D4DBB25EE515800F6F1A6 /* PlaceItem.swift in Sources */,
 				C816F94825748B2400C0E71E /* ImagePreviewViewController.swift in Sources */,
 				C8BAF815254A29FE002C3855 /* CreateAnnouncementNavigationController.swift in Sources */,
 				C8CB001B258A367500DF4734 /* Date.swift in Sources */,

@@ -31,7 +31,7 @@ class AnnouncementTableViewCell: UITableViewCell {
 
     func set(item: AnnouncementItem) {
         announcementImageView.kf.setImage(with: URL(string: item.photo))
-        creationDateLabel.text = item.createdAt//item.createdAt.string(withFormat: "d MMM yyyy',' HH:mm")
+        creationDateLabel.text = item.createdAt.string(withFormat: "d MMM yyyy',' HH:mm")
         descriprionLabel.text = item.description
     }
 

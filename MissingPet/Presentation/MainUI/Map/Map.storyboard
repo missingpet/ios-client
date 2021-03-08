@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,20 +21,40 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dk6-9F-x4h">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                             </mapView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aa-Rd-m4B" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Eqh-8R-yx9">
+                                        <rect key="frame" x="188.5" y="342.5" width="37" height="37"/>
+                                        <color key="color" name="DarkBlue"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Eqh-8R-yx9" firstAttribute="centerY" secondItem="5aa-Rd-m4B" secondAttribute="centerY" id="G4U-d5-IIM"/>
+                                    <constraint firstItem="Eqh-8R-yx9" firstAttribute="centerX" secondItem="5aa-Rd-m4B" secondAttribute="centerX" id="To0-fL-KqB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BkW-CX-Fcu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Dk6-9F-x4h" firstAttribute="trailing" secondItem="BkW-CX-Fcu" secondAttribute="trailing" id="3fb-04-szp"/>
+                            <constraint firstItem="BkW-CX-Fcu" firstAttribute="trailing" secondItem="5aa-Rd-m4B" secondAttribute="trailing" id="3kh-gB-OIJ"/>
+                            <constraint firstItem="5aa-Rd-m4B" firstAttribute="leading" secondItem="BkW-CX-Fcu" secondAttribute="leading" id="NzM-fg-qZc"/>
                             <constraint firstItem="Dk6-9F-x4h" firstAttribute="top" secondItem="BkW-CX-Fcu" secondAttribute="top" id="T0g-Yt-29N"/>
+                            <constraint firstItem="5aa-Rd-m4B" firstAttribute="top" secondItem="BkW-CX-Fcu" secondAttribute="top" id="Th4-2r-hY0"/>
                             <constraint firstItem="Dk6-9F-x4h" firstAttribute="leading" secondItem="BkW-CX-Fcu" secondAttribute="leading" id="gNb-pg-Waa"/>
                             <constraint firstAttribute="bottom" secondItem="Dk6-9F-x4h" secondAttribute="bottom" id="jSx-HZ-XPw"/>
+                            <constraint firstItem="BkW-CX-Fcu" firstAttribute="bottom" secondItem="5aa-Rd-m4B" secondAttribute="bottom" id="uQd-np-Cir"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" largeTitleDisplayMode="always" id="meX-2S-sAg">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="H3C-L4-M0H"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="largeActivityIndicatorView" destination="Eqh-8R-yx9" id="Daa-RO-ZI8"/>
+                        <outlet property="loadingView" destination="5aa-Rd-m4B" id="J3a-CR-1Ja"/>
                         <outlet property="mapView" destination="Dk6-9F-x4h" id="gwn-gC-4iW"/>
                     </connections>
                 </viewController>

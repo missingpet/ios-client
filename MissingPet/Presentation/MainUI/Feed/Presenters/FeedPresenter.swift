@@ -55,11 +55,7 @@ class FeedPresenter: PresenterType {
 
     @objc func reloadFeed() {
         resetItemsState()
-        if AppSettings.isAuthorized {
-            self.getFeed()
-        } else {
-            self.getAllAnnouncements()
-        }
+        loadItems()
     }
 
     private func updateItems(result: AnnouncementListResult) {
@@ -78,7 +74,7 @@ class FeedPresenter: PresenterType {
         loadingSetter?(true)
     }
 
-    private func stopAnimatng() {
+    private func stopAnimating() {
         loadingSetter?(false)
     }
 
@@ -90,11 +86,11 @@ class FeedPresenter: PresenterType {
         announcementRepository.getAllAnnouncements(pageNumber: pageNumber, onSuccess: { (result) in
             self.updateItems(result: result)
             self.reloadItemsUI()
-            self.stopAnimatng()
+            self.stopAnimating()
         },
         onFailure: { (errorDescription) in
             debugPrint(errorDescription)
-            self.stopAnimatng()
+            self.stopAnimating()
         })
     }
 
@@ -104,11 +100,11 @@ class FeedPresenter: PresenterType {
         announcementRepository.getFeed(pageNumber: pageNumber, onSuccess: { (result) in
             self.updateItems(result: result)
             self.reloadItemsUI()
-            self.stopAnimatng()
+            self.stopAnimating()
         },
         onFailure: { (errorDescription) in
             debugPrint(errorDescription)
-            self.stopAnimatng()
+            self.stopAnimating()
         })
     }
 
@@ -122,7 +118,8 @@ class FeedPresenter: PresenterType {
 
     func pushInspectAnnouncementViewController(with item: AnnouncementItem) {
         Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self,
-                                                       presenter: InspectAnnouncementPresenter(announcement: item))
+                                                       presenter: InspectAnnouncementPresenter(announcement: item,
+                                                                                               userInfoRepository: UserInfoRepository()))
     }
 
 }
