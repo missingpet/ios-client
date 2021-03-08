@@ -9,23 +9,23 @@ import MapKit
 import Foundation
 
 struct PlaceItem {
-    
+
     let addressLine: String
     let latitude: Double
     let longitude: Double
-    
+
 }
 
 extension PlaceItem {
-    
+
     static func from(mapItem: MKMapItem) -> PlaceItem {
-        
+
         let placemark = mapItem.placemark
         let coordinate = placemark.coordinate
         var addressLine = ""
-        
+
         let separator = ", "
-        
+
         if let administrativeArea = placemark.administrativeArea {
             addressLine += administrativeArea
         }
@@ -47,11 +47,11 @@ extension PlaceItem {
             }
             addressLine += subThoroughfare
         }
-        
+
         let latitude = coordinate.latitude
         let longitude = coordinate.longitude
-        
+
         return PlaceItem(addressLine: addressLine, latitude: latitude, longitude: longitude)
     }
-    
+
 }

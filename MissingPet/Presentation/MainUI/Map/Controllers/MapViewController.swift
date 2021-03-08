@@ -12,7 +12,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
 
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
-    
+
     @IBOutlet weak var mapView: MKMapView!
 
     let locationManager = CLLocationManager()
@@ -44,7 +44,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
                 self?.tabBarController?.view.isUserInteractionEnabled = true
             }
         }
-        
+
         super.viewDidLoad()
 
         mapView.delegate = self
@@ -53,7 +53,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
-        
+
         presenter?.loadItems()
     }
 

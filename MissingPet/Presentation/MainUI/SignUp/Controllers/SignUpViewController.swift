@@ -17,7 +17,7 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
 
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         self.presenter?.loadingSetter = { [weak self] isLoading in
             if isLoading {
@@ -30,7 +30,7 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
                 self?.activityIndicatorView.stopAnimating()
             }
         }
-        
+
         super.viewDidLoad()
 
         nicknameTextField.delegate = self

@@ -60,7 +60,7 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
         return feedCell
     }
 // end of table view
-    
+
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == feedTableView else { return }
         if feedTableView.isScrolledToTheBottom {

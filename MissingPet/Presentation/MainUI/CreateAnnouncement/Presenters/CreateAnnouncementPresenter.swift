@@ -16,7 +16,7 @@ class CreateAnnouncementPresenter: PresenterType {
     var photoSetter: UISetter<UIImage?>?
     var sourceTypeSetter: UISetter<String?>?
     var loadingSetter: UISetter<Bool>?
-    
+
     var announcementType: AnnouncementType?
     var animalType: AnimalType?
     var address: String?
@@ -27,7 +27,7 @@ class CreateAnnouncementPresenter: PresenterType {
     var photo: UIImage?
 
     private let notificationCenter = NotificationCenter.default
-    
+
     private let announcementRepository: AnnouncementRepositoryType!
 
     private func startAnimating() {
@@ -37,7 +37,7 @@ class CreateAnnouncementPresenter: PresenterType {
     private func stopAnimatng() {
         loadingSetter?(false)
     }
-    
+
     init (announcementRepository: AnnouncementRepositoryType) {
         self.announcementRepository = announcementRepository
         notificationCenter.addObserver(self, selector:
@@ -45,11 +45,11 @@ class CreateAnnouncementPresenter: PresenterType {
                                        name: NSNotification.Name(Constants.addressSelected),
                                        object: nil)
     }
-    
+
     deinit {
         notificationCenter.removeObserver(self)
     }
-    
+
     @objc func updateAddressUI(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
             self.address = userInfo["address"] as? String
@@ -58,7 +58,7 @@ class CreateAnnouncementPresenter: PresenterType {
             addressSetter?(self.address)
         }
     }
-    
+
     func chooseAnnouncementType(controller: UIViewController) {
 
         let chooseAnnouncementTypeAlert = UIAlertController(title: "Тип объявления", message: "Выберите один из следующих вариантов", preferredStyle: .alert)
@@ -93,7 +93,7 @@ class CreateAnnouncementPresenter: PresenterType {
 
         controller.present(chooseAnnouncementTypeAlert, animated: true, completion: nil)
     }
-    
+
     func pushPlaceSearchViewController() {
         Navigator(Storyboard.placeSearch).push(PlaceSearchViewController.self,
                                                presenter: PlaceSearchPresenter(placeRepository: PlaceRepository()))
@@ -165,7 +165,7 @@ class CreateAnnouncementPresenter: PresenterType {
     func addPhoto(photo: UIImage?) {
         self.photo = photo
         photoSetter?(self.photo)
-        
+
         Navigator().dismiss()
     }
 }

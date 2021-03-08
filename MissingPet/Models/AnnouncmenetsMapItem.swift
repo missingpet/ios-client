@@ -17,11 +17,11 @@ class AnnouncmenetsMapItem {
 }
 
 extension AnnouncmenetsMapItem {
-    
+
     static func from(json: JSON) -> AnnouncmenetsMapItem {
-        
+
         let announcmenetsMapItem = AnnouncmenetsMapItem()
-        
+
         if let id = json["id"].int {
             announcmenetsMapItem.id = id
         }
@@ -31,8 +31,8 @@ extension AnnouncmenetsMapItem {
         if let longitude = json["longitude"].double {
             announcmenetsMapItem.longitude = longitude
         }
-        
+
         return announcmenetsMapItem
     }
-    
+
 }

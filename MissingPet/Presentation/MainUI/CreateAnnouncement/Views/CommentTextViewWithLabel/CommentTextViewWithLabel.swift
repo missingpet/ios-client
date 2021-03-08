@@ -20,7 +20,7 @@ class CommentTextViewWithLabel: UIView {
         super.init(frame: frame)
         loadUI()
     }
-    
+
     var delegate: UITextViewDelegate? {
         set { textView.delegate = newValue }
         get { return textView.delegate }
@@ -30,7 +30,7 @@ class CommentTextViewWithLabel: UIView {
         set { textView.text = newValue }
         get { return textView.text }
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadUI()

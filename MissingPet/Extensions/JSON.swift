@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 
 extension JSON {
-    
+
     var date: Date? {
         get {
             if let dateString = self.string {
@@ -24,5 +24,5 @@ extension JSON {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
         return dateFormatter
     }
-    
+
 }

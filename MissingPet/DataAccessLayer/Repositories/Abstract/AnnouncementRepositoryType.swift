@@ -27,7 +27,7 @@ protocol AnnouncementRepositoryType: class {
 
     func getFeedAnnouncementsMap(onSuccess: (([AnnouncmenetsMapItem]) -> Void)?,
                                  onFailure: ((String) -> Void)?)
-    
+
     func createAnnouncement(description: String,
                             photo: UIImage,
                             announcementType: AnnouncementType,
@@ -41,7 +41,7 @@ protocol AnnouncementRepositoryType: class {
 
     func getAnnouncement(id: Int, onSuccess: ((AnnouncementItem) -> Void)?,
                             onFailure: ((String) -> Void)?)
-    
+
     func deleteAnnouncement(id: Int, onSuccess: (() -> Void)?,
                             onFailure: ((String) -> Void)?)
 

@@ -37,5 +37,5 @@ struct Constants {
     static let nicknameErrorMessageKey = "nickname"
     static let passwordErrorMessageKey = "password"
     static let detailKey = "detail"
-    
+
 }
