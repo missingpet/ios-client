@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AlertService {
-    
+
     static func getErrorAlert(message: String) -> UIAlertController {
         let alert = UIAlertController(title: "Ошибка",
                                       message: message,
@@ -19,7 +19,7 @@ class AlertService {
                                       handler: nil))
         return alert
     }
-    
+
     static func getSuccessAlert(message: String) -> UIAlertController {
         let alert = UIAlertController(title: "Успех",
                                       message: message,
@@ -29,7 +29,7 @@ class AlertService {
                                       handler: nil))
         return alert
     }
-    
+
     static func getConnectionUnavalableAlert() -> UIAlertController {
         let alert = UIAlertController(title: "Ошибка",
                                       message: "Отсутствует подключение к интернету",
@@ -39,5 +39,5 @@ class AlertService {
                                       handler: nil))
         return alert
     }
-    
+
 }

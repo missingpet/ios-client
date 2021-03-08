@@ -16,11 +16,11 @@ class AnnouncementListResult {
 }
 
 extension AnnouncementListResult {
-    
+
     static func from(json: JSON) -> AnnouncementListResult {
-        
+
         let announcementListResult = AnnouncementListResult()
-        
+
         if let count = json["count"].int {
             announcementListResult.count = count
         }
@@ -35,8 +35,8 @@ extension AnnouncementListResult {
                 announcementListResult.results.append(AnnouncementItem.from(json: jsonItem))
             }
         }
-        
+
         return announcementListResult
     }
-    
+
 }

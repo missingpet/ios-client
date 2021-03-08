@@ -9,7 +9,7 @@ import MapKit
 import Foundation
 
 class PlaceRepository: PlaceRepositoryType {
-    
+
     func searchForPlaces(searchText: String,
                          onSuccess: (([PlaceItem]) -> Void)?,
                          onFailure: ((String) -> Void)?) {
@@ -25,11 +25,11 @@ class PlaceRepository: PlaceRepositoryType {
             }
         })
     }
-    
+
 }
 
 fileprivate extension PlaceRepository {
-    
+
     func processSearchForPlaces(mapItems: [MKMapItem]) -> [PlaceItem] {
         var result = [PlaceItem]()
         for mapItem in mapItems {
@@ -37,5 +37,5 @@ fileprivate extension PlaceRepository {
         }
         return result
     }
-    
+
 }

@@ -11,12 +11,12 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
 
     @IBOutlet weak var placeSearchResultsTableView: UITableView!
     @IBOutlet weak var placeSearchTextField: TextFieldWithImageView!
-    
+
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
-    
+
     @IBOutlet weak var resultsCountLabel: UILabel!
-    
+
     override func viewDidLoad() {
         presenter?.loadingSetter = { [weak self] (isLoading) in
             if isLoading {
@@ -36,19 +36,19 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
             self?.resultsCountLabel.text = "Найдено адресов: \(count)"
             self?.resultsCountLabel.isHidden = count == 0
         }
-        
+
         super.viewDidLoad()
-        
+
         placeSearchTextField.delegate = self
         placeSearchTextField.keyboardType = .default
         placeSearchTextField.textContentType = .addressCityAndState
         placeSearchTextField.isSecureTextEntry = false
-        
+
         placeSearchResultsTableView.delegate = self
         placeSearchResultsTableView.dataSource = self
         placeSearchResultsTableView.register(UINib(nibName: AddressTableViewCell.nibName, bundle: nil),
                                              forCellReuseIdentifier: AddressTableViewCell.cellIdentifier)
-        
+
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(dismissKeyboard)))
     }
@@ -73,7 +73,7 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
         return addressCell
     }
 // end of table view
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         let searchText = placeSearchTextField.text ?? ""
@@ -84,5 +84,5 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
+
 }

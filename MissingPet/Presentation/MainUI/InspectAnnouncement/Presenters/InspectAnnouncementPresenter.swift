@@ -22,10 +22,10 @@ class InspectAnnouncementPresenter: PresenterType {
     var deleteAnnouncementButtonSetter: UISetter<Bool>?
 
     let announcement: AnnouncementItem
-    
+
     private let userInfoRepository: UserInfoRepositoryType!
-    
-    
+
+
     init (announcement: AnnouncementItem,
           userInfoRepository: UserInfoRepositoryType) {
         self.announcement = announcement
@@ -66,7 +66,7 @@ class InspectAnnouncementPresenter: PresenterType {
         guard let telUrl = URL(string: "tel://\(announcement.contactPhoneNumber)") else { return }
         UIApplication.shared.open(telUrl, options: [:], completionHandler: nil)
     }
-    
+
     func presentDeleteAnnouncementAlert(controller: UIViewController) {
         if ConnectionService.isUnavailable {
             let connectionUnavailableAlert = AlertService.getConnectionUnavalableAlert()
@@ -78,7 +78,7 @@ class InspectAnnouncementPresenter: PresenterType {
             controller.present(notAuthorizedAlert, animated: true, completion: nil)
             return
         }
-        
+
         let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение",
                                                         message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))

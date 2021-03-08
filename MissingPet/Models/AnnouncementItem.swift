@@ -31,11 +31,11 @@ class AnnouncementItem {
 }
 
 extension AnnouncementItem {
-    
+
     static func from(json: JSON) -> AnnouncementItem {
-        
+
         let announcementItem = AnnouncementItem()
-        
+
         if let id = json["id"].int {
             announcementItem.id = id
         }
@@ -75,8 +75,8 @@ extension AnnouncementItem {
         if let updatedAt = json["updated_at"].date {
             announcementItem.updatedAt = updatedAt
         }
-        
+
         return announcementItem
     }
-    
+
 }

@@ -14,7 +14,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
 
     private let userIdStorage = UserDefaultsAccessor<Int>(key: Constants.userIdKey)
     private let accessTokenStorage = UserDefaultsAccessor<String>(key: Constants.accessTokenKey)
-    
+
     func getAllAnnouncements(pageNumber: Int,
                  onSuccess: ((AnnouncementListResult) -> Void)?,
                  onFailure: ((String) -> Void)?) {
@@ -66,7 +66,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
         let parameters = [
             "page": pageNumber,
         ]
-        
+
         AF.request(Router.myAnnouncements(userId: userId), method: .get, parameters: parameters)
             .validate(statusCode: 200..<300)
             .responseJSON(completionHandler: { (response) in
@@ -94,7 +94,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                 }
             })
     }
-    
+
     func getFeedAnnouncementsMap(onSuccess: (([AnnouncmenetsMapItem]) -> Void)?,
                                  onFailure: ((String) -> Void)?) {
         guard let userId = userIdStorage.value else { return }
@@ -120,9 +120,9 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                             contactPhoneNumber: String,
                             onSuccess: ((AnnouncementItem) -> Void)?,
                             onFailure: ((String) -> Void)?) {
-        
+
         guard let accessToken = accessTokenStorage.value else { return }
-        
+
         let form = MultipartFormData()
         if let descriptionData = description.data(using: .utf8) {
             form.append(descriptionData, withName: "description")
@@ -148,11 +148,11 @@ class AnnouncementRepository: AnnouncementRepositoryType {
         if let contactPhoneNumberData = contactPhoneNumber.data(using: .utf8) {
             form.append(contactPhoneNumberData, withName: "contact_phone_number")
         }
-        
+
         let headers = [
             "Authorization": "Bearer \(accessToken)"
         ]
-        
+
         AF.upload(multipartFormData: form,
                   to: Router.listOrCreateAnnouncement,
                   headers: HTTPHeaders(headers))
@@ -164,8 +164,8 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                     onFailure?(self.processFailure(data: response.data!))
                 }
             })
-        
-        
+
+
     }
 
     func getAnnouncement(id: Int, onSuccess: ((AnnouncementItem) -> Void)?,
@@ -181,7 +181,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                 }
             })
     }
-    
+
     func deleteAnnouncement(id: Int, onSuccess: (() -> Void)?,
                             onFailure: ((String) -> Void)?) {
         guard let accessToken = accessTokenStorage.value else { return }
@@ -203,13 +203,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
 }
 
 fileprivate extension AnnouncementRepository {
-    
+
     func processCreateAnnouncement(data: Data) -> AnnouncementItem {
         let json = JSON(data)
         let result = AnnouncementItem.from(json: json)
         return result
     }
-    
+
     func processAnnouncementsMap(data: Data) -> [AnnouncmenetsMapItem] {
         let json = JSON(data)
         var announcementsMapItems = [AnnouncmenetsMapItem]()
@@ -218,23 +218,23 @@ fileprivate extension AnnouncementRepository {
         }
         return announcementsMapItems
     }
-    
+
     func processGetAnnouncement(data: Data) -> AnnouncementItem {
         let json = JSON(data)
         let result = AnnouncementItem.from(json: json)
         return result
     }
-    
+
     func processGetAnnouncementsList(data: Data) -> AnnouncementListResult {
         let json = JSON(data)
         let announcementsListResult = AnnouncementListResult.from(json: json)
         return announcementsListResult
     }
-    
+
     func processFailure(data: Data) -> String {
-        
+
         let json = JSON(data)
-        
+
         let nonFieldErrorsErrorMessage = json[Constants.nonFieldErrorsErrorKey][0].string
         let photoErrorMessage = json[Constants.photoErrorKey][0].string
         let descriptionErrorMessage = json[Constants.descriptionErrorKey][0].string
@@ -242,11 +242,11 @@ fileprivate extension AnnouncementRepository {
         let latitudeErrorMessage = json[Constants.latitudeErrorKey][0].string
         let longitudeErrorMessage = json[Constants.longitudeErrorKey][0].string
         let contactPhoneNumberErrorMessage = json[Constants.contactPhoneNumberErrorKey][0].string
-        
+
         var resultMessage = ""
-        
+
         let separator = "\n"
-        
+
         if let nonFieldErrorsErrorMessage = nonFieldErrorsErrorMessage {
             resultMessage += nonFieldErrorsErrorMessage
         }
@@ -286,7 +286,7 @@ fileprivate extension AnnouncementRepository {
             }
             resultMessage += contactPhoneNumberErrorMessage
         }
-        
+
         return resultMessage
     }
 

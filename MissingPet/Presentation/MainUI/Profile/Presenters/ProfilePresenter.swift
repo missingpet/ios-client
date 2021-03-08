@@ -17,7 +17,7 @@ class ProfilePresenter: PresenterType {
 
     private let authorizationReporitory: AuthorizationRepositoryType!
     private let userInfoRepository: UserInfoRepositoryType!
-    
+
     private let notificationCenter = NotificationCenter.default
 
     init(authorizationReporitory: AuthorizationRepositoryType,
@@ -40,7 +40,7 @@ class ProfilePresenter: PresenterType {
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         controller.present(alert, animated: true, completion: nil)
     }
-    
+
     func setupUserInfoViews() {
         if AppSettings.isAuthorized {
             profileViewSetter?(false)

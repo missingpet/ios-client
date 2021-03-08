@@ -8,9 +8,9 @@
 import Foundation
 
 protocol PlaceRepositoryType: class {
-    
+
     func searchForPlaces(searchText: String,
                          onSuccess: (([PlaceItem]) -> Void)?,
                          onFailure: ((String) -> Void)?)
-    
+
 }

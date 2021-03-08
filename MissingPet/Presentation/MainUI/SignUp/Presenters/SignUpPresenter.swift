@@ -11,7 +11,7 @@ import UIKit
 class SignUpPresenter: PresenterType {
 
     var loadingSetter: UISetter<Bool>?
-    
+
     let authorizationRepository: AuthorizationRepositoryType!
 
     init(authorizationRepository: AuthorizationRepositoryType) {
@@ -24,21 +24,21 @@ class SignUpPresenter: PresenterType {
     func stopLoading() {
         self.loadingSetter?(false)
     }
-    
+
     func singUp(_ controller: UIViewController,
                 nickname: String,
                 email: String,
                 password: String,
                 repeatedPassword: String) {
-        
+
         if ConnectionService.isUnavailable {
             let alert = AlertService.getConnectionUnavalableAlert()
             controller.present(alert, animated: true, completion: nil)
             return
         }
-        
+
         self.startLoading()
-        
+
         guard !nickname.isEmpty,
               !email.isEmpty,
               !password.isEmpty,
@@ -48,13 +48,13 @@ class SignUpPresenter: PresenterType {
             controller.present(alert, animated: true, completion: nil)
             return
         }
-        
+
         if password != repeatedPassword {
             let alert = AlertService.getErrorAlert(message: "Пароли не совпадают")
             self.stopLoading()
             controller.present(alert, animated: true, completion: nil)
         }
-        
+
         if nickname.count < 3 {
             let alert = AlertService.getErrorAlert(message: "Никнейм должен содержать не менее чем 3 символа")
             self.stopLoading()
@@ -67,7 +67,7 @@ class SignUpPresenter: PresenterType {
             controller.present(alert, animated: true, completion: nil)
             return
         }
-        
+
         if password.count < 6 {
             let alert = AlertService.getErrorAlert(message: "Пароль должен содержать не менее чем 6 символов")
             self.stopLoading()
@@ -80,7 +80,7 @@ class SignUpPresenter: PresenterType {
             controller.present(alert, animated: true, completion: nil)
             return
         }
-        
+
         authorizationRepository.register(nickname: nickname,
                                          email: email, password: password,
                                          onSuccess: {

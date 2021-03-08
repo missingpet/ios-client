@@ -8,11 +8,11 @@
 import Foundation
 
 class UserInfoRepository: UserInfoRepositoryType {
-    
+
     private let currentUserIdStorage = UserDefaultsAccessor<Int>(key: Constants.userIdKey)
     private let currentUserNicknameStorage = UserDefaultsAccessor<String>(key: Constants.nicknameKey)
     private let currentUserEmailStorage = UserDefaultsAccessor<String>(key: Constants.emailKey)
-    
+
     func getUserEmail(onSuccess: ((String) -> Void)?,
                       onFailure: ((String) -> Void)?) {
         if let email = self.currentUserEmailStorage.value {
@@ -21,7 +21,7 @@ class UserInfoRepository: UserInfoRepositoryType {
             onFailure?("An error occurred when getting an email address")
         }
     }
-    
+
     func getUserNickname(onSuccess: ((String) -> Void)?,
                          onFailure: ((String) -> Void)?) {
         if let nickname = self.currentUserNicknameStorage.value {
@@ -30,7 +30,7 @@ class UserInfoRepository: UserInfoRepositoryType {
             onFailure?("An error occurred when getting a nickname")
         }
     }
-    
+
     func getUserId(onSuccess: ((Int) -> Void)?,
                    onFailure: ((String) -> Void)?) {
         if let userId = self.currentUserIdStorage.value {
@@ -39,5 +39,5 @@ class UserInfoRepository: UserInfoRepositoryType {
             onFailure?("An error occurred when getting a user id")
         }
     }
-    
+
 }

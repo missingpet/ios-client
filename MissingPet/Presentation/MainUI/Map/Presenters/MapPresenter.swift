@@ -11,13 +11,13 @@ class MapPresenter: PresenterType {
 
     var loadingSetter: UISetter<Bool>?
     var reloadResults: UISetter<Void>?
-    
+
     private var items = [AnnouncmenetsMapItem]()
-    
+
     private let announcementRepository: AnnouncementRepositoryType!
 
     private let notificationCenter = NotificationCenter.default
-    
+
     init(announcementRepository: AnnouncementRepositoryType) {
         self.announcementRepository = announcementRepository
         notificationCenter.addObserver(self,
@@ -29,7 +29,7 @@ class MapPresenter: PresenterType {
                                        name: Notification.Name(Constants.userLoggedOut),
                                        object: nil)
     }
-    
+
     deinit {
         notificationCenter.removeObserver(self)
     }
@@ -39,7 +39,7 @@ class MapPresenter: PresenterType {
                                                        presenter: InspectAnnouncementPresenter(announcement: announcement,
                                                                                                userInfoRepository: UserInfoRepository()))
     }
-    
+
     func openConcreteItem(id: Int) {
         self.startAnimating()
         announcementRepository.getAnnouncement(id: id,
@@ -52,27 +52,27 @@ class MapPresenter: PresenterType {
                                                 self.stopAnimating()
                                                })
     }
-    
+
     func getItems() -> [AnnouncmenetsMapItem] {
         return self.items
     }
-    
+
     func updateItems(result: [AnnouncmenetsMapItem]) {
         self.items = result
     }
-    
+
     func startAnimating() {
         loadingSetter?(true)
     }
-    
+
     func stopAnimating() {
         loadingSetter?(false)
     }
-    
+
     private func reloadItemsUI() {
         reloadResults?(())
     }
-    
+
     func getAllAnnouncementsMap() {
         startAnimating()
         announcementRepository.getAllAnnouncementsMap(onSuccess: { (result) in
@@ -85,7 +85,7 @@ class MapPresenter: PresenterType {
             self.stopAnimating()
         })
     }
-    
+
     func getFeedAnnouncementsMap() {
         startAnimating()
         announcementRepository.getFeedAnnouncementsMap(onSuccess: { (result) in
@@ -98,7 +98,7 @@ class MapPresenter: PresenterType {
             self.stopAnimating()
         })
     }
-    
+
     @objc func loadItems() {
         if AppSettings.isAuthorized {
             self.getFeedAnnouncementsMap()

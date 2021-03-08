@@ -76,16 +76,16 @@ class AuthorizationRepository: AuthorizationRepositoryType {
 fileprivate extension AuthorizationRepository {
 
     // MARK: - Data Processing
-    
+
     func processLogin(data: Data) {
-        
+
         let json = JSON(data)
-        
+
         guard let access = json["token"].string,
               let nickname = json["nickname"].string,
               let email = json["email"].string,
               let id = json["id"].int else { return }
-        
+
         self.accessTokenStorage.value = access
         self.nicknameStorage.value = nickname
         self.emailStorage.value = email
@@ -98,26 +98,26 @@ fileprivate extension AuthorizationRepository {
         self.nicknameStorage.value = nil
         self.emailStorage.value = nil
     }
-    
+
     func processLoginFailure(data: Data) -> String {
         let json = JSON(data)
         let detailMessage = json[Constants.detailKey].string!
         return detailMessage
     }
-    
+
     func processRegisterFailure(data: Data) -> String {
-        
+
         let json = JSON(data)
-        
+
         let nonFieldErrorsErrorMessage = json[Constants.nonFieldErrorsErrorKey][0].string
         let emailErrorMessage = json[Constants.emailErrorMessageKey][0].string
         let nicknameErrorMessage = json[Constants.nicknameErrorMessageKey][0].string
         let passwordErrorMessage = json[Constants.passwordErrorMessageKey][0].string
-        
+
         var resultMessage = ""
-        
+
         let separator = "\n"
-        
+
         if let nonFieldErrorsErrorMessage = nonFieldErrorsErrorMessage {
             resultMessage += nonFieldErrorsErrorMessage
         }
@@ -136,7 +136,7 @@ fileprivate extension AuthorizationRepository {
             }
             resultMessage += passwordErrorMessage
         }
-        
+
         return resultMessage
     }
 
