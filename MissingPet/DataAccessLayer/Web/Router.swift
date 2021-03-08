@@ -16,7 +16,6 @@ enum Router: URLConvertible {
     // authorization
     case register
     case login
-    case tokenRefresh
 
     // announcements
     case listOrCreateAnnouncement
@@ -30,7 +29,6 @@ enum Router: URLConvertible {
         switch self {
         case .register: return "auth/register/"
         case .login: return "auth/login/"
-        case .tokenRefresh: return "auth/token/refresh/"
         case .listOrCreateAnnouncement: return "announcement/"
         case .feedAnnouncements(let userId): return "user/\(userId)/feed/"
         case .detailOrDeleteAnnouncement(let id): return "announcement/\(id)/"

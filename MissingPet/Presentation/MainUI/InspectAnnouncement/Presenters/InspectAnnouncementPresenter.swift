@@ -22,9 +22,14 @@ class InspectAnnouncementPresenter: PresenterType {
     var deleteAnnouncementButtonSetter: UISetter<Bool>?
 
     let announcement: AnnouncementItem
-
-    init (announcement: AnnouncementItem) {
+    
+    private let userInfoRepository: UserInfoRepositoryType!
+    
+    
+    init (announcement: AnnouncementItem,
+          userInfoRepository: UserInfoRepositoryType) {
         self.announcement = announcement
+        self.userInfoRepository = userInfoRepository
     }
 
     func setup() {
@@ -48,20 +53,38 @@ class InspectAnnouncementPresenter: PresenterType {
         placeLabelSetter?(announcement.address)
         usernameSetter?(announcement.user.nickname)
         callPhoneNumberSetter?(announcement.contactPhoneNumber)
-        deleteAnnouncementButtonSetter?(announcement.user.id != AppSettings.currentUserId)
+        if AppSettings.isAuthorized {
+            userInfoRepository.getUserId(onSuccess: { userId in
+                                            self.deleteAnnouncementButtonSetter?(userId != self.announcement.user.id)},
+                                         onFailure: nil)
+        } else {
+            deleteAnnouncementButtonSetter?(true)
+        }
     }
 
     func callPhoneNumber() {
         guard let telUrl = URL(string: "tel://\(announcement.contactPhoneNumber)") else { return }
         UIApplication.shared.open(telUrl, options: [:], completionHandler: nil)
     }
-
-    func presentDeleteAnnouncementAlert(viewController: UIViewController) {
-        let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение", message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
+    
+    func presentDeleteAnnouncementAlert(controller: UIViewController) {
+        if ConnectionService.isUnavailable {
+            let connectionUnavailableAlert = AlertService.getConnectionUnavalableAlert()
+            controller.present(connectionUnavailableAlert, animated: true, completion: nil)
+            return
+        }
+        guard AppSettings.isAuthorized else {
+            let notAuthorizedAlert = AlertService.getErrorAlert(message: "Вы не авторизованы")
+            controller.present(notAuthorizedAlert, animated: true, completion: nil)
+            return
+        }
+        
+        let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение",
+                                                        message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { (_) in
                                                             self.deleteAnnouncement(id: self.announcement.id) }))
-        viewController.present(deleteAnnouncementAlert, animated: true, completion: nil)
+        controller.present(deleteAnnouncementAlert, animated: true, completion: nil)
     }
 
     func deleteAnnouncement(id: Int) {

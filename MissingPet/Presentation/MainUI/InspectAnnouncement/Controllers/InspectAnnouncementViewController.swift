@@ -59,7 +59,7 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     }
 
     @IBAction func deleteAnnouncement(_ sender: UIButton) {
-        presenter?.presentDeleteAnnouncementAlert(viewController: self)
+        presenter?.presentDeleteAnnouncementAlert(controller: self)
     }
 
     @objc private func presentImagePreviewViewController() {

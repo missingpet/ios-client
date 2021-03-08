@@ -11,7 +11,6 @@ struct Constants {
 
     // MARK:- UserDefaults Keys
 
-    static let refreshTokenKey = "refresh"
     static let accessTokenKey = "access"
     static let nicknameKey = "nickname"
     static let emailKey = "email"
@@ -22,5 +21,21 @@ struct Constants {
     static let userLoggedIn = "UserLoggedIn"
     static let userLoggedOut = "UserLoggedOut"
     static let refreshedAccessToken = "RefreshedAccessToken"
+    static let addressSelected  = "AddressSelected"
+    static let announcementCreated = "AnnouncementCreated"
+    static let announcementDeleted = "AnnouncementDeleted"
 
+    // MARK:- JSON error fields
+    static let nonFieldErrorsErrorKey = "non_field_errors"
+    static let photoErrorKey = "photo"
+    static let descriptionErrorKey = "description"
+    static let addressErrorKey = "address"
+    static let latitudeErrorKey = "latitude"
+    static let longitudeErrorKey = "longitude"
+    static let contactPhoneNumberErrorKey = "contact_phone_number"
+    static let emailErrorMessageKey = "email"
+    static let nicknameErrorMessageKey = "nickname"
+    static let passwordErrorMessageKey = "password"
+    static let detailKey = "detail"
+    
 }

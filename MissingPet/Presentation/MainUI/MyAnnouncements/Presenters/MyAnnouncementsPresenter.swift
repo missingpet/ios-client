@@ -40,6 +40,14 @@ class MyAnnouncementsPresenter: PresenterType {
                                        selector: #selector(reloadMyAnnouncements),
                                        name: Notification.Name(Constants.userLoggedOut),
                                        object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(reloadMyAnnouncements),
+                                       name: Notification.Name(Constants.announcementCreated),
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(reloadMyAnnouncements),
+                                       name: Notification.Name(Constants.announcementDeleted),
+                                       object: nil)
     }
 
     deinit {
@@ -102,6 +110,8 @@ class MyAnnouncementsPresenter: PresenterType {
     }
 
     func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
-        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self, presenter: InspectAnnouncementPresenter(announcement: announcement))
+        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self,
+                                                       presenter: InspectAnnouncementPresenter(announcement: announcement,
+                                                                                               userInfoRepository: UserInfoRepository()))
     }
 }

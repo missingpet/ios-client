@@ -46,6 +46,7 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
         presenter?.loadItems()
     }
 
+// table view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let announcement = presenter?.item(at: indexPath.item) else { return }
         presenter?.pushInspectAnnouncementViewController(with: announcement)
@@ -58,7 +59,8 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
         feedCell.set(item: presenter.item(at: indexPath.item))
         return feedCell
     }
-
+// end of table view
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == feedTableView else { return }
         if feedTableView.isScrolledToTheBottom {

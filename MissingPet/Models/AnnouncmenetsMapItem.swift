@@ -6,11 +6,33 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct AnnouncmenetsMapItem: Decodable {
+class AnnouncmenetsMapItem {
 
-    let id: Int
-    let latitude: Double
-    let longitude: Double
+    var id: Int = 0
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
 
+}
+
+extension AnnouncmenetsMapItem {
+    
+    static func from(json: JSON) -> AnnouncmenetsMapItem {
+        
+        let announcmenetsMapItem = AnnouncmenetsMapItem()
+        
+        if let id = json["id"].int {
+            announcmenetsMapItem.id = id
+        }
+        if let latitude = json["latitude"].double {
+            announcmenetsMapItem.latitude = latitude
+        }
+        if let longitude = json["longitude"].double {
+            announcmenetsMapItem.longitude = longitude
+        }
+        
+        return announcmenetsMapItem
+    }
+    
 }

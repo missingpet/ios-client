@@ -19,7 +19,7 @@
             <connections>
                 <outlet property="contentView" destination="WUp-ah-xWX" id="rEU-GK-j7C"/>
                 <outlet property="shadowView" destination="ceb-eg-Qf1" id="kZt-UR-DyZ"/>
-                <outlet property="textField" destination="QQX-x0-KGY" id="OfU-Fn-rKw"/>
+                <outlet property="textField" destination="QQX-x0-KGY" id="9T9-Xz-0Aj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="YUw-2c-hHT"/>
             </connections>
         </placeholder>
@@ -57,11 +57,6 @@
                                     <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                     <color key="textColor" name="Blue"/>
                                     <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <integer key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите номер с +7" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQX-x0-KGY">
                                     <rect key="frame" x="0.0" y="30" width="234" height="82"/>

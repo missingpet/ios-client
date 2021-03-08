@@ -16,11 +16,14 @@ class ProfilePresenter: PresenterType {
     var loadingSetter: UISetter<Bool>?
 
     private let authorizationReporitory: AuthorizationRepositoryType!
-
+    private let userInfoRepository: UserInfoRepositoryType!
+    
     private let notificationCenter = NotificationCenter.default
 
-    init(authorizationReporitory: AuthorizationRepositoryType) {
+    init(authorizationReporitory: AuthorizationRepositoryType,
+         userInfoRepository: UserInfoRepositoryType) {
         self.authorizationReporitory = authorizationReporitory
+        self.userInfoRepository = userInfoRepository
     }
 
     func setup() {
@@ -29,7 +32,7 @@ class ProfilePresenter: PresenterType {
 
     func presentLogoutConfirmationAlert(controller: UIViewController) {
         let alert = UIAlertController(title: "Предупреждение",
-                                      message: "Вы действительно хотите выйти? Данные для входа будут удалены",
+                                      message: "Данные для входа будут удалены. Вы действительно хотите выйти из профиля?",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Да",
                                       style: .destructive,
@@ -38,10 +41,16 @@ class ProfilePresenter: PresenterType {
         controller.present(alert, animated: true, completion: nil)
     }
     
-    private func setupUserInfoViews() {
-        profileViewSetter?(AppSettings.isAuthorized)
-        emailSetter?(AppSettings.currentUserEmail ?? "")
-        nicknameSetter?(AppSettings.currentUserNickname ?? "")
+    func setupUserInfoViews() {
+        if AppSettings.isAuthorized {
+            profileViewSetter?(false)
+            userInfoRepository.getUserEmail(onSuccess: { email in self.emailSetter?(email) },
+                                            onFailure: nil)
+            userInfoRepository.getUserNickname(onSuccess: { nickname in self.nicknameSetter?(nickname) },
+                                               onFailure: nil)
+        } else {
+            profileViewSetter?(true)
+        }
     }
 
     private func startAnimating() {
@@ -52,21 +61,31 @@ class ProfilePresenter: PresenterType {
         loadingSetter?(false)
     }
 
-    func login(email: String?, password: String?) {
-        if ConnectionService.isUnavailable { return }
-        guard let email = email, let password = password else { return }
+    func login(_ controller: UIViewController, email: String, password: String) {
+        if ConnectionService.isUnavailable {
+            let alert = AlertService.getConnectionUnavalableAlert()
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
+        guard !email.isEmpty, !password.isEmpty else {
+            let alert = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля")
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
 
         startAnimating()
 
         authorizationReporitory.login(email: email,
                                       password: password,
-                                      onSuccess: { (_) in
+                                      onSuccess: {
                                         self.setupUserInfoViews()
                                         self.postUserLoggedInNotification()
                                         self.stopAnimatng()
                                       },
-                                      onFailure: { (_) in
+                                      onFailure: { (message) in
                                         self.stopAnimatng()
+                                        let alert = AlertService.getErrorAlert(message: message)
+                                        controller.present(alert, animated: true, completion: nil)
                                       })
     }
 
@@ -92,14 +111,6 @@ class ProfilePresenter: PresenterType {
         postUserLoggedOutNotification()
         setupUserInfoViews()
         stopAnimatng()
-    }
-
-    func refreshAccessToken() {
-        if ConnectionService.isUnavailable { return }
-        authorizationReporitory.refreshAccessToken(onSuccess: { (_) in
-            self.postRefreshedAccessTokenNotification()
-        },
-        onFailure: nil)
     }
 
     func pushSignUpViewController() {

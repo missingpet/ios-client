@@ -33,8 +33,8 @@ class AddressTableViewCell: UITableViewCell {
         separatorInset.right = .infinity
     }
 
-    func set(title: String) {
-        addressLabel.text = title
+    func set(text: String) {
+        addressLabel.text = text
     }
 
 }

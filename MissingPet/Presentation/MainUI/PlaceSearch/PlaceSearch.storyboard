@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Place Search View Controller-->
         <scene sceneID="KJ8-ko-SXn">
@@ -33,22 +38,54 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mg5-WW-aw6">
                                 <rect key="frame" x="0.0" y="172" width="414" height="690"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="BPv-Ky-2k1">
+                                <view key="tableFooterView" contentMode="scaleToFill" id="mF5-hh-Ylx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ResultsCountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbz-lE-PyM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                            <color key="textColor" name="DarkBlue"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Pbz-lE-PyM" secondAttribute="trailing" id="5Bc-Nl-pju"/>
+                                        <constraint firstAttribute="bottom" secondItem="Pbz-lE-PyM" secondAttribute="bottom" id="lqL-J6-vdt"/>
+                                        <constraint firstItem="Pbz-lE-PyM" firstAttribute="top" secondItem="mF5-hh-Ylx" secondAttribute="top" id="qsR-Qe-GM2"/>
+                                        <constraint firstItem="Pbz-lE-PyM" firstAttribute="leading" secondItem="mF5-hh-Ylx" secondAttribute="leading" id="xzA-VW-qrO"/>
+                                    </constraints>
                                 </view>
                             </tableView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-X6-E4i" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fzw-Mw-0Hb">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" name="DarkBlue"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fzw-Mw-0Hb" firstAttribute="centerY" secondItem="hvO-X6-E4i" secondAttribute="centerY" id="Ve4-Bw-uCl"/>
+                                    <constraint firstItem="fzw-Mw-0Hb" firstAttribute="centerX" secondItem="hvO-X6-E4i" secondAttribute="centerX" id="ou3-ie-ahb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eNK-Rw-Wim"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hvO-X6-E4i" firstAttribute="bottom" secondItem="eNK-Rw-Wim" secondAttribute="bottom" id="1Je-f3-UVu"/>
+                            <constraint firstItem="hvO-X6-E4i" firstAttribute="top" secondItem="eNK-Rw-Wim" secondAttribute="top" id="1ra-gK-e8U"/>
+                            <constraint firstItem="hvO-X6-E4i" firstAttribute="leading" secondItem="eNK-Rw-Wim" secondAttribute="leading" id="20L-Z2-VEo"/>
                             <constraint firstItem="eNK-Rw-Wim" firstAttribute="trailing" secondItem="kfK-bH-VnM" secondAttribute="trailing" constant="16" id="Cxr-ao-kkQ"/>
                             <constraint firstItem="Mg5-WW-aw6" firstAttribute="leading" secondItem="eNK-Rw-Wim" secondAttribute="leading" id="GDk-aO-BZA"/>
                             <constraint firstItem="Mg5-WW-aw6" firstAttribute="trailing" secondItem="eNK-Rw-Wim" secondAttribute="trailing" id="Ijm-Mk-9ye"/>
                             <constraint firstItem="kfK-bH-VnM" firstAttribute="top" secondItem="eNK-Rw-Wim" secondAttribute="top" constant="16" id="Lse-Zp-mKN"/>
                             <constraint firstItem="Mg5-WW-aw6" firstAttribute="top" secondItem="kfK-bH-VnM" secondAttribute="bottom" constant="8" id="WhE-jv-spk"/>
                             <constraint firstItem="eNK-Rw-Wim" firstAttribute="bottom" secondItem="Mg5-WW-aw6" secondAttribute="bottom" id="YUL-nP-W5z"/>
+                            <constraint firstItem="hvO-X6-E4i" firstAttribute="trailing" secondItem="eNK-Rw-Wim" secondAttribute="trailing" id="j05-AZ-W2f"/>
                             <constraint firstItem="kfK-bH-VnM" firstAttribute="leading" secondItem="eNK-Rw-Wim" secondAttribute="leading" constant="16" id="uv7-bQ-ADG"/>
                         </constraints>
                     </view>
@@ -56,8 +93,11 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="1tY-ld-Bfb"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="largeActivityIndicatorView" destination="fzw-Mw-0Hb" id="EwS-1E-hW8"/>
+                        <outlet property="loadingView" destination="hvO-X6-E4i" id="vN7-6I-eBW"/>
                         <outlet property="placeSearchResultsTableView" destination="Mg5-WW-aw6" id="MNM-fC-qf2"/>
-                        <outlet property="textFieldWithImageView" destination="kfK-bH-VnM" id="yfK-c3-H45"/>
+                        <outlet property="placeSearchTextField" destination="kfK-bH-VnM" id="yfK-c3-H45"/>
+                        <outlet property="resultsCountLabel" destination="Pbz-lE-PyM" id="pMo-Hd-nhw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZr-Jh-9Xu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -47,7 +47,8 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
 
         presenter?.loadItems()
     }
-
+    
+// table view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let annoucement = presenter?.item(at: indexPath.item) else { return }
         presenter?.pushInspectAnnouncementViewController(with: annoucement)
@@ -63,7 +64,8 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
         myAnnouncementCell.set(item: presenter.item(at: indexPath.item))
         return myAnnouncementCell
     }
-
+// end of table view
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         guard scrollView == myAnnouncementsTableView else { return }
         if myAnnouncementsTableView.isScrolledToTheBottom {

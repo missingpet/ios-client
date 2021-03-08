@@ -10,23 +10,89 @@ import UIKit
 
 class SignUpPresenter: PresenterType {
 
+    var loadingSetter: UISetter<Bool>?
+    
     let authorizationRepository: AuthorizationRepositoryType!
 
     init(authorizationRepository: AuthorizationRepositoryType) {
         self.authorizationRepository = authorizationRepository
     }
 
-    func singUp(nickname: String, email: String, password: String, repeatedPassword: String) {
+    func startLoading() {
+        self.loadingSetter?(true)
+    }
+    func stopLoading() {
+        self.loadingSetter?(false)
+    }
+    
+    func singUp(_ controller: UIViewController,
+                nickname: String,
+                email: String,
+                password: String,
+                repeatedPassword: String) {
+        
+        if ConnectionService.isUnavailable {
+            let alert = AlertService.getConnectionUnavalableAlert()
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        self.startLoading()
+        
+        guard !nickname.isEmpty,
+              !email.isEmpty,
+              !password.isEmpty,
+              !repeatedPassword.isEmpty else {
+            let alert = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля")
+            self.stopLoading()
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if password != repeatedPassword {
+            let alert = AlertService.getErrorAlert(message: "Пароли не совпадают")
+            self.stopLoading()
+            controller.present(alert, animated: true, completion: nil)
+        }
+        
+        if nickname.count < 3 {
+            let alert = AlertService.getErrorAlert(message: "Никнейм должен содержать не менее чем 3 символа")
+            self.stopLoading()
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
+        if nickname.count > 64 {
+            let alert = AlertService.getErrorAlert(message: "Никнейм должен содержать не более чем 64 символа")
+            self.stopLoading()
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if password.count < 6 {
+            let alert = AlertService.getErrorAlert(message: "Пароль должен содержать не менее чем 6 символов")
+            self.stopLoading()
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
+        if password.count > 128 {
+            let alert = AlertService.getErrorAlert(message: "Пароль должен содержать не более чем 128 символов")
+            self.stopLoading()
+            controller.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         authorizationRepository.register(nickname: nickname,
                                          email: email, password: password,
-                                         onSuccess: nil,
-                                         onFailure: nil)
-    }
-
-    func presentSignUpAlert(viewController: UIViewController) {
-        let signUpAlert = UIAlertController(title: "Предупреждение", message: "Данный функционал пока что отсутсвует", preferredStyle: .alert)
-        signUpAlert.addAction(UIAlertAction(title: "Хорошо", style: .default, handler: nil))
-        viewController.present(signUpAlert, animated: true, completion: nil)
+                                         onSuccess: {
+                                            let alert = AlertService.getSuccessAlert(message: "Пользователь успешно зарегистрирован")
+                                            controller.present(alert, animated: true, completion: nil)
+                                            self.stopLoading()
+                                         },
+                                         onFailure: { message in
+                                            self.stopLoading()
+                                            let alert = AlertService.getErrorAlert(message: message)
+                                            controller.present(alert, animated: true, completion: nil)
+                                         })
     }
 
 }
