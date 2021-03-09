@@ -20,7 +20,6 @@ struct Constants {
 
     static let userLoggedIn = "UserLoggedIn"
     static let userLoggedOut = "UserLoggedOut"
-    static let refreshedAccessToken = "RefreshedAccessToken"
     static let addressSelected  = "AddressSelected"
     static let announcementCreated = "AnnouncementCreated"
     static let announcementDeleted = "AnnouncementDeleted"

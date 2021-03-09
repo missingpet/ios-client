@@ -37,7 +37,8 @@ class MapPresenter: PresenterType {
     func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
         Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self,
                                                        presenter: InspectAnnouncementPresenter(announcement: announcement,
-                                                                                               userInfoRepository: UserInfoRepository()))
+                                                                                               userInfoRepository: UserInfoRepository(),
+                                                                                               announcementRepository: AnnouncementRepository()))
     }
 
     func openConcreteItem(id: Int) {

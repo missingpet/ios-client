@@ -185,16 +185,17 @@ class AnnouncementRepository: AnnouncementRepositoryType {
     func deleteAnnouncement(id: Int, onSuccess: (() -> Void)?,
                             onFailure: ((String) -> Void)?) {
         guard let accessToken = accessTokenStorage.value else { return }
-        let parameters = [
+        let headers = [
             "Authorization": "Bearer \(accessToken)"
         ]
-        AF.request(Router.detailOrDeleteAnnouncement(id: id), method: .get, parameters: parameters)
+        debugPrint(accessToken)
+        AF.request(Router.detailOrDeleteAnnouncement(id: id), method: .delete, headers: HTTPHeaders(headers))
             .validate(statusCode: 200..<300)
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
                     onSuccess?()
-                case .failure:
+                case .failure(let error):
                     onFailure?(self.processFailure(data: response.data!))
                 }
             })
@@ -242,6 +243,7 @@ fileprivate extension AnnouncementRepository {
         let latitudeErrorMessage = json[Constants.latitudeErrorKey][0].string
         let longitudeErrorMessage = json[Constants.longitudeErrorKey][0].string
         let contactPhoneNumberErrorMessage = json[Constants.contactPhoneNumberErrorKey][0].string
+        let detailMessage = json[Constants.detailKey].string
 
         var resultMessage = ""
 
@@ -285,6 +287,12 @@ fileprivate extension AnnouncementRepository {
                 resultMessage += separator
             }
             resultMessage += contactPhoneNumberErrorMessage
+        }
+        if let detailMessage = detailMessage {
+            if contactPhoneNumberErrorMessage != nil {
+                resultMessage += separator
+            }
+            resultMessage += detailMessage
         }
 
         return resultMessage

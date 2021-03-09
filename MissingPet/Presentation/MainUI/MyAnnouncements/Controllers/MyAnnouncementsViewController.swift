@@ -29,7 +29,6 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
                 self?.tabBarController?.view.isUserInteractionEnabled = true
             }
         }
-
         presenter?.reloadItemsWithCount = { [weak self] count in
             self?.myAnnouncementsTableView.reloadData()
             self?.announcementCountLabel.text = "Всего объявлений: \(count)"

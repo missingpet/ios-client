@@ -12,7 +12,7 @@ import Kingfisher
 class InspectAnnouncementPresenter: PresenterType {
 
     var photoUrlSetter: UISetter<URL?>?
-    var creationDateSetter: UISetter<String>?
+    var creationDateSetter: UISetter<Date>?
     var animalTypeSetter: UISetter<String>?
     var descriptionSetter: UISetter<String>?
     var lostFoundSetter: UISetter<String>?
@@ -20,21 +20,34 @@ class InspectAnnouncementPresenter: PresenterType {
     var usernameSetter: UISetter<String>?
     var callPhoneNumberSetter: UISetter<String>?
     var deleteAnnouncementButtonSetter: UISetter<Bool>?
+    var loadingSetter: UISetter<Bool>?
 
     let announcement: AnnouncementItem
 
-    private let userInfoRepository: UserInfoRepositoryType!
+    private let notificationCenter = NotificationCenter.default
 
+    private let userInfoRepository: UserInfoRepositoryType!
+    private let announcementRepository: AnnouncementRepositoryType!
 
     init (announcement: AnnouncementItem,
-          userInfoRepository: UserInfoRepositoryType) {
+          userInfoRepository: UserInfoRepositoryType,
+          announcementRepository: AnnouncementRepositoryType) {
         self.announcement = announcement
         self.userInfoRepository = userInfoRepository
+        self.announcementRepository = announcementRepository
+    }
+
+    private func startAnimating() {
+        loadingSetter?(true)
+    }
+
+    private func stopAnimatng() {
+        loadingSetter?(false)
     }
 
     func setup() {
         photoUrlSetter?(URL(string: announcement.photo))
-        creationDateSetter?(announcement.createdAt.string(withFormat: "d MMM yyyy',' HH:mm"))
+        creationDateSetter?(announcement.createdAt)
         switch announcement.animalType {
         case .dog:
             animalTypeSetter?("Собаки")
@@ -83,12 +96,30 @@ class InspectAnnouncementPresenter: PresenterType {
                                                         message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { (_) in
-                                                            self.deleteAnnouncement(id: self.announcement.id) }))
+                                                            self.deleteAnnouncement(controller, id: self.announcement.id) }))
         controller.present(deleteAnnouncementAlert, animated: true, completion: nil)
     }
 
-    func deleteAnnouncement(id: Int) {
-        Navigator().pop()
+    func deleteAnnouncement(_ controller: UIViewController, id: Int) {
+        self.startAnimating()
+        self.announcementRepository.deleteAnnouncement(id: id,
+                                                       onSuccess: {
+                                                        self.notificationCenter.post(name: Notification.Name(Constants.announcementDeleted),
+                                                                                     object: nil)
+                                                        self.stopAnimatng()
+                                                        let alert = UIAlertController(title: "Объявление удалено",
+                                                                                      message: nil,
+                                                                                      preferredStyle: .alert)
+                                                        alert.addAction(UIAlertAction(title: "Ок",
+                                                                                      style: .default,
+                                                                                      handler: { (_) in
+                                                                                        Navigator().pop()
+                                                                                      }))
+                                                        controller.present(alert, animated: true, completion: nil)
+                                                       },
+                                                       onFailure: { (errorMessage) in
+                                                        debugPrint(errorMessage)
+                                                        self.stopAnimatng() })
     }
 
     func presentImagePreviewViewController(image: UIImage?) {

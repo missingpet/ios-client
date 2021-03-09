@@ -99,11 +99,6 @@ class ProfilePresenter: PresenterType {
                                      object: nil)
     }
 
-    func postRefreshedAccessTokenNotification() {
-        notificationCenter.post(name: Notification.Name(Constants.refreshedAccessToken),
-                                object: nil)
-    }
-
     func logout() {
         if ConnectionService.isUnavailable { return }
         startAnimating()
