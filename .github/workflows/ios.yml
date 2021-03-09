@@ -12,10 +12,14 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: CocoaPods Action
-        uses: ty0x2333/cocoapods-action@0.2.0
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Bundle Install
+        run: bundle install
+      - name: Dependencies
+        run: |
+          carthage bootstrap --no-use-binaries --platform iOS --cache-builds
+          bundle exec pod install
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")
