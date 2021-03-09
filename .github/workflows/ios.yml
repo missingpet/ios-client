@@ -14,14 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Bundle Update
-        run: gem install bundler:1.17.2
-      - name: Bundle Install
-        run: bundle install
-      - name: Dependencies
-        run: |
-          carthage bootstrap --no-use-binaries --platform iOS --cache-builds
-          bundle exec pod install
+      - name: CocoaPod Install
+        run: pod install
       - name: Set Default Scheme
         run: |
           scheme_list=$(xcodebuild -list -json | tr -d "\n")
