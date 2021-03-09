@@ -19,10 +19,10 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var callPhoneNumberButton: UIButton!
     @IBOutlet weak var deleteAnnouncementButton: UIButton!
-    
+
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         presenter?.loadingSetter = { [weak self] isLoading in
             if isLoading {
