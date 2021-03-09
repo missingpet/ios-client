@@ -119,7 +119,8 @@ class FeedPresenter: PresenterType {
     func pushInspectAnnouncementViewController(with item: AnnouncementItem) {
         Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self,
                                                        presenter: InspectAnnouncementPresenter(announcement: item,
-                                                                                               userInfoRepository: UserInfoRepository()))
+                                                                                               userInfoRepository: UserInfoRepository(),
+                                                                                               announcementRepository: AnnouncementRepository()))
     }
 
 }
