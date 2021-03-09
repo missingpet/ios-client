@@ -134,7 +134,7 @@ class CreateAnnouncementPresenter: PresenterType {
                                                         controller.present(successAlert, animated: true, completion: nil)
                                                       },
                                                       onFailure: { errorMessage in
-                                                        let errorAlert = AlertService.getSuccessAlert(message: errorMessage)
+                                                        let errorAlert = AlertService.getErrorAlert(message: errorMessage)
                                                         controller.present(errorAlert, animated: true, completion: nil)
                                                         self.stopAnimatng()
                                                       })
