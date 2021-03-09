@@ -21,11 +21,11 @@ class InspectAnnouncementPresenter: PresenterType {
     var callPhoneNumberSetter: UISetter<String>?
     var deleteAnnouncementButtonSetter: UISetter<Bool>?
     var loadingSetter: UISetter<Bool>?
-    
+
     let announcement: AnnouncementItem
 
     private let notificationCenter = NotificationCenter.default
-    
+
     private let userInfoRepository: UserInfoRepositoryType!
     private let announcementRepository: AnnouncementRepositoryType!
 
@@ -44,7 +44,7 @@ class InspectAnnouncementPresenter: PresenterType {
     private func stopAnimatng() {
         loadingSetter?(false)
     }
-    
+
     func setup() {
         photoUrlSetter?(URL(string: announcement.photo))
         creationDateSetter?(announcement.createdAt)

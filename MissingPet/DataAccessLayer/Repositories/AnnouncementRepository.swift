@@ -244,7 +244,7 @@ fileprivate extension AnnouncementRepository {
         let longitudeErrorMessage = json[Constants.longitudeErrorKey][0].string
         let contactPhoneNumberErrorMessage = json[Constants.contactPhoneNumberErrorKey][0].string
         let detailMessage = json[Constants.detailKey].string
-        
+
         var resultMessage = ""
 
         let separator = "\n"
