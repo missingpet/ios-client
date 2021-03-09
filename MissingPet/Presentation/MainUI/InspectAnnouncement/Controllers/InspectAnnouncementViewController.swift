@@ -19,13 +19,29 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var callPhoneNumberButton: UIButton!
     @IBOutlet weak var deleteAnnouncementButton: UIButton!
-
+    
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
+        presenter?.loadingSetter = { [weak self] isLoading in
+            if isLoading {
+                self?.loadingView.isHidden = false
+                self?.largeActivityIndicatorView.startAnimating()
+                self?.view.isUserInteractionEnabled = false
+                self?.tabBarController?.view.isUserInteractionEnabled = false
+            } else {
+                self?.loadingView.isHidden = true
+                self?.largeActivityIndicatorView.stopAnimating()
+                self?.view.isUserInteractionEnabled = true
+                self?.tabBarController?.view.isUserInteractionEnabled = true
+            }
+        }
         presenter?.photoUrlSetter = { [weak self] photoUrl in
             self?.announcementImageView.kf.setImage(with: photoUrl)
         }
         presenter?.creationDateSetter = { [weak self] creationDate in
-            self?.creationDateLabel.text = creationDate//creationDate.string(withFormat: "d MMM yyyy',' HH:mm")
+            self?.creationDateLabel.text = creationDate.string(withFormat: "d MMM yyyy',' HH:mm")
         }
         presenter?.animalTypeSetter = { [weak self] animalType in
             self?.animalTypeLabel.text = animalType

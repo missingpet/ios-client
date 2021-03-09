@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -124,14 +124,32 @@
                                     <constraint firstAttribute="bottom" secondItem="bHo-Ba-CF7" secondAttribute="bottom" id="jOD-7A-8Pb"/>
                                 </constraints>
                             </scrollView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ok1-4o-UF2" userLabel="Loading View">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4sC-SN-SPe">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" name="DarkBlue"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="4sC-SN-SPe" firstAttribute="centerY" secondItem="Ok1-4o-UF2" secondAttribute="centerY" id="Jyp-kd-gl7"/>
+                                    <constraint firstItem="4sC-SN-SPe" firstAttribute="centerX" secondItem="Ok1-4o-UF2" secondAttribute="centerX" id="Xcv-AN-dZ8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MU2-5X-u54"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ok1-4o-UF2" firstAttribute="leading" secondItem="MU2-5X-u54" secondAttribute="leading" id="94I-bn-FLH"/>
+                            <constraint firstItem="Ok1-4o-UF2" firstAttribute="top" secondItem="MU2-5X-u54" secondAttribute="top" id="9T2-MG-AEb"/>
                             <constraint firstAttribute="trailing" secondItem="vUg-d4-U99" secondAttribute="trailing" id="KE8-RT-ove"/>
                             <constraint firstItem="vUg-d4-U99" firstAttribute="top" secondItem="MU2-5X-u54" secondAttribute="top" id="NWF-2S-2Vl"/>
                             <constraint firstItem="MU2-5X-u54" firstAttribute="bottom" secondItem="vUg-d4-U99" secondAttribute="bottom" id="QQw-1L-Fdq"/>
                             <constraint firstItem="vUg-d4-U99" firstAttribute="leading" secondItem="MU2-5X-u54" secondAttribute="leading" id="cQn-xq-7dk"/>
+                            <constraint firstItem="MU2-5X-u54" firstAttribute="trailing" secondItem="Ok1-4o-UF2" secondAttribute="trailing" id="mTf-Bi-EYZ"/>
+                            <constraint firstItem="MU2-5X-u54" firstAttribute="bottom" secondItem="Ok1-4o-UF2" secondAttribute="bottom" id="wsD-ab-gOU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="bL7-G9-SCF">
@@ -156,6 +174,8 @@
                         <outlet property="creationDateLabel" destination="JsW-yb-5Ku" id="uh9-ot-Oal"/>
                         <outlet property="deleteAnnouncementButton" destination="CNy-Ve-n2c" id="aqI-np-RqZ"/>
                         <outlet property="descriptionLabel" destination="Sn1-nF-fD9" id="Sud-Gu-2wi"/>
+                        <outlet property="largeActivityIndicatorView" destination="4sC-SN-SPe" id="EUb-c7-63F"/>
+                        <outlet property="loadingView" destination="Ok1-4o-UF2" id="bFy-y0-fPG"/>
                         <outlet property="lostFoundLabel" destination="bY7-fe-MRP" id="xez-vF-6B1"/>
                         <outlet property="placeLabel" destination="4W6-oy-Hbj" id="HO5-yJ-7nu"/>
                         <outlet property="usernameLabel" destination="XDg-Bi-11V" id="dpa-ZE-2ML"/>
@@ -231,6 +251,9 @@
         <image name="phone" width="20" height="20"/>
         <namedColor name="Blue">
             <color red="0.16099999845027924" green="0.3529999852180481" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.097999997437000275" green="0.28200000524520874" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightBlue">
             <color red="0.72600001096725464" green="0.79500001668930054" blue="0.84500002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
