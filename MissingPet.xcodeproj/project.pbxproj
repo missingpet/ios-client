@@ -18,6 +18,8 @@
 		9D7E9E8025F1E35B000A1861 /* UserInfoRespositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E9E7F25F1E35B000A1861 /* UserInfoRespositoryType.swift */; };
 		9D7E9E8325F1E3BC000A1861 /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E9E8225F1E3BC000A1861 /* UserInfoRepository.swift */; };
 		9D8CE6CC25F4D65C00E28DE8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D8CE6CB25F4D65C00E28DE8 /* Profile.storyboard */; };
+		9DA2965925F7A08900C33C7D /* MissingPetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2965825F7A08900C33C7D /* MissingPetTests.swift */; };
+		9DA2966925F7A0B000C33C7D /* MissingPetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2966825F7A0B000C33C7D /* MissingPetUITests.swift */; };
 		9DB3130725E803010073ABF7 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3130625E803010073ABF7 /* UITableView.swift */; };
 		9DC2D10D25E461360041BE1B /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D10C25E461360041BE1B /* ConnectionService.swift */; };
 		9DD7F19925D96EB50024169F /* AnnouncementListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */; };
@@ -125,6 +127,23 @@
 		C8FDF0B3252479C800A2C962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8FDF0B2252479C800A2C962 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9DA2965B25F7A08900C33C7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8CA02AE2520BDAC00C22815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8CA02B52520BDAC00C22815;
+			remoteInfo = MissingPet;
+		};
+		9DA2966B25F7A0B000C33C7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8CA02AE2520BDAC00C22815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8CA02B52520BDAC00C22815;
+			remoteInfo = MissingPet;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2784DA8184CA10E8AD9CCCAD /* Pods-MissingPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.release.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.release.xcconfig"; sourceTree = "<group>"; };
 		63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissingPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +158,12 @@
 		9D7E9E7F25F1E35B000A1861 /* UserInfoRespositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRespositoryType.swift; sourceTree = "<group>"; };
 		9D7E9E8225F1E3BC000A1861 /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		9D8CE6CB25F4D65C00E28DE8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		9DA2965625F7A08900C33C7D /* MissingPetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MissingPetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA2965825F7A08900C33C7D /* MissingPetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingPetTests.swift; sourceTree = "<group>"; };
+		9DA2965A25F7A08900C33C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA2966625F7A0B000C33C7D /* MissingPetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MissingPetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA2966825F7A0B000C33C7D /* MissingPetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingPetUITests.swift; sourceTree = "<group>"; };
+		9DA2966A25F7A0B000C33C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DB3130625E803010073ABF7 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		9DC2D10C25E461360041BE1B /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementListResult.swift; sourceTree = "<group>"; };
@@ -249,6 +274,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9DA2965325F7A08900C33C7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2966325F7A0B000C33C7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8CA02B32520BDAC00C22815 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +325,24 @@
 				C8F76C56253CA0C400ED71C4 /* Web */,
 			);
 			path = DataAccessLayer;
+			sourceTree = "<group>";
+		};
+		9DA2965725F7A08900C33C7D /* MissingPetTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2965825F7A08900C33C7D /* MissingPetTests.swift */,
+				9DA2965A25F7A08900C33C7D /* Info.plist */,
+			);
+			path = MissingPetTests;
+			sourceTree = "<group>";
+		};
+		9DA2966725F7A0B000C33C7D /* MissingPetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2966825F7A0B000C33C7D /* MissingPetUITests.swift */,
+				9DA2966A25F7A0B000C33C7D /* Info.plist */,
+			);
+			path = MissingPetUITests;
 			sourceTree = "<group>";
 		};
 		9DC2D10B25E461170041BE1B /* Services */ = {
@@ -707,6 +764,8 @@
 			isa = PBXGroup;
 			children = (
 				C8CA02B82520BDAC00C22815 /* MissingPet */,
+				9DA2965725F7A08900C33C7D /* MissingPetTests */,
+				9DA2966725F7A0B000C33C7D /* MissingPetUITests */,
 				C8CA02B72520BDAC00C22815 /* Products */,
 				78CEC00D0D149F083C9882E4 /* Pods */,
 				DAFFA6FBB146DAA839EB619F /* Frameworks */,
@@ -717,6 +776,8 @@
 			isa = PBXGroup;
 			children = (
 				C8CA02B62520BDAC00C22815 /* MissingPet.app */,
+				9DA2965625F7A08900C33C7D /* MissingPetTests.xctest */,
+				9DA2966625F7A0B000C33C7D /* MissingPetUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -845,6 +906,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9DA2965525F7A08900C33C7D /* MissingPetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DA2965F25F7A08900C33C7D /* Build configuration list for PBXNativeTarget "MissingPetTests" */;
+			buildPhases = (
+				9DA2965225F7A08900C33C7D /* Sources */,
+				9DA2965325F7A08900C33C7D /* Frameworks */,
+				9DA2965425F7A08900C33C7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DA2965C25F7A08900C33C7D /* PBXTargetDependency */,
+			);
+			name = MissingPetTests;
+			productName = MissingPetTests;
+			productReference = 9DA2965625F7A08900C33C7D /* MissingPetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9DA2966525F7A0B000C33C7D /* MissingPetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DA2966D25F7A0B000C33C7D /* Build configuration list for PBXNativeTarget "MissingPetUITests" */;
+			buildPhases = (
+				9DA2966225F7A0B000C33C7D /* Sources */,
+				9DA2966325F7A0B000C33C7D /* Frameworks */,
+				9DA2966425F7A0B000C33C7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DA2966C25F7A0B000C33C7D /* PBXTargetDependency */,
+			);
+			name = MissingPetUITests;
+			productName = MissingPetUITests;
+			productReference = 9DA2966625F7A0B000C33C7D /* MissingPetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		C8CA02B52520BDAC00C22815 /* MissingPet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8CA02CA2520BDB000C22815 /* Build configuration list for PBXNativeTarget "MissingPet" */;
@@ -870,9 +967,17 @@
 		C8CA02AE2520BDAC00C22815 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					9DA2965525F7A08900C33C7D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C8CA02B52520BDAC00C22815;
+					};
+					9DA2966525F7A0B000C33C7D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = C8CA02B52520BDAC00C22815;
+					};
 					C8CA02B52520BDAC00C22815 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -892,11 +997,27 @@
 			projectRoot = "";
 			targets = (
 				C8CA02B52520BDAC00C22815 /* MissingPet */,
+				9DA2965525F7A08900C33C7D /* MissingPetTests */,
+				9DA2966525F7A0B000C33C7D /* MissingPetUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9DA2965425F7A08900C33C7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2966425F7A0B000C33C7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8CA02B42520BDAC00C22815 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -989,6 +1110,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9DA2965225F7A08900C33C7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA2965925F7A08900C33C7D /* MissingPetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA2966225F7A0B000C33C7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA2966925F7A0B000C33C7D /* MissingPetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8CA02B22520BDAC00C22815 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1073,6 +1210,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9DA2965C25F7A08900C33C7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8CA02B52520BDAC00C22815 /* MissingPet */;
+			targetProxy = 9DA2965B25F7A08900C33C7D /* PBXContainerItemProxy */;
+		};
+		9DA2966C25F7A0B000C33C7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8CA02B52520BDAC00C22815 /* MissingPet */;
+			targetProxy = 9DA2966B25F7A0B000C33C7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1085,6 +1235,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9DA2965D25F7A08900C33C7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24X4EL2BCS;
+				INFOPLIST_FILE = MissingPetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.meremeev.MissingPetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MissingPet.app/MissingPet";
+			};
+			name = Debug;
+		};
+		9DA2965E25F7A08900C33C7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24X4EL2BCS;
+				INFOPLIST_FILE = MissingPetTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.meremeev.MissingPetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MissingPet.app/MissingPet";
+			};
+			name = Release;
+		};
+		9DA2966E25F7A0B000C33C7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24X4EL2BCS;
+				INFOPLIST_FILE = MissingPetUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.meremeev.MissingPetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MissingPet;
+			};
+			name = Debug;
+		};
+		9DA2966F25F7A0B000C33C7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24X4EL2BCS;
+				INFOPLIST_FILE = MissingPetUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.meremeev.MissingPetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MissingPet;
+			};
+			name = Release;
+		};
 		C8CA02C82520BDB000C22815 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1252,6 +1484,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9DA2965F25F7A08900C33C7D /* Build configuration list for PBXNativeTarget "MissingPetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA2965D25F7A08900C33C7D /* Debug */,
+				9DA2965E25F7A08900C33C7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DA2966D25F7A0B000C33C7D /* Build configuration list for PBXNativeTarget "MissingPetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA2966E25F7A0B000C33C7D /* Debug */,
+				9DA2966F25F7A0B000C33C7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C8CA02B12520BDAC00C22815 /* Build configuration list for PBXProject "MissingPet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
