@@ -54,10 +54,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="N1w-xx-Bi1" firstAttribute="leading" secondItem="gLe-dl-kmZ" secondAttribute="leading" constant="10" id="GTh-vV-CbH"/>
-                            <constraint firstAttribute="bottom" secondItem="N1w-xx-Bi1" secondAttribute="bottom" constant="20" id="Sad-Rf-NaN"/>
-                            <constraint firstItem="N1w-xx-Bi1" firstAttribute="top" secondItem="gLe-dl-kmZ" secondAttribute="top" constant="20" id="gH2-Aw-oUY"/>
-                            <constraint firstAttribute="trailing" secondItem="N1w-xx-Bi1" secondAttribute="trailing" constant="10" id="kPP-uT-pjM"/>
+                            <constraint firstItem="N1w-xx-Bi1" firstAttribute="top" secondItem="gLe-dl-kmZ" secondAttribute="top" constant="20" id="0ub-Ry-jQg"/>
+                            <constraint firstAttribute="trailing" secondItem="N1w-xx-Bi1" secondAttribute="trailing" constant="10" id="OJY-6w-sdo"/>
+                            <constraint firstAttribute="bottom" secondItem="N1w-xx-Bi1" secondAttribute="bottom" constant="20" id="ZOS-jX-1E0"/>
+                            <constraint firstItem="N1w-xx-Bi1" firstAttribute="leading" secondItem="gLe-dl-kmZ" secondAttribute="leading" constant="10" id="dU8-f1-MoL"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -67,14 +67,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="gLe-dl-kmZ" secondAttribute="bottom" constant="8" id="1zb-fx-X6Y"/>
-                    <constraint firstAttribute="trailing" secondItem="gbM-5W-A5s" secondAttribute="trailing" constant="16" id="71b-Kq-ORf"/>
-                    <constraint firstAttribute="trailing" secondItem="gLe-dl-kmZ" secondAttribute="trailing" constant="16" id="BZf-wS-Uvp"/>
-                    <constraint firstItem="gbM-5W-A5s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IZ8-Jf-AMI"/>
-                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JbA-Xq-BFP"/>
-                    <constraint firstAttribute="bottom" secondItem="gbM-5W-A5s" secondAttribute="bottom" constant="8" id="a3V-9f-GNw"/>
-                    <constraint firstItem="gbM-5W-A5s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gwH-qc-9lA"/>
-                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xpv-pS-3x3"/>
+                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="B10-lB-Xm2"/>
+                    <constraint firstAttribute="bottom" secondItem="gLe-dl-kmZ" secondAttribute="bottom" constant="8" id="QQo-hH-vFp"/>
+                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="width" secondItem="gbM-5W-A5s" secondAttribute="width" id="RfV-Kh-r1g"/>
+                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="SA9-i6-xQI"/>
+                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="centerY" secondItem="gbM-5W-A5s" secondAttribute="centerY" id="WnT-68-7Wi"/>
+                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="centerX" secondItem="gbM-5W-A5s" secondAttribute="centerX" id="eB4-g3-w1l"/>
+                    <constraint firstAttribute="trailing" secondItem="gLe-dl-kmZ" secondAttribute="trailing" constant="16" id="nuO-zr-ir5"/>
+                    <constraint firstItem="gLe-dl-kmZ" firstAttribute="height" secondItem="gbM-5W-A5s" secondAttribute="height" id="xSq-9Q-F7b"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
