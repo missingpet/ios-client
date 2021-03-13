@@ -20,8 +20,8 @@ class PlaceRepository: PlaceRepositoryType {
             if let response = response {
                 let results = self.processSearchForPlaces(mapItems: response.mapItems)
                 onSuccess?(results)
-            } else {
-                onFailure?(error?.localizedDescription ?? "an error occured")
+            } else if let error = error {
+                onFailure?(error.localizedDescription)
             }
         })
     }

@@ -195,7 +195,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                 switch response.result {
                 case .success:
                     onSuccess?()
-                case .failure(let error):
+                case .failure:
                     onFailure?(self.processFailure(data: response.data!))
                 }
             })

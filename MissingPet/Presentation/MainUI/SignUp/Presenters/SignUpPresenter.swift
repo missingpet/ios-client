@@ -83,15 +83,16 @@ class SignUpPresenter: PresenterType {
 
         authorizationRepository.register(nickname: nickname,
                                          email: email, password: password,
-                                         onSuccess: {
+                                         onSuccess: { [weak self] in
                                             let alert = AlertService.getSuccessAlert(message: "Пользователь успешно зарегистрирован")
                                             controller.present(alert, animated: true, completion: nil)
-                                            self.stopLoading()
+                                            self?.stopLoading()
                                          },
-                                         onFailure: { message in
-                                            self.stopLoading()
+                                         onFailure: { [weak self] message in
+                                            self?.stopLoading()
                                             let alert = AlertService.getErrorAlert(message: message)
-                                            controller.present(alert, animated: true, completion: nil)
+                                            controller.present(alert, animated: true,
+                                                               completion: nil)
                                          })
     }
 

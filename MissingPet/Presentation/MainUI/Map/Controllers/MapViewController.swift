@@ -8,14 +8,14 @@
 import UIKit
 import MapKit
 
-class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
+class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     @IBOutlet weak var mapView: MKMapView!
 
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         presenter?.reloadResults = { [weak self] (_) in
@@ -49,10 +49,18 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
 
         mapView.delegate = self
 
+        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
+
+        if let userLocation = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: userLocation,
+                                            latitudinalMeters: 300,
+                                            longitudinalMeters: 300)
+            mapView.setRegion(region, animated: false)
+        }
 
         presenter?.loadItems()
     }
@@ -78,9 +86,18 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect: MKAnnotationView) {
         guard let annotation = didSelect.annotation as? AnnouncementPointAnnotation else { return }
         presenter?.openConcreteItem(id: annotation.id)
-        self.mapView.deselectAnnotation(annotation, animated: false)
+        mapView.deselectAnnotation(annotation, animated: false)
     }
 
-    func mapView(_ mapView: MKMapView, didDeselect: MKAnnotationView) {}
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        guard let location = locations.last as? CLLocation else { return }
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
+                                            longitude: location.coordinate.longitude)
+        var region = MKCoordinateRegion(center: center,
+                                        span: MKCoordinateSpan(latitudeDelta: 0.1,
+                                                               longitudeDelta: 0.1))
+        region.center = mapView.userLocation.coordinate
+        mapView.setRegion(region, animated: true)
+    }
 
 }

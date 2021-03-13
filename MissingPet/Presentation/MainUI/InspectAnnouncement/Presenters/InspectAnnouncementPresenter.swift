@@ -67,8 +67,8 @@ class InspectAnnouncementPresenter: PresenterType {
         usernameSetter?(announcement.user.nickname)
         callPhoneNumberSetter?(announcement.contactPhoneNumber)
         if AppSettings.isAuthorized {
-            userInfoRepository.getUserId(onSuccess: { userId in
-                                            self.deleteAnnouncementButtonSetter?(userId != self.announcement.user.id)},
+            userInfoRepository.getUserId(onSuccess: { [weak self] userId in
+                                            self?.deleteAnnouncementButtonSetter?(userId != self?.announcement.user.id)},
                                          onFailure: nil)
         } else {
             deleteAnnouncementButtonSetter?(true)
@@ -88,16 +88,25 @@ class InspectAnnouncementPresenter: PresenterType {
         }
         guard AppSettings.isAuthorized else {
             let notAuthorizedAlert = AlertService.getErrorAlert(message: "Вы не авторизованы")
-            controller.present(notAuthorizedAlert, animated: true, completion: nil)
+            controller.present(notAuthorizedAlert,
+                               animated: true,
+                               completion: nil)
             return
         }
 
         let deleteAnnouncementAlert = UIAlertController(title: "Предупреждение",
-                                                        message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?", preferredStyle: .alert)
-        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { (_) in
+                                                        message: "Данное действие необратимо. Вы действительно хотите удалить это объявление?",
+                                                        preferredStyle: .alert)
+        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Отмена",
+                                                        style: .cancel,
+                                                        handler: nil))
+        deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да",
+                                                        style: .destructive,
+                                                        handler: { (_) in
                                                             self.deleteAnnouncement(controller, id: self.announcement.id) }))
-        controller.present(deleteAnnouncementAlert, animated: true, completion: nil)
+        controller.present(deleteAnnouncementAlert,
+                           animated: true,
+                           completion: nil)
     }
 
     func deleteAnnouncement(_ controller: UIViewController, id: Int) {
@@ -124,7 +133,8 @@ class InspectAnnouncementPresenter: PresenterType {
 
     func presentImagePreviewViewController(image: UIImage?) {
         guard let image = image else { return }
-        Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self, presenter: ImagePreviewPresenter(image: image))
+        Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self,
+                                                        presenter: ImagePreviewPresenter(image: image))
     }
 
 }

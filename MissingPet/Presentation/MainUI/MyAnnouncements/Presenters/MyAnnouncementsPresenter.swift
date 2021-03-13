@@ -98,14 +98,14 @@ class MyAnnouncementsPresenter: PresenterType {
         guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         self.startAnimating()
         announcementRepository.getMyAnnouncements(pageNumber: pageNumber,
-                                       onSuccess: { result in
-                                        self.updateItems(result: result)
-                                        self.reloadItemsUI()
-                                        self.stopAnimatng()
+                                       onSuccess: { [weak self] result in
+                                        self?.updateItems(result: result)
+                                        self?.reloadItemsUI()
+                                        self?.stopAnimatng()
                                        },
-                                       onFailure: { errorDescription in
+                                       onFailure: { [weak self] errorDescription in
                                         debugPrint(errorDescription)
-                                        self.stopAnimatng()
+                                        self?.stopAnimatng()
                                        })
     }
 

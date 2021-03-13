@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0869D152CAA23394AB4F4D5A /* Pods_MissingPet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */; };
+		9D1ECD1425FC081300A3D544 /* PlaceSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ECD1325FC081300A3D544 /* PlaceSearchNavigationController.swift */; };
 		9D2917D925F6386C00707FB6 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2917D825F6386C00707FB6 /* JSON.swift */; };
 		9D33D8B525D6EFD9008F40A8 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */; };
 		9D33D8B925D6EFE8008F40A8 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */; };
@@ -148,6 +149,7 @@
 		2784DA8184CA10E8AD9CCCAD /* Pods-MissingPet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.release.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.release.xcconfig"; sourceTree = "<group>"; };
 		63777CC3059639FABDD46E8C /* Pods_MissingPet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MissingPet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B7AA15D05DAF05F9F3D85B /* Pods-MissingPet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MissingPet.debug.xcconfig"; path = "Target Support Files/Pods-MissingPet/Pods-MissingPet.debug.xcconfig"; sourceTree = "<group>"; };
+		9D1ECD1325FC081300A3D544 /* PlaceSearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearchNavigationController.swift; sourceTree = "<group>"; };
 		9D2917D825F6386C00707FB6 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		9D33D8B425D6EFD9008F40A8 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		9D33D8B825D6EFE8008F40A8 /* ProfileInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoView.xib; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				C814C35B258D4F7E000EF0B9 /* PlaceSearchViewController.swift */,
+				9D1ECD1325FC081300A3D544 /* PlaceSearchNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				C850261C255338770068D687 /* AnnouncementRepositoryType.swift in Sources */,
 				C82B02E625228A0900C5DBC1 /* ShadowView.swift in Sources */,
 				C89F486425985E6B001F0137 /* UIView.swift in Sources */,
+				9D1ECD1425FC081300A3D544 /* PlaceSearchNavigationController.swift in Sources */,
 				C814C35C258D4F7E000EF0B9 /* PlaceSearchViewController.swift in Sources */,
 				C811477A25684AF800620D1E /* ProfilePresenter.swift in Sources */,
 				C89F99FE254477E60022C7C4 /* Colors.swift in Sources */,

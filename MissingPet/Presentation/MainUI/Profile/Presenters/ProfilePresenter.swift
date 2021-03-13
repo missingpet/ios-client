@@ -44,9 +44,11 @@ class ProfilePresenter: PresenterType {
     func setupUserInfoViews() {
         if AppSettings.isAuthorized {
             profileViewSetter?(false)
-            userInfoRepository.getUserEmail(onSuccess: { email in self.emailSetter?(email) },
+            userInfoRepository.getUserEmail(onSuccess: { [weak self] email in
+                                                self?.emailSetter?(email) },
                                             onFailure: nil)
-            userInfoRepository.getUserNickname(onSuccess: { nickname in self.nicknameSetter?(nickname) },
+            userInfoRepository.getUserNickname(onSuccess: { [weak self] nickname in
+                                                self?.nicknameSetter?(nickname) },
                                                onFailure: nil)
         } else {
             profileViewSetter?(true)
@@ -77,13 +79,13 @@ class ProfilePresenter: PresenterType {
 
         authorizationReporitory.login(email: email,
                                       password: password,
-                                      onSuccess: {
-                                        self.setupUserInfoViews()
-                                        self.postUserLoggedInNotification()
-                                        self.stopAnimatng()
+                                      onSuccess: { [weak self] in
+                                        self?.setupUserInfoViews()
+                                        self?.postUserLoggedInNotification()
+                                        self?.stopAnimatng()
                                       },
-                                      onFailure: { (message) in
-                                        self.stopAnimatng()
+                                      onFailure: { [weak self] (message) in
+                                        self?.stopAnimatng()
                                         let alert = AlertService.getErrorAlert(message: message)
                                         controller.present(alert, animated: true, completion: nil)
                                       })
