@@ -86,7 +86,7 @@ class MapPresenter: PresenterType {
             self?.stopAnimating()
         })
     }
-    
+
     func getFeedAnnouncementsMap() {
         startAnimating()
         announcementRepository.getFeedAnnouncementsMap(onSuccess: { [weak self] (result) in
