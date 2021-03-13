@@ -88,7 +88,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
         presenter?.openConcreteItem(id: annotation.id)
         mapView.deselectAnnotation(annotation, animated: false)
     }
-    
+
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         guard let location = locations.last as? CLLocation else { return }
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
@@ -99,5 +99,5 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
         region.center = mapView.userLocation.coordinate
         mapView.setRegion(region, animated: true)
     }
-    
+
 }
