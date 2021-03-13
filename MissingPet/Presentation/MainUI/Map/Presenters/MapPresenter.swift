@@ -44,13 +44,13 @@ class MapPresenter: PresenterType {
     func openConcreteItem(id: Int) {
         self.startAnimating()
         announcementRepository.getAnnouncement(id: id,
-                                               onSuccess: { (result) in
-                                                self.stopAnimating()
-                                                self.pushInspectAnnouncementViewController(with: result)
+                                               onSuccess: { [weak self] (result) in
+                                                self?.stopAnimating()
+                                                self?.pushInspectAnnouncementViewController(with: result)
                                                },
-                                               onFailure: { (errorDescription) in
+                                               onFailure: { [weak self] (errorDescription) in
                                                 debugPrint(errorDescription)
-                                                self.stopAnimating()
+                                                self?.stopAnimating()
                                                })
     }
 
@@ -76,27 +76,27 @@ class MapPresenter: PresenterType {
 
     func getAllAnnouncementsMap() {
         startAnimating()
-        announcementRepository.getAllAnnouncementsMap(onSuccess: { (result) in
-            self.updateItems(result: result)
-            self.reloadItemsUI()
-            self.stopAnimating()
+        announcementRepository.getAllAnnouncementsMap(onSuccess: { [weak self] (result) in
+            self?.updateItems(result: result)
+            self?.reloadItemsUI()
+            self?.stopAnimating()
         },
-        onFailure: { (errorDescription) in
+        onFailure: { [weak self] (errorDescription) in
             debugPrint(errorDescription)
-            self.stopAnimating()
+            self?.stopAnimating()
         })
     }
-
+    
     func getFeedAnnouncementsMap() {
         startAnimating()
-        announcementRepository.getFeedAnnouncementsMap(onSuccess: { (result) in
-            self.updateItems(result: result)
-            self.reloadItemsUI()
-            self.stopAnimating()
+        announcementRepository.getFeedAnnouncementsMap(onSuccess: { [weak self] (result) in
+            self?.updateItems(result: result)
+            self?.reloadItemsUI()
+            self?.stopAnimating()
         },
-        onFailure: { (errorDescription) in
+        onFailure: { [weak self] (errorDescription) in
             debugPrint(errorDescription)
-            self.stopAnimating()
+            self?.stopAnimating()
         })
     }
 

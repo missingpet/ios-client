@@ -61,16 +61,18 @@ class PlaceSearchPresenter: PresenterType {
     func searchForPlace(searchText: String) {
         self.startLoading()
         self.placeRepository.searchForPlaces(searchText: searchText,
-                                             onSuccess: { result in
+                                             onSuccess: { [weak self] result in
                                                 DispatchQueue.main.async {
-                                                    self.searchResults = result
-                                                    self.updateSearchResultsWithCount?(self.itemsTotal)
-                                                    self.stopLoading()
+                                                    self?.searchResults = result
+                                                    if let itemsTotal = self?.itemsTotal {
+                                                        self?.updateSearchResultsWithCount?(itemsTotal)
+                                                    }
+                                                    self?.stopLoading()
                                                 }
                                              },
-                                             onFailure: { _ in
+                                             onFailure: { [weak self] (_) in
                                                 DispatchQueue.main.async {
-                                                    self.stopLoading()
+                                                    self?.stopLoading()
                                                 }
                                              })
     }

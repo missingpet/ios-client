@@ -127,16 +127,16 @@ class CreateAnnouncementPresenter: PresenterType {
                                                       latitude: latitude,
                                                       longitude: longitude,
                                                       contactPhoneNumber: contactPhoneNumber,
-                                                      onSuccess: { (_) in
-                                                        self.stopAnimatng()
-                                                        self.notificationCenter.post(Notification(name: Notification.Name(Constants.announcementCreated)))
+                                                      onSuccess: { [weak self] (_) in
+                                                        self?.stopAnimatng()
+                                                        self?.notificationCenter.post(Notification(name: Notification.Name(Constants.announcementCreated)))
                                                         let successAlert = AlertService.getSuccessAlert(message: "Объявление создано")
                                                         controller.present(successAlert, animated: true, completion: nil)
                                                       },
-                                                      onFailure: { errorMessage in
+                                                      onFailure: { [weak self] errorMessage in
                                                         let errorAlert = AlertService.getErrorAlert(message: errorMessage)
                                                         controller.present(errorAlert, animated: true, completion: nil)
-                                                        self.stopAnimatng()
+                                                        self?.stopAnimatng()
                                                       })
         } else {
             let alertControllet = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля")

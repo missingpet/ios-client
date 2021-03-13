@@ -10,7 +10,6 @@ import Foundation
 class FeedPresenter: PresenterType {
 
     var reloadItemsWithCount: UISetter<Int>?
-
     var loadingSetter: UISetter<Bool>?
 
     private var pageNumber = 1
@@ -78,34 +77,34 @@ class FeedPresenter: PresenterType {
         loadingSetter?(false)
     }
 
-    // TODO: Don`t repeat yourself!
-
     func getAllAnnouncements() {
         guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         startAnimating()
-        announcementRepository.getAllAnnouncements(pageNumber: pageNumber, onSuccess: { (result) in
-            self.updateItems(result: result)
-            self.reloadItemsUI()
-            self.stopAnimating()
-        },
-        onFailure: { (errorDescription) in
-            debugPrint(errorDescription)
-            self.stopAnimating()
-        })
+        announcementRepository.getAllAnnouncements(pageNumber: pageNumber,
+                                                   onSuccess: { [weak self] (result) in
+                                                    self?.updateItems(result: result)
+                                                    self?.reloadItemsUI()
+                                                    self?.stopAnimating()
+                                                   },
+                                                   onFailure: { [weak self] (errorDescription) in
+                                                    debugPrint(errorDescription)
+                                                    self?.stopAnimating()
+                                                   })
     }
 
     func getFeed() {
         guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         startAnimating()
-        announcementRepository.getFeed(pageNumber: pageNumber, onSuccess: { (result) in
-            self.updateItems(result: result)
-            self.reloadItemsUI()
-            self.stopAnimating()
-        },
-        onFailure: { (errorDescription) in
-            debugPrint(errorDescription)
-            self.stopAnimating()
-        })
+        announcementRepository.getFeed(pageNumber: pageNumber,
+                                       onSuccess: { [weak self] (result) in
+                                        self?.updateItems(result: result)
+                                        self?.reloadItemsUI()
+                                        self?.stopAnimating()
+                                       },
+                                       onFailure: { [weak self] (errorDescription) in
+                                        debugPrint(errorDescription)
+                                        self?.stopAnimating()
+                                       })
     }
 
     func loadItems() {
