@@ -16,7 +16,7 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var loadingView: UIView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         presenter?.startLoadingSetter = { [weak self] (_) in
