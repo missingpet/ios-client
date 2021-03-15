@@ -9,9 +9,10 @@ import Foundation
 
 class MapPresenter: PresenterType {
 
-    var loadingSetter: UISetter<Bool>?
+    var startLoadingSetter: UISetter<Void>?
+    var stopLoadingSetter: UISetter<Void>?
     var reloadResults: UISetter<Void>?
-
+    
     private var items = [AnnouncmenetsMapItem]()
 
     private let announcementRepository: AnnouncementRepositoryType!
@@ -42,15 +43,15 @@ class MapPresenter: PresenterType {
     }
 
     func openConcreteItem(id: Int) {
-        self.startAnimating()
+        self.startLoading()
         announcementRepository.getAnnouncement(id: id,
                                                onSuccess: { [weak self] (result) in
-                                                self?.stopAnimating()
+                                                self?.stopLoading()
                                                 self?.pushInspectAnnouncementViewController(with: result)
                                                },
                                                onFailure: { [weak self] (errorDescription) in
                                                 debugPrint(errorDescription)
-                                                self?.stopAnimating()
+                                                self?.stopLoading()
                                                })
     }
 
@@ -62,41 +63,40 @@ class MapPresenter: PresenterType {
         self.items = result
     }
 
-    func startAnimating() {
-        loadingSetter?(true)
+    func startLoading() {
+        startLoadingSetter?(())
     }
 
-    func stopAnimating() {
-        loadingSetter?(false)
+    func stopLoading() {
+        stopLoadingSetter?(())
     }
-
-    private func reloadItemsUI() {
+    
+    func reloadItemsUI() {
         reloadResults?(())
     }
-
+    
     func getAllAnnouncementsMap() {
-        startAnimating()
+        startLoading()
         announcementRepository.getAllAnnouncementsMap(onSuccess: { [weak self] (result) in
             self?.updateItems(result: result)
-            self?.reloadItemsUI()
-            self?.stopAnimating()
+            self?.stopLoading()
         },
         onFailure: { [weak self] (errorDescription) in
             debugPrint(errorDescription)
-            self?.stopAnimating()
+            self?.stopLoading()
         })
     }
 
     func getFeedAnnouncementsMap() {
-        startAnimating()
+        startLoading()
         announcementRepository.getFeedAnnouncementsMap(onSuccess: { [weak self] (result) in
             self?.updateItems(result: result)
             self?.reloadItemsUI()
-            self?.stopAnimating()
+            self?.stopLoading()
         },
         onFailure: { [weak self] (errorDescription) in
             debugPrint(errorDescription)
-            self?.stopAnimating()
+            self?.stopLoading()
         })
     }
 

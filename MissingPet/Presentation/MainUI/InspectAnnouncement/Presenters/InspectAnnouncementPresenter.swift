@@ -20,7 +20,8 @@ class InspectAnnouncementPresenter: PresenterType {
     var usernameSetter: UISetter<String>?
     var callPhoneNumberSetter: UISetter<String>?
     var deleteAnnouncementButtonSetter: UISetter<Bool>?
-    var loadingSetter: UISetter<Bool>?
+    var startLoadingSetter: UISetter<Void>?
+    var stopLoadingSetter: UISetter<Void>?
 
     let announcement: AnnouncementItem
 
@@ -38,11 +39,11 @@ class InspectAnnouncementPresenter: PresenterType {
     }
 
     private func startAnimating() {
-        loadingSetter?(true)
+        startLoadingSetter?(())
     }
 
     private func stopAnimatng() {
-        loadingSetter?(false)
+        stopLoadingSetter?(())
     }
 
     func setup() {

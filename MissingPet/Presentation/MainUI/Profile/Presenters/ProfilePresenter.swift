@@ -13,7 +13,8 @@ class ProfilePresenter: PresenterType {
     var nicknameSetter: UISetter<String>?
     var emailSetter: UISetter<String>?
     var profileViewSetter: UISetter<Bool>?
-    var loadingSetter: UISetter<Bool>?
+    var stopLoadingSetter: UISetter<Void>?
+    var startLoadingSetter: UISetter<Void>?
 
     private let authorizationReporitory: AuthorizationRepositoryType!
     private let userInfoRepository: UserInfoRepositoryType!
@@ -56,11 +57,11 @@ class ProfilePresenter: PresenterType {
     }
 
     private func startAnimating() {
-        loadingSetter?(true)
+        startLoadingSetter?(())
     }
 
     private func stopAnimatng() {
-        loadingSetter?(false)
+        stopLoadingSetter?(())
     }
 
     func login(_ controller: UIViewController, email: String, password: String) {

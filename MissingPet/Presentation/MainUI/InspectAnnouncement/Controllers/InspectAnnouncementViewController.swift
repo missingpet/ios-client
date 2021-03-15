@@ -24,18 +24,17 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     override func viewDidLoad() {
-        presenter?.loadingSetter = { [weak self] isLoading in
-            if isLoading {
-                self?.loadingView.isHidden = false
-                self?.largeActivityIndicatorView.startAnimating()
-                self?.view.isUserInteractionEnabled = false
-                self?.tabBarController?.view.isUserInteractionEnabled = false
-            } else {
-                self?.loadingView.isHidden = true
-                self?.largeActivityIndicatorView.stopAnimating()
-                self?.view.isUserInteractionEnabled = true
-                self?.tabBarController?.view.isUserInteractionEnabled = true
-            }
+        presenter?.startLoadingSetter = { [weak self] (_) in
+            self?.loadingView.isHidden = false
+            self?.largeActivityIndicatorView.startAnimating()
+            self?.view.isUserInteractionEnabled = false
+            self?.tabBarController?.view.isUserInteractionEnabled = false
+        }
+        presenter?.stopLoadingSetter = { [weak self] (_) in
+            self?.loadingView.isHidden = true
+            self?.largeActivityIndicatorView.stopAnimating()
+            self?.view.isUserInteractionEnabled = true
+            self?.tabBarController?.view.isUserInteractionEnabled = true
         }
         presenter?.photoUrlSetter = { [weak self] photoUrl in
             self?.announcementImageView.kf.setImage(with: photoUrl)

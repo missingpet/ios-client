@@ -18,7 +18,7 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: TextFieldWithImageView!
 
     @IBOutlet weak var loadingView: UIView!
-    @IBOutlet weak var largeActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         presenter?.profileViewSetter = { [weak self] isHidden in
@@ -30,18 +30,17 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
         presenter?.nicknameSetter = { [weak self] nickname in
             self?.nicknameView.text = nickname
         }
-        presenter?.loadingSetter = { [weak self] isLoading in
-            if isLoading {
-                self?.loadingView.isHidden = false
-                self?.largeActivityIndicator.startAnimating()
-                self?.view.isUserInteractionEnabled = false
-                self?.tabBarController?.view.isUserInteractionEnabled = false
-            } else {
-                self?.loadingView.isHidden = true
-                self?.largeActivityIndicator.stopAnimating()
-                self?.view.isUserInteractionEnabled = true
-                self?.tabBarController?.view.isUserInteractionEnabled = true
-            }
+        presenter?.startLoadingSetter = { [weak self] (_) in
+            self?.loadingView.isHidden = false
+            self?.largeActivityIndicatorView.startAnimating()
+            self?.view.isUserInteractionEnabled = false
+            self?.tabBarController?.view.isUserInteractionEnabled = false
+        }
+        presenter?.stopLoadingSetter = { [weak self] (_) in
+            self?.loadingView.isHidden = true
+            self?.largeActivityIndicatorView.stopAnimating()
+            self?.view.isUserInteractionEnabled = true
+            self?.tabBarController?.view.isUserInteractionEnabled = true
         }
 
         super.viewDidLoad()

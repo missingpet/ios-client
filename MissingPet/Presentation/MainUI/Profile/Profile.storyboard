@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,20 +21,20 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="hk0-j4-R6p" customClass="ProfileViewController" customModule="MissingPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jn2-ds-GnP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-hC-CfN">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="96" width="600" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nI-tk-Tdg" userLabel="Login View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="504"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NKt-S8-j6d">
-                                                <rect key="frame" x="16" y="16" width="382" height="270"/>
+                                                <rect key="frame" x="16" y="16" width="568" height="270"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNQ-FG-Mx0" userLabel="Email Text Field With Image View" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="568" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="wwR-Ov-pbh"/>
@@ -48,7 +46,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cq-Xc-JNe" userLabel="Password Text Field With Image View" customClass="TextFieldWithImageView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
+                                                        <rect key="frame" x="0.0" y="70" width="568" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="IS1-Om-43r"/>
@@ -60,7 +58,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouA-E6-pBd">
-                                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
+                                                        <rect key="frame" x="0.0" y="140" width="568" height="60"/>
                                                         <color key="backgroundColor" name="Blue"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="JSU-SW-o3o"/>
@@ -79,7 +77,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEl-Eg-Go3">
-                                                        <rect key="frame" x="0.0" y="210" width="382" height="60"/>
+                                                        <rect key="frame" x="0.0" y="210" width="568" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="hiP-jZ-EtB"/>
                                                         </constraints>
@@ -109,13 +107,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6R2-Wi-vW3" userLabel="Profile View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="504"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-s1-1zs">
-                                                <rect key="frame" x="16" y="16" width="382" height="200"/>
+                                                <rect key="frame" x="16" y="16" width="568" height="200"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pm-3B-HCL" customClass="ProfileInfoView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="568" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="2i2-ws-oeZ"/>
@@ -125,7 +123,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qf-TP-e1F" customClass="ProfileInfoView" customModule="MissingPet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
+                                                        <rect key="frame" x="0.0" y="70" width="568" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="0os-SU-cvO"/>
@@ -135,7 +133,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIc-In-zHn">
-                                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
+                                                        <rect key="frame" x="0.0" y="140" width="568" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="Kci-iP-DrJ"/>
                                                         </constraints>
@@ -165,10 +163,10 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Yw-sQ-fSY" userLabel="Loading View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="504"/>
                                         <subviews>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aMM-8L-bie">
-                                                <rect key="frame" x="188.5" y="342.5" width="37" height="37"/>
+                                                <rect key="frame" x="281.5" y="233.5" width="37" height="37"/>
                                                 <color key="color" name="DarkBlue"/>
                                             </activityIndicatorView>
                                         </subviews>
@@ -214,7 +212,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="MNQ-FG-Mx0" id="ZtJ-h1-MdA"/>
                         <outlet property="emailView" destination="8qf-TP-e1F" id="8CH-yM-OjN"/>
-                        <outlet property="largeActivityIndicator" destination="aMM-8L-bie" id="7Uz-38-GA2"/>
+                        <outlet property="largeActivityIndicatorView" destination="aMM-8L-bie" id="7Uz-38-GA2"/>
                         <outlet property="loadingView" destination="0Yw-sQ-fSY" id="ng6-lY-2h1"/>
                         <outlet property="nicknameView" destination="5Pm-3B-HCL" id="deM-OV-B2r"/>
                         <outlet property="passwordTextField" destination="2Cq-Xc-JNe" id="QU2-mV-bB4"/>

@@ -31,18 +31,17 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
                 }
             }
         }
-        presenter?.loadingSetter = { [weak self] isLoading in
-            if isLoading {
-                self?.loadingView.isHidden = false
-                self?.largeActivityIndicatorView.startAnimating()
-                self?.view.isUserInteractionEnabled = false
-                self?.tabBarController?.view.isUserInteractionEnabled = false
-            } else {
-                self?.loadingView.isHidden = true
-                self?.largeActivityIndicatorView.stopAnimating()
-                self?.view.isUserInteractionEnabled = true
-                self?.tabBarController?.view.isUserInteractionEnabled = true
-            }
+        presenter?.startLoadingSetter = { [weak self] (_) in
+            self?.loadingView.isHidden = false
+            self?.largeActivityIndicatorView.startAnimating()
+            self?.view.isUserInteractionEnabled = false
+            self?.tabBarController?.view.isUserInteractionEnabled = false
+        }
+        presenter?.stopLoadingSetter = { [weak self] (_) in
+            self?.loadingView.isHidden = true
+            self?.largeActivityIndicatorView.stopAnimating()
+            self?.view.isUserInteractionEnabled = true
+            self?.tabBarController?.view.isUserInteractionEnabled = true
         }
 
         super.viewDidLoad()
@@ -57,8 +56,8 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
 
         if let userLocation = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(center: userLocation,
-                                            latitudinalMeters: 300,
-                                            longitudinalMeters: 300)
+                                            latitudinalMeters: 800,
+                                            longitudinalMeters: 800)
             mapView.setRegion(region, animated: false)
         }
 
