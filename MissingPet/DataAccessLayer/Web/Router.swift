@@ -11,7 +11,8 @@ import Alamofire
 enum Router: URLConvertible {
 
     static let domain = "https://missingpet.social/"
-    static let apiPath = domain + "api/"
+    static let apiVersion = "v1/"
+    static let apiPath = domain + "api/" + apiVersion
 
     // authorization
     case register
