@@ -15,8 +15,8 @@ class CreateAnnouncementPresenter: PresenterType {
     var addressSetter: UISetter<String?>?
     var photoSetter: UISetter<UIImage?>?
     var sourceTypeSetter: UISetter<String?>?
-    var startLoadingSetter: UISetter<Void>?
-    var stopLoadingSetter: UISetter<Void>?
+    var startLoadingSetter: UIUpdater?
+    var stopLoadingSetter: UIUpdater?
 
     var announcementType: AnnouncementType?
     var animalType: AnimalType?
@@ -32,11 +32,11 @@ class CreateAnnouncementPresenter: PresenterType {
     private let announcementRepository: AnnouncementRepositoryType!
 
     private func startAnimating() {
-        startLoadingSetter?(())
+        startLoadingSetter?()
     }
 
     private func stopAnimatng() {
-        stopLoadingSetter?(())
+        stopLoadingSetter?()
     }
 
     init (announcementRepository: AnnouncementRepositoryType) {

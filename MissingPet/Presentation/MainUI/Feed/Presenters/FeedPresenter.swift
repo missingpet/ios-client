@@ -10,8 +10,8 @@ import Foundation
 class FeedPresenter: PresenterType {
 
     var reloadItemsWithCount: UISetter<Int>?
-    var startLoadingSetter: UISetter<Void>?
-    var stopLoadingSetter: UISetter<Void>?
+    var startLoadingSetter: UIUpdater?
+    var stopLoadingSetter: UIUpdater?
 
     private var pageNumber = 1
 
@@ -71,11 +71,11 @@ class FeedPresenter: PresenterType {
     }
 
     private func startAnimating() {
-        startLoadingSetter?(())
+        startLoadingSetter?()
     }
 
     private func stopAnimating() {
-        stopLoadingSetter?(())
+        stopLoadingSetter?()
     }
 
     func getAllAnnouncements() {

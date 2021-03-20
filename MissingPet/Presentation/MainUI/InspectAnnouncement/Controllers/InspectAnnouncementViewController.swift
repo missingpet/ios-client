@@ -24,13 +24,13 @@ class InspectAnnouncementViewController: Controller<InspectAnnouncementPresenter
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     override func viewDidLoad() {
-        presenter?.startLoadingSetter = { [weak self] (_) in
+        presenter?.startLoadingSetter = { [weak self] in
             self?.loadingView.isHidden = false
             self?.largeActivityIndicatorView.startAnimating()
             self?.view.isUserInteractionEnabled = false
             self?.tabBarController?.view.isUserInteractionEnabled = false
         }
-        presenter?.stopLoadingSetter = { [weak self] (_) in
+        presenter?.stopLoadingSetter = { [weak self] in
             self?.loadingView.isHidden = true
             self?.largeActivityIndicatorView.stopAnimating()
             self?.view.isUserInteractionEnabled = true

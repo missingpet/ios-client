@@ -9,9 +9,9 @@ import Foundation
 
 class PlaceSearchPresenter: PresenterType {
 
-    var updateSearchResultsWithCount: UISetter<Int>?
-
-    var loadingSetter: UISetter<Bool>?
+    var updateSearchResultsWithCount: UIUpdater?
+    var startLoadingSetter: UIUpdater?
+    var stopLoadingSetter: UIUpdater?
 
     private let notificationCenter = NotificationCenter.default
 
@@ -43,11 +43,11 @@ class PlaceSearchPresenter: PresenterType {
     }
 
     private func startLoading() {
-        loadingSetter?(true)
+        startLoadingSetter?()
     }
 
     private func stopLoading() {
-        loadingSetter?(false)
+        stopLoadingSetter?()
     }
 
     func item(at index: Int) -> PlaceItem {
@@ -60,21 +60,20 @@ class PlaceSearchPresenter: PresenterType {
 
     func searchForPlace(searchText: String) {
         self.startLoading()
-        self.placeRepository.searchForPlaces(searchText: searchText,
-                                             onSuccess: { [weak self] result in
-                                                DispatchQueue.main.async {
-                                                    self?.searchResults = result
-                                                    if let itemsTotal = self?.itemsTotal {
-                                                        self?.updateSearchResultsWithCount?(itemsTotal)
-                                                    }
-                                                    self?.stopLoading()
-                                                }
-                                             },
-                                             onFailure: { [weak self] (_) in
-                                                DispatchQueue.main.async {
-                                                    self?.stopLoading()
-                                                }
-                                             })
+        self.placeRepository
+            .searchForPlaces(searchText: searchText,
+                             onSuccess: { [weak self] result in
+                                DispatchQueue.main.async {
+                                    self?.searchResults = result
+                                    self?.updateSearchResultsWithCount?()
+                                    self?.stopLoading()
+                                }
+                             },
+                             onFailure: { [weak self] (_) in
+                                DispatchQueue.main.async {
+                                    self?.stopLoading()
+                                }
+                             })
     }
 
 }

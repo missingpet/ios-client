@@ -9,9 +9,9 @@ import Foundation
 
 class MapPresenter: PresenterType {
 
-    var startLoadingSetter: UISetter<Void>?
-    var stopLoadingSetter: UISetter<Void>?
-    var reloadResults: UISetter<Void>?
+    var startLoadingSetter: UIUpdater?
+    var stopLoadingSetter: UIUpdater?
+    var reloadResults: UIUpdater?
     
     private var items = [AnnouncmenetsMapItem]()
 
@@ -64,15 +64,15 @@ class MapPresenter: PresenterType {
     }
 
     func startLoading() {
-        startLoadingSetter?(())
+        startLoadingSetter?()
     }
 
     func stopLoading() {
-        stopLoadingSetter?(())
+        stopLoadingSetter?()
     }
     
     func reloadItemsUI() {
-        reloadResults?(())
+        reloadResults?()
     }
     
     func getAllAnnouncementsMap() {

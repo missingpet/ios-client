@@ -10,8 +10,8 @@ import UIKit
 
 class SignUpPresenter: PresenterType {
 
-    var startLoadingSetter: UISetter<Void>?
-    var stopLoadingSetter: UISetter<Void>?
+    var startLoadingSetter: UIUpdater?
+    var stopLoadingSetter: UIUpdater?
 
     let authorizationRepository: AuthorizationRepositoryType!
 
@@ -20,10 +20,10 @@ class SignUpPresenter: PresenterType {
     }
 
     func startLoading() {
-        self.startLoadingSetter?(())
+        self.startLoadingSetter?()
     }
     func stopLoading() {
-        self.stopLoadingSetter?(())
+        self.stopLoadingSetter?()
     }
 
     func singUp(_ controller: UIViewController,

@@ -18,7 +18,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
     var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
-        presenter?.reloadResults = { [weak self] (_) in
+        presenter?.reloadResults = { [weak self] in
             if let annotations = self?.mapView.annotations {
                 self?.mapView.removeAnnotations(annotations)
             }
@@ -31,13 +31,13 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
                 }
             }
         }
-        presenter?.startLoadingSetter = { [weak self] (_) in
+        presenter?.startLoadingSetter = { [weak self] in
             self?.loadingView.isHidden = false
             self?.largeActivityIndicatorView.startAnimating()
             self?.view.isUserInteractionEnabled = false
             self?.tabBarController?.view.isUserInteractionEnabled = false
         }
-        presenter?.stopLoadingSetter = { [weak self] (_) in
+        presenter?.stopLoadingSetter = { [weak self] in
             self?.loadingView.isHidden = true
             self?.largeActivityIndicatorView.stopAnimating()
             self?.view.isUserInteractionEnabled = true

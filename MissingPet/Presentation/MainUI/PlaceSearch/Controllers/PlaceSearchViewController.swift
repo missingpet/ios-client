@@ -15,26 +15,21 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
-    @IBOutlet weak var resultsCountLabel: UILabel!
-
     override func viewDidLoad() {
-        presenter?.loadingSetter = { [weak self] (isLoading) in
-            if isLoading {
-                self?.view.isUserInteractionEnabled = false
-                self?.tabBarController?.view.isUserInteractionEnabled = false
-                self?.loadingView.isHidden = false
-                self?.largeActivityIndicatorView.startAnimating()
-            } else {
-                self?.view.isUserInteractionEnabled = true
-                self?.tabBarController?.view.isUserInteractionEnabled = true
-                self?.loadingView.isHidden = true
-                self?.largeActivityIndicatorView.stopAnimating()
-            }
+        presenter?.startLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = false
+            self?.largeActivityIndicatorView.startAnimating()
+            self?.view.isUserInteractionEnabled = false
+            self?.tabBarController?.view.isUserInteractionEnabled = false
         }
-        presenter?.updateSearchResultsWithCount = { [weak self] (count) in
+        presenter?.stopLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = true
+            self?.largeActivityIndicatorView.stopAnimating()
+            self?.view.isUserInteractionEnabled = true
+            self?.tabBarController?.view.isUserInteractionEnabled = true
+        }
+        presenter?.updateSearchResultsWithCount = { [weak self] in
             self?.placeSearchResultsTableView.reloadData()
-            self?.resultsCountLabel.text = "Найдено адресов: \(count)"
-            self?.resultsCountLabel.isHidden = count == 0
         }
 
         super.viewDidLoad()
@@ -61,12 +56,12 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
         presenter?.popViewController()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        debugPrint("numberOfRowsInSection")
         return presenter?.itemsTotal ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        debugPrint("cellForRowAt")
-        let addressCell = tableView.dequeueReusableCell(withIdentifier: AddressTableViewCell.cellIdentifier, for: indexPath) as? AddressTableViewCell ?? AddressTableViewCell(style: .default, reuseIdentifier: AddressTableViewCell.cellIdentifier)
+        let addressCell = tableView.dequeueReusableCell(withIdentifier: AddressTableViewCell.cellIdentifier,
+                                                        for: indexPath) as? AddressTableViewCell ?? AddressTableViewCell(style: .default,
+                                                                                                                         reuseIdentifier: AddressTableViewCell.cellIdentifier)
         if let item = presenter?.item(at: indexPath.item) {
             addressCell.set(text: item.addressLine)
         }
