@@ -11,10 +11,8 @@ import SwiftyJSON
 extension JSON {
 
     var date: Date? {
-        if let dateString = self.string {
-            return JSON.dateFormatter.date(from: dateString)
-        }
-        return nil
+        guard let dateString = self.string else { return nil }
+        return JSON.dateFormatter.date(from: dateString)
     }
 
     private static var dateFormatter: DateFormatter {
