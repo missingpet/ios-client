@@ -88,15 +88,4 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
         mapView.deselectAnnotation(annotation, animated: false)
     }
 
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        guard let location = locations.last as? CLLocation else { return }
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
-                                            longitude: location.coordinate.longitude)
-        var region = MKCoordinateRegion(center: center,
-                                        span: MKCoordinateSpan(latitudeDelta: 0.1,
-                                                               longitudeDelta: 0.1))
-        region.center = mapView.userLocation.coordinate
-        mapView.setRegion(region, animated: true)
-    }
-
 }

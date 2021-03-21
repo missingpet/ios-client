@@ -36,23 +36,24 @@ class MapPresenter: PresenterType {
     }
 
     func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
-        Navigator(Storyboard.inspectAnnouncement).push(InspectAnnouncementViewController.self,
-                                                       presenter: InspectAnnouncementPresenter(announcement: announcement,
-                                                                                               userInfoRepository: UserInfoRepository(),
-                                                                                               announcementRepository: AnnouncementRepository()))
+        Navigator(Storyboard.inspectAnnouncement)
+            .push(InspectAnnouncementViewController.self,
+                  presenter: InspectAnnouncementPresenter(announcement: announcement,
+                                                          userInfoRepository: UserInfoRepository(),
+                                                          announcementRepository: AnnouncementRepository()))
     }
 
     func openConcreteItem(id: Int) {
         self.startLoading()
-        announcementRepository.getAnnouncement(id: id,
-                                               onSuccess: { [weak self] (result) in
-                                                self?.stopLoading()
-                                                self?.pushInspectAnnouncementViewController(with: result)
-                                               },
-                                               onFailure: { [weak self] (errorDescription) in
-                                                debugPrint(errorDescription)
-                                                self?.stopLoading()
-                                               })
+        announcementRepository
+            .getAnnouncement(id: id,
+                             onSuccess: { [weak self] (result) in
+                                self?.stopLoading()
+                                self?.pushInspectAnnouncementViewController(with: result)
+                             },
+                             onFailure: { [weak self] (_) in
+                                self?.stopLoading()
+                             })
     }
 
     func getItems() -> [AnnouncmenetsMapItem] {
@@ -77,27 +78,28 @@ class MapPresenter: PresenterType {
     
     func getAllAnnouncementsMap() {
         startLoading()
-        announcementRepository.getAllAnnouncementsMap(onSuccess: { [weak self] (result) in
-            self?.updateItems(result: result)
-            self?.stopLoading()
-        },
-        onFailure: { [weak self] (errorDescription) in
-            debugPrint(errorDescription)
-            self?.stopLoading()
-        })
+        announcementRepository
+            .getAllAnnouncementsMap(onSuccess: { [weak self] (result) in
+                self?.updateItems(result: result)
+                self?.reloadItemsUI()
+                self?.stopLoading()
+            },
+            onFailure: { [weak self] (_) in
+                self?.stopLoading()
+            })
     }
 
     func getFeedAnnouncementsMap() {
         startLoading()
-        announcementRepository.getFeedAnnouncementsMap(onSuccess: { [weak self] (result) in
-            self?.updateItems(result: result)
-            self?.reloadItemsUI()
-            self?.stopLoading()
-        },
-        onFailure: { [weak self] (errorDescription) in
-            debugPrint(errorDescription)
-            self?.stopLoading()
-        })
+        announcementRepository
+            .getFeedAnnouncementsMap(onSuccess: { [weak self] (result) in
+                self?.updateItems(result: result)
+                self?.reloadItemsUI()
+                self?.stopLoading()
+            },
+            onFailure: { [weak self] (_) in
+                self?.stopLoading()
+            })
     }
 
     @objc func loadItems() {
