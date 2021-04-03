@@ -44,8 +44,6 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
         placeSearchResultsTableView.register(UINib(nibName: AddressTableViewCell.nibName, bundle: nil),
                                              forCellReuseIdentifier: AddressTableViewCell.cellIdentifier)
 
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                         action: #selector(dismissKeyboard)))
     }
 
 // table view
@@ -74,10 +72,6 @@ class PlaceSearchViewController: Controller<PlaceSearchPresenter>, UITableViewDe
         let searchText = placeSearchTextField.text ?? ""
         presenter?.searchForPlace(searchText: searchText)
         return true
-    }
-
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
     }
 
 }
