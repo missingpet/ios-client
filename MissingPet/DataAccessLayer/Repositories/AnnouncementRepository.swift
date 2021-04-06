@@ -28,9 +28,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    onSuccess?(self.processGetAnnouncementsList(data: response.data!))
+                    if let data = response.data {
+                        onSuccess?(self.processGetAnnouncementsList(data: data))
+                    }
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
     }
@@ -50,9 +54,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    onSuccess?(self.processGetAnnouncementsList(data: response.data!))
+                    if let data = response.data {
+                        onSuccess?(self.processGetAnnouncementsList(data: data))
+                    }
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
     }
@@ -72,9 +80,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    onSuccess?(self.processGetAnnouncementsList(data: response.data!))
+                    if let data = response.data {
+                        onSuccess?(self.processGetAnnouncementsList(data: data))
+                    }
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
     }
@@ -88,9 +100,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    onSuccess?(self.processAnnouncementsMap(data: response.data!))
+                    if let data = response.data {
+                        onSuccess?(self.processAnnouncementsMap(data: data))
+                    }
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
     }
@@ -103,9 +119,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    onSuccess?(self.processAnnouncementsMap(data: response.data!))
+                    if let data = response.data {
+                        onSuccess?(self.processAnnouncementsMap(data: data))
+                    }
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
     }
@@ -159,9 +179,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             .validate(statusCode: 200..<300).responseJSON(completionHandler: { response in
                 switch response.result {
                 case .success:
-                    onSuccess?(self.processCreateAnnouncement(data: response.data!))
+                    if let data = response.data {
+                        onSuccess?(self.processCreateAnnouncement(data: data))
+                    }
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
 
@@ -175,9 +199,13 @@ class AnnouncementRepository: AnnouncementRepositoryType {
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    onSuccess?(self.processGetAnnouncement(data: response.data!))
+                    if let data = response.data {
+                        onSuccess?(self.processGetAnnouncement(data: data))
+                    }
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
     }
@@ -196,7 +224,9 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                 case .success:
                     onSuccess?()
                 case .failure:
-                    onFailure?(self.processFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processFailure(data: data))
+                    }
                 }
             })
     }

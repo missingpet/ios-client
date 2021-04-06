@@ -24,26 +24,25 @@ class CreateAnnouncementViewController: Controller<CreateAnnouncementPresenter>,
     let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
-        presenter?.loadingSetter = { [weak self] isLoading in
-            if isLoading {
-                self?.loadingView.isHidden = false
-                self?.largeActivityIndicatorView.startAnimating()
-                self?.view.isUserInteractionEnabled = false
-                self?.tabBarController?.view.isUserInteractionEnabled = false
-            } else {
-                self?.loadingView.isHidden = true
-                self?.largeActivityIndicatorView.stopAnimating()
-                self?.view.isUserInteractionEnabled = true
-                self?.tabBarController?.view.isUserInteractionEnabled = true
-            }
+        presenter?.startLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = false
+            self?.largeActivityIndicatorView.startAnimating()
+            self?.view.isUserInteractionEnabled = false
+            self?.tabBarController?.view.isUserInteractionEnabled = false
         }
-        presenter?.photoSetter = { [weak self] photo in
+        presenter?.stopLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = true
+            self?.largeActivityIndicatorView.stopAnimating()
+            self?.view.isUserInteractionEnabled = true
+            self?.tabBarController?.view.isUserInteractionEnabled = true
+        }
+        presenter?.photoSetter = { [weak self] (photo) in
             self?.photoView.imageView.image = photo
         }
-        presenter?.animalTypeSetter = { [weak self] text in
+        presenter?.animalTypeSetter = { [weak self] (text) in
             self?.animalTypeView.label.text = text
         }
-        presenter?.announcementTypeSetter = { [weak self] text in
+        presenter?.announcementTypeSetter = { [weak self] (text) in
             self?.announcementTypeView.label.text = text
         }
         presenter?.addressSetter = { [weak self] (address) in
@@ -58,17 +57,22 @@ class CreateAnnouncementViewController: Controller<CreateAnnouncementPresenter>,
 
         commentTextView.delegate = self
 
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                         action: #selector(dismissKeyboard)))
 
         phoneNumberTextFieldWithLabel.delegate = self
 
-        announcementTypeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chooseAnnouncementType)))
+        announcementTypeView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                         action: #selector(chooseAnnouncementType)))
 
-        animalTypeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(chooseAnimalType)))
+        animalTypeView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                   action: #selector(chooseAnimalType)))
 
-        placeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushPlaceSearchViewController)))
+        placeView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                              action: #selector(pushPlaceSearchViewController)))
 
-        photoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(choosePhoto)))
+        photoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                              action: #selector(choosePhoto)))
     }
 
     @IBAction func createAnnouncement(_ sender: UIButton) {

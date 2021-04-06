@@ -22,11 +22,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
+	<key>Pricacy - Photo Library Usage Description</key>
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
@@ -70,10 +74,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>Pricacy - Photo Library Usage Description</key>
-	<string></string>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>

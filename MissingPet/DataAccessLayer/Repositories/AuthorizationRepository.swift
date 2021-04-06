@@ -35,10 +35,14 @@ class AuthorizationRepository: AuthorizationRepositoryType {
             .responseJSON(completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    self.processLogin(data: response.data!)
+                    if let data = response.data {
+                        self.processLogin(data: data)
+                    }
                     onSuccess?()
                 case .failure:
-                    onFailure?(self.processLoginFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processLoginFailure(data: data))
+                    }
                 }
             })
     }
@@ -62,7 +66,9 @@ class AuthorizationRepository: AuthorizationRepositoryType {
                 case .success:
                     onSuccess?()
                 case .failure:
-                    onFailure?(self.processRegisterFailure(data: response.data!))
+                    if let data = response.data {
+                        onFailure?(self.processRegisterFailure(data: data))
+                    }
                 }
             })
     }

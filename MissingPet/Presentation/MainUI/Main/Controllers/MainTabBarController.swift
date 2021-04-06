@@ -43,10 +43,13 @@ class MainTabBarController: UITabBarController {
 
     }
 
-    private func createController<P: PresenterType, C: Controller<P>, NC: UINavigationController>(_ controller: C.Type,
-                                                                                                  presenter: P,
-                                                                                                  navigationController: NC.Type,
-                                                                                                  storyboard: Storyboard, iconName: String) -> UINavigationController {
+    private func createController<P: PresenterType,
+                                  C: Controller<P>,
+                                  NC: UINavigationController>(_ controller: C.Type,
+                                                              presenter: P,
+                                                              navigationController: NC.Type,
+                                                              storyboard: Storyboard,
+                                                              iconName: String) -> UINavigationController {
         let navigator = Navigator(storyboard)
         let navigationController = navigator.createController(NC.self)
         let controller: C = navigator.createControllerWithPresenter(C.self, presenter: presenter)

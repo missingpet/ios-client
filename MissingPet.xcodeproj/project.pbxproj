@@ -16,6 +16,7 @@
 		9D5D4DB825EE4C6700F6F1A6 /* PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D4DB725EE4C6700F6F1A6 /* PlaceRepository.swift */; };
 		9D5D4DBB25EE515800F6F1A6 /* PlaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5D4DBA25EE515800F6F1A6 /* PlaceItem.swift */; };
 		9D7337BA25E500B9005BA301 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7337B925E500B9005BA301 /* AlertService.swift */; };
+		9D7E12BF2605CBA500BA0651 /* UIUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E12BE2605CBA500BA0651 /* UIUpdater.swift */; };
 		9D7E9E8025F1E35B000A1861 /* UserInfoRespositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E9E7F25F1E35B000A1861 /* UserInfoRespositoryType.swift */; };
 		9D7E9E8325F1E3BC000A1861 /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E9E8225F1E3BC000A1861 /* UserInfoRepository.swift */; };
 		9D8CE6CC25F4D65C00E28DE8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D8CE6CB25F4D65C00E28DE8 /* Profile.storyboard */; };
@@ -157,6 +158,7 @@
 		9D5D4DB725EE4C6700F6F1A6 /* PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepository.swift; sourceTree = "<group>"; };
 		9D5D4DBA25EE515800F6F1A6 /* PlaceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceItem.swift; sourceTree = "<group>"; };
 		9D7337B925E500B9005BA301 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		9D7E12BE2605CBA500BA0651 /* UIUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUpdater.swift; sourceTree = "<group>"; };
 		9D7E9E7F25F1E35B000A1861 /* UserInfoRespositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRespositoryType.swift; sourceTree = "<group>"; };
 		9D7E9E8225F1E3BC000A1861 /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		9D8CE6CB25F4D65C00E28DE8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 		C834D541252255EC0070E3F6 /* ReusableUI */ = {
 			isa = PBXGroup;
 			children = (
+				9D7E12BE2605CBA500BA0651 /* UIUpdater.swift */,
 				C834D5422522560E0070E3F6 /* UISetter.swift */,
 				C89455272576C26D004A85EB /* AnnouncementPointAnnotation.swift */,
 				C8BAF7F5254A24B8002C3855 /* Views */,
@@ -953,7 +956,7 @@
 				C8CA02B22520BDAC00C22815 /* Sources */,
 				C8CA02B32520BDAC00C22815 /* Frameworks */,
 				C8CA02B42520BDAC00C22815 /* Resources */,
-				7B8B3AF8C2517272EB21C730 /* [CP] Embed Pods Frameworks */,
+				85C037A48EC9851C69AB1CED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1071,7 +1074,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7B8B3AF8C2517272EB21C730 /* [CP] Embed Pods Frameworks */ = {
+		85C037A48EC9851C69AB1CED /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1186,6 +1189,7 @@
 				C89F486425985E6B001F0137 /* UIView.swift in Sources */,
 				9D1ECD1425FC081300A3D544 /* PlaceSearchNavigationController.swift in Sources */,
 				C814C35C258D4F7E000EF0B9 /* PlaceSearchViewController.swift in Sources */,
+				9D7E12BF2605CBA500BA0651 /* UIUpdater.swift in Sources */,
 				C811477A25684AF800620D1E /* ProfilePresenter.swift in Sources */,
 				C89F99FE254477E60022C7C4 /* Colors.swift in Sources */,
 				C8BAF804254A288E002C3855 /* MapViewController.swift in Sources */,
@@ -1287,7 +1291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24X4EL2BCS;
 				INFOPLIST_FILE = MissingPetUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1307,7 +1311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24X4EL2BCS;
 				INFOPLIST_FILE = MissingPetUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1453,11 +1457,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.meremeev.MissingPet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.missing.pet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1477,11 +1481,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.meremeev.MissingPet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.missing.pet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -15,7 +15,8 @@ class CreateAnnouncementPresenter: PresenterType {
     var addressSetter: UISetter<String?>?
     var photoSetter: UISetter<UIImage?>?
     var sourceTypeSetter: UISetter<String?>?
-    var loadingSetter: UISetter<Bool>?
+    var startLoadingSetter: UIUpdater?
+    var stopLoadingSetter: UIUpdater?
 
     var announcementType: AnnouncementType?
     var animalType: AnimalType?
@@ -31,11 +32,11 @@ class CreateAnnouncementPresenter: PresenterType {
     private let announcementRepository: AnnouncementRepositoryType!
 
     private func startAnimating() {
-        loadingSetter?(true)
+        startLoadingSetter?()
     }
 
     private func stopAnimatng() {
-        loadingSetter?(false)
+        stopLoadingSetter?()
     }
 
     init (announcementRepository: AnnouncementRepositoryType) {
@@ -61,37 +62,59 @@ class CreateAnnouncementPresenter: PresenterType {
 
     func chooseAnnouncementType(controller: UIViewController) {
 
-        let chooseAnnouncementTypeAlert = UIAlertController(title: "Тип объявления", message: "Выберите один из следующих вариантов", preferredStyle: .alert)
-        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Потеряно", style: .default, handler: { (_) in
+        let chooseAnnouncementTypeAlert = UIAlertController(title: "Тип объявления",
+                                                            message: "Выберите один из следующих вариантов",
+                                                            preferredStyle: .alert)
+        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Потеряно",
+                                                            style: .default,
+                                                            handler: { (_) in
             self.announcementType = .lost
             self.announcementTypeSetter?("Потеряно")
         }))
-        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Найдено", style: .default, handler: { (_) in
+        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Найдено",
+                                                            style: .default,
+                                                            handler: { (_) in
             self.announcementType = .found
             self.announcementTypeSetter?("Найдено")
         }))
-        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Отмена",
+                                                            style: .cancel,
+                                                            handler: nil))
 
-        controller.present(chooseAnnouncementTypeAlert, animated: true, completion: nil)
+        controller.present(chooseAnnouncementTypeAlert,
+                           animated: true,
+                           completion: nil)
     }
 
     func chooseAnimalType(controller: UIViewController) {
-        let chooseAnnouncementTypeAlert = UIAlertController(title: "Тип животного", message: "Выберите один из следующих вариантов", preferredStyle: .alert)
-        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Собаки", style: .default, handler: { (_) in
+        let chooseAnnouncementTypeAlert = UIAlertController(title: "Тип животного",
+                                                            message: "Выберите один из следующих вариантов",
+                                                            preferredStyle: .alert)
+        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Собаки",
+                                                            style: .default,
+                                                            handler: { (_) in
             self.animalType = .dog
             self.animalTypeSetter?("Собаки")
         }))
-        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Кошки", style: .default, handler: { (_) in
+        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Кошки",
+                                                            style: .default,
+                                                            handler: { (_) in
             self.animalType = .cat
             self.animalTypeSetter?("Кошки")
         }))
-        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Иные", style: .default, handler: { (_) in
+        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Иные",
+                                                            style: .default,
+                                                            handler: { (_) in
             self.animalType = .other
             self.animalTypeSetter?("Иные")
         }))
-        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Отмена",
+                                                            style: .cancel,
+                                                            handler: nil))
 
-        controller.present(chooseAnnouncementTypeAlert, animated: true, completion: nil)
+        controller.present(chooseAnnouncementTypeAlert,
+                           animated: true,
+                           completion: nil)
     }
 
     func pushPlaceSearchViewController() {
@@ -102,12 +125,16 @@ class CreateAnnouncementPresenter: PresenterType {
     func createAnnouncement(controller: UIViewController) {
         if ConnectionService.isUnavailable {
             let connectionUnavailableAlert = AlertService.getConnectionUnavalableAlert()
-            controller.present(connectionUnavailableAlert, animated: true, completion: nil)
+            controller.present(connectionUnavailableAlert,
+                               animated: true,
+                               completion: nil)
             return
         }
         guard AppSettings.isAuthorized else {
             let notAuthorizedAlert = AlertService.getErrorAlert(message: "Вы не авторизованы")
-            controller.present(notAuthorizedAlert, animated: true, completion: nil)
+            controller.present(notAuthorizedAlert,
+                               animated: true,
+                               completion: nil)
             return
         }
         if let comment = self.comment,
@@ -119,28 +146,35 @@ class CreateAnnouncementPresenter: PresenterType {
            let longitude = self.longitude,
            let contactPhoneNumber = self.phoneNumber {
             self.startAnimating()
-            self.announcementRepository.createAnnouncement(description: comment,
-                                                      photo: photo,
-                                                      announcementType: announcementType,
-                                                      animalType: animalType,
-                                                      place: place,
-                                                      latitude: latitude,
-                                                      longitude: longitude,
-                                                      contactPhoneNumber: contactPhoneNumber,
-                                                      onSuccess: { [weak self] (_) in
-                                                        self?.stopAnimatng()
-                                                        self?.notificationCenter.post(Notification(name: Notification.Name(Constants.announcementCreated)))
-                                                        let successAlert = AlertService.getSuccessAlert(message: "Объявление создано")
-                                                        controller.present(successAlert, animated: true, completion: nil)
-                                                      },
-                                                      onFailure: { [weak self] errorMessage in
-                                                        let errorAlert = AlertService.getErrorAlert(message: errorMessage)
-                                                        controller.present(errorAlert, animated: true, completion: nil)
-                                                        self?.stopAnimatng()
-                                                      })
+            self.announcementRepository
+                .createAnnouncement(description: comment,
+                                    photo: photo,
+                                    announcementType: announcementType,
+                                    animalType: animalType,
+                                    place: place,
+                                    latitude: latitude,
+                                    longitude: longitude,
+                                    contactPhoneNumber: contactPhoneNumber,
+                                    onSuccess: { [weak self] (_) in
+                                        self?.stopAnimatng()
+                                        self?.notificationCenter.post(Notification(name: Notification.Name(Constants.announcementCreated)))
+                                        let successAlert = AlertService.getSuccessAlert(message: "Объявление создано")
+                                        controller.present(successAlert,
+                                                           animated: true,
+                                                           completion: nil)
+                                    },
+                                    onFailure: { [weak self] errorMessage in
+                                        let errorAlert = AlertService.getErrorAlert(message: errorMessage)
+                                        controller.present(errorAlert,
+                                                           animated: true,
+                                                           completion: nil)
+                                        self?.stopAnimatng()
+                                    })
         } else {
             let alertControllet = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля")
-            controller.present(alertControllet, animated: true, completion: nil)
+            controller.present(alertControllet,
+                               animated: true,
+                               completion: nil)
         }
     }
 

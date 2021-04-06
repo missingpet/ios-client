@@ -16,19 +16,20 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var loadingView: UIView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     override func viewDidLoad() {
-        self.presenter?.loadingSetter = { [weak self] isLoading in
-            if isLoading {
-                self?.view.isUserInteractionEnabled = false
-                self?.loadingView.isHidden = false
-                self?.activityIndicatorView.startAnimating()
-            } else {
-                self?.view.isUserInteractionEnabled = true
-                self?.loadingView.isHidden = true
-                self?.activityIndicatorView.stopAnimating()
-            }
+        presenter?.startLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = false
+            self?.largeActivityIndicatorView.startAnimating()
+            self?.view.isUserInteractionEnabled = false
+            self?.tabBarController?.view.isUserInteractionEnabled = false
+        }
+        presenter?.stopLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = true
+            self?.largeActivityIndicatorView.stopAnimating()
+            self?.view.isUserInteractionEnabled = true
+            self?.tabBarController?.view.isUserInteractionEnabled = true
         }
 
         super.viewDidLoad()

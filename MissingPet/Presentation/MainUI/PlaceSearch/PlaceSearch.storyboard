@@ -9,11 +9,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SFUIDisplay-Regular.ttf">
-            <string>SFUIDisplay-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Place Search View Controller-->
         <scene sceneID="KJ8-ko-SXn">
@@ -41,21 +36,7 @@
                                 <view key="tableFooterView" contentMode="scaleToFill" id="mF5-hh-Ylx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ResultsCountLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbz-lE-PyM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
-                                            <color key="textColor" name="DarkBlue"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Pbz-lE-PyM" secondAttribute="trailing" id="5Bc-Nl-pju"/>
-                                        <constraint firstAttribute="bottom" secondItem="Pbz-lE-PyM" secondAttribute="bottom" id="lqL-J6-vdt"/>
-                                        <constraint firstItem="Pbz-lE-PyM" firstAttribute="top" secondItem="mF5-hh-Ylx" secondAttribute="top" id="qsR-Qe-GM2"/>
-                                        <constraint firstItem="Pbz-lE-PyM" firstAttribute="leading" secondItem="mF5-hh-Ylx" secondAttribute="leading" id="xzA-VW-qrO"/>
-                                    </constraints>
                                 </view>
                             </tableView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-X6-E4i" userLabel="Loading View">
@@ -97,7 +78,6 @@
                         <outlet property="loadingView" destination="hvO-X6-E4i" id="vN7-6I-eBW"/>
                         <outlet property="placeSearchResultsTableView" destination="Mg5-WW-aw6" id="MNM-fC-qf2"/>
                         <outlet property="placeSearchTextField" destination="kfK-bH-VnM" id="yfK-c3-H45"/>
-                        <outlet property="resultsCountLabel" destination="Pbz-lE-PyM" id="pMo-Hd-nhw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZr-Jh-9Xu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

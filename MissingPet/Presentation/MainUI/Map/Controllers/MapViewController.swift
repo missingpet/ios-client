@@ -18,7 +18,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
     var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
-        presenter?.reloadResults = { [weak self] (_) in
+        presenter?.reloadResults = { [weak self] in
             if let annotations = self?.mapView.annotations {
                 self?.mapView.removeAnnotations(annotations)
             }
@@ -31,18 +31,17 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
                 }
             }
         }
-        presenter?.loadingSetter = { [weak self] isLoading in
-            if isLoading {
-                self?.loadingView.isHidden = false
-                self?.largeActivityIndicatorView.startAnimating()
-                self?.view.isUserInteractionEnabled = false
-                self?.tabBarController?.view.isUserInteractionEnabled = false
-            } else {
-                self?.loadingView.isHidden = true
-                self?.largeActivityIndicatorView.stopAnimating()
-                self?.view.isUserInteractionEnabled = true
-                self?.tabBarController?.view.isUserInteractionEnabled = true
-            }
+        presenter?.startLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = false
+            self?.largeActivityIndicatorView.startAnimating()
+            self?.view.isUserInteractionEnabled = false
+            self?.tabBarController?.view.isUserInteractionEnabled = false
+        }
+        presenter?.stopLoadingSetter = { [weak self] in
+            self?.loadingView.isHidden = true
+            self?.largeActivityIndicatorView.stopAnimating()
+            self?.view.isUserInteractionEnabled = true
+            self?.tabBarController?.view.isUserInteractionEnabled = true
         }
 
         super.viewDidLoad()
@@ -57,8 +56,8 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
 
         if let userLocation = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(center: userLocation,
-                                            latitudinalMeters: 300,
-                                            longitudinalMeters: 300)
+                                            latitudinalMeters: 800,
+                                            longitudinalMeters: 800)
             mapView.setRegion(region, animated: false)
         }
 
@@ -87,17 +86,6 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
         guard let annotation = didSelect.annotation as? AnnouncementPointAnnotation else { return }
         presenter?.openConcreteItem(id: annotation.id)
         mapView.deselectAnnotation(annotation, animated: false)
-    }
-
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        guard let location = locations.last as? CLLocation else { return }
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
-                                            longitude: location.coordinate.longitude)
-        var region = MKCoordinateRegion(center: center,
-                                        span: MKCoordinateSpan(latitudeDelta: 0.1,
-                                                               longitudeDelta: 0.1))
-        region.center = mapView.userLocation.coordinate
-        mapView.setRegion(region, animated: true)
     }
 
 }
