@@ -12,7 +12,7 @@ class MapPresenter: PresenterType {
     var startLoadingSetter: UIUpdater?
     var stopLoadingSetter: UIUpdater?
     var reloadResults: UIUpdater?
-    
+
     private var items = [AnnouncmenetsMapItem]()
 
     private let announcementRepository: AnnouncementRepositoryType!
@@ -71,11 +71,11 @@ class MapPresenter: PresenterType {
     func stopLoading() {
         stopLoadingSetter?()
     }
-    
+
     func reloadItemsUI() {
         reloadResults?()
     }
-    
+
     func getAllAnnouncementsMap() {
         startLoading()
         announcementRepository
