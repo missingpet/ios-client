@@ -64,7 +64,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter?.loadItems()
+        presenter?.reloadMap()
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

@@ -80,6 +80,17 @@ class MapPresenter: PresenterType {
         stopLoadingSetter?()
     }
 
+    private func resetItemsState() {
+        self.items = []
+    }
+
+    func reloadMap() {
+        print(items.count)
+        resetItemsState()
+        print(items.count)
+        loadItems()
+    }
+    
     func reloadItemsUI() {
         reloadResults?()
     }
