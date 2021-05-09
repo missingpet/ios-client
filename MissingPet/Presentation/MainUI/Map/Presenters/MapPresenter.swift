@@ -5,6 +5,7 @@
 //  Created by Михаил Еремеев on 29.10.2020.
 //
 
+import UIKit
 import Foundation
 
 class MapPresenter: PresenterType {
@@ -43,7 +44,14 @@ class MapPresenter: PresenterType {
                                                           announcementRepository: AnnouncementRepository()))
     }
 
-    func openConcreteItem(id: Int) {
+    func openConcreteItem(_ controller: UIViewController, id: Int) {
+        if ConnectionService.isUnavailable {
+            let connectionUnavailableAlert = AlertService.getConnectionUnavalableAlert()
+            controller.present(connectionUnavailableAlert,
+                               animated: true,
+                               completion: nil)
+            return
+        }
         self.startLoading()
         announcementRepository
             .getAnnouncement(id: id,
@@ -70,6 +78,17 @@ class MapPresenter: PresenterType {
 
     func stopLoading() {
         stopLoadingSetter?()
+    }
+
+    private func resetItemsState() {
+        self.items = []
+    }
+
+    func reloadMap() {
+        print(items.count)
+        resetItemsState()
+        print(items.count)
+        loadItems()
     }
 
     func reloadItemsUI() {

@@ -54,7 +54,7 @@ class ProfileViewController: Controller<ProfilePresenter>, UITextFieldDelegate {
         emailTextField.isSecureTextEntry = false
 
         passwordTextField.delegate = self
-        passwordTextField.keyboardType = .asciiCapable
+        passwordTextField.keyboardType = .default
         passwordTextField.textContentType = .password
         passwordTextField.isSecureTextEntry = true
     }

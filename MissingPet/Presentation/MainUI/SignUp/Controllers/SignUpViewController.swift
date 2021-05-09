@@ -35,7 +35,7 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
         super.viewDidLoad()
 
         nicknameTextField.delegate = self
-        nicknameTextField.keyboardType = .asciiCapable
+        nicknameTextField.keyboardType = .default
         nicknameTextField.textContentType = .username
         nicknameTextField.isSecureTextEntry = false
 
@@ -45,12 +45,12 @@ class SignUpViewController: Controller<SignUpPresenter>, UITextFieldDelegate {
         emailTextField.isSecureTextEntry = false
 
         passwordTextField.delegate = self
-        passwordTextField.keyboardType = .asciiCapable
+        passwordTextField.keyboardType = .default
         passwordTextField.textContentType = .password
         passwordTextField.isSecureTextEntry = true
 
         repeatPasswordTextField.delegate = self
-        repeatPasswordTextField.keyboardType = .asciiCapable
+        repeatPasswordTextField.keyboardType = .default
         repeatPasswordTextField.textContentType = .password
         repeatPasswordTextField.isSecureTextEntry = true
 

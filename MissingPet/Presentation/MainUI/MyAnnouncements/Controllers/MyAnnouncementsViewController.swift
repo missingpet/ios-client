@@ -42,8 +42,11 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
         myAnnouncementsTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName,
                                                 bundle: nil),
                                           forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
+    }
 
-        presenter?.loadItems()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.reloadMyAnnouncements()
     }
 
 // table view
