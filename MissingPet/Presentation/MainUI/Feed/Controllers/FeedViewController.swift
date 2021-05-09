@@ -41,10 +41,13 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
 
         feedTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName, bundle: nil),
                                forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
-
-        presenter?.loadItems()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.reloadFeed()
+    }
+    
 // table view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let announcement = presenter?.item(at: indexPath.item) else { return }

@@ -60,10 +60,13 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
                                             longitudinalMeters: 800)
             mapView.setRegion(region, animated: false)
         }
-
-        presenter?.loadItems()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.loadItems()
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
         guard annotation is AnnouncementPointAnnotation else { return nil }
