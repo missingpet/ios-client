@@ -12,6 +12,7 @@ class MyAnnouncementsPresenter: PresenterType {
     var reloadItemsWithCount: UISetter<Int>?
     var startLoadingSetter: UIUpdater?
     var stopLoadingSetter: UIUpdater?
+    var refreshControlUpdater : UIUpdater?
 
     private var pageNumber = 1
 
@@ -65,7 +66,7 @@ class MyAnnouncementsPresenter: PresenterType {
         startLoadingSetter?()
     }
 
-    private func stopAnimatng() {
+    private func stopAnimating() {
         stopLoadingSetter?()
     }
 
@@ -73,9 +74,12 @@ class MyAnnouncementsPresenter: PresenterType {
         resetItemsState()
         if AppSettings.isAuthorized {
             self.getMyAnnouncements()
-        } else {
-            self.reloadItemsUI()
         }
+    }
+    
+    func handleRefreshControl() {
+        reloadMyAnnouncements()
+        refreshControlUpdater?()
     }
 
     private func updateItems(result: AnnouncementListResult) {
@@ -102,11 +106,10 @@ class MyAnnouncementsPresenter: PresenterType {
                                        onSuccess: { [weak self] result in
                                         self?.updateItems(result: result)
                                         self?.reloadItemsUI()
-                                        self?.stopAnimatng()
+                                        self?.stopAnimating()
                                        },
-                                       onFailure: { [weak self] errorDescription in
-                                        debugPrint(errorDescription)
-                                        self?.stopAnimatng()
+                                       onFailure: { [weak self] (_) in
+                                        self?.stopAnimating()
                                        })
     }
 
