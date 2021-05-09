@@ -41,8 +41,8 @@ class CreateAnnouncementPresenter: PresenterType {
 
     init (announcementRepository: AnnouncementRepositoryType) {
         self.announcementRepository = announcementRepository
-        notificationCenter.addObserver(self, selector:
-                                        #selector(updateAddressUI(_:)),
+        notificationCenter.addObserver(self,
+                                       selector: #selector(updateAddressUI(_:)),
                                        name: NSNotification.Name(Constants.addressSelected),
                                        object: nil)
     }
@@ -158,7 +158,7 @@ class CreateAnnouncementPresenter: PresenterType {
                                     onSuccess: { [weak self] (_) in
                                         self?.stopAnimatng()
                                         self?.notificationCenter.post(Notification(name: Notification.Name(Constants.announcementCreated)))
-                                        let successAlert = AlertService.getSuccessAlert(message: "Объявление создано")
+                                        let successAlert = AlertService.getSuccessAlert(message: "Объявление создано. Вы можете просмотреть его на экране \"Мои объявления\".")
                                         controller.present(successAlert,
                                                            animated: true,
                                                            completion: nil)
@@ -171,7 +171,7 @@ class CreateAnnouncementPresenter: PresenterType {
                                         self?.stopAnimatng()
                                     })
         } else {
-            let alertControllet = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля")
+            let alertControllet = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля.")
             controller.present(alertControllet,
                                animated: true,
                                completion: nil)

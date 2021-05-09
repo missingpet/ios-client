@@ -40,9 +40,7 @@ class AuthorizationRepository: AuthorizationRepositoryType {
                     }
                     onSuccess?()
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processLoginFailure(data: data))
-                    }
+                    onFailure?(self.processLoginFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -66,9 +64,7 @@ class AuthorizationRepository: AuthorizationRepositoryType {
                 case .success:
                     onSuccess?()
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processRegisterFailure(data: data))
-                    }
+                    onFailure?(self.processRegisterFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -107,7 +103,7 @@ fileprivate extension AuthorizationRepository {
 
     func processLoginFailure(data: Data) -> String {
         let json = JSON(data)
-        let detailMessage = json[Constants.detailKey].string!
+        let detailMessage = json[Constants.detailKey].string ?? ""
         return detailMessage
     }
 
