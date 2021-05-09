@@ -90,7 +90,7 @@ class MapPresenter: PresenterType {
         print(items.count)
         loadItems()
     }
-    
+
     func reloadItemsUI() {
         reloadResults?()
     }
