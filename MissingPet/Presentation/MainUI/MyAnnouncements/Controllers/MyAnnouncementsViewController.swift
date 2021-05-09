@@ -43,7 +43,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
                                                 bundle: nil),
                                           forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter?.reloadMyAnnouncements()

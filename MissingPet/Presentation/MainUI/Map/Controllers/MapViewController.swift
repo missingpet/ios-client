@@ -66,7 +66,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
         super.viewDidAppear(animated)
         presenter?.reloadMap()
     }
-    
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
         guard annotation is AnnouncementPointAnnotation else { return nil }
