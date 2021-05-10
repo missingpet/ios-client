@@ -25,6 +25,7 @@
 		9DB3130725E803010073ABF7 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3130625E803010073ABF7 /* UITableView.swift */; };
 		9DC2D10D25E461360041BE1B /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2D10C25E461360041BE1B /* ConnectionService.swift */; };
 		9DD7F19925D96EB50024169F /* AnnouncementListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */; };
+		9DFFFB32264944E300B14382 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DFFFB31264944E300B14382 /* Info.plist */; };
 		C801550A2599EFD800601D76 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80155092599EFD800601D76 /* PhotoView.swift */; };
 		C801550D2599EFE800601D76 /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C801550C2599EFE800601D76 /* PhotoView.xib */; };
 		C8015511259A070500601D76 /* PhoneNumberTextFieldWithLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8015510259A070500601D76 /* PhoneNumberTextFieldWithLabel.xib */; };
@@ -171,6 +172,7 @@
 		9DB3130625E803010073ABF7 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		9DC2D10C25E461360041BE1B /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		9DD7F19825D96EB50024169F /* AnnouncementListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementListResult.swift; sourceTree = "<group>"; };
+		9DFFFB31264944E300B14382 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C80155092599EFD800601D76 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		C801550C2599EFE800601D76 /* PhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoView.xib; sourceTree = "<group>"; };
 		C8015510259A070500601D76 /* PhoneNumberTextFieldWithLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberTextFieldWithLabel.xib; sourceTree = "<group>"; };
@@ -259,7 +261,6 @@
 		C8CA02B62520BDAC00C22815 /* MissingPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissingPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CA02B92520BDAD00C22815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8CA02C52520BDB000C22815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C8CA02C72520BDB000C22815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8CB001A258A367500DF4734 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C8E3432A25A87CE5000C95B4 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		C8F441BE2520D2E800A6570D /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
@@ -613,8 +614,8 @@
 		C89F9A00254478A60022C7C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DFFFB31264944E300B14382 /* Info.plist */,
 				C8CA02C42520BDB000C22815 /* LaunchScreen.storyboard */,
-				C8CA02C72520BDB000C22815 /* Info.plist */,
 				C8CA02B92520BDAD00C22815 /* AppDelegate.swift */,
 				C89F9A01254478CB0022C7C4 /* Fonts */,
 				C89F99FD254477E60022C7C4 /* Colors.swift */,
@@ -1041,6 +1042,7 @@
 				C8BAF7E3254A165F002C3855 /* SFUIText-Heavy.ttf in Resources */,
 				C8BAF7DD254A165F002C3855 /* SFUIDisplay-Ultralight.ttf in Resources */,
 				C8BAF7DC254A165F002C3855 /* SFUIDisplay-Heavy.ttf in Resources */,
+				9DFFFB32264944E300B14382 /* Info.plist in Resources */,
 				C8BAF80D254A290B002C3855 /* Map.storyboard in Resources */,
 				C8BCC98D2524C6A900FB3164 /* Feed.storyboard in Resources */,
 				C8BAF7D9254A165F002C3855 /* SFUIText-Light.ttf in Resources */,
@@ -1456,7 +1458,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.missing.pet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1480,7 +1482,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.missing.pet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
