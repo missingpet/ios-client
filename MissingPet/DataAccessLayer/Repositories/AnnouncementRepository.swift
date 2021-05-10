@@ -32,9 +32,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                         onSuccess?(self.processGetAnnouncementsList(data: data))
                     }
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -58,9 +56,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                         onSuccess?(self.processGetAnnouncementsList(data: data))
                     }
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -84,9 +80,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                         onSuccess?(self.processGetAnnouncementsList(data: data))
                     }
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -104,9 +98,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                         onSuccess?(self.processAnnouncementsMap(data: data))
                     }
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -123,9 +115,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                         onSuccess?(self.processAnnouncementsMap(data: data))
                     }
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -183,9 +173,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                         onSuccess?(self.processCreateAnnouncement(data: data))
                     }
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
 
@@ -203,9 +191,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                         onSuccess?(self.processGetAnnouncement(data: data))
                     }
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
     }
@@ -224,9 +210,7 @@ class AnnouncementRepository: AnnouncementRepositoryType {
                 case .success:
                     onSuccess?()
                 case .failure:
-                    if let data = response.data {
-                        onFailure?(self.processFailure(data: data))
-                    }
+                    onFailure?(self.processFailure(data: response.data ?? Data()))
                 }
             })
     }

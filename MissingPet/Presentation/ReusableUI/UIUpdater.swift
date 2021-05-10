@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias UIUpdater = () -> ()
+typealias UIUpdater = () -> Void

@@ -15,7 +15,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
 
     @IBOutlet weak var mapView: MKMapView!
 
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         presenter?.reloadResults = { [weak self] in
@@ -84,7 +84,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
 
     func mapView(_ mapView: MKMapView, didSelect: MKAnnotationView) {
         guard let annotation = didSelect.annotation as? AnnouncementPointAnnotation else { return }
-        presenter?.openConcreteItem(id: annotation.id)
+        presenter?.openConcreteItem(self, id: annotation.id)
         mapView.deselectAnnotation(annotation, animated: false)
     }
 

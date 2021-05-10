@@ -5,6 +5,7 @@
 //  Created by Михаил Еремеев on 29.10.2020.
 //
 
+import UIKit
 import Foundation
 
 class MapPresenter: PresenterType {
@@ -31,10 +32,6 @@ class MapPresenter: PresenterType {
                                        object: nil)
     }
 
-    deinit {
-        notificationCenter.removeObserver(self)
-    }
-
     func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
         Navigator(Storyboard.inspectAnnouncement)
             .push(InspectAnnouncementViewController.self,
@@ -43,7 +40,14 @@ class MapPresenter: PresenterType {
                                                           announcementRepository: AnnouncementRepository()))
     }
 
-    func openConcreteItem(id: Int) {
+    func openConcreteItem(_ controller: UIViewController, id: Int) {
+        if ConnectionService.isUnavailable {
+            let connectionUnavailableAlert = AlertService.getConnectionUnavalableAlert()
+            controller.present(connectionUnavailableAlert,
+                               animated: true,
+                               completion: nil)
+            return
+        }
         self.startLoading()
         announcementRepository
             .getAnnouncement(id: id,
@@ -64,19 +68,23 @@ class MapPresenter: PresenterType {
         self.items = result
     }
 
-    func startLoading() {
+    private func startLoading() {
         startLoadingSetter?()
     }
 
-    func stopLoading() {
+    private func stopLoading() {
         stopLoadingSetter?()
     }
 
-    func reloadItemsUI() {
+    private func resetItemsState() {
+        self.items = []
+    }
+
+    private func reloadItemsUI() {
         reloadResults?()
     }
 
-    func getAllAnnouncementsMap() {
+    private func getAllAnnouncementsMap() {
         startLoading()
         announcementRepository
             .getAllAnnouncementsMap(onSuccess: { [weak self] (result) in
@@ -89,7 +97,7 @@ class MapPresenter: PresenterType {
             })
     }
 
-    func getFeedAnnouncementsMap() {
+    private func getFeedAnnouncementsMap() {
         startLoading()
         announcementRepository
             .getFeedAnnouncementsMap(onSuccess: { [weak self] (result) in
@@ -108,6 +116,10 @@ class MapPresenter: PresenterType {
         } else {
             self.getAllAnnouncementsMap()
         }
+    }
+
+    deinit {
+        notificationCenter.removeObserver(self)
     }
 
 }

@@ -21,8 +21,7 @@ class ProfilePresenter: PresenterType {
 
     private let notificationCenter = NotificationCenter.default
 
-    init(authorizationReporitory: AuthorizationRepositoryType,
-         userInfoRepository: UserInfoRepositoryType) {
+    init(authorizationReporitory: AuthorizationRepositoryType, userInfoRepository: UserInfoRepositoryType) {
         self.authorizationReporitory = authorizationReporitory
         self.userInfoRepository = userInfoRepository
     }
