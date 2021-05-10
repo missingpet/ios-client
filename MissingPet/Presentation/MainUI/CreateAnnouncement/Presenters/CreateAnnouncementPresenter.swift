@@ -87,7 +87,7 @@ class CreateAnnouncementPresenter: PresenterType {
     }
 
     func chooseAnimalType(controller: UIViewController) {
-        let chooseAnnouncementTypeAlert = UIAlertController(title: "Тип животного",
+        let chooseAnnouncementTypeAlert = UIAlertController(title: "Вид животного",
                                                             message: "Выберите один из следующих вариантов",
                                                             preferredStyle: .alert)
         chooseAnnouncementTypeAlert.addAction(UIAlertAction(title: "Собаки",
@@ -125,16 +125,12 @@ class CreateAnnouncementPresenter: PresenterType {
     func createAnnouncement(controller: UIViewController) {
         if ConnectionService.isUnavailable {
             let connectionUnavailableAlert = AlertService.getConnectionUnavalableAlert()
-            controller.present(connectionUnavailableAlert,
-                               animated: true,
-                               completion: nil)
+            controller.present(connectionUnavailableAlert, animated: true, completion: nil)
             return
         }
         guard AppSettings.isAuthorized else {
             let notAuthorizedAlert = AlertService.getErrorAlert(message: "Вы не авторизованы")
-            controller.present(notAuthorizedAlert,
-                               animated: true,
-                               completion: nil)
+            controller.present(notAuthorizedAlert, animated: true, completion: nil)
             return
         }
         if let comment = self.comment,
@@ -172,9 +168,7 @@ class CreateAnnouncementPresenter: PresenterType {
                                     })
         } else {
             let alertControllet = AlertService.getErrorAlert(message: "Пожалуйста, заполните все поля.")
-            controller.present(alertControllet,
-                               animated: true,
-                               completion: nil)
+            controller.present(alertControllet, animated: true, completion: nil)
         }
     }
 
@@ -199,7 +193,6 @@ class CreateAnnouncementPresenter: PresenterType {
     func addPhoto(photo: UIImage?) {
         self.photo = photo
         photoSetter?(self.photo)
-
         Navigator().dismiss()
     }
 }

@@ -95,7 +95,7 @@ class MyAnnouncementsPresenter: PresenterType {
         self.getMyAnnouncements()
     }
 
-    func getMyAnnouncements() {
+    private func getMyAnnouncements() {
         guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         self.startAnimating()
         announcementRepository.getMyAnnouncements(pageNumber: pageNumber,
