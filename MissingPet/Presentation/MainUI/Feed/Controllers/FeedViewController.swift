@@ -41,7 +41,7 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
 
         feedTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName, bundle: nil),
                                forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
-        
+
         presenter?.loadItems()
     }
 
@@ -66,5 +66,5 @@ class FeedViewController: Controller<FeedPresenter>, UITableViewDelegate, UITabl
             presenter?.loadItems()
         }
     }
-    
+
 }

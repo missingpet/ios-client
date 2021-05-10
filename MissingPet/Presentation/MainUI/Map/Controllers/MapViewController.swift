@@ -14,7 +14,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     @IBOutlet weak var mapView: MKMapView!
-    
+
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
                                             longitudinalMeters: 800)
             mapView.setRegion(region, animated: false)
         }
-        
+
         presenter?.loadItems()
     }
 
