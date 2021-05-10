@@ -23,15 +23,17 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Для создания объявления</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Для отображения объявлений поблизости</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Для отображения объявлений поблизости</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Для отображения объявлений поблизости</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string></string>
+	<string>Для создания объявления</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
-	<key>Pricacy - Photo Library Usage Description</key>
-	<string></string>
+	<string>Для создания объявления</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFUIDisplay-Black.ttf</string>
