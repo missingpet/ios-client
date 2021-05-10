@@ -97,8 +97,7 @@ class FeedPresenter: PresenterType {
                                         self?.reloadItemsUI()
                                         self?.stopAnimating()
                                        },
-                                       onFailure: { [weak self] (errorDescription) in
-                                        debugPrint(errorDescription)
+                                       onFailure: { [weak self] (_) in
                                         self?.stopAnimating()
                                        })
     }

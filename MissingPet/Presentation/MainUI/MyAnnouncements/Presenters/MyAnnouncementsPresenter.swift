@@ -88,7 +88,7 @@ class MyAnnouncementsPresenter: PresenterType {
 
     func loadItems() {
         guard AppSettings.isAuthorized else { return }
-        reloadMyAnnouncements()
+        getMyAnnouncements()
     }
 
     private func getMyAnnouncements() {
