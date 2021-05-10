@@ -191,9 +191,9 @@ class CreateAnnouncementPresenter: PresenterType {
         photoSetter?(self.photo)
         Navigator().dismiss()
     }
-    
+
     deinit {
         notificationCenter.removeObserver(self)
     }
-    
+
 }

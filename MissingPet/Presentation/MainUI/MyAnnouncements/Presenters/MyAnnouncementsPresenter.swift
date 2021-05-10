@@ -112,9 +112,9 @@ class MyAnnouncementsPresenter: PresenterType {
                                                                                                userInfoRepository: UserInfoRepository(),
                                                                                                announcementRepository: AnnouncementRepository()))
     }
-    
+
     deinit {
         notificationCenter.removeObserver(self)
     }
-    
+
 }
