@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias UISetter<T> = (T) -> ()
+typealias UISetter<T> = (T) -> Void
