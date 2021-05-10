@@ -48,9 +48,9 @@ class InspectAnnouncementPresenter: PresenterType {
 
     func setup() {
         photoUrlSetter?(URL(string: announcement.photo))
-        
+
         creationDateSetter?(announcement.createdAt)
-        
+
         switch announcement.animalType {
         case .dog:
             animalTypeSetter?("Собаки")
@@ -59,22 +59,22 @@ class InspectAnnouncementPresenter: PresenterType {
         case .other:
             animalTypeSetter?("Иные")
         }
-        
+
         descriptionSetter?(announcement.description)
-        
+
         switch announcement.announcementType {
         case .lost:
             lostFoundSetter?("Место пропажи:")
         case .found:
             lostFoundSetter?("Место находки:")
         }
-        
+
         placeLabelSetter?(announcement.address)
-        
+
         usernameSetter?(announcement.user.nickname)
-        
+
         callPhoneNumberSetter?(announcement.contactPhoneNumber)
-        
+
         if AppSettings.isAuthorized {
             userInfoRepository.getUserId(onSuccess: { [weak self] userId in
                                             self?.deleteAnnouncementButtonSetter?(userId != self?.announcement.user.id)},

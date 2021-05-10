@@ -117,7 +117,7 @@ class MapPresenter: PresenterType {
             self.getAllAnnouncementsMap()
         }
     }
-    
+
     deinit {
         notificationCenter.removeObserver(self)
     }

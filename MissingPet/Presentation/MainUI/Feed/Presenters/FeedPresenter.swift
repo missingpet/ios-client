@@ -42,7 +42,7 @@ class FeedPresenter: PresenterType {
     func item(at index: Int) -> AnnouncementItem {
         return items[index]
     }
-    
+
     private func resetItemsState() {
         self.items = []
         self.pageNumber = 1
@@ -73,7 +73,7 @@ class FeedPresenter: PresenterType {
     private func stopAnimating() {
         stopLoadingSetter?()
     }
-    
+
     func getAllAnnouncements() {
         guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         startAnimating()
@@ -121,5 +121,5 @@ class FeedPresenter: PresenterType {
     deinit {
         notificationCenter.removeObserver(self)
     }
-    
+
 }

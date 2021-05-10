@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    
+
     static let defaultFontSize: CGFloat = 14.0
-    
+
     enum CustomName: String {
         case sUiDisplayBlack = "SFUIDisplay-Black"
         case sfUiDisplayBold = "SFUIDisplay-Bold"
@@ -22,7 +22,7 @@ extension UIFont {
         case sfUiDisplaySemibold = "SFUIDisplay-Semibold"
         case sfUiDisplayThin = "SFUIDisplay-Thin"
         case sfUiDisplayUltralight = "SFUIDisplay-Ultralight"
-        
+
         case sfUiTextBold = "SFUIText-Bold"
         case sfUiTextBoldItalic = "SFUIText-BoldItalic"
         case sfUiTextHeavy = "SFUIText-Heavy"
@@ -36,9 +36,9 @@ extension UIFont {
         case sfUiTextSemibold = "SFUIText-Semibold"
         case sfUiTextSemiboldItalic = "SFUIText-SemiboldItalic"
     }
-    
+
     static func custom(_ customName: CustomName, size: CGFloat) -> UIFont {
         return UIFont(name: customName.rawValue, size: size)!
     }
-    
+
 }
