@@ -12,7 +12,6 @@ class FeedPresenter: PresenterType {
     var reloadItemsWithCount: UISetter<Int>?
     var startLoadingSetter: UIUpdater?
     var stopLoadingSetter: UIUpdater?
-    var refreshControlUpdater : UIUpdater?
 
     private var pageNumber = 1
 
@@ -77,11 +76,6 @@ class FeedPresenter: PresenterType {
 
     private func stopAnimating() {
         stopLoadingSetter?()
-    }
-    
-    func handleRefreshControl() {
-        reloadFeed()
-        refreshControlUpdater?()
     }
     
     func getAllAnnouncements() {

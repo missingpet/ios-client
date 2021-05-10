@@ -12,7 +12,6 @@ class MyAnnouncementsPresenter: PresenterType {
     var reloadItemsWithCount: UISetter<Int>?
     var startLoadingSetter: UIUpdater?
     var stopLoadingSetter: UIUpdater?
-    var refreshControlUpdater : UIUpdater?
 
     private var pageNumber = 1
 
@@ -74,12 +73,9 @@ class MyAnnouncementsPresenter: PresenterType {
         resetItemsState()
         if AppSettings.isAuthorized {
             self.getMyAnnouncements()
+        } else {
+            reloadItemsUI()
         }
-    }
-    
-    func handleRefreshControl() {
-        reloadMyAnnouncements()
-        refreshControlUpdater?()
     }
 
     private func updateItems(result: AnnouncementListResult) {

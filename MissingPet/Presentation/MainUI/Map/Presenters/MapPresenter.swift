@@ -72,11 +72,11 @@ class MapPresenter: PresenterType {
         self.items = result
     }
 
-    func startLoading() {
+    private func startLoading() {
         startLoadingSetter?()
     }
 
-    func stopLoading() {
+    private func stopLoading() {
         stopLoadingSetter?()
     }
 
@@ -84,18 +84,11 @@ class MapPresenter: PresenterType {
         self.items = []
     }
 
-    func reloadMap() {
-        print(items.count)
-        resetItemsState()
-        print(items.count)
-        loadItems()
-    }
-
-    func reloadItemsUI() {
+    private func reloadItemsUI() {
         reloadResults?()
     }
 
-    func getAllAnnouncementsMap() {
+    private func getAllAnnouncementsMap() {
         startLoading()
         announcementRepository
             .getAllAnnouncementsMap(onSuccess: { [weak self] (result) in
@@ -108,7 +101,7 @@ class MapPresenter: PresenterType {
             })
     }
 
-    func getFeedAnnouncementsMap() {
+    private func getFeedAnnouncementsMap() {
         startLoading()
         announcementRepository
             .getFeedAnnouncementsMap(onSuccess: { [weak self] (result) in

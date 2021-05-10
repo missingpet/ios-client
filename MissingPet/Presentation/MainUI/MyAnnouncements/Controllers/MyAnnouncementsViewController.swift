@@ -33,11 +33,6 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
             self?.announcementCountLabel.text = "Всего объявлений: \(count)"
             self?.announcementCountLabel.isHidden = count == 0
         }
-        presenter?.refreshControlUpdater = { [weak self] in
-            DispatchQueue.main.async {
-                self?.myAnnouncementsTableView.refreshControl?.endRefreshing()
-            }
-        }
 
         super.viewDidLoad()
 
@@ -47,9 +42,6 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
         myAnnouncementsTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName,
                                                 bundle: nil),
                                           forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
-        
-        myAnnouncementsTableView.refreshControl = UIRefreshControl()
-        myAnnouncementsTableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         
         presenter?.loadItems()
     }
@@ -77,10 +69,6 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
         if myAnnouncementsTableView.isScrolledToTheBottom {
             presenter?.loadItems()
         }
-    }
-    
-    @objc func handleRefreshControl() {
-        presenter?.handleRefreshControl()
     }
     
 }

@@ -14,8 +14,8 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
 
     @IBOutlet weak var mapView: MKMapView!
-
-    var locationManager = CLLocationManager()
+    
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         presenter?.reloadResults = { [weak self] in
@@ -60,11 +60,8 @@ class MapViewController: Controller<MapPresenter>, MKMapViewDelegate, CLLocation
                                             longitudinalMeters: 800)
             mapView.setRegion(region, animated: false)
         }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        presenter?.reloadMap()
+        
+        presenter?.loadItems()
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
