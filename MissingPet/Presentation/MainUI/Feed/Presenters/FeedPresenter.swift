@@ -19,14 +19,6 @@ class FeedPresenter: PresenterType {
 
     var itemsWeb: Int = 0
 
-    var itemsTotal: Int {
-        return items.count
-    }
-
-    func item(at index: Int) -> AnnouncementItem {
-        return items[index]
-    }
-
     private let announcementRepository: AnnouncementRepositoryType!
 
     private let notificationCenter = NotificationCenter.default
@@ -43,10 +35,14 @@ class FeedPresenter: PresenterType {
                                        object: nil)
     }
 
-    deinit {
-        notificationCenter.removeObserver(self)
+    var itemsTotal: Int {
+        return items.count
     }
 
+    func item(at index: Int) -> AnnouncementItem {
+        return items[index]
+    }
+    
     private func resetItemsState() {
         self.items = []
         self.pageNumber = 1
@@ -87,8 +83,7 @@ class FeedPresenter: PresenterType {
                                                     self?.reloadItemsUI()
                                                     self?.stopAnimating()
                                                    },
-                                                   onFailure: { [weak self] (errorDescription) in
-                                                    debugPrint(errorDescription)
+                                                   onFailure: { [weak self] (_) in
                                                     self?.stopAnimating()
                                                    })
     }
@@ -123,5 +118,8 @@ class FeedPresenter: PresenterType {
                                                                                                announcementRepository: AnnouncementRepository()))
     }
 
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
     
 }

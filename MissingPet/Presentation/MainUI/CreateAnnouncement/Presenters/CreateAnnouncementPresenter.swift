@@ -47,10 +47,6 @@ class CreateAnnouncementPresenter: PresenterType {
                                        object: nil)
     }
 
-    deinit {
-        notificationCenter.removeObserver(self)
-    }
-
     @objc func updateAddressUI(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
             self.address = userInfo["address"] as? String
@@ -195,4 +191,9 @@ class CreateAnnouncementPresenter: PresenterType {
         photoSetter?(self.photo)
         Navigator().dismiss()
     }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+    
 }

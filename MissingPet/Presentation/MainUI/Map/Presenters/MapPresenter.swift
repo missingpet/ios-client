@@ -32,10 +32,6 @@ class MapPresenter: PresenterType {
                                        object: nil)
     }
 
-    deinit {
-        notificationCenter.removeObserver(self)
-    }
-
     func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
         Navigator(Storyboard.inspectAnnouncement)
             .push(InspectAnnouncementViewController.self,
@@ -120,6 +116,10 @@ class MapPresenter: PresenterType {
         } else {
             self.getAllAnnouncementsMap()
         }
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
     }
 
 }

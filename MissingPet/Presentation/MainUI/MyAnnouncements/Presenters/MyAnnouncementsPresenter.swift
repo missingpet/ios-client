@@ -19,14 +19,6 @@ class MyAnnouncementsPresenter: PresenterType {
 
     var itemsWeb: Int = 0
 
-    var itemsTotal: Int {
-        return items.count
-    }
-
-    func item(at index: Int) -> AnnouncementItem {
-        return items[index]
-    }
-
     private let announcementRepository: AnnouncementRepositoryType!
 
     private let notificationCenter = NotificationCenter.default
@@ -51,14 +43,18 @@ class MyAnnouncementsPresenter: PresenterType {
                                        object: nil)
     }
 
-    deinit {
-        notificationCenter.removeObserver(self)
+    var itemsTotal: Int {
+        return items.count
+    }
+
+    func item(at index: Int) -> AnnouncementItem {
+        return items[index]
     }
 
     private func resetItemsState() {
-        self.items = []
-        self.pageNumber = 1
-        self.itemsWeb = 0
+        items = []
+        pageNumber = 1
+        itemsWeb = 0
     }
 
     private func startAnimating() {
@@ -72,41 +68,42 @@ class MyAnnouncementsPresenter: PresenterType {
     @objc func reloadMyAnnouncements() {
         resetItemsState()
         if AppSettings.isAuthorized {
-            self.getMyAnnouncements()
+            getMyAnnouncements()
         } else {
             reloadItemsUI()
         }
     }
 
     private func updateItems(result: AnnouncementListResult) {
-        self.items += result.results
-        self.itemsWeb = result.count
+        items += result.results
+        itemsWeb = result.count
         if result.next != nil {
-            self.pageNumber += 1
+            pageNumber += 1
         }
     }
 
     private func reloadItemsUI() {
-        self.reloadItemsWithCount?(max(self.itemsWeb, self.itemsTotal))
+        reloadItemsWithCount?(max(itemsWeb, itemsTotal))
     }
 
     func loadItems() {
         guard AppSettings.isAuthorized else { return }
-        self.getMyAnnouncements()
+        reloadMyAnnouncements()
     }
 
     private func getMyAnnouncements() {
         guard itemsTotal == 0 || itemsTotal < itemsWeb else { return }
         self.startAnimating()
-        announcementRepository.getMyAnnouncements(pageNumber: pageNumber,
-                                       onSuccess: { [weak self] result in
-                                        self?.updateItems(result: result)
-                                        self?.reloadItemsUI()
-                                        self?.stopAnimating()
-                                       },
-                                       onFailure: { [weak self] (_) in
-                                        self?.stopAnimating()
-                                       })
+        announcementRepository.getMyAnnouncements(
+            pageNumber: pageNumber,
+            onSuccess: { [weak self] result in
+                self?.updateItems(result: result)
+                self?.reloadItemsUI()
+                self?.stopAnimating()
+            },
+            onFailure: { [weak self] (_) in
+                self?.stopAnimating()
+            })
     }
 
     func pushInspectAnnouncementViewController(with announcement: AnnouncementItem) {
@@ -115,4 +112,9 @@ class MyAnnouncementsPresenter: PresenterType {
                                                                                                userInfoRepository: UserInfoRepository(),
                                                                                                announcementRepository: AnnouncementRepository()))
     }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+    
 }

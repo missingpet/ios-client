@@ -26,11 +26,7 @@ class SignUpPresenter: PresenterType {
         self.stopLoadingSetter?()
     }
 
-    func singUp(_ controller: UIViewController,
-                nickname: String,
-                email: String,
-                password: String,
-                repeatedPassword: String) {
+    func singUp(_ controller: UIViewController, nickname: String, email: String, password: String, repeatedPassword: String) {
 
         if ConnectionService.isUnavailable {
             let alert = AlertService.getConnectionUnavalableAlert()
@@ -92,8 +88,7 @@ class SignUpPresenter: PresenterType {
                                          onFailure: { [weak self] message in
                                             self?.stopLoading()
                                             let alert = AlertService.getErrorAlert(message: message)
-                                            controller.present(alert, animated: true,
-                                                               completion: nil)
+                                            controller.present(alert, animated: true, completion: nil)
                                          })
     }
 

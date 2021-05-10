@@ -48,7 +48,9 @@ class InspectAnnouncementPresenter: PresenterType {
 
     func setup() {
         photoUrlSetter?(URL(string: announcement.photo))
+        
         creationDateSetter?(announcement.createdAt)
+        
         switch announcement.animalType {
         case .dog:
             animalTypeSetter?("Собаки")
@@ -57,16 +59,22 @@ class InspectAnnouncementPresenter: PresenterType {
         case .other:
             animalTypeSetter?("Иные")
         }
+        
         descriptionSetter?(announcement.description)
+        
         switch announcement.announcementType {
         case .lost:
             lostFoundSetter?("Место пропажи:")
         case .found:
             lostFoundSetter?("Место находки:")
         }
+        
         placeLabelSetter?(announcement.address)
+        
         usernameSetter?(announcement.user.nickname)
+        
         callPhoneNumberSetter?(announcement.contactPhoneNumber)
+        
         if AppSettings.isAuthorized {
             userInfoRepository.getUserId(onSuccess: { [weak self] userId in
                                             self?.deleteAnnouncementButtonSetter?(userId != self?.announcement.user.id)},
@@ -104,38 +112,37 @@ class InspectAnnouncementPresenter: PresenterType {
         deleteAnnouncementAlert.addAction(UIAlertAction(title: "Да",
                                                         style: .destructive,
                                                         handler: { (_) in
-                                                            self.deleteAnnouncement(controller, id: self.announcement.id) }))
-        controller.present(deleteAnnouncementAlert,
-                           animated: true,
-                           completion: nil)
+                                                            self.deleteAnnouncement(controller, id: self.announcement.id)
+                                                        }))
+        controller.present(deleteAnnouncementAlert, animated: true, completion: nil)
     }
 
     func deleteAnnouncement(_ controller: UIViewController, id: Int) {
-        self.startAnimating()
-        self.announcementRepository.deleteAnnouncement(id: id,
-                                                       onSuccess: {
-                                                        self.notificationCenter.post(name: Notification.Name(Constants.announcementDeleted),
+        startAnimating()
+        announcementRepository
+            .deleteAnnouncement(id: id,
+                                onSuccess: {
+                                    self.notificationCenter.post(name: Notification.Name(Constants.announcementDeleted),
                                                                                      object: nil)
-                                                        self.stopAnimatng()
-                                                        let alert = UIAlertController(title: "Объявление удалено",
-                                                                                      message: nil,
-                                                                                      preferredStyle: .alert)
-                                                        alert.addAction(UIAlertAction(title: "Ок",
-                                                                                      style: .default,
-                                                                                      handler: { (_) in
-                                                                                        Navigator().pop()
-                                                                                      }))
-                                                        controller.present(alert, animated: true, completion: nil)
-                                                       },
-                                                       onFailure: { (errorMessage) in
-                                                        debugPrint(errorMessage)
-                                                        self.stopAnimatng() })
+                                    self.stopAnimatng()
+                                    let alert = UIAlertController(title: "Объявление удалено",
+                                                                  message: nil,
+                                                                  preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ок",
+                                                                  style: .default,
+                                                                  handler: { (_) in
+                                                                    Navigator().pop()
+                                                                  }))
+                                    controller.present(alert, animated: true, completion: nil)
+                                },
+                                onFailure: { (_) in
+                                    self.stopAnimatng()
+                                })
     }
 
     func presentImagePreviewViewController(image: UIImage?) {
         guard let image = image else { return }
-        Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self,
-                                                        presenter: ImagePreviewPresenter(image: image))
+        Navigator(Storyboard.inspectAnnouncement).modal(ImagePreviewViewController.self, presenter: ImagePreviewPresenter(image: image))
     }
 
 }

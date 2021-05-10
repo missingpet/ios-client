@@ -11,10 +11,9 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
 
     @IBOutlet weak var myAnnouncementsTableView: UITableView!
     @IBOutlet weak var announcementCountLabel: UILabel!
-
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var largeActivityIndicatorView: UIActivityIndicatorView!
-
+    
     override func viewDidLoad() {
         presenter?.startLoadingSetter = { [weak self] in
             self?.loadingView.isHidden = false
@@ -39,8 +38,7 @@ class MyAnnouncementsViewController: Controller<MyAnnouncementsPresenter>, UITab
         myAnnouncementsTableView.delegate = self
         myAnnouncementsTableView.dataSource = self
 
-        myAnnouncementsTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName,
-                                                bundle: nil),
+        myAnnouncementsTableView.register(UINib(nibName: AnnouncementTableViewCell.nibName, bundle: nil),
                                           forCellReuseIdentifier: AnnouncementTableViewCell.cellIdentifier)
         
         presenter?.loadItems()
