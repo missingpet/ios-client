@@ -1,6 +1,10 @@
+# MissingPet iOS
+
+Native iOS application for MissingPet project
+
 ## Development
 
-- Install [CocoaPods](https://cocoapods.org)
-- Clone the repository
-- Execute `pod install` command to install dependencies
-- Open `MissingPet.xcworkspace`
+1. Install [CocoaPods](https://cocoapods.org)
+2. Clone the repository
+3. Execute `pod install` command inside the project directory to install dependencies
+4. Open `MissingPet.xcworkspace`
