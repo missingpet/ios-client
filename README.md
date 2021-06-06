@@ -18,3 +18,7 @@ If you have found a bug or you want a new feature, but don't know how to
 fix/implement it, please fill up an [issue][issue].
 If you have fixed a bug or implemented a feature, please send a [pull
 request][pr].
+
+<!-- Links -->
+[issue]: https://github.com/missing-pet/ios-client/issues
+[pr]: https://github.com/missing-pet/ios-client/pulls
